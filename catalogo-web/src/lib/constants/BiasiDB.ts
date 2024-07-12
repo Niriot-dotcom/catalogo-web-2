@@ -1,0 +1,1 @@
+export const BiasiCollectionName = "biasiPages";
