@@ -1,5 +1,22 @@
+// USING VERCEL
+// import adapter from "@sveltejs/adapter-vercel";
+
+// export default {
+//   kit: {
+//     adapter: adapter({
+//       images: {
+//         sizes: [500, 800, 896, 1080, 1280],
+//         formats: ["image/webp"],
+//         minimumCacheTTL: 300,
+//         domains: ["catalogo2.vercel.app"],
+//       },
+//     }),
+//   },
+// };
+////////////////////////////////////////////////////////////////
+
 import adapter from "@sveltejs/adapter-auto";
-import { vitePreprocess } from "@sveltejs/kit/vite";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
