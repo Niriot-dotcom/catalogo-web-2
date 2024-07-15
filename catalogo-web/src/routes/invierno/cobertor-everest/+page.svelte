@@ -7,6 +7,8 @@
   import { catalogSections } from "$lib/components/currentCatalogPage";
   import { onMount } from "svelte";
   import type { PageData } from "./$types";
+  import DiferenciasDeCobertores from "$lib/components/communication/DiferenciasDeCobertores.svelte";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
 
   function isSafari() {
     return (
@@ -53,6 +55,21 @@
     }
   </style>
 </div>
+
+<!-- [COMUNICACION] Diferencias de Cobertores -->
+<DiferenciasDeCobertores />
+
+<!-- ENTRADA -->
+<EntradaInvierno
+  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
+  backgroundImage="/videos/poster-Bruselas.jpg"
+  backgroundColor="#EDE3EC"
+  textImage="/images/bebe/copys/Entrada-P4-Basicos.svg"
+  textColor="#EDF3EC"
+  storyMainPhrase="llega la época de abrazos"
+  storyCopy="donde la familia se reúne, cubre del frío con los cobertores más <b>calientitos</b>"
+/>
+
 {#each products as product, index}
   {#if index % 2 === 0}
     <div
@@ -318,10 +335,6 @@
   {/if}
 {/each}
 
-<CategoriesFooter
-  catalog={Catalogs.INVIERNO}
-  categories={catalogSections.INVIERNO}
-/>
 <NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
 
 <div>
