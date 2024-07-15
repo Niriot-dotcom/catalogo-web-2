@@ -4,6 +4,7 @@
   import { BiasiFooterHeader } from "$lib/constants/FooterHeaders";
   import { Catalogs } from "$lib/constants/globalTypes";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
+  import { onMount } from "svelte";
   let visibleIds: string[] = [];
   let selectedProduct: null | string = null;
   let showPopup = false;
@@ -13,8 +14,6 @@
   function show() {
     showPopup = true;
   }
-
-  import { onMount } from "svelte";
 
   let mounted = false;
   onMount(() => {
@@ -57,25 +56,6 @@
     type="text/css"
   />
 
-  <style>
-    @media (min-width: 992px) {
-      html.w-mod-js:not(.w-mod-ix)
-        [data-w-id="89edf476-53ad-eba9-6756-9a72f2d57ba7"] {
-        opacity: 0;
-      }
-    }
-    @media (max-width: 991px) and (min-width: 768px) {
-      html.w-mod-js:not(.w-mod-ix)
-        [data-w-id="89edf476-53ad-eba9-6756-9a72f2d57ba7"] {
-        opacity: 0;
-      }
-    }
-    body {
-      font-family: "Inter", sans-serif;
-      overflow-x: hidden;
-    }
-  </style>
-
   <script type="text/javascript">
     try {
       Typekit.load();
@@ -107,58 +87,6 @@
     rel="stylesheet"
     href="https://unpkg.com/tippy.js@6/animations/scale.css"
   />
-
-  <style>
-[text-split] {opacity: 0;}
-html.w-editor [text-split] {opacity: 1;}
-.word {
-	overflow: inherit;
-  padding-bottom: 0.1em;
-  margin-bottom: -0.1em;
-  transform-origin: bottom;
-}
-::selection {
-background: #FDF886 !important;
-color: #000 !important;
-}
-.tippy-content{
-  font-family: "Helvetica", sans-serif; !important
-  }
-  .menu-options {
-  pointer-events: none;
-  /* other styles for the parent div */
-}
-.navigator {
-  pointer-events: auto;
-  /* other styles for the child div */
-}
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/biasi/entrada.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* transition: opacity 3s ease; */
-}
-@media (min-width: 768px) {
-    .background-image {
-        opacity: 0.6; /* Adjust the opacity value as needed */
-    }
-}
-.background-image2 {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/biasi/entrada2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-  </style>
 </div>
 {#if !mounted}
   <div style="position: fixed; z-index: 900;" class="pre-loader">
@@ -802,3 +730,70 @@ color: #000 !important;
   ></script>
   <script defer src="../js/animations.js" type="text/javascript"></script>
 </div>
+
+<style>
+  /* [text-split] {opacity: 0;} */
+  /* html.w-editor [text-split] {opacity: 1;} */
+  /* .word {
+    overflow: inherit;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+    transform-origin: bottom;
+  }
+  ::selection {
+  background: #FDF886 !important;
+  color: #000 !important;
+  }
+  .tippy-content{
+    font-family: "Helvetica", sans-serif; !important
+    }
+    .menu-options {
+    pointer-events: none;
+  }*/
+  .navigator {
+    pointer-events: auto;
+    /* other styles for the child div */
+  }
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/biasi/entrada.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* transition: opacity 3s ease; */
+  }
+  @media (min-width: 768px) {
+    .background-image {
+      opacity: 0.6; /* Adjust the opacity value as needed */
+    }
+  }
+  .background-image2 {
+    /* position: absolute;
+      top: 0;
+      left: 0; */
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/biasi/entrada2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  /* @media (min-width: 992px) {
+    html.w-mod-js:not(.w-mod-ix)
+      [data-w-id="89edf476-53ad-eba9-6756-9a72f2d57ba7"] {
+      opacity: 0;
+    }
+  }
+  @media (max-width: 991px) and (min-width: 768px) {
+    html.w-mod-js:not(.w-mod-ix)
+      [data-w-id="89edf476-53ad-eba9-6756-9a72f2d57ba7"] {
+      opacity: 0;
+    }
+  }
+  body {
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  } */
+</style>
