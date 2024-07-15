@@ -37,6 +37,6 @@
     "tippy.js": "^6.3.7"
   },
   "engines": {
-    "node": "16"
+    "node": "20.x"
   }
 }
