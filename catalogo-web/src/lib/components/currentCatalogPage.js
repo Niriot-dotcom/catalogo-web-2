@@ -534,7 +534,7 @@ export const catalogSections = {
     },
     {
       link: "bebe",
-      title: "Bebe",
+      title: "Bebé",
       subtitle: "",
       image: "",
       isActive: true,

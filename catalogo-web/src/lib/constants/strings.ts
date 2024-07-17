@@ -88,14 +88,12 @@ export const VIALIFRESH_ICONS = [
 export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
   invierno: {
     title: "Invierno",
-    year: "2023-2024",
+    year: "2024-2025",
     url: "/invierno",
-    launchVideo: "https://youtu.be/EAtqYyzO9Pk",
-    downloadLink: "https://bit.ly/Invierno-23-24-MX",
-    image:
-      "https://vianney.vtexassets.com/assets/vtex.file-manager-graphql/images/c7104c05-f633-433a-8d83-323203c3fb42___a659a03e2331c7b7505e1cba67787823.jpg",
-    description:
-      "Este año, el catálogo de Invierno nos lleva al mundo de Sofía, una artista que no solo ama lo que hace, sino que encuentra significado en los momentos más cotidianos. Al abrir sus páginas, la vemos en su departamento, hojeando un sketchbook lleno de recuerdos. Dibujos que nos llevan a su infancia, a esos días en los que soñaba con llenar el mundo de color y sentimientos.",
+    launchVideo: "",
+    downloadLink: "",
+    image: "",
+    description: "",
   },
   biasi: {
     title: "Biasi",
