@@ -875,7 +875,7 @@
                     <span class="truncate">Decoradora IA</span>
                   </a> -->
 
-                    {#if catalog === Catalogs.CHAVOS || catalog === Catalogs.VIANNEY || catalog === Catalogs.BEBE}
+                    {#if catalog === Catalogs.CHAVOS || catalog === Catalogs.VIANNEY || catalog === Catalogs.BEBE || catalog === Catalogs.INVIERNO}
                       <button
                         on:click={handleShowSections}
                         class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium border border-red-400"
@@ -931,7 +931,7 @@
                             class="group flex flex-col leading-5 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                           >
                             <span class="truncate chavos-bold-sm"
-                              >{section.title}</span
+                              >{section.title.replaceAll("<br />", " ")}</span
                             >
                             <span class="truncate chavos-xs"
                               >{section.subtitle}</span

@@ -92,7 +92,7 @@ export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
     url: "/invierno",
     launchVideo: "",
     downloadLink: "",
-    image: "",
+    image: "/images/invierno/PORTADA_INVIERNO_24-25.jpg",
     description: "",
   },
   biasi: {

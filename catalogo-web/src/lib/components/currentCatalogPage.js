@@ -406,7 +406,7 @@ export const catalogSections = {
   INVIERNO: [
     {
       link: "cobertor-everest",
-      title: "Cobertores<br>Everest",
+      title: "Cobertores<br />Everest",
       subtitle: "",
       image: "../images/88190-01.png",
       isActive: true,
@@ -414,7 +414,7 @@ export const catalogSections = {
     },
     {
       link: "funda-de-duvet",
-      title: "Funda<br>de Duvet",
+      title: "Fundas<br />de Duvet",
       subtitle: "",
       image: "",
       isActive: true,
@@ -422,7 +422,7 @@ export const catalogSections = {
     },
     {
       link: "cobertor-invernal",
-      title: "Cobertores<br> Invernales",
+      title: "Cobertores<br />Invernales",
       subtitle: "",
       image: "../images/88069.png",
       isActive: true,
@@ -430,7 +430,7 @@ export const catalogSections = {
     },
     {
       link: "cobertor-nordico",
-      title: "Cobertores<br>Nórdicos",
+      title: "Cobertores<br />Nórdicos",
       subtitle: "",
       image: "../images/88157_2.jpg",
       isActive: true,
@@ -438,7 +438,7 @@ export const catalogSections = {
     },
     {
       link: "cobertor-ligero",
-      title: "Cobertores<br>Ligeros",
+      title: "Cobertores<br />Ligeros",
       subtitle: "",
       image: "../images/54356-1.png",
       isActive: true,
@@ -470,7 +470,7 @@ export const catalogSections = {
     },
     {
       link: "accesorios-personales",
-      title: "Accesorios<br/>personales",
+      title: "Accesorios<br />Personales",
       subtitle: "",
       image: "",
       isActive: true,
@@ -518,7 +518,7 @@ export const catalogSections = {
     },
     {
       link: "comedor-y-sala-navidad",
-      title: "Comedor y Sala<br>Navidad",
+      title: "Comedor y Sala<br />Navidad",
       subtitle: "",
       image: "../images/NAVIDAD.jpg",
       isActive: true,
