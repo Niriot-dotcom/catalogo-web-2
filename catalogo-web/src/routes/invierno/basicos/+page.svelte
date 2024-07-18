@@ -5,7 +5,7 @@
   import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
   import Sublinea from "$lib/templates/Sublinea.svelte";
   import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
-  import EntradaBebe from "$lib/templates/EntradaBebe.svelte";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
 
   let visibleIds: string[] = [];
   let relatedProducts: string[] = [];
@@ -21,18 +21,14 @@
   const groups: Record<string, []> = data.props.groupedPages;
 </script>
 
-<!-- tutorial -->
-<!-- <Tutorial showHorizontalHand /> -->
-
-<!-- entrada -->
-<EntradaBebe
-  backgroundVideo="../videos/bebe/Entrada-P3-Accesorios.mp4"
-  backgroundImage="/images/bebe/copys/Entrada-P3-AccesoriosFondo.svg"
-  backgroundColor="#FBECEA"
-  textImage="/images/bebe/copys/Entrada-P3-Accesorios.svg"
-  textColor="#F0BDB8"
-  storyMainPhrase="Las aventuras de los pequeños"
-  storyCopy="se viven mejor en un ambiente adecuado a ellos."
+<!-- ENTRADA -->
+<EntradaInvierno
+  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
+  backgroundImage="/videos/poster-Bruselas.jpg"
+  backgroundColor="#EDE3EC"
+  textImage="/images/invierno/copys/08_BASICOS_TITULO.svg"
+  storyMainPhrase="llega la época<br />de abrazos"
+  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
 />
 
 <!-- render pages -->
@@ -54,7 +50,7 @@
 {/each}
 
 <NavigatorMenu
-  catalog={Catalogs.BEBE}
+  catalog={Catalogs.INVIERNO}
   bind:relatedProducts
   bind:visibleIds
   bind:showPopup

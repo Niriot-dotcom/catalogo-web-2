@@ -6,6 +6,8 @@
   import type { PageData } from "./$types";
   import { catalogSections } from "$lib/components/currentCatalogPage";
   import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import { URLS } from "$lib/constants/strings";
 
   let visibleIds = [];
 
@@ -19,25 +21,33 @@
     showPopup = true;
   }
 
-  let isLoaded = false;
   export let data: PageData;
-  const products = data.props.products; // guarda el objeto product en una variable
+  const pages = data.props.pages; // guarda el objeto product en una variable
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 
-{#each products as product, index}
+<!-- ENTRADA -->
+<EntradaInvierno
+  backgroundVideo="/images/invierno/portadillas/ENTRADA-P03-AUSTRAL-VERTICAL.mp4"
+  backgroundImage="/images/invierno/portadillas/ENTRADA-P03-AUSTRAL.webp"
+  backgroundColor="#EDE3EC"
+  textImage="/images/invierno/copys/.svg"
+  storyMainPhrase="llega la época<br />de abrazos"
+  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+/>
+
+{#each pages as page, index}
   {#if index % 2 === 0}
     <div
-      id={product.pageTitle}
+      id={page.pageTitle}
       class="plantilla-austral"
-      data-visible-id="{product.pageProducts}, {product
-        .pageProductsImages[0]}, {product.pageProductsImages[1]}"
+      data-visible-id={page.SKU}
     >
       <section class="section-7">
         <div
-          data-poster-url="../videos/poster-{product.pageTitle}.jpg"
-          data-video-urls="../videos/video-{product.pageTitle}.mp4,../videos/video-{product.pageTitle}.webm"
+          data-poster-url="../videos/poster-{page.pageTitle}.jpg"
+          data-video-urls="../videos/video-{page.pageTitle}.mp4,../videos/video-{page.pageTitle}.webm"
           data-autoplay="true"
           data-loop="true"
           data-wf-ignore="true"
@@ -47,18 +57,18 @@
             id="03aaf391-43fe-3144-f30a-a9a620053ba8-video"
             autoplay="true"
             loop="true"
-            style="background-image:url(&quot;../videos/poster-{product.pageTitle}.jpg&quot;)"
+            style="background-image:url(&quot;../videos/poster-{page.pageTitle}.jpg&quot;)"
             muted="true"
             playsinline=""
             data-wf-ignore="true"
             data-object-fit="cover"
           >
             <source
-              src="../videos/video-{product.pageTitle}.mp4"
+              src="../videos/video-{page.pageTitle}.mp4"
               data-wf-ignore="true"
             />
             <source
-              src="../videos/video-{product.pageTitle}.webm"
+              src="../videos/video-{page.pageTitle}.webm"
               data-wf-ignore="true"
             />
           </video>
@@ -66,7 +76,7 @@
             <ImageComponent
               id="13bb5612-fe92-2612-82a1-47ecd004a28d"
               alt=""
-              src={product.pageMainImage}
+              src={page.pageMainImage}
               classList="image-25"
             />
             <div class="div-block-11 title-right">
@@ -76,7 +86,7 @@
                   words-slide-from-right=""
                   class="heading-4 alternate"
                 >
-                  {product.pageTitle}
+                  {page.pageTitle}
                 </h2>
                 <p
                   text-split=""
@@ -86,7 +96,7 @@
                   Cobertor Austral
                 </p>
               </div>
-              {#each product.pageIcons as icon}
+              {#each page.pageIcons as icon}
                 <div>
                   <ImageComponent
                     src={icon}
@@ -111,8 +121,7 @@
           </div>
           <a href="#" class="link-block-10 w-inline-block"
             ><img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[0]}.jpg"
+              src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18"
@@ -123,8 +132,7 @@
           </a>
           <a href="#" class="link-block-10 w-inline-block"
             ><img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[1]}.jpg"
+              src={`${URLS.fotos}${page.complSheets[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18"
@@ -138,15 +146,14 @@
     </div>
   {:else}
     <div
-      id={product.pageTitle}
+      id={page.pageTitle}
       class="plantilla-austral"
-      data-visible-id="{product.pageProducts}, {product
-        .pageProductsImages[0]}, {product.pageProductsImages[1]}"
+      data-visible-id={page.SKU}
     >
       <section class="section-7">
         <div
-          data-poster-url="../videos/poster-{product.pageTitle}.jpg"
-          data-video-urls="../videos/video-{product.pageTitle}.mp4,../videos/video-{product.pageTitle}.webm"
+          data-poster-url="../videos/poster-{page.pageTitle}.jpg"
+          data-video-urls="../videos/video-{page.pageTitle}.mp4,../videos/video-{page.pageTitle}.webm"
           data-autoplay="true"
           data-loop="true"
           data-wf-ignore="true"
@@ -156,18 +163,18 @@
             id="03aaf391-43fe-3144-f30a-a9a620053ba8-video"
             autoplay="true"
             loop="true"
-            style="background-image:url(&quot;../videos/poster-{product.pageTitle}.jpg&quot;)"
+            style="background-image:url(&quot;../videos/poster-{page.pageTitle}.jpg&quot;)"
             muted="true"
             playsinline=""
             data-wf-ignore="true"
             data-object-fit="cover"
           >
             <source
-              src="../videos/video-{product.pageTitle}.mp4"
+              src="../videos/video-{page.pageTitle}.mp4"
               data-wf-ignore="true"
             />
             <source
-              src="../videos/video-{product.pageTitle}.webm"
+              src="../videos/video-{page.pageTitle}.webm"
               data-wf-ignore="true"
             />
           </video>
@@ -175,7 +182,7 @@
             <ImageComponent
               id="13bb5612-fe92-2612-82a1-47ecd004a28d"
               alt=""
-              src={product.pageMainImage}
+              src={page.pageMainImage}
               classList="image-25"
             />
             <div class="div-block-11 title-right">
@@ -185,7 +192,7 @@
                   words-slide-from-right=""
                   class="heading-4 alternate"
                 >
-                  {product.pageTitle}
+                  {page.pageTitle}
                 </h2>
                 <p
                   text-split=""
@@ -195,7 +202,7 @@
                   Cobertor Austral
                 </p>
               </div>
-              {#each product.pageIcons as icon}
+              {#each page.pageIcons as icon}
                 <div>
                   <ImageComponent
                     src={icon}
@@ -220,8 +227,7 @@
           </div>
           <a href="#" class="link-block-10 w-inline-block"
             ><img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[0]}.jpg"
+              src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18"
@@ -232,8 +238,7 @@
           </a>
           <a href="#" class="link-block-10 w-inline-block"
             ><img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[1]}.jpg"
+              src={`${URLS.fotos}${page.complSheets[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18"

@@ -31,8 +31,8 @@
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 <!-- entrada -->
 <EntradaInvierno
-  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
-  backgroundImage="/videos/poster-Bruselas.jpg"
+  backgroundVideo="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET-VERTICAL.mp4"
+  backgroundImage="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET.webp"
   backgroundColor="#EDE3EC"
   textImage="/images/invierno/copys/02_FUNDAS_DE_DUVET_TITULO.svg"
   storyMainPhrase="llega la época<br />de abrazos"

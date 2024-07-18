@@ -9,7 +9,7 @@ export type VisibleIds = string[];
 export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   const q = query(
     collection(db, InviernoCollectionName),
-    where("productSection", "==", "Página 3 / Cobertores Invernales"),
+    where("productSection", "==", "Página 4 / Cobertores Invernales"),
     where("pageStatus", "==", "Activa"),
   );
   const querySnapshot = await getDocs(q);

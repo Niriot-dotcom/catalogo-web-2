@@ -421,12 +421,20 @@ export const catalogSections = {
       position: "2",
     },
     {
+      link: "cobertor-austral",
+      title: "Cobertores<br />Australes",
+      subtitle: "",
+      image: "../images/88069.png",
+      isActive: true,
+      position: "3",
+    },
+    {
       link: "cobertor-invernal",
       title: "Cobertores<br />Invernales",
       subtitle: "",
       image: "../images/88069.png",
       isActive: true,
-      position: "3",
+      position: "4",
     },
     {
       link: "cobertor-nordico",
@@ -434,7 +442,7 @@ export const catalogSections = {
       subtitle: "",
       image: "../images/88157_2.jpg",
       isActive: true,
-      position: "4",
+      position: "5",
     },
     {
       link: "cobertor-ligero",
@@ -442,7 +450,7 @@ export const catalogSections = {
       subtitle: "",
       image: "../images/54356-1.png",
       isActive: true,
-      position: "5",
+      position: "6",
     },
     {
       link: "frazadas",
@@ -450,7 +458,7 @@ export const catalogSections = {
       subtitle: "",
       image: "",
       isActive: true,
-      position: "6",
+      position: "7",
     },
     {
       link: "complementos",
@@ -458,7 +466,7 @@ export const catalogSections = {
       subtitle: "",
       image: "",
       isActive: true,
-      position: "7",
+      position: "8",
     },
     {
       link: "basicos",
@@ -466,7 +474,7 @@ export const catalogSections = {
       subtitle: "",
       image: "",
       isActive: true,
-      position: "8",
+      position: "9",
     },
     {
       link: "accesorios-personales",
@@ -474,7 +482,7 @@ export const catalogSections = {
       subtitle: "",
       image: "",
       isActive: true,
-      position: "9",
+      position: "10",
     },
     {
       link: "decoracion",
@@ -482,7 +490,7 @@ export const catalogSections = {
       subtitle: "",
       image: "",
       isActive: true,
-      position: "10",
+      position: "11",
     },
     {
       link: "vialite",
@@ -490,7 +498,7 @@ export const catalogSections = {
       subtitle: "",
       image: "../images/VIALITE.jpg",
       isActive: true,
-      position: "11",
+      position: "12",
     },
     {
       link: "mascotas",
@@ -498,7 +506,7 @@ export const catalogSections = {
       subtitle: "",
       image: "../images/MASCOTAS.jpg",
       isActive: true,
-      position: "12",
+      position: "13",
     },
     {
       link: "cortinas",
@@ -506,7 +514,7 @@ export const catalogSections = {
       subtitle: "",
       image: "../images/CORTINAS.jpg",
       isActive: true,
-      position: "13",
+      position: "14",
     },
     {
       link: "navidad",
@@ -514,7 +522,7 @@ export const catalogSections = {
       subtitle: "",
       image: "../images/NAVIDAD.jpg",
       isActive: true,
-      position: "14",
+      position: "15",
     },
     {
       link: "comedor-y-sala-navidad",
@@ -522,7 +530,7 @@ export const catalogSections = {
       subtitle: "",
       image: "../images/NAVIDAD.jpg",
       isActive: true,
-      position: "15",
+      position: "16",
     },
     {
       link: "bebe",
@@ -530,7 +538,7 @@ export const catalogSections = {
       subtitle: "",
       image: "",
       isActive: true,
-      position: "16",
+      position: "17",
     },
   ],
 };

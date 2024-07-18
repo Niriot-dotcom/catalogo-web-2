@@ -3,12 +3,9 @@
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
   import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
-  import EdredonVoga from "$lib/templates/EdredonVoga.svelte";
-  import JuegoDeEdredon from "$lib/templates/JuegoDeEdredon.svelte";
-  import EdredonNovo from "$lib/templates/EdredonNovo.svelte";
-  import EdredonNuut from "$lib/templates/EdredonNuut.svelte";
-  import Cobertor from "$lib/templates/Cobertor.svelte";
   import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
+  import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
+  import Sublinea from "$lib/templates/Sublinea.svelte";
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
 
   let visibleIds: string[] = [];
@@ -25,15 +22,15 @@
     relatedProducts = relatedProds;
   };
 
-  const pages: DatabasePage[] = data.props.pages;
+  const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 
 <!-- ENTRADA -->
 <EntradaInvierno
-  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
-  backgroundImage="/videos/poster-Bruselas.jpg"
+  backgroundVideo=""
+  backgroundImage="/images/invierno/portadillas/ENTRADA-P08-COMPLEMENTOS.webp"
   backgroundColor="#EDE3EC"
   textImage="/images/invierno/copys/07_COMPLEMENTOS_TITULO.svg"
   storyMainPhrase="llega la época<br />de abrazos"
@@ -41,19 +38,20 @@
 />
 
 <!-- render pages -->
-{#each pages as page, i}
-  {#if page.pageTemplate == "JuegoDeEdredon"}
-    <JuegoDeEdredon bind:page {handleImageClick} />
-  {:else if page.pageTemplate == "EdredonNovo"}
-    <EdredonNovo bind:page {handleImageClick} />
-  {:else if page.pageTemplate == "EdredonNuut"}
-    <EdredonNuut bind:page {handleImageClick} />
-  {:else if page.pageTemplate == "Cobertor"}
-    <Cobertor bind:page {handleImageClick} />
-  {:else if page.pageTemplate == "EdredonVoga"}
-    <EdredonVoga bind:page {handleImageClick} />
-  {:else if page.pageTemplate == "AmbienteConMiniambiente"}
-    <AmbienteConMiniambiente bind:page {handleImageClick} />
+{#each Object.keys(groups) as group, i}
+  {#if groups[group][0].pageTemplate == "AmbienteConMiniambiente"}
+    {#each groups[group] as juego, i}
+      <AmbienteConMiniambiente page={juego} {handleImageClick} />
+    {/each}
+  {:else if groups[group][0].pageTemplate == "Sublinea"}
+    <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
+  {:else if groups[group][0].pageTemplate == "VariantesDeColor"}
+    <VariantesDeColor
+      bind:visibleIds
+      groupPages={groups[group]}
+      title={group}
+      {handleImageClick}
+    />
   {/if}
 {/each}
 

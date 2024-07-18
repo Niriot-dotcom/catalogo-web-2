@@ -9,7 +9,7 @@ export type VisibleIds = string[];
 export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   const q = query(
     collection(db, InviernoCollectionName),
-    where("productSection", "==", "Página 7 / Complementos"),
+    where("productSection", "==", "Página 8 / Complementos"),
     where("pageStatus", "==", "Activa"),
   );
   const querySnapshot = await getDocs(q);
@@ -21,17 +21,14 @@ export const load = async ({ params }: Parameters<PageLoad>[0]) => {
 
   let groupedPages = {};
   for (const page of pages) {
-    if (
-      page.pageTemplate == "Sublinea" ||
-      page.pageTemplate == "VariantesDeColor"
-    ) {
-      if (groupedPages[page.productType] === undefined) {
-        groupedPages[page.productType] = [page];
-      } else {
-        groupedPages[page.productType].push(page);
-      }
+    if (page.pageTemplate == "") continue;
+
+    if (groupedPages[page.productType] === undefined) {
+      groupedPages[page.productType] = [page];
+    } else {
+      groupedPages[page.productType].push(page);
     }
   }
 
-  return { props: { pages, groupedPages } };
+  return { props: { groupedPages } };
 };

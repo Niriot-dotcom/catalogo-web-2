@@ -243,10 +243,6 @@
           categories={catalogSections.BEBE}
         />
       {:else if catalog === Catalogs.INVIERNO}
-        <!-- {console.log(
-          "show catalogs invierno aksdfkhajksdf",
-          catalogSections.INVIERNO,
-        )} -->
         <CategoriesFooter
           {catalog}
           showOnlyGrid={true}

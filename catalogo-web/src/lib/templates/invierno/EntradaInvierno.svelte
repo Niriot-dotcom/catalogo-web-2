@@ -1,5 +1,12 @@
 <script lang="ts">
   import ScrollDownArrows from "$lib/components/animations/ScrollDownArrows.svelte";
+  import { EnumEntradaInvierno } from "$lib/constants/strings";
+  enum VariantsEntradaInvierno {
+    FOTO_VIDEO = "FOTO_VIDEO",
+    VIDEO_FOTO = "VIDEO_FOTO",
+    SOLO_FOTO = "SOLO_FOTO",
+    SOLO_VIDEO = "SOLO_VIDEO",
+  }
 
   export let backgroundVideo: string;
   export let backgroundImage: string;
@@ -7,6 +14,7 @@
   export let textImage: string;
   export let storyMainPhrase: string;
   export let storyCopy: string;
+  export let variant: VariantsEntradaInvierno;
 </script>
 
 <div

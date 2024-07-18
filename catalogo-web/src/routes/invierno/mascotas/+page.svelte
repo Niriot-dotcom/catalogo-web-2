@@ -1,129 +1,67 @@
 <script lang="ts">
-  import VisibleDetector from "$lib/components/visibleDetector.svelte";
-  import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import { Catalogs } from "$lib/constants/globalTypes";
   import type { PageData } from "./$types";
-  import { catalogSections } from "$lib/components/currentCatalogPage";
-  import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
+  import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
+  import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
+  import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
+  import Sublinea from "$lib/templates/Sublinea.svelte";
+  import VisibleDetector from "$lib/components/visibleDetector.svelte";
 
-  let visibleIds = [];
-
-  function handleVisibleChange(event) {
+  let visibleIds: string[] = [];
+  function handleVisibleChange(event: any) {
     visibleIds = event.detail;
   }
-
+  let relatedProducts: string[] = [];
+  let selectedProduct: null | string = null;
   let showPopup = false;
 
-  function show() {
-    showPopup = true;
-  }
-
   export let data: PageData;
-  const products = data.props.products; // guarda el objeto product en una variable
+  const handleImageClick = (sku: string, relatedProds: string[]) => {
+    selectedProduct = sku;
+    relatedProducts = relatedProds;
+  };
+
+  const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 
-{#each products as product, index}
-  <section id={product.pageTitle} class="introducci-n">
-    <div class="div-block">
-      <div class="sticky-container primary-container" style="height: 75vh;">
-        <div class="sticky-parent primary-sticky" style="height: 75vh;">
-          <div class="card-parent pillows-background">
-            <section
-              class="hero-image-left pillows-hero"
-              style="background-image: url({product.pageMainImage.replace(
-                '.webp',
-                '-1280.webp',
-              )}) ;     background-position: top;     justify-content: flex-end; align-items: flex-start; display: flex;"
-            >
-              <section id="page1" class="div-block-3 primary-copy-box">
-                <div class="div-block-48">
-                  <div class="page-title-box">
-                    <h2
-                      text-split=""
-                      words-slide-from-right=""
-                      class="heading-4"
-                    >
-                      {product.pageTitle}
-                    </h2>
-                    <p
-                      text-split=""
-                      words-slide-from-right=""
-                      class="paragraph product-detail-subtitle alternate"
-                    >
-                      Las mejores cámitas
-                    </p>
-                  </div>
-                </div>
-              </section>
-            </section>
-          </div>
-        </div>
-      </div>
-      <section id="page3" class="section-text">
-        <div
-          text-split=""
-          words-slide-from-right=""
-          class="text-block-5 subtitle-intro"
-        >
-          <span class="text-span-5"></span><span class="text-span-2"
-            >{product.pageCopys[0]}</span
-          ><span class="text-span-6"></span>
-        </div>
-        <div
-          words-slide-from-right=""
-          text-split=""
-          class="text-block-4 secondary intro"
-          style="margin-top: 24px;"
-        >
-          {product.pageDescriptions.join(", ")}
-        </div>
-        <div class="div-block-5">
-          {#each product.pageProductsImages.slice(0, 3) as item}
-            <div
-              class="div-block-6 everest-ideal rounded-xl"
-              data-visible-id={item}
-              on:click={show}
-            >
-              <img
-                src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{item}.jpg"
-                class="rounded-xl my-16"
-                loading="eager"
-                alt=""
-                style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; cursor: pointer;"
-              />
-            </div>
-          {/each}
+<!-- ENTRADA -->
+<EntradaInvierno
+  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
+  backgroundImage="/videos/poster-Bruselas.jpg"
+  backgroundColor="#EDE3EC"
+  textImage="/images/invierno/copys/12_MASCOTAS_TITULO.svg"
+  storyMainPhrase="llega la época<br />de abrazos"
+  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+/>
 
-          <div class="div-block-5">
-            {#each product.pageProductsImages.slice(3) as item}
-              <div
-                class="div-block-6 everest-ideal rounded-xl"
-                data-visible-id={item}
-                on:click={show}
-              >
-                <img
-                  src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{item}.jpg"
-                  class="rounded-xl my-16"
-                  loading="eager"
-                  alt=""
-                  style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; cursor: pointer"
-                />
-              </div>
-            {/each}
-          </div>
-        </div>
-      </section>
-    </div>
-  </section>
+<!-- render pages -->
+{#each Object.keys(groups) as group, i}
+  {#if groups[group][0].pageTemplate == "AmbienteConMiniambiente"}
+    {#each groups[group] as juego, i}
+      <AmbienteConMiniambiente page={juego} {handleImageClick} />
+    {/each}
+  {:else if groups[group][0].pageTemplate == "Sublinea"}
+    <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
+  {:else if groups[group][0].pageTemplate == "VariantesDeColor"}
+    <VariantesDeColor
+      bind:visibleIds
+      groupPages={groups[group]}
+      title={group}
+      {handleImageClick}
+    />
+  {/if}
 {/each}
 
-<CategoriesFooter
+<NavigatorMenu
   catalog={Catalogs.INVIERNO}
-  categories={catalogSections.INVIERNO}
+  bind:relatedProducts
+  bind:visibleIds
+  bind:showPopup
+  bind:selectedProduct
 />
-<NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
 
 <div>
   <script defer src="../js/webflowPage.js"></script>
@@ -146,21 +84,3 @@
   <script defer src="../js/animations.js" type="text/javascript"></script>
   <script defer src="../js/webflow.js" type="text/javascript"></script>
 </div>
-
-<style>
-  @media screen and (max-width: 479px) {
-    .hero-image-left.pillows-hero {
-      background-size: cover;
-      height: 50vh !important;
-    }
-    .card-parent {
-      height: 50vh !important;
-    }
-    .sticky-parent {
-      height: 50vh !important;
-    }
-    .sticky-container {
-      height: 50vh !important;
-    }
-  }
-</style>

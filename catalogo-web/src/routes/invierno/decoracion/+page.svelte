@@ -1,13 +1,17 @@
 <script lang="ts">
   import type { PageData } from "./$types";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import { Catalogs } from "$lib/constants/globalTypes";
+  import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
   import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
   import Sublinea from "$lib/templates/Sublinea.svelte";
-  import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
-  import EntradaBebe from "$lib/templates/EntradaBebe.svelte";
+  import VisibleDetector from "$lib/components/visibleDetector.svelte";
 
   let visibleIds: string[] = [];
+  function handleVisibleChange(event: any) {
+    visibleIds = event.detail;
+  }
   let relatedProducts: string[] = [];
   let selectedProduct: null | string = null;
   let showPopup = false;
@@ -18,21 +22,19 @@
     relatedProducts = relatedProds;
   };
 
-  const groups: Record<string, []> = data.props.groupedPages;
+  const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
 </script>
 
-<!-- tutorial -->
-<!-- <Tutorial showHorizontalHand /> -->
+<VisibleDetector on:visibleChange={handleVisibleChange} />
 
-<!-- entrada -->
-<EntradaBebe
-  backgroundVideo="../videos/bebe/Entrada-P3-Accesorios.mp4"
-  backgroundImage="/images/bebe/copys/Entrada-P3-AccesoriosFondo.svg"
-  backgroundColor="#FBECEA"
-  textImage="/images/bebe/copys/Entrada-P3-Accesorios.svg"
-  textColor="#F0BDB8"
-  storyMainPhrase="Las aventuras de los pequeños"
-  storyCopy="se viven mejor en un ambiente adecuado a ellos."
+<!-- ENTRADA -->
+<EntradaInvierno
+  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
+  backgroundImage="/videos/poster-Bruselas.jpg"
+  backgroundColor="#EDE3EC"
+  textImage="/images/invierno/copys/10_DECORACION_TITULO.svg"
+  storyMainPhrase="llega la época<br />de abrazos"
+  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
 />
 
 <!-- render pages -->
@@ -54,7 +56,7 @@
 {/each}
 
 <NavigatorMenu
-  catalog={Catalogs.BEBE}
+  catalog={Catalogs.INVIERNO}
   bind:relatedProducts
   bind:visibleIds
   bind:showPopup
