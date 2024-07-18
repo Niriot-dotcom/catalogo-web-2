@@ -11,7 +11,7 @@
   const cobertoresInfos = [
     {
       title: "Everest",
-      subtitle: "",
+      image: "/images/invierno/recortes/EVEREST_MARFIL_RECORTE",
       characteristics: [
         "Linea Premium",
         "Diseños vanguardistas",
@@ -22,7 +22,7 @@
     },
     {
       title: "Funda de duvet",
-      subtitle: "",
+      image: "/images/invierno/recortes/FUNDA_DUVET_INCIENSO_RECORTE",
       characteristics: [
         "Cubierta removible para duvet de pelo ultrasuave",
         "Lavable en casa",
@@ -32,7 +32,7 @@
     },
     {
       title: "Austral",
-      subtitle: "",
+      image: "/images/invierno/recortes/AUSTRAL_ROSETA_RECORTE",
       characteristics: [
         "Detalles únicos",
         "Texturas de jacquard",
@@ -42,7 +42,7 @@
     },
     {
       title: "Invernal",
-      subtitle: "",
+      image: "/images/invierno/recortes/INVERNAL_AMBER_RECORTE",
       characteristics: [
         "Suavidad y calidez a tu alcance",
         "Diseño en tendencia",
@@ -52,7 +52,7 @@
     },
     {
       title: "Nórdico",
-      subtitle: "",
+      image: "/images/invierno/recortes/NORDICO_VOSTOK_RECORTE",
       characteristics: [
         "2 diseños en uno",
         "Texturas especiales",
@@ -62,7 +62,7 @@
     },
     {
       title: "Ligero",
-      subtitle: "",
+      image: "/images/invierno/recortes/LIGERO_BOLD_RECORTE",
       characteristics: [
         "Ideal para todo el año",
         "El más ligero",
@@ -166,10 +166,10 @@
         <!-- images (product and plasta) -->
         <div class="relative">
           <img
-            src="../images/invierno_fotos_ENTRADA-03.png"
+            src={`${cobertor.image}-500.webp`}
             loading="eager"
             sizes="(max-width: 479px) 92vw, (max-width: 767px) 83vw, 29vw"
-            srcset="../images/invierno_fotos_ENTRADA-03-p-500.png 500w, ../images/invierno_fotos_ENTRADA-03-p-800.png 800w, ../images/invierno_fotos_ENTRADA-03-p-1080.png 1080w, ../images/invierno_fotos_ENTRADA-03.png 1280w"
+            srcset={`${cobertor.image}-500.webp 500w, ${cobertor.image}-800.webp 800w, ${cobertor.image}-1080.webp 1080w, ${cobertor.image}-1800.webp 1800w`}
             alt=""
             class="z-20"
           />
