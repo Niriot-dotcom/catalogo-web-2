@@ -29,7 +29,8 @@
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
-<!-- entrada -->
+
+<!-- ENTRADA -->
 <EntradaInvierno
   backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
   backgroundImage="/videos/poster-Bruselas.jpg"

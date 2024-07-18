@@ -4,8 +4,8 @@
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
   import { Catalogs } from "$lib/constants/globalTypes";
   import type { PageData } from "./$types";
-  import { catalogSections } from "$lib/components/currentCatalogPage";
-  import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
+  import { URLS } from "$lib/constants/strings";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
 
   let visibleIds = [];
 
@@ -21,18 +21,27 @@
 
   let isLoaded = false;
   export let data: PageData;
-  const products = data.props.products; // guarda el objeto product en una variable
+  const pages = data.props.pages; // guarda el objeto product en una variable
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 
+<!-- ENTRADA -->
+<EntradaInvierno
+  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
+  backgroundImage="/videos/poster-Bruselas.jpg"
+  backgroundColor="#EDE3EC"
+  textImage="/images/invierno/copys/03_INVERNAL_TITULO.svg"
+  storyMainPhrase="llega la época<br />de abrazos"
+  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+/>
+
 <div>
-  {#each products as product, index}
+  {#each pages as page, index}
     {#if index % 2 === 0}
-      <div id={product.pageTitle}>
+      <div id={page.pageTitle}>
         <div
-          data-visible-id="{product.pageProducts}, {product
-            .pageProductsImages[0]}, {product.pageProductsImages[1]}"
+          data-visible-id={page.SKU}
           data-w-id="26494cac-c879-c70d-1939-3984a45c1663"
           class="div-block-40 column-container"
         >
@@ -43,13 +52,13 @@
             <div class="div-block-43 sm:hidden block">
               <div class="page-title-box">
                 <div>
-                  <h2 class="heading-4">{product.pageTitle}</h2>
+                  <h2 class="heading-4">{page.pageTitle}</h2>
                   <p class="paragraph product-detail-subtitle alternate">
                     Cobertor Invernal
                   </p>
                 </div>
               </div>
-              {#each product.pageIcons as icon}
+              {#each page.pageIcons as icon}
                 <ImageComponent
                   src={icon}
                   loading="eager"
@@ -59,7 +68,7 @@
               {/each}
             </div>
             <ImageComponent
-              src={product.pageImages[0]}
+              src={`${URLS.fotos}${page.SKU}.webp`}
               loading="eager"
               alt=""
               classList="image-26"
@@ -67,7 +76,7 @@
           </div>
           <div class="columna-invernal-2 austral">
             <ImageComponent
-              src={product.pageMainImage}
+              src={page.pageMainImage}
               loading="eager"
               alt=""
               classList="image-26"
@@ -75,13 +84,13 @@
             <div class="div-block-43 sm:block hidden">
               <div class="page-title-box">
                 <div>
-                  <h2 class="heading-4">{product.pageTitle}</h2>
+                  <h2 class="heading-4">{page.pageTitle}</h2>
                   <p class="paragraph product-detail-subtitle alternate">
                     Cobertor Invernal
                   </p>
                 </div>
               </div>
-              {#each product.pageIcons as icon}
+              {#each page.pageIcons as icon}
                 <ImageComponent
                   src={icon}
                   loading="eager"
@@ -93,7 +102,7 @@
           </div>
           <div class="columna-invernal-3">
             <ImageComponent
-              src={product.pageImages[1]}
+              src={`${URLS.fotos}${page.SKU}-2.webp`}
               loading="eager"
               alt=""
               classList="image-26"
@@ -114,8 +123,7 @@
             class="link-block-10 centered w-inline-block"
           >
             <img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[0]}.jpg"
+              src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18 horizontal"
@@ -126,8 +134,7 @@
           </div>
           <div href="#" class="link-block-10 centered w-inline-block">
             <img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[1]}.jpg"
+              src={`${URLS.fotos}${page.complSheets[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18 horizontal"
@@ -140,10 +147,9 @@
         </div>
       </div>
     {:else}
-      <div id={product.pageTitle}>
+      <div id={page.pageTitle}>
         <div
-          data-visible-id="{product.pageProducts}, {product
-            .pageProductsImages[0]}, {product.pageProductsImages[1]}"
+          data-visible-id={page.SKU}
           data-w-id="922ca861-0457-4a76-f593-9ea2a0016e98"
           class="div-block-40 column-container"
         >
@@ -154,13 +160,13 @@
             <div class="div-block-43 sm:hidden block">
               <div class="page-title-box">
                 <div>
-                  <h2 class="heading-4">{product.pageTitle}</h2>
+                  <h2 class="heading-4">{page.pageTitle}</h2>
                   <p class="paragraph product-detail-subtitle alternate">
                     Cobertor Invernal
                   </p>
                 </div>
               </div>
-              {#each product.pageIcons as icon}
+              {#each page.pageIcons as icon}
                 <div>
                   <ImageComponent
                     src={icon}
@@ -172,24 +178,24 @@
               {/each}
             </div>
             <ImageComponent
-              src={product.pageImages[0]}
+              src={`${URLS.fotos}${page.SKU}.webp`}
               loading="eager"
               alt=""
               classList="image-26"
             />
           </div>
           <div class="columna-invernal-2 austral">
-            <ImageComponent src={product.pageMainImage} classList="image-26" />
+            <ImageComponent src={page.pageMainImage} classList="image-26" />
             <div class="div-block-43 sm:block hidden">
               <div class="page-title-box">
                 <div>
-                  <h2 class="heading-4">{product.pageTitle}</h2>
+                  <h2 class="heading-4">{page.pageTitle}</h2>
                   <p class="paragraph product-detail-subtitle alternate">
                     Cobertor Invernal
                   </p>
                 </div>
               </div>
-              {#each product.pageIcons as icon}
+              {#each page.pageIcons as icon}
                 <div>
                   <ImageComponent
                     src={icon}
@@ -203,7 +209,7 @@
           </div>
           <div class="columna-invernal-1">
             <ImageComponent
-              src={product.pageImages[1]}
+              src={`${URLS.fotos}${page.SKU}-2.webp`}
               loading="eager"
               alt=""
               classList="image-26"
@@ -218,10 +224,9 @@
           >
             Completa<br /><strong class="bold-text">el Look</strong>
           </div>
-          <a href="#" class="link-block-10 centered w-inline-block"
-            ><img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[0]}.jpg"
+          <a href="#" class="link-block-10 centered w-inline-block">
+            <img
+              src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
               loading="eager"
               class="image-18 horizontal"
             />
@@ -229,10 +234,9 @@
               agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
             </div>
           </a>
-          <a href="#" class="link-block-10 centered w-inline-block"
-            ><img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[1]}.jpg"
+          <a href="#" class="link-block-10 centered w-inline-block">
+            <img
+              src={`${URLS.fotos}${page.complSheets[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18 horizontal"
@@ -248,10 +252,6 @@
   {/each}
 </div>
 
-<CategoriesFooter
-  catalog={Catalogs.INVIERNO}
-  categories={catalogSections.INVIERNO}
-/>
 <NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
 
 <div>

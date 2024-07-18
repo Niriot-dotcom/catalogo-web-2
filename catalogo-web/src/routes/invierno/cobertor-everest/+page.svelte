@@ -9,6 +9,7 @@
   import type { PageData } from "./$types";
   import DiferenciasDeCobertores from "$lib/components/communication/DiferenciasDeCobertores.svelte";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import { URLS } from "$lib/constants/strings";
 
   function isSafari() {
     return (
@@ -42,7 +43,7 @@
   }
 
   export let data: PageData;
-  const products = data.props.products; // guarda el objeto product en una variable
+  const pages = data.props.pages;
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
@@ -64,35 +65,33 @@
   backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
   backgroundImage="/videos/poster-Bruselas.jpg"
   backgroundColor="#EDE3EC"
-  textImage="/images/bebe/copys/Entrada-P4-Basicos.svg"
-  textColor="#EDF3EC"
-  storyMainPhrase="llega la época de abrazos"
-  storyCopy="donde la familia se reúne, cubre del frío con los cobertores más <b>calientitos</b>"
+  textImage="/images/invierno/copys/01_EVEREST_TITULO.svg"
+  storyMainPhrase="llega la época<br />de abrazos"
+  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
 />
 
-{#each products as product, index}
+{#each pages as page, index}
   {#if index % 2 === 0}
     <div
-      id={product.pageTitle}
-      data-visible-id="{product.pageProducts}, {product
-        .pageProductsImages[0]}, {product.pageProductsImages[1]}"
+      id={page.pageTitle}
+      data-visible-id={page.SKU}
       class="plantilla-everest"
     >
       <div class="div-block-31">
         <ImageComponent
-          src={product.pageMainImage}
+          src={page.pageMainImage}
           loading="eager"
           id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
           classList="image-16"
         />
         <div class="div-block-11">
           <div class="page-title-box">
-            <h2 class="heading-4">{product.pageTitle}</h2>
+            <h2 class="heading-4">{page.pageTitle}</h2>
             <p class="paragraph product-detail-subtitle alternate">
               Cobertor Everest
             </p>
           </div>
-          {#each product.pageIcons as icon}
+          {#each page.pageIcons as icon}
             <div>
               <ImageComponent
                 src={icon}
@@ -109,10 +108,10 @@
           class="background-video-2 w-background-video w-background-video-atom"
         >
           <img
-            src="../videos/poster-{product.pageTitle}.jpg"
+            src="../videos/poster-{page.pageTitle}.jpg"
             loading="eager"
             alt=""
-            style="background-image:url(&quot;../videos/poster-{product.pageTitle}.jpg&quot;); height: 100%;
+            style="background-image:url(&quot;../videos/poster-{page.pageTitle}.jpg&quot;); height: 100%;
         object-fit: cover;"
           />
           <div class="copy-box-everest right">
@@ -120,8 +119,8 @@
               Pelo <span class="text-span-8">largo</span>
             </div>
             <div class="text-block-27" style="text-transform: capitalize;">
-              {typeof product.pageCopys[1] !== "undefined"
-                ? product.pageCopys[1]
+              {typeof page.pageCopys[1] !== "undefined"
+                ? page.pageCopys[1]
                 : ""}
             </div>
             <img
@@ -134,16 +133,20 @@
         </div>
         <div class="div-block-33">
           <ImageComponent
-            src={product.pageImages[0]}
+            src={`${URLS.fotos}${page.SKU}.webp`}
             loading="eager"
             id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
             classList="image-17"
           />
           <div class="copy-box-everest">
             <div class="text-block-25" style="text-transform: lowercase;">
-              {product.pageDescriptions[1]}
+              <!-- TODO -->
+              page.pageDescriptions[1]
             </div>
-            <div class="text-block-27">{product.pageDescriptions[2]}</div>
+            <div class="text-block-27">
+              <!-- TODO -->
+              page.pageDescriptions[2]
+            </div>
             <img
               src="../images/Flechas-1.svg"
               loading="eager"
@@ -166,8 +169,7 @@
             class="link-block-10 w-inline-block"
           >
             <img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[0]}.jpg"
+              src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18"
@@ -182,8 +184,7 @@
             class="link-block-10 w-inline-block"
           >
             <img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[1]}.jpg"
+              src={`${URLS.fotos}${page.complSheets[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18"
@@ -202,9 +203,8 @@
     </div>
   {:else}
     <div
-      id={product.pageTitle}
-      data-visible-id="{product.pageProducts}, {product
-        .pageProductsImages[0]}, {product.pageProductsImages[1]}"
+      id={page.pageTitle}
+      data-visible-id="{page.SKU},"
       class="plantilla-everest inversa"
     >
       <section class="section-6">
@@ -212,10 +212,10 @@
           class="background-video-2 w-background-video w-background-video-atom"
         >
           <img
-            src="../videos/poster-{product.pageTitle}.jpg"
+            src="../videos/poster-{page.pageTitle}.jpg"
             loading="eager"
             alt=""
-            style="background-image:url(&quot;../videos/poster-{product.pageTitle}.jpg&quot;); height: 100%;
+            style="background-image:url(&quot;../videos/poster-{page.pageTitle}.jpg&quot;); height: 100%;
         object-fit: cover;"
           />
 
@@ -224,8 +224,8 @@
               Pelo <span class="text-span-8">largo</span>
             </div>
             <div class="text-block-27" style="text-transform: capitalize;">
-              {typeof product.pageCopys[1] !== "undefined"
-                ? product.pageCopys[1]
+              {typeof page.pageCopys[1] !== "undefined"
+                ? page.pageCopys[1]
                 : ""}
             </div>
             <img
@@ -238,14 +238,15 @@
         </div>
         <div class="div-block-33">
           <ImageComponent
-            src={product.pageImages[0]}
+            src={`${URLS.fotos}${page.SKU}.webp`}
             loading="eager"
             id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
             classList="image-17"
           />
           <div class="copy-box-everest">
             <div class="text-block-25" style="text-transform: lowercase;">
-              {product.pageDescriptions[1]}
+              <!-- TODO -->
+              page.pageDescriptions[1]
             </div>
             <div class="text-block-27 hidden">
               This is some text inside of a div block.
@@ -272,8 +273,7 @@
             class="link-block-10 w-inline-block"
           >
             <img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[0]}.jpg"
+              src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18"
@@ -288,8 +288,7 @@
             class="link-block-10 w-inline-block"
           >
             <img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[1]}.jpg"
+              src={`${URLS.fotos}${page.complSheets[0]}.webp`}
               loading="eager"
               alt=""
               class="image-18"
@@ -307,19 +306,19 @@
       </section>
       <div class="div-block-31">
         <ImageComponent
-          src={product.pageMainImage}
+          src={page.pageMainImage}
           loading="eager"
           id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
           classList="image-16"
         />
         <div class="div-block-11">
           <div class="page-title-box">
-            <h2 class="heading-4">{product.pageTitle}</h2>
+            <h2 class="heading-4">{page.pageTitle}</h2>
             <p class="paragraph product-detail-subtitle alternate">
               Cobertor Everest
             </p>
           </div>
-          {#each product.pageIcons as icon}
+          {#each page.pageIcons as icon}
             <div>
               <ImageComponent
                 src={icon}
