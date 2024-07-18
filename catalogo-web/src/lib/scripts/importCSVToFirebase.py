@@ -26,14 +26,16 @@ class NumpyArrayEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, obj)
 
 ''' CREDENTIALS '''
-cred = credentials.Certificate('/Users/Paty.Lopez/Vianney/keys/mx-vianney-001-firebase-adminsdk-q5ydi-71a4661d43.json')
+cred = credentials.Certificate('/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 keys/mx-vianney-001-firebase-adminsdk-q5ydi-84d2becdf3.json')
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 ''' CONSTANTS '''
 COLLECTION_NAME = "testPages"
-# csv_file = '/Users/Paty.Lopez/Desktop/biasi.csv'
-csv_filepath = '/Users/Paty.Lopez/Desktop/out.csv'
+OUT_JSON = 'jsonInvierno.json'
+CSV_DB = './src/lib/scripts/Invierno Completed F2.csv'
+
+csv_filepath = '/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 docs/out.csv'
 ARRAY_ROWS = [
     'complSheets',
     'complCurtains',
@@ -121,14 +123,9 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
 
 
 ''' MAIN '''
-# delete_collection('chavosPages', 5)
-# json_obj = parse_csv_to_json('/Users/Paty.Lopez/Documents/GitHub/catalogo-web/catalogo-web/src/lib/scripts/Vianney Hogar.csv', 'jsonVianney.json', 5)
-
-# json_obj = parse_csv_to_json('./src/lib/scripts/Vianney Hogar More Completed F6.csv', 'jsonVianneyCompleted.json')
-# json_to_firebase(json_obj, 'vianneyPages')
-
-json_obj = parse_csv_to_json('./src/lib/scripts/Bebe More Completed F2.csv', 'jsonBebe.json')
-json_to_firebase(json_obj, 'bebePages')
+# delete_collection(COLLECTION_NAME, 5)
+json_obj = parse_csv_to_json(CSV_DB, OUT_JSON)
+json_to_firebase(json_obj, COLLECTION_NAME)
 
 # DEPRECATED
 def add_data_from_csv():
