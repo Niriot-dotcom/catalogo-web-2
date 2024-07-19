@@ -7,7 +7,7 @@
   import { catalogSections } from "$lib/components/currentCatalogPage";
   import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
-  import { URLS } from "$lib/constants/strings";
+  import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
 
   let visibleIds = [];
 
@@ -29,12 +29,13 @@
 
 <!-- ENTRADA -->
 <EntradaInvierno
-  backgroundVideo="/images/invierno/portadillas/ENTRADA-P03-AUSTRAL-VERTICAL.mp4"
-  backgroundImage="/images/invierno/portadillas/ENTRADA-P03-AUSTRAL.webp"
-  backgroundColor="#EDE3EC"
-  textImage="/images/invierno/copys/.svg"
-  storyMainPhrase="llega la época<br />de abrazos"
-  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+  titleSvg="/images/invierno/copys/ENTRADA-P03-AUSTRAL.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
+  variant={EnumEntradaInvierno.FOTO_VIDEO}
+  titlePosition="bottom-0 right-0"
+  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  bgImage="/images/invierno/portadillas/ENTRADA-P03-AUSTRAL.webp"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P03-AUSTRAL-VERTICAL.mp4"
 />
 
 {#each pages as page, index}
@@ -76,7 +77,7 @@
             <ImageComponent
               id="13bb5612-fe92-2612-82a1-47ecd004a28d"
               alt=""
-              src={page.pageMainImage}
+              src={`${URLS.fotos}${page.SKU}.webp`}
               classList="image-25"
             />
             <div class="div-block-11 title-right">
@@ -182,7 +183,7 @@
             <ImageComponent
               id="13bb5612-fe92-2612-82a1-47ecd004a28d"
               alt=""
-              src={page.pageMainImage}
+              src={`${URLS.fotos}${page.SKU}.webp`}
               classList="image-25"
             />
             <div class="div-block-11 title-right">
@@ -253,10 +254,6 @@
   {/if}
 {/each}
 
-<CategoriesFooter
-  catalog={Catalogs.INVIERNO}
-  categories={catalogSections.INVIERNO}
-/>
 <NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
 
 <div>

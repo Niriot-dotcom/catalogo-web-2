@@ -6,6 +6,7 @@
   import Sublinea from "$lib/templates/Sublinea.svelte";
   import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import { EnumEntradaInvierno } from "$lib/constants/strings";
 
   let visibleIds: string[] = [];
   let relatedProducts: string[] = [];
@@ -23,12 +24,13 @@
 
 <!-- ENTRADA -->
 <EntradaInvierno
-  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
-  backgroundImage="/videos/poster-Bruselas.jpg"
-  backgroundColor="#EDE3EC"
-  textImage="/images/invierno/copys/08_BASICOS_TITULO.svg"
-  storyMainPhrase="llega la época<br />de abrazos"
-  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+  titleSvg="/images/invierno/copys/08_BASICOS_TITULO.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
+  variant={EnumEntradaInvierno.FOTO_VIDEO}
+  titlePosition="bottom-0"
+  storyPosition="top-1/2 transform -translate-y-1/2"
+  bgImage="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET.webp"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET-VERTICAL.mp4"
 />
 
 <!-- render pages -->

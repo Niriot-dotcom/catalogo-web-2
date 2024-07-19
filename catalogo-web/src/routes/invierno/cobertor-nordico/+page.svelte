@@ -7,6 +7,8 @@
   import type { PageData } from "./$types";
   import { onMount } from "svelte";
   import ImageComponent from "$lib/components/imageComponent.svelte";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import { URLS } from "$lib/constants/strings";
 
   onMount(() => {
     const script = document.createElement("script");
@@ -28,28 +30,33 @@
   }
 
   export let data: PageData;
-  const products = data.props.products; // guarda el objeto product en una variable
-
-  function removeSpecialChars(str) {
-    return str.replace(/["\[\]]/g, "");
-  }
+  const pages = data.props.pages; // guarda el objeto product en una variable
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 
-{#each products as product, index}
+<!-- ENTRADA -->
+<EntradaInvierno
+  backgroundVideo="/images/invierno/portadillas/ENTRADA-P05-NORDICO-VERTICAL.mp4"
+  backgroundImage="/images/invierno/portadillas/ENTRADA-P05-NORDICO.webp"
+  backgroundColor="#EDE3EC"
+  textImage="/images/invierno/copys/.svg"
+  storyMainPhrase="llega la época<br />de abrazos"
+  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+/>
+
+{#each pages as page, index}
   {#if index % 2 === 0}
     <div
-      id={product.pageTitle}
+      id={page.pageTitle}
       class="plantilla-nordico"
-      data-visible-id="{product.pageProducts}, {product
-        .pageProductsImages[0]}, {product.pageProductsImages[1]}"
+      data-visible-id={page.SKU}
     >
       <div class="div-block-46">
         <div class="handle-container">
           <div class="div-block-45">
             <ImageComponent
-              src={product.pageImages[1]}
+              src={`${URLS.fotos}${page.SKU}-2.webp`}
               loading="eager"
               id="f09abdcc-902f-003f-2d59-9712f02a5bd1"
               alt=""
@@ -59,7 +66,7 @@
               <div class="div-block-48">
                 <div class="page-title-box">
                   <h2 text-split="" words-slide-from-right="" class="heading-4">
-                    {product.pageTitle}
+                    {page.pageTitle}
                   </h2>
                   <p
                     text-split=""
@@ -69,7 +76,7 @@
                     Cobertor Nórdico
                   </p>
                 </div>
-                {#each product.pageIcons as icon}
+                {#each page.pageIcons as icon}
                   <div>
                     <ImageComponent
                       src={icon}
@@ -91,13 +98,13 @@
           <div udesly-before-after="50" class="handle-wrapper">
             <ImageComponent
               classList="image-right"
-              src={product.pageImages[0]}
+              src={`${URLS.fotos}${page.SKU}.webp`}
               alt=""
               image="right"
             />
             <ImageComponent
               classList="image-left"
-              src={product.pageMainImage}
+              src={page.pageMainImage}
               alt=""
               image="left"
             />
@@ -123,8 +130,7 @@
         </div>
         <div class="link-block-10 centered w-inline-block">
           <img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[0]}.jpg"
+            src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             loading="eager"
             alt=""
             class="image-18 horizontal"
@@ -135,8 +141,7 @@
         </div>
         <div class="link-block-10 centered w-inline-block">
           <img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[1]}.jpg"
+            src={`${URLS.fotos}${page.complSheets[0]}.webp`}
             loading="eager"
             alt=""
             class="image-18 horizontal"
@@ -148,17 +153,14 @@
         </div>
       </div>
     </div>
-  {:else if product.pageTitle === "Bariloche"}
-    <div
-      data-visible-id="{product.pageProducts}, {product
-        .pageProductsImages[0]}, {product.pageProductsImages[1]}"
-    >
+  {:else if page.pageTitle === "Bariloche"}
+    <div data-visible-id={page.SKU}>
       <div class="plantilla-nordico">
         <div class="div-block-46">
           <div class="handle-container">
             <div class="div-block-45">
               <ImageComponent
-                src={product.pageImages[1]}
+                src={`${URLS.fotos}${page.SKU}-2.webp`}
                 loading="eager"
                 id="f09abdcc-902f-003f-2d59-9712f02a5bd1"
                 alt=""
@@ -172,7 +174,7 @@
                       words-slide-from-right=""
                       class="heading-4"
                     >
-                      {product.pageTitle}
+                      {page.pageTitle}
                     </h2>
                     <p
                       text-split=""
@@ -182,7 +184,7 @@
                       Cobertor Ligero
                     </p>
                   </div>
-                  {#each product.pageIcons as icon}
+                  {#each page.pageIcons as icon}
                     <div>
                       <ImageComponent
                         src={icon}
@@ -195,12 +197,14 @@
                 </div>
                 <div class="copy-box-everest right ligero">
                   <div class="text-block-26">
-                    <span class="text-span-8"
-                      >{product.pageDescriptions[0]}</span
-                    >
+                    <span class="text-span-8">
+                      <!-- TODO -->
+                      page.pageDescriptions[0]
+                    </span>
                   </div>
                   <div class="text-block-27">
-                    {product.pageDescriptions[1]}, {product.pageDescriptions[2]}
+                    <!-- TODO -->
+                    page.pageDescriptions[1], page.pageDescriptions[2]
                   </div>
                   <img
                     src="../images/Flechas.svg"
@@ -213,7 +217,7 @@
             </div>
             <div udesly-before-after="50" class="ligero-container">
               <ImageComponent
-                src={product.pageMainImage}
+                src={page.pageMainImage}
                 loading="eager"
                 id="adfea8dd-6554-1c71-61f8-1c4b232589e5"
                 classList="image-31"
@@ -231,8 +235,7 @@
           </div>
           <a href="#" class="link-block-10 centered w-inline-block"
             ><img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[0]}.jpg"
+              src={`${URLS.fotos}${page.SKU}.webp`}
               loading="eager"
               alt=""
               class="image-18 horizontal"
@@ -243,8 +246,7 @@
           </a>
           <a href="#" class="link-block-10 centered w-inline-block"
             ><img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[1]}.jpg"
+              src={`${URLS.fotos}${page.SKU}-2.webp`}
               loading="eager"
               alt=""
               class="image-18 horizontal"
@@ -259,23 +261,22 @@
     </div>
   {:else}
     <div
-      id={product.pageTitle}
+      id={page.pageTitle}
       class="plantilla-nordico"
-      data-visible-id="{product.pageProducts}, {product
-        .pageProductsImages[0]}, {product.pageProductsImages[1]}"
+      data-visible-id={page.SKU}
     >
       <div>
         <div class="handle-container inverse">
           <div udesly-before-after="50" class="handle-wrapper">
             <ImageComponent
               classList="image-right"
-              src={product.pageImages[0]}
+              src={`${URLS.fotos}${page.SKU}.webp`}
               alt=""
               image="right"
             />
             <ImageComponent
               classList="image-left"
-              src={product.pageMainImage}
+              src={page.pageMainImage}
               alt=""
               image="left"
             />
@@ -291,7 +292,7 @@
           </div>
           <div class="div-block-45 left">
             <ImageComponent
-              src={product.pageImages[1]}
+              src={`${URLS.fotos}${page.SKU}-2.webp`}
               loading="eager"
               id="1fd515fa-fb89-8c4a-3025-2143feb88432"
               alt=""
@@ -301,7 +302,7 @@
               <div class="div-block-48">
                 <div class="page-title-box">
                   <h2 text-split="" words-slide-from-right="" class="heading-4">
-                    {product.pageTitle}
+                    {page.pageTitle}
                   </h2>
                   <p
                     text-split=""
@@ -311,7 +312,7 @@
                     Cobertor Nórdico
                   </p>
                 </div>
-                {#each product.pageIcons as icon}
+                {#each page.pageIcons as icon}
                   <ImageComponent
                     src={icon}
                     loading="eager"
@@ -340,8 +341,7 @@
         </div>
         <a href="#" class="link-block-10 centered w-inline-block"
           ><img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[0]}.jpg"
+            src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             loading="eager"
             alt=""
             class="image-18 horizontal"
@@ -352,8 +352,7 @@
         </a>
         <a href="#" class="link-block-10 centered w-inline-block"
           ><img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[1]}.jpg"
+            src={`${URLS.fotos}${page.complSheets[0]}.webp`}
             loading="eager"
             alt=""
             class="image-18 horizontal"
@@ -368,10 +367,6 @@
   {/if}
 {/each}
 
-<CategoriesFooter
-  catalog={Catalogs.INVIERNO}
-  categories={catalogSections.INVIERNO}
-/>
 <NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
 
 <div>

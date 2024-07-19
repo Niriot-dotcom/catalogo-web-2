@@ -10,6 +10,8 @@
   import Cobertor from "$lib/templates/Cobertor.svelte";
   import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
+  import { EnumEntradaInvierno } from "$lib/constants/strings";
+  import DiferenciasDeCobertores from "$lib/components/communication/DiferenciasDeCobertores.svelte";
 
   let visibleIds: string[] = [];
   function handleVisibleChange(event: any) {
@@ -29,15 +31,20 @@
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
-<!-- entrada -->
+
+<!-- ENTRADA -->
 <EntradaInvierno
-  backgroundVideo="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET-VERTICAL.mp4"
-  backgroundImage="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET.webp"
-  backgroundColor="#EDE3EC"
-  textImage="/images/invierno/copys/02_FUNDAS_DE_DUVET_TITULO.svg"
-  storyMainPhrase="llega la época<br />de abrazos"
-  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+  titleSvg="/images/invierno/copys/ENTRADA-P02-FUNDA-DUVET.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
+  variant={EnumEntradaInvierno.FOTO_VIDEO}
+  titlePosition="bottom-0"
+  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  bgImage="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET.webp"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET-VERTICAL.mp4"
 />
+
+<!-- [COMUNICACION] Diferencias de Cobertores -->
+<DiferenciasDeCobertores />
 
 <!-- render pages -->
 {#each pages as page, i}
