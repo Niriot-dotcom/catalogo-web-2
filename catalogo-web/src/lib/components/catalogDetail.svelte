@@ -155,9 +155,11 @@
               <div>
                 <div class="pb-1 sm:pb-6">
                   <div>
-                    <div class="relative h-40 sm:h-56">
+                    <div
+                      class="relative h-[40vh] m-3 sm:h-56 overflow-hidden max-w-5/6 flex justify-center"
+                    >
                       <img
-                        class="absolute h-full w-full object-cover"
+                        class="absolute h-full object-contain"
                         src={catalogImage}
                         alt=""
                       />
