@@ -29,13 +29,14 @@
   class="loader_img-wrap"
 >
   <img
-    src="images/Recurso-1Invierno.svg"
+    src="images/invierno/recursos/LOGOTIPO_INVIERNO.svg"
     loading="eager"
     style="opacity:0"
     alt=""
     class="image logo-catalogo"
-  /><img
-    src="images/Recurso-1Invierno.svg"
+  />
+  <img
+    src="images/invierno/recursos/LOGOTIPO_INVIERNO.svg"
     loading="eager"
     alt=""
     class="image logo-catalogo movil"
@@ -65,6 +66,21 @@
         .play();
     </script> -->
   </div>
+
+  <!-- below part -->
+  <img
+    src="images/invierno/recursos/COPY.svg"
+    loading="eager"
+    style="opacity:0"
+    alt=""
+    class="image logo-catalogo-bottom"
+  />
+  <img
+    src="images/invierno/recursos/COPY.svg"
+    loading="eager"
+    alt=""
+    class="image logo-catalogo-bottom movil"
+  />
 </div>
 <div
   data-w-id="a065ae01-88da-7301-488b-fc63d5f5e07c"
