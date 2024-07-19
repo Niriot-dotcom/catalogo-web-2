@@ -119,6 +119,7 @@ vianney_words_remove = [
     'Bata De Baño Soft ',
     'Bata De Baño Tulum ',
     'Bata De Baño ',
+    'Bata De Descanso ',
     'Bata De ',
     'Salida De ',
     'Salida De Baño ',
@@ -192,9 +193,6 @@ def get_page_title(productName: str, template: str, productType=""):
     if 'vialifresh' in productName.lower():
         new_keyword = 'vialifresh'
     
-    # if template == "Sublinea":
-    #     return productType, new_keyword
-
     # first, remove tallas
     tallas_to_remove = [
         'Baby',
@@ -207,6 +205,7 @@ def get_page_title(productName: str, template: str, productType=""):
         'Ind',
         'Mat/Ind',
         'Mat',
+        'Med',
         'Corta',
         'Larga',
         'Infantil',
@@ -244,7 +243,6 @@ def get_page_title(productName: str, template: str, productType=""):
     productName = ' '.join([word for word in productName.split() if word.upper() not in upper_tallas_to_remove])
 
     # then, remove other custom titles
-
     for substring in vianney_words_remove:
         if substring.upper() in productName.upper():
             # print(substring.upper(), productName.upper(), "=", productName.replace(substring.upper(), ''))
@@ -270,10 +268,21 @@ def get_page_subtitle(productType, pageTemplate, pageSubtitle):
         'Edredón': 'Juego de Edredón',
         'Juego de Cocina': 'Juego de cocina',
         'Colcha': 'Colcha',
+
+        # invierno
+        'Cobertor Everest': 'Cobertor Everest',
+        'Cobertor Austral': 'Cobertor Austral',
+        'Cobertor Invernal': 'Cobertor Invernal',
+        'Cobertor Nórdico': 'Cobertor Nórdico',
+        'Cobertor Ligero': 'Cobertor Ligero',
+        # 'Cobertor ': 'Cobertor ',
+        # 'Cobertor ': 'Cobertor ',
+        # 'Cobertor ': 'Cobertor ',
     }
 
-    if productType in product_types:
-        return product_types[productType]
+    upper_product_types = {k.upper(): v for k, v in product_types.items()}
+    if productType.upper() in upper_product_types:
+        return upper_product_types[productType.upper()]
     else:
         return ''
 
@@ -356,9 +365,10 @@ def process_csv_file(limit, filename):
                 row['pageKeywords'] = get_numeric_array(row['pageKeywords'], keyword=keyw)
                 row['pageVideos'] = get_numeric_array(row['pageVideos'])
                 row['pageStatus'] = row['pageStatus'] if row['pageStatus'] else 'Activa'
-                # row['pageProducts'] = pd.unique(np.r_[np.array([sku]), complementsIds])
-                # del row['pageProducts']
                 row['pageIcons'] = get_numeric_array(row['pageIcons'])
+
+                # uppercase to capital first letter
+                row['productType'] = row['productType'].title() if row['pageTemplate'] == "Sublinea" or row['pageTemplate'] == "VariantesDeColor" else row['productType']
 
             line_count += 1
             updated_data.append(row)

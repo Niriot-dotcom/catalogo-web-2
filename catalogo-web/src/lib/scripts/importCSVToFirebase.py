@@ -1,7 +1,7 @@
 ''' COMMAND '''
 '''
 
-python3 src/lib/scripts/importCSVToFirebase.py
+python src/lib/scripts/importCSVToFirebase.py
 
 '''
 
@@ -87,28 +87,31 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
         csv_reader = csv.DictReader(csv_file)
         line_count = 0
         for row in csv_reader:
-            # custom stop
-            if line_count == count_stop: break
+            try: 
+                # custom stop
+                if line_count == count_stop: break
 
-            # avoid columns
-            if line_count == 0:
+                # avoid columns
+                if line_count == 0:
+                    line_count += 1
+
+                # process rows
+                if row['productOrder'] != "":
+                    row['productOrder'] = int(row['productOrder'] if row['productOrder'].isdigit() else -1)
+                if row['pageCopys'] != "":
+                    row['pageCopys'] = row['pageCopys'].replace(" '", ", '").strip('[]').replace("'", "").split(', ')
+                for field in ARRAY_ROWS:
+                    try:
+                        row[field] = row[field].replace(" '", ", '").strip('[]').replace("'", "").split(', ')
+                    except:
+                        print("An exception occurred in ", field)
+
+                # add row to array
+                json_array.append(row)
+                
                 line_count += 1
-
-            # process rows
-            if row['productOrder'] != "":
-                row['productOrder'] = int(row['productOrder'] if row['productOrder'].isdigit() else -1)
-            if row['pageCopys'] != "":
-                row['pageCopys'] = row['pageCopys'].replace(" '", ", '").strip('[]').replace("'", "").split(', ')
-            for field in ARRAY_ROWS:
-                try:
-                    row[field] = row[field].replace(" '", ", '").strip('[]').replace("'", "").split(', ')
-                except:
-                    print("An exception occurred in ", field)
-
-            # add row to array
-            json_array.append(row)
-            
-            line_count += 1
+            except:
+                print("An exception occurred in ROW", row)
 
     # write file is json_filepath is provided
     if json_filepath != "":
@@ -126,41 +129,3 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
 # delete_collection(COLLECTION_NAME, 5)
 json_obj = parse_csv_to_json(CSV_DB, OUT_JSON)
 json_to_firebase(json_obj, COLLECTION_NAME)
-
-# DEPRECATED
-def add_data_from_csv():
-    cols = ''
-    with open(csv_file, mode='r') as csv_file:
-        csv_reader = csv.DictReader(csv_file)
-        line_count = 0
-        for row in csv_reader:
-            # if line_count == 3: break
-            if line_count == 0:
-                cols = ", ".join(row)
-                line_count += 1
-            
-            # 
-            # Add data
-            doc_ref = db.collection(COLLECTION_NAME).document()
-            doc_ref.set({
-            "pageTitle": [substring.replace('\\', '') for substring in re.split(r'(?<!\\),', row["pageTitle"])],
-            "pageTemplate": row["pageTemplate"],
-            "pageCategory": row["pageCategory"],
-            "pageSubtitle": row["pageSubtitle"],
-            "pageCopys": [substring.replace('\\', '') for substring in re.split(r'(?<!\\),', row["pageCopys"])],
-            "pageDescriptions": [substring.replace('\\', '') for substring in re.split(r'(?<!\\),', row["pageDescriptions"])],
-            "pageProducts": row["pageProducts"].split(','),
-            "pageIcons": row["pageIcons"].split(','),
-            "pageProductsImagesPosition": row["pageProductsImagesPosition"].split(','),
-            "pageVideos": row["pageVideos"].split(','),
-            "pageResources": [substring.replace('\\', '') for substring in re.split(r'(?<!\\),', row["pageResources"])],
-            "pageStatus": row["pageStatus"] == 'Activa',
-            "pageSeoDescription": row["pageSeoDescription"],
-            "pageSeoTitle": row["pageSeoTitle"],
-            "pageKeywords": [substring.replace('\\', '') for substring in re.split(r'(?<!\\),', row["pageKeywords"])],
-            })
-            # 
-            line_count += 1
-        print(f'Processed {line_count} lines.')
-
-    # print(cols)
