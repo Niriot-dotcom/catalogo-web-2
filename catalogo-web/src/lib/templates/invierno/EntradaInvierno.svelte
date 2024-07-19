@@ -5,6 +5,7 @@
   export let titleSvg: string;
   export let storySvg: string;
   export let variant: string;
+  export let titleSize: string = "h-1/3";
   export let titlePosition: string = "";
   export let storyPosition: string = "";
   export let bgImage: string = "";
@@ -49,7 +50,7 @@
           </div>
         {/if}
 
-        <div class="z-20 absolute h-1/3 p-3 {titlePosition}">
+        <div class="z-20 absolute p-3 {titlePosition} {titleSize}">
           <img class="w-full h-full" src={titleSvg} alt="" />
         </div>
 
@@ -68,18 +69,18 @@
         style={`flex-direction: ${variant === EnumEntradaInvierno.VIDEO_FOTO ? "column-reverse" : "column"};`}
       >
         <!-- image -->
-        <div class="w-full h-[30vh]">
+        <div class="w-full h-[50vh]">
           <img class="w-full h-full object-cover" src={bgImage} alt="" />
         </div>
 
         <!-- video -->
         <div
+          class="w-full h-[30vh]"
           data-poster-url={bgVideo.replace("mp4", "jpg")}
           data-video-urls="{bgVideo},{bgVideo.replace('mp4', 'webm')}"
           data-autoplay="true"
           data-loop="true"
           data-wf-ignore="true"
-          class="w-full h-[40vh]"
         >
           <video
             autoplay
@@ -102,7 +103,7 @@
         </div>
 
         <!-- TODO aqui agregar el svg para el titulo y para el story -->
-        <div class="z-20 absolute h-1/3 p-3 {titlePosition}">
+        <div class="z-20 absolute p-3 {titlePosition} {titleSize}">
           <img class="w-full h-full" src={titleSvg} alt="" />
         </div>
 
