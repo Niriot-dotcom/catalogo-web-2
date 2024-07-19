@@ -33,7 +33,7 @@ db = firestore.client()
 ''' CONSTANTS '''
 COLLECTION_NAME = "testPages"
 OUT_JSON = 'jsonInvierno.json'
-CSV_DB = './src/lib/scripts/Invierno Completed F2.csv'
+CSV_DB = './src/lib/scripts/Invierno Completed F3.csv'
 
 csv_filepath = '/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 docs/out.csv'
 ARRAY_ROWS = [

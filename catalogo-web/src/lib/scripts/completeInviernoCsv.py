@@ -7,17 +7,94 @@ python src/lib/scripts/completeInviernoCsv.py
 
 from firebase_admin import credentials
 from firebase_admin import firestore
+from sklearn.cluster import KMeans
 from json import JSONEncoder
-import firebase_admin
+from PIL import Image
+from io import BytesIO
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import csv
+import firebase_admin
+import requests
 import json
+import csv
 
 ''' CREDENTIALS '''
 cred = credentials.Certificate('/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 keys/mx-vianney-001-firebase-adminsdk-q5ydi-84d2becdf3.json')
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
+
+''' FUNCTIONS '''
+def rgb_to_hex(r, g, b):
+    return '#{:02x}{:02x}{:02x}'.format(r, g, b)
+def get_color_palette_from_image(image, n_colors=18, showPalette=False):
+    image = np.array(image)
+
+    # Get the dimensions (width, height, and depth) of the image
+    w, h, d = tuple(image.shape)
+
+    # Reshape the image into a 2D array, where each row represents a pixel
+    pixel = np.reshape(image, (w * h, d))
+
+    # Create a KMeans model with the specified number of clusters and fit it to the pixels
+    model = KMeans(n_clusters=n_colors, random_state=42).fit(pixel)
+
+    # Get the cluster centers (representing colors) from the model
+    colour_palette = np.uint8(model.cluster_centers_)
+
+    if showPalette:
+        plt.imshow([colour_palette])
+        plt.show()
+    return colour_palette
+def crop_image_url(url, new_height, new_width):
+    try:
+        response = requests.get(url)
+        im = Image.open(BytesIO(response.content))
+        width, height = im.size   
+
+        left = (width - new_width)/2
+        top = (height - new_height)/2
+        right = (width + new_width)/2
+        bottom = (height + new_height)/2
+
+        crop_im = im.crop((left, top, right, bottom)) #Cropping Image 
+        # crop_im.save(file_path + "_new.webp") 
+        return crop_im
+    except:
+        # UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x13f0e7060>
+        return False
+def aclarar_color(hex_color, porcentaje):
+    # Convertir el código hexadecimal a valores RGB
+    r = int(hex_color[1:3], 16)
+    g = int(hex_color[3:5], 16)
+    b = int(hex_color[5:7], 16)
+
+    # Aclarar los valores RGB
+    r_nuevo = r + (255 - r) * porcentaje
+    g_nuevo = g + (255 - g) * porcentaje
+    b_nuevo = b + (255 - b) * porcentaje
+
+    # Asegurarse de que los valores están en el rango válido (0-255)
+    r_nuevo = min(int(r_nuevo), 255)
+    g_nuevo = min(int(g_nuevo), 255)
+    b_nuevo = min(int(b_nuevo), 255)
+
+    # Convertir los valores RGB a código hexadecimal
+    nuevo_hex = '#{:02x}{:02x}{:02x}'.format(int(r_nuevo), int(g_nuevo), int(b_nuevo))
+    return nuevo_hex
+def get_background_color_from_sku(sku: str, percentage=0.7, h=300, w=300):
+    url =  f"https://storage.googleapis.com/catalogo-web/fotos/{sku}-1280.webp"
+    new_image = crop_image_url(url, h, w)
+    try:
+        color_palette = get_color_palette_from_image(new_image, n_colors=9)
+        r, g, b = color_palette[0]
+        hex_color = rgb_to_hex(r, g, b)
+
+        # lighten color
+        return aclarar_color(hex_color, percentage)
+    except:
+        print("An exception occurred with", sku)
+        return ""
 
 ''' CONSTANTS '''
 class NumpyArrayEncoder(JSONEncoder):
@@ -44,6 +121,15 @@ list_cols = [
     "pageIcons",
     "pageSeoTitle",
     "pageSeoDescription",
+]
+COLORED_TEMPLATES = [
+    "Cobertor",
+    "JuegoDeEdredon",
+    # "EdredonNovo",
+    # "CobertorEverest",
+    # "CobertorAustral",
+    # "CobertorInvernal",
+    # "CobertorNordico",
 ]
 vianney_words_remove = [
     'Edredón Nuut ',
@@ -146,9 +232,7 @@ vianney_words_remove = [
 ]
 
 ''' UTILS '''
-def get_numeric_array(arr: str, resources=False, keyword=''):
-    if resources and arr != '':
-        print('pageResources arr:\n', arr)
+def get_numeric_array(arr: str, resources=False, keyword='', sku='', pageTemplate=''):
     # arr can be:
     #    an empty string (''),
     #    ['12345' '12345']
@@ -170,8 +254,13 @@ def get_numeric_array(arr: str, resources=False, keyword=''):
     # viasoft, vialifresh and viafoam keywords when it appears on productName
     if keyword != '':
         arr = np.append(arr, keyword)
-        # print('arr with keyword:', arr)
-    # print('final arr:', type(arr), ' | ', arr)
+    if resources and len(arr) == 0 and pageTemplate in COLORED_TEMPLATES:
+        print("===>>>", resources, sku, pageTemplate)
+        print('==> here SI ENTRA A TOMAR COLOR', sku)
+        arr = np.append(arr, get_background_color_from_sku(sku))
+        if pageTemplate == "Cobertor":
+            arr = np.append(arr, get_background_color_from_sku(sku, percentage=0.5))
+        print('arr:', arr)
     return arr
 
     # CHECK IF ALL CONTENT IS NUMERIC
@@ -275,9 +364,14 @@ def get_page_subtitle(productType, pageTemplate, pageSubtitle):
         'Cobertor Invernal': 'Cobertor Invernal',
         'Cobertor Nórdico': 'Cobertor Nórdico',
         'Cobertor Ligero': 'Cobertor Ligero',
-        # 'Cobertor ': 'Cobertor ',
-        # 'Cobertor ': 'Cobertor ',
-        # 'Cobertor ': 'Cobertor ',
+
+        # bebe
+        'Edredón Baby Voga': 'edredón baby',
+        'Cobija Baby Voga': 'cobija baby voga',
+        'Manta Baby Voga': 'manta baby voga',
+        'Cobertor Baby Ligero': 'cobertor baby ligero',
+        'Cobertor Baby Nórdico': 'cobertor baby nórdico',
+        'Cobertor Baby Siberia': 'cobertor baby siberia',
     }
 
     upper_product_types = {k.upper(): v for k, v in product_types.items()}
@@ -361,7 +455,7 @@ def process_csv_file(limit, filename):
                 row['pageTitle'], keyw = get_page_title(row['productName'], row['pageTemplate'], row['productType'])
                 row['pageSubtitle'] = get_page_subtitle(row['productType'], row['pageTemplate'], row['pageSubtitle'])
                 row['pageCopys'] = get_numeric_array(row['pageCopys'])
-                row['pageResources'] = get_numeric_array(row['pageResources'], True)
+                row['pageResources'] = get_numeric_array(row['pageResources'], True, sku=sku, pageTemplate=row['pageTemplate'])
                 row['pageKeywords'] = get_numeric_array(row['pageKeywords'], keyword=keyw)
                 row['pageVideos'] = get_numeric_array(row['pageVideos'])
                 row['pageStatus'] = row['pageStatus'] if row['pageStatus'] else 'Activa'
@@ -379,7 +473,7 @@ def process_csv_file(limit, filename):
 
 ''' MAIN '''
 new_data = process_csv_file(-1, '/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 docs/CAT WEB BD Invierno 2024 - 2025.csv')
-write_csv_file('./src/lib/scripts/Invierno Completed F2.csv', new_data)
+write_csv_file('./src/lib/scripts/Invierno Completed F3.csv', new_data)
 
 # title =  get_page_title('Viasoft Edredón Qs/Mat Xl Bernal')
 # print('title:', title[2])

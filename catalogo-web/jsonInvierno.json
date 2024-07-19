@@ -8,7 +8,6 @@
         "productOrder": 1,
         "pageTemplate": "CobertorEverest",
         "pageTitle": "Celeste",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -39,6 +38,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -51,7 +51,6 @@
         "productOrder": 2,
         "pageTemplate": "CobertorEverest",
         "pageTitle": "Sweet Pink",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -82,6 +81,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -94,7 +94,6 @@
         "productOrder": 3,
         "pageTemplate": "CobertorEverest",
         "pageTitle": "Marfil",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -125,6 +124,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -137,7 +137,6 @@
         "productOrder": 4,
         "pageTemplate": "CobertorEverest",
         "pageTitle": "Denim",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -168,6 +167,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -180,7 +180,6 @@
         "productOrder": 5,
         "pageTemplate": "CobertorEverest",
         "pageTitle": "Deep Rose",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -188,10 +187,10 @@
             ""
         ],
         "complCurtains": [
-            ""
+            "63932"
         ],
         "complPillowCovers": [
-            ""
+            "88809"
         ],
         "complCushions": [
             ""
@@ -211,6 +210,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -223,7 +223,6 @@
         "productOrder": 6,
         "pageTemplate": "CobertorEverest",
         "pageTitle": "Nebraska",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -254,6 +253,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -266,7 +266,6 @@
         "productOrder": 7,
         "pageTemplate": "CobertorEverest",
         "pageTitle": "Aria",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -297,6 +296,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -309,7 +309,6 @@
         "productOrder": 8,
         "pageTemplate": "CobertorEverest",
         "pageTitle": "Palena",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -340,6 +339,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -352,7 +352,6 @@
         "productOrder": 9,
         "pageTemplate": "CobertorEverest",
         "pageTitle": "Barrow",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -383,6 +382,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -395,7 +395,6 @@
         "productOrder": 1,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Everest Incienso",
-        "pageSubtitle": "Funda de Duvet",
         "pageResources": [
             ""
         ],
@@ -426,6 +425,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Funda de Duvet",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -438,7 +438,6 @@
         "productOrder": 2,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Everest Stone",
-        "pageSubtitle": "Funda de Duvet",
         "pageResources": [
             ""
         ],
@@ -469,6 +468,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Funda de Duvet",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -481,7 +481,6 @@
         "productOrder": 3,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Duvet",
-        "pageSubtitle": "Juego de Edredón",
         "pageResources": [
             ""
         ],
@@ -512,6 +511,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Juego de Edredón",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -524,7 +524,6 @@
         "productOrder": 4,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Duvet Basic",
-        "pageSubtitle": "Juego de Edredón",
         "pageResources": [
             ""
         ],
@@ -555,6 +554,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Juego de Edredón",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -567,7 +567,6 @@
         "productOrder": 5,
         "pageTemplate": "CobertorAustral",
         "pageTitle": "Esmeralda",
-        "pageSubtitle": "Cobertor Austral",
         "pageResources": [
             ""
         ],
@@ -598,6 +597,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Austral",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -610,7 +610,6 @@
         "productOrder": 6,
         "pageTemplate": "CobertorAustral",
         "pageTitle": "Merlot",
-        "pageSubtitle": "Cobertor Austral",
         "pageResources": [
             ""
         ],
@@ -641,6 +640,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Austral",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -653,21 +653,20 @@
         "productOrder": 7,
         "pageTemplate": "CobertorAustral",
         "pageTitle": "Verde",
-        "pageSubtitle": "Cobertor Austral",
         "pageResources": [
             ""
         ],
         "complSheets": [
-            ""
+            "88776"
         ],
         "complCurtains": [
-            ""
+            "87548"
         ],
         "complPillowCovers": [
-            ""
+            "88215"
         ],
         "complCushions": [
-            ""
+            "88794"
         ],
         "complDecoration": [
             ""
@@ -684,6 +683,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Austral",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -696,7 +696,6 @@
         "productOrder": 8,
         "pageTemplate": "CobertorAustral",
         "pageTitle": "Roseta",
-        "pageSubtitle": "Cobertor Austral",
         "pageResources": [
             ""
         ],
@@ -727,6 +726,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Austral",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -739,7 +739,6 @@
         "productOrder": 1,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Bremen",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -770,6 +769,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -782,7 +782,6 @@
         "productOrder": 2,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Holanda",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -813,6 +812,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -825,7 +825,6 @@
         "productOrder": 3,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Oslo",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -856,6 +855,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -868,7 +868,6 @@
         "productOrder": 4,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Lavanda",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -899,6 +898,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -911,7 +911,6 @@
         "productOrder": 5,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Jurasico",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -942,6 +941,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -954,7 +954,6 @@
         "productOrder": 6,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Chic",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -985,6 +984,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -997,7 +997,6 @@
         "productOrder": 7,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Amber",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1028,6 +1027,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1040,7 +1040,6 @@
         "productOrder": 8,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Jade",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1071,6 +1070,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1083,7 +1083,6 @@
         "productOrder": 9,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Pink Dream",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1114,6 +1113,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1126,7 +1126,6 @@
         "productOrder": 10,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Alaska",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1157,6 +1156,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1169,7 +1169,6 @@
         "productOrder": 11,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Alaska",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1200,6 +1199,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1212,21 +1212,20 @@
         "productOrder": 12,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Hojarasca",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
         "complSheets": [
-            ""
+            "88776"
         ],
         "complCurtains": [
             ""
         ],
         "complPillowCovers": [
-            ""
+            "88503"
         ],
         "complCushions": [
-            ""
+            "88572"
         ],
         "complDecoration": [
             ""
@@ -1243,6 +1242,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1255,7 +1255,6 @@
         "productOrder": 13,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Ártico",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1286,6 +1285,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1298,7 +1298,6 @@
         "productOrder": 14,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Himalaya",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1329,6 +1328,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1341,7 +1341,6 @@
         "productOrder": 15,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Himalaya",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1372,6 +1371,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1384,7 +1384,6 @@
         "productOrder": 16,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Fun",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1415,6 +1414,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1427,7 +1427,6 @@
         "productOrder": 17,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Lila",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1458,6 +1457,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1470,7 +1470,6 @@
         "productOrder": 18,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Tinto",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1501,6 +1500,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1513,7 +1513,6 @@
         "productOrder": 19,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Turquesa",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1544,6 +1543,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1556,7 +1556,6 @@
         "productOrder": 20,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Turquesa",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1587,6 +1586,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1599,7 +1599,6 @@
         "productOrder": 21,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Minto",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1630,6 +1629,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1642,7 +1642,6 @@
         "productOrder": 22,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Buller",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1673,6 +1672,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1685,7 +1685,6 @@
         "productOrder": 23,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Quebec",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1716,6 +1715,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1728,7 +1728,6 @@
         "productOrder": 24,
         "pageTemplate": "CobertorInvernal",
         "pageTitle": "Harry Potter",
-        "pageSubtitle": "Cobertor Invernal",
         "pageResources": [
             ""
         ],
@@ -1759,6 +1758,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Invernal",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1771,7 +1771,6 @@
         "productOrder": 1,
         "pageTemplate": "CobertorNordico",
         "pageTitle": "Vostok",
-        "pageSubtitle": "Cobertor Nórdico",
         "pageResources": [
             ""
         ],
@@ -1802,6 +1801,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Nórdico",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1814,7 +1814,6 @@
         "productOrder": 2,
         "pageTemplate": "CobertorNordico",
         "pageTitle": "Loket",
-        "pageSubtitle": "Cobertor Nórdico",
         "pageResources": [
             ""
         ],
@@ -1845,6 +1844,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Nórdico",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1857,7 +1857,6 @@
         "productOrder": 3,
         "pageTemplate": "CobertorNordico",
         "pageTitle": "Preston",
-        "pageSubtitle": "Cobertor Nórdico",
         "pageResources": [
             ""
         ],
@@ -1888,6 +1887,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Nórdico",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1900,7 +1900,6 @@
         "productOrder": 4,
         "pageTemplate": "CobertorNordico",
         "pageTitle": "Bariloche",
-        "pageSubtitle": "Cobertor Nórdico",
         "pageResources": [
             ""
         ],
@@ -1931,6 +1930,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Nórdico",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1943,8 +1943,8 @@
         "productOrder": 1,
         "pageTemplate": "Cobertor",
         "pageTitle": "Bold",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
+            "",
             ""
         ],
         "complSheets": [
@@ -1974,6 +1974,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -1986,8 +1987,8 @@
         "productOrder": 2,
         "pageTemplate": "Cobertor",
         "pageTitle": "Galia",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
+            "",
             ""
         ],
         "complSheets": [
@@ -2017,6 +2018,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2029,8 +2031,8 @@
         "productOrder": 3,
         "pageTemplate": "Cobertor",
         "pageTitle": "Plumas",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
+            "",
             ""
         ],
         "complSheets": [
@@ -2060,6 +2062,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2072,8 +2075,8 @@
         "productOrder": 4,
         "pageTemplate": "Cobertor",
         "pageTitle": "Sabia",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
+            "",
             ""
         ],
         "complSheets": [
@@ -2103,6 +2106,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2115,8 +2119,8 @@
         "productOrder": 5,
         "pageTemplate": "Cobertor",
         "pageTitle": "Coffee",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
+            "",
             ""
         ],
         "complSheets": [
@@ -2146,6 +2150,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2158,8 +2163,8 @@
         "productOrder": 6,
         "pageTemplate": "Cobertor",
         "pageTitle": "Navidad",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
+            "",
             ""
         ],
         "complSheets": [
@@ -2189,6 +2194,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2201,8 +2207,8 @@
         "productOrder": 7,
         "pageTemplate": "Cobertor",
         "pageTitle": "Snow",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
+            "",
             ""
         ],
         "complSheets": [
@@ -2232,6 +2238,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2244,8 +2251,8 @@
         "productOrder": 8,
         "pageTemplate": "Cobertor",
         "pageTitle": "Tinto",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
+            "",
             ""
         ],
         "complSheets": [
@@ -2275,6 +2282,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2287,9 +2295,9 @@
         "productOrder": 9,
         "pageTemplate": "Cobertor",
         "pageTitle": "Estonia",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#f2f1f1",
+            "#eae9e8"
         ],
         "complSheets": [
             ""
@@ -2318,6 +2326,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2330,9 +2339,9 @@
         "productOrder": 10,
         "pageTemplate": "Cobertor",
         "pageTitle": "Negro",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#f5f6f6",
+            "#eff0f0"
         ],
         "complSheets": [
             ""
@@ -2361,6 +2370,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2373,9 +2383,9 @@
         "productOrder": 11,
         "pageTemplate": "Cobertor",
         "pageTitle": "Colors",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#c4bec0",
+            "#9d9397"
         ],
         "complSheets": [
             ""
@@ -2404,6 +2414,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2416,9 +2427,9 @@
         "productOrder": 12,
         "pageTemplate": "Cobertor",
         "pageTitle": "Dreams",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#eef2f3",
+            "#e4eaeb"
         ],
         "complSheets": [
             ""
@@ -2447,6 +2458,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2459,9 +2471,9 @@
         "productOrder": 13,
         "pageTemplate": "Cobertor",
         "pageTitle": "Dinosaurios",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#c7cad3",
+            "#a2a8b6"
         ],
         "complSheets": [
             ""
@@ -2490,6 +2502,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2502,9 +2515,9 @@
         "productOrder": 14,
         "pageTemplate": "Cobertor",
         "pageTitle": "Harry Potter",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#d1d4d1",
+            "#b3b7b3"
         ],
         "complSheets": [
             ""
@@ -2533,6 +2546,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2545,8 +2559,8 @@
         "productOrder": 15,
         "pageTemplate": "Cobertor",
         "pageTitle": "Toronto",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
+            "",
             ""
         ],
         "complSheets": [
@@ -2576,6 +2590,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2588,8 +2603,8 @@
         "productOrder": 16,
         "pageTemplate": "Cobertor",
         "pageTitle": "Winter",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
+            "",
             ""
         ],
         "complSheets": [
@@ -2619,6 +2634,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2631,9 +2647,9 @@
         "productOrder": 17,
         "pageTemplate": "Cobertor",
         "pageTitle": "Lila",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#f2efee",
+            "#eae5e3"
         ],
         "complSheets": [
             ""
@@ -2662,6 +2678,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2674,9 +2691,9 @@
         "productOrder": 18,
         "pageTemplate": "Cobertor",
         "pageTitle": "Navy",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#edeeef",
+            "#e2e3e5"
         ],
         "complSheets": [
             ""
@@ -2705,6 +2722,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2717,9 +2735,9 @@
         "productOrder": 19,
         "pageTemplate": "Cobertor",
         "pageTitle": "Love",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#dedddd",
+            "#c9c7c7"
         ],
         "complSheets": [
             ""
@@ -2748,6 +2766,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2760,9 +2779,9 @@
         "productOrder": 20,
         "pageTemplate": "Cobertor",
         "pageTitle": "Celeste",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#dad8d9",
+            "#c1bec0"
         ],
         "complSheets": [
             ""
@@ -2791,6 +2810,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2803,9 +2823,9 @@
         "productOrder": 21,
         "pageTemplate": "Cobertor",
         "pageTitle": "Batman",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#e8e6e5",
+            "#dad6d4"
         ],
         "complSheets": [
             ""
@@ -2834,6 +2854,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2846,9 +2867,9 @@
         "productOrder": 22,
         "pageTemplate": "Cobertor",
         "pageTitle": "Playstation",
-        "pageSubtitle": "Cobertor Ligero",
         "pageResources": [
-            ""
+            "#bec0c3",
+            "#94969c"
         ],
         "complSheets": [
             ""
@@ -2877,6 +2898,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2889,7 +2911,6 @@
         "productOrder": 1,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Ivory",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -2920,6 +2941,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2932,7 +2954,6 @@
         "productOrder": 2,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Gante",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -2963,6 +2984,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -2975,7 +2997,6 @@
         "productOrder": 3,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Chenille Rose",
-        "pageSubtitle": "Cobertor Everest",
         "pageResources": [
             ""
         ],
@@ -3006,6 +3027,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Cobertor Everest",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3018,7 +3040,6 @@
         "productOrder": 4,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Térmica",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3049,6 +3070,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3061,15 +3083,14 @@
         "productOrder": 5,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Mumbai Menta",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#c0c3bf"
         ],
         "complSheets": [
-            ""
+            "88551"
         ],
         "complCurtains": [
-            ""
+            "88549"
         ],
         "complPillowCovers": [
             ""
@@ -3092,6 +3113,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3104,15 +3126,14 @@
         "productOrder": 6,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Mumbai Gris Neutral",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#dbd8d7"
         ],
         "complSheets": [
-            ""
+            "24058"
         ],
         "complCurtains": [
-            ""
+            "87868"
         ],
         "complPillowCovers": [
             ""
@@ -3135,6 +3156,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3147,15 +3169,14 @@
         "productOrder": 7,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Mumbai Siena",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e7d8cf"
         ],
         "complSheets": [
-            ""
+            "88776"
         ],
         "complCurtains": [
-            ""
+            "88649"
         ],
         "complPillowCovers": [
             ""
@@ -3178,6 +3199,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3190,15 +3212,14 @@
         "productOrder": 8,
         "pageTemplate": "JuegoDeEdredon",
         "pageTitle": "Mumbai Beige",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#d7d3cf"
         ],
         "complSheets": [
-            ""
+            "88860"
         ],
         "complCurtains": [
-            ""
+            "88486"
         ],
         "complPillowCovers": [
             ""
@@ -3221,6 +3242,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3233,7 +3255,6 @@
         "productOrder": 1,
         "pageTemplate": "Sublinea",
         "pageTitle": "Ivory",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3264,6 +3285,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3276,7 +3298,6 @@
         "productOrder": 2,
         "pageTemplate": "Sublinea",
         "pageTitle": "Everest Celeste",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3307,6 +3328,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3319,7 +3341,6 @@
         "productOrder": 3,
         "pageTemplate": "Sublinea",
         "pageTitle": "Everest Palena",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3350,6 +3371,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3362,7 +3384,6 @@
         "productOrder": 4,
         "pageTemplate": "Sublinea",
         "pageTitle": "Everest Nebraska",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3393,6 +3414,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3405,7 +3427,6 @@
         "productOrder": 5,
         "pageTemplate": "Sublinea",
         "pageTitle": "Everest Barrow",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3436,6 +3457,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3448,7 +3470,6 @@
         "productOrder": 6,
         "pageTemplate": "Sublinea",
         "pageTitle": "Gris Neutral",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3479,6 +3500,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3491,7 +3513,6 @@
         "productOrder": 7,
         "pageTemplate": "Sublinea",
         "pageTitle": "Waffle Turquesa",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3522,6 +3543,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3534,7 +3556,6 @@
         "productOrder": 8,
         "pageTemplate": "Sublinea",
         "pageTitle": "Waffle Incienso",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3565,92 +3586,7 @@
         "pageIcons": [
             ""
         ],
-        "pageSeoTitle": "",
-        "pageSeoDescription": ""
-    },
-    {
-        "SKU": "88811",
-        "productType": "Funda De Almohada",
-        "productName": "FUNDA DE ALMOHADA EUROPEA VOGA PEONY",
-        "status": "CONT",
-        "productSection": "Página 8 / Complementos",
-        "productOrder": 9,
-        "pageTemplate": "Sublinea",
-        "pageTitle": "Voga Peony",
         "pageSubtitle": "",
-        "pageResources": [
-            ""
-        ],
-        "complSheets": [
-            ""
-        ],
-        "complCurtains": [
-            ""
-        ],
-        "complPillowCovers": [
-            ""
-        ],
-        "complCushions": [
-            ""
-        ],
-        "complDecoration": [
-            ""
-        ],
-        "pageCopys": [
-            ""
-        ],
-        "pageKeywords": "[]",
-        "pageVideos": [
-            ""
-        ],
-        "pageStatus": "Activa",
-        "pageRelatedProducts": "",
-        "pageIcons": [
-            ""
-        ],
-        "pageSeoTitle": "",
-        "pageSeoDescription": ""
-    },
-    {
-        "SKU": "88810",
-        "productType": "Funda De Almohada",
-        "productName": "FUNDA DE ALMOHADA KS VOGA PEONY",
-        "status": "CONT",
-        "productSection": "Página 8 / Complementos",
-        "productOrder": 10,
-        "pageTemplate": "Sublinea",
-        "pageTitle": "Voga Peony",
-        "pageSubtitle": "",
-        "pageResources": [
-            ""
-        ],
-        "complSheets": [
-            ""
-        ],
-        "complCurtains": [
-            ""
-        ],
-        "complPillowCovers": [
-            ""
-        ],
-        "complCushions": [
-            ""
-        ],
-        "complDecoration": [
-            ""
-        ],
-        "pageCopys": [
-            ""
-        ],
-        "pageKeywords": "[]",
-        "pageVideos": [
-            ""
-        ],
-        "pageStatus": "Activa",
-        "pageRelatedProducts": "",
-        "pageIcons": [
-            ""
-        ],
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3663,9 +3599,8 @@
         "productOrder": 11,
         "pageTemplate": "Sublinea",
         "pageTitle": "Voga Peony",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -3694,49 +3629,7 @@
         "pageIcons": [
             ""
         ],
-        "pageSeoTitle": "",
-        "pageSeoDescription": ""
-    },
-    {
-        "SKU": "86618",
-        "productType": "Funda De Almohada",
-        "productName": "FUNDA DE ALMOHADA EUROPEA VOGA PERLA",
-        "status": "CONT",
-        "productSection": "Página 8 / Complementos",
-        "productOrder": 12,
-        "pageTemplate": "Sublinea",
-        "pageTitle": "Voga Perla",
         "pageSubtitle": "",
-        "pageResources": [
-            ""
-        ],
-        "complSheets": [
-            ""
-        ],
-        "complCurtains": [
-            ""
-        ],
-        "complPillowCovers": [
-            ""
-        ],
-        "complCushions": [
-            ""
-        ],
-        "complDecoration": [
-            ""
-        ],
-        "pageCopys": [
-            ""
-        ],
-        "pageKeywords": "[]",
-        "pageVideos": [
-            ""
-        ],
-        "pageStatus": "Activa",
-        "pageRelatedProducts": "",
-        "pageIcons": [
-            ""
-        ],
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3749,9 +3642,8 @@
         "productOrder": 13,
         "pageTemplate": "Sublinea",
         "pageTitle": "Voga Perla",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -3780,49 +3672,7 @@
         "pageIcons": [
             ""
         ],
-        "pageSeoTitle": "",
-        "pageSeoDescription": ""
-    },
-    {
-        "SKU": "88502",
-        "productType": "Funda De Almohada",
-        "productName": "FUNDA DE ALMOHADA KS VOGA PERLA",
-        "status": "CONT",
-        "productSection": "Página 8 / Complementos",
-        "productOrder": 14,
-        "pageTemplate": "Sublinea",
-        "pageTitle": "Voga Perla",
         "pageSubtitle": "",
-        "pageResources": [
-            ""
-        ],
-        "complSheets": [
-            ""
-        ],
-        "complCurtains": [
-            ""
-        ],
-        "complPillowCovers": [
-            ""
-        ],
-        "complCushions": [
-            ""
-        ],
-        "complDecoration": [
-            ""
-        ],
-        "pageCopys": [
-            ""
-        ],
-        "pageKeywords": "[]",
-        "pageVideos": [
-            ""
-        ],
-        "pageStatus": "Activa",
-        "pageRelatedProducts": "",
-        "pageIcons": [
-            ""
-        ],
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3835,7 +3685,6 @@
         "productOrder": 15,
         "pageTemplate": "Sublinea",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3866,49 +3715,7 @@
         "pageIcons": [
             ""
         ],
-        "pageSeoTitle": "",
-        "pageSeoDescription": ""
-    },
-    {
-        "SKU": "88541",
-        "productType": "Funda De Almohada",
-        "productName": "FUNDA DE ALMOHADA EUROPEA VELVET MINT",
-        "status": "CONT",
-        "productSection": "Página 8 / Complementos",
-        "productOrder": 16,
-        "pageTemplate": "Sublinea",
-        "pageTitle": "Mint",
         "pageSubtitle": "",
-        "pageResources": [
-            ""
-        ],
-        "complSheets": [
-            ""
-        ],
-        "complCurtains": [
-            ""
-        ],
-        "complPillowCovers": [
-            ""
-        ],
-        "complCushions": [
-            ""
-        ],
-        "complDecoration": [
-            ""
-        ],
-        "pageCopys": [
-            ""
-        ],
-        "pageKeywords": "[]",
-        "pageVideos": [
-            ""
-        ],
-        "pageStatus": "Activa",
-        "pageRelatedProducts": "",
-        "pageIcons": [
-            ""
-        ],
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -3921,7 +3728,6 @@
         "productOrder": 17,
         "pageTemplate": "Sublinea",
         "pageTitle": "Mint",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -3952,49 +3758,7 @@
         "pageIcons": [
             ""
         ],
-        "pageSeoTitle": "",
-        "pageSeoDescription": ""
-    },
-    {
-        "SKU": "88484",
-        "productType": "Funda De Almohada",
-        "productName": "FUNDA DE ALMOHADA KS VELVET MINT",
-        "status": "CONT",
-        "productSection": "Página 8 / Complementos",
-        "productOrder": 18,
-        "pageTemplate": "Sublinea",
-        "pageTitle": "Mint",
         "pageSubtitle": "",
-        "pageResources": [
-            ""
-        ],
-        "complSheets": [
-            ""
-        ],
-        "complCurtains": [
-            ""
-        ],
-        "complPillowCovers": [
-            ""
-        ],
-        "complCushions": [
-            ""
-        ],
-        "complDecoration": [
-            ""
-        ],
-        "pageCopys": [
-            ""
-        ],
-        "pageKeywords": "[]",
-        "pageVideos": [
-            ""
-        ],
-        "pageStatus": "Activa",
-        "pageRelatedProducts": "",
-        "pageIcons": [
-            ""
-        ],
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4007,7 +3771,6 @@
         "productOrder": 19,
         "pageTemplate": "Sublinea",
         "pageTitle": "Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4038,6 +3801,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4050,7 +3814,6 @@
         "productOrder": 20,
         "pageTemplate": "Sublinea",
         "pageTitle": "Alpes Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4081,6 +3844,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4093,7 +3857,6 @@
         "productOrder": 21,
         "pageTemplate": "Sublinea",
         "pageTitle": "Alpes Greige",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4124,6 +3887,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4136,7 +3900,6 @@
         "productOrder": 22,
         "pageTemplate": "Sublinea",
         "pageTitle": "Alpes Rosa Matura",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4167,6 +3930,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4179,7 +3943,6 @@
         "productOrder": 23,
         "pageTemplate": "Sublinea",
         "pageTitle": "Alpes Azul",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4210,6 +3973,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4222,7 +3986,6 @@
         "productOrder": 24,
         "pageTemplate": "Sublinea",
         "pageTitle": "Alpes Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4253,6 +4016,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4265,7 +4029,6 @@
         "productOrder": 25,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Everest Denim",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4296,6 +4059,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4308,7 +4072,6 @@
         "productOrder": 26,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Everest Stone",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4339,6 +4102,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4351,7 +4115,6 @@
         "productOrder": 27,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Everest Celeste",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4382,6 +4145,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4394,7 +4158,6 @@
         "productOrder": 28,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Everest Incienso",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4425,6 +4188,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4437,7 +4201,6 @@
         "productOrder": 29,
         "pageTemplate": "Sublinea",
         "pageTitle": "Estrella Barrow",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4468,6 +4231,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4480,7 +4244,6 @@
         "productOrder": 30,
         "pageTemplate": "Sublinea",
         "pageTitle": "Corazón Sweet Pink",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4511,6 +4274,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4523,7 +4287,6 @@
         "productOrder": 31,
         "pageTemplate": "Sublinea",
         "pageTitle": "Esfera Bucle",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4554,6 +4317,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4566,7 +4330,6 @@
         "productOrder": 32,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Everest Deep Rose",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4597,6 +4360,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4609,7 +4373,6 @@
         "productOrder": 33,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Everest Aria",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4640,6 +4403,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4652,7 +4416,6 @@
         "productOrder": 34,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Everest Palena",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4683,6 +4446,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4695,9 +4459,8 @@
         "productOrder": 35,
         "pageTemplate": "Sublinea",
         "pageTitle": "Barrow",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -4726,6 +4489,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4738,9 +4502,8 @@
         "productOrder": 36,
         "pageTemplate": "Sublinea",
         "pageTitle": "Estaño",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "DOBLE"
         ],
         "complSheets": [
             ""
@@ -4769,6 +4532,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4781,9 +4545,8 @@
         "productOrder": 37,
         "pageTemplate": "Sublinea",
         "pageTitle": "Arena",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "DOBLE"
         ],
         "complSheets": [
             ""
@@ -4812,6 +4575,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4824,9 +4588,8 @@
         "productOrder": 38,
         "pageTemplate": "Sublinea",
         "pageTitle": "Adana",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "DOBLE"
         ],
         "complSheets": [
             ""
@@ -4855,6 +4618,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4867,9 +4631,8 @@
         "productOrder": 39,
         "pageTemplate": "Sublinea",
         "pageTitle": "Trento",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "CUATRO"
         ],
         "complSheets": [
             ""
@@ -4898,6 +4661,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4910,7 +4674,6 @@
         "productOrder": 40,
         "pageTemplate": "Sublinea",
         "pageTitle": "Xbox",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4941,6 +4704,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4953,7 +4717,6 @@
         "productOrder": 41,
         "pageTemplate": "Sublinea",
         "pageTitle": "Ps5",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -4984,6 +4747,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -4996,7 +4760,6 @@
         "productOrder": 42,
         "pageTemplate": "Sublinea",
         "pageTitle": "Harry Potter",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5027,6 +4790,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5039,7 +4803,6 @@
         "productOrder": 43,
         "pageTemplate": "Sublinea",
         "pageTitle": "Harry Potter",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5070,6 +4833,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5082,7 +4846,6 @@
         "productOrder": 44,
         "pageTemplate": "Sublinea",
         "pageTitle": "Rex",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5113,6 +4876,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5125,7 +4889,6 @@
         "productOrder": 45,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Ivory",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5156,6 +4919,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5168,7 +4932,6 @@
         "productOrder": 46,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Gante",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5199,6 +4962,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5211,7 +4975,6 @@
         "productOrder": 47,
         "pageTemplate": "Sublinea",
         "pageTitle": "Creta",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5242,6 +5005,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5254,9 +5018,9 @@
         "productOrder": 48,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Mint",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e3e9e8",
+            "#a2b7b5"
         ],
         "complSheets": [
             ""
@@ -5285,6 +5049,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5297,9 +5062,9 @@
         "productOrder": 49,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Mostaza",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#fce9c5",
+            "#f5b63e"
         ],
         "complSheets": [
             ""
@@ -5328,6 +5093,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5340,9 +5106,9 @@
         "productOrder": 50,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Azul",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#c3c9d7",
+            "#374c7c"
         ],
         "complSheets": [
             ""
@@ -5371,6 +5137,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5383,9 +5150,9 @@
         "productOrder": 51,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Gris",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#d5d5d5",
+            "#737373"
         ],
         "complSheets": [
             ""
@@ -5414,6 +5181,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5426,9 +5194,9 @@
         "productOrder": 52,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e6dcdc",
+            "#ae8c8c"
         ],
         "complSheets": [
             ""
@@ -5457,6 +5225,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5469,7 +5238,6 @@
         "productOrder": 53,
         "pageTemplate": "Sublinea",
         "pageTitle": "Mérida",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5500,6 +5268,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5512,7 +5281,6 @@
         "productOrder": 54,
         "pageTemplate": "Sublinea",
         "pageTitle": "Rectangular Mumbai Beige",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5543,6 +5311,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5555,7 +5324,6 @@
         "productOrder": 55,
         "pageTemplate": "Sublinea",
         "pageTitle": "Rectangular Mumbai Gray",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5586,6 +5354,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5598,7 +5367,6 @@
         "productOrder": 56,
         "pageTemplate": "Sublinea",
         "pageTitle": "Rectangular Mumbai Sand",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5629,6 +5397,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5641,7 +5410,6 @@
         "productOrder": 57,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Mumbai Macrame",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5672,6 +5440,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5684,7 +5453,6 @@
         "productOrder": 58,
         "pageTemplate": "Sublinea",
         "pageTitle": "Waffle Incienso",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5715,6 +5483,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5727,7 +5496,6 @@
         "productOrder": 59,
         "pageTemplate": "Sublinea",
         "pageTitle": "Waffle Turquesa",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5758,6 +5526,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5770,9 +5539,8 @@
         "productOrder": 60,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cojín Rectangular Basic",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -5801,6 +5569,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5813,9 +5582,8 @@
         "productOrder": 61,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cojín Cuadrado Plus",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -5844,6 +5612,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5856,9 +5625,8 @@
         "productOrder": 62,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cojín Cuadrado Basic",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -5887,6 +5655,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5899,7 +5668,6 @@
         "productOrder": 1,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lactancia Alpes Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5930,6 +5698,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5942,7 +5711,6 @@
         "productOrder": 2,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Alpes Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -5973,6 +5741,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -5985,7 +5754,6 @@
         "productOrder": 3,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Alpes Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6016,6 +5784,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6028,7 +5797,6 @@
         "productOrder": 4,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Alpes Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6059,6 +5827,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6071,7 +5840,6 @@
         "productOrder": 6,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Alpes Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6102,6 +5870,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6114,7 +5883,6 @@
         "productOrder": 9,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Alpes Rosa Matura",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6145,6 +5913,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6157,7 +5926,6 @@
         "productOrder": 12,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Alpes Negro",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6188,6 +5956,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6200,7 +5969,6 @@
         "productOrder": 14,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Greige",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6231,6 +5999,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6243,7 +6012,6 @@
         "productOrder": 15,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Greige",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6274,6 +6042,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6286,7 +6055,6 @@
         "productOrder": 16,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Greige",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6317,6 +6085,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6329,7 +6098,6 @@
         "productOrder": 17,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Floral",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6360,6 +6128,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6372,7 +6141,6 @@
         "productOrder": 18,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Floral",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6403,6 +6171,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6415,7 +6184,6 @@
         "productOrder": 19,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Floral",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6446,6 +6214,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6458,7 +6227,6 @@
         "productOrder": 21,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Live",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6489,6 +6257,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6501,7 +6270,6 @@
         "productOrder": 24,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Polonia",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6532,6 +6300,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6544,7 +6313,6 @@
         "productOrder": 26,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Almond",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6575,6 +6343,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6587,7 +6356,6 @@
         "productOrder": 27,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Almond",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6618,6 +6386,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6630,7 +6399,6 @@
         "productOrder": 28,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Almond",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6661,6 +6429,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6673,7 +6442,6 @@
         "productOrder": 29,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Almond",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6704,6 +6472,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6716,7 +6485,6 @@
         "productOrder": 30,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6747,6 +6515,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6759,7 +6528,6 @@
         "productOrder": 31,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6790,6 +6558,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6802,7 +6571,6 @@
         "productOrder": 32,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6833,6 +6601,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6845,7 +6614,6 @@
         "productOrder": 33,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6876,6 +6644,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6888,7 +6657,6 @@
         "productOrder": 34,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Sweet Pink",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6919,6 +6687,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6931,7 +6700,6 @@
         "productOrder": 35,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Sweet Pink",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -6962,6 +6730,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -6974,7 +6743,6 @@
         "productOrder": 36,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Sweet Pink",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7005,6 +6773,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7017,7 +6786,6 @@
         "productOrder": 37,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Sweet Pink",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7048,6 +6816,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7060,7 +6829,6 @@
         "productOrder": 39,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Azul",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7091,6 +6859,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7103,7 +6872,6 @@
         "productOrder": 43,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7134,6 +6902,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7146,7 +6915,6 @@
         "productOrder": 46,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Celeste",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7177,6 +6945,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7189,7 +6958,6 @@
         "productOrder": 47,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Celeste",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7220,6 +6988,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7232,7 +7001,6 @@
         "productOrder": 48,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Vermont",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7263,6 +7031,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7275,7 +7044,6 @@
         "productOrder": 50,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Winnipeg",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7306,6 +7074,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7318,7 +7087,6 @@
         "productOrder": 53,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Gris Glacial",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7349,6 +7117,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7361,7 +7130,6 @@
         "productOrder": 57,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7392,6 +7160,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7404,7 +7173,6 @@
         "productOrder": 60,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Celeste",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7435,6 +7203,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7447,7 +7216,6 @@
         "productOrder": 63,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Almond",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7478,6 +7246,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7490,7 +7259,6 @@
         "productOrder": 66,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Azul",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7521,6 +7289,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7533,7 +7302,6 @@
         "productOrder": 68,
         "pageTemplate": "Sublinea",
         "pageTitle": "Everest Sweet Pink",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7564,6 +7332,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7576,7 +7345,6 @@
         "productOrder": 69,
         "pageTemplate": "Sublinea",
         "pageTitle": "Alpes Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7607,6 +7375,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7619,7 +7388,6 @@
         "productOrder": 70,
         "pageTemplate": "Sublinea",
         "pageTitle": "Blue",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7650,6 +7418,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7662,7 +7431,6 @@
         "productOrder": 71,
         "pageTemplate": "Sublinea",
         "pageTitle": "Alpes Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7693,6 +7461,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7705,7 +7474,6 @@
         "productOrder": 72,
         "pageTemplate": "Sublinea",
         "pageTitle": "Alpes Negro",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7736,6 +7504,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7748,7 +7517,6 @@
         "productOrder": 73,
         "pageTemplate": "Sublinea",
         "pageTitle": "Everest Barrow",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7779,6 +7547,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7791,7 +7560,6 @@
         "productOrder": 74,
         "pageTemplate": "Sublinea",
         "pageTitle": "Harry Potter",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7822,6 +7590,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7834,7 +7603,6 @@
         "productOrder": 75,
         "pageTemplate": "Sublinea",
         "pageTitle": "Love",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7865,6 +7633,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7877,7 +7646,6 @@
         "productOrder": 76,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7908,6 +7676,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7920,7 +7689,6 @@
         "productOrder": 78,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Kaki",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7951,6 +7719,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -7963,7 +7732,6 @@
         "productOrder": 82,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Gris Glacial",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -7994,6 +7762,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8006,7 +7775,6 @@
         "productOrder": 84,
         "pageTemplate": "Almohadas",
         "pageTitle": "Cooling",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8037,6 +7805,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8049,7 +7818,6 @@
         "productOrder": 86,
         "pageTemplate": "Almohadas",
         "pageTitle": "Básica Plus",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8080,6 +7848,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8092,7 +7861,6 @@
         "productOrder": 87,
         "pageTemplate": "Almohadas",
         "pageTitle": "Pocket",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8123,6 +7891,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8135,7 +7904,6 @@
         "productOrder": 88,
         "pageTemplate": "Almohadas",
         "pageTitle": "Cooling",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8166,6 +7934,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8178,7 +7947,6 @@
         "productOrder": 91,
         "pageTemplate": "Almohadas",
         "pageTitle": "Balance",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8209,6 +7977,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8221,7 +7990,6 @@
         "productOrder": 93,
         "pageTemplate": "Almohadas",
         "pageTitle": "Antiviral Impermeable",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8252,6 +8020,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8264,7 +8033,6 @@
         "productOrder": 94,
         "pageTemplate": "Almohadas",
         "pageTitle": "Super Confort",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8295,6 +8063,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8307,7 +8076,6 @@
         "productOrder": 96,
         "pageTemplate": "Almohadas",
         "pageTitle": "Vialifresh",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8329,7 +8097,7 @@
         "pageCopys": [
             ""
         ],
-        "pageKeywords": "['vialifresh']",
+        "pageKeywords": "['vialifresh' 'vialifresh']",
         "pageVideos": [
             ""
         ],
@@ -8338,6 +8106,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8350,7 +8119,6 @@
         "productOrder": 98,
         "pageTemplate": "Almohadas",
         "pageTitle": "Vialifresh Super Confort",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8372,7 +8140,7 @@
         "pageCopys": [
             ""
         ],
-        "pageKeywords": "['vialifresh']",
+        "pageKeywords": "['vialifresh' 'vialifresh']",
         "pageVideos": [
             ""
         ],
@@ -8381,6 +8149,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8393,7 +8162,6 @@
         "productOrder": 100,
         "pageTemplate": "Almohadas",
         "pageTitle": "Sognare Fussion Firme",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8424,6 +8192,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8436,7 +8205,6 @@
         "productOrder": 102,
         "pageTemplate": "Almohadas",
         "pageTitle": "Sognare Nuo",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8467,6 +8235,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8479,7 +8248,6 @@
         "productOrder": 104,
         "pageTemplate": "Almohadas",
         "pageTitle": "Lactancia Washed Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8510,6 +8278,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8522,7 +8291,6 @@
         "productOrder": 105,
         "pageTemplate": "Almohadas",
         "pageTitle": "Body Comfort Washed Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8553,6 +8321,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8565,7 +8334,6 @@
         "productOrder": 106,
         "pageTemplate": "Almohadas",
         "pageTitle": "Viafoam Cool",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8587,7 +8355,7 @@
         "pageCopys": [
             ""
         ],
-        "pageKeywords": "['viafoam']",
+        "pageKeywords": "['viafoam' 'viafoam']",
         "pageVideos": [
             ""
         ],
@@ -8596,6 +8364,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8608,7 +8377,6 @@
         "productOrder": 107,
         "pageTemplate": "Almohadas",
         "pageTitle": "Ortoconfort",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8630,7 +8398,7 @@
         "pageCopys": [
             ""
         ],
-        "pageKeywords": "['viafoam']",
+        "pageKeywords": "['viafoam' 'viafoam']",
         "pageVideos": [
             ""
         ],
@@ -8639,6 +8407,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8651,7 +8420,6 @@
         "productOrder": 108,
         "pageTemplate": "Almohadas",
         "pageTitle": "Viafoam Ortomedic",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8673,7 +8441,7 @@
         "pageCopys": [
             ""
         ],
-        "pageKeywords": "['viafoam']",
+        "pageKeywords": "['viafoam' 'viafoam']",
         "pageVideos": [
             ""
         ],
@@ -8682,6 +8450,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8694,7 +8463,6 @@
         "productOrder": 109,
         "pageTemplate": "Almohadas",
         "pageTitle": "Multiseat",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8716,7 +8484,7 @@
         "pageCopys": [
             ""
         ],
-        "pageKeywords": "['viafoam']",
+        "pageKeywords": "['viafoam' 'viafoam']",
         "pageVideos": [
             ""
         ],
@@ -8725,6 +8493,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8737,7 +8506,6 @@
         "productOrder": 110,
         "pageTemplate": "Almohadas",
         "pageTitle": "Viafoam Gel Confort",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8759,7 +8527,7 @@
         "pageCopys": [
             ""
         ],
-        "pageKeywords": "['viafoam']",
+        "pageKeywords": "['viafoam' 'viafoam']",
         "pageVideos": [
             ""
         ],
@@ -8768,6 +8536,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8780,7 +8549,6 @@
         "productOrder": 111,
         "pageTemplate": "Almohadas",
         "pageTitle": "Modular",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8811,6 +8579,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8823,7 +8592,6 @@
         "productOrder": 112,
         "pageTemplate": "Almohadas",
         "pageTitle": "Viafoam Duo",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -8845,7 +8613,7 @@
         "pageCopys": [
             ""
         ],
-        "pageKeywords": "['viafoam']",
+        "pageKeywords": "['viafoam' 'viafoam']",
         "pageVideos": [
             ""
         ],
@@ -8854,6 +8622,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8866,9 +8635,8 @@
         "productOrder": 113,
         "pageTemplate": "Almohadas",
         "pageTitle": "Relleno Balance",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -8897,92 +8665,7 @@
         "pageIcons": [
             ""
         ],
-        "pageSeoTitle": "",
-        "pageSeoDescription": ""
-    },
-    {
-        "SKU": "35901",
-        "productType": "RELLENO ALMOHADA",
-        "productName": "RELLENO ALMOHADA EUROPEA BALANCE",
-        "status": "CONT",
-        "productSection": "Página 9 / Básicos",
-        "productOrder": 115,
-        "pageTemplate": "Almohadas",
-        "pageTitle": "Relleno Balance",
         "pageSubtitle": "",
-        "pageResources": [
-            ""
-        ],
-        "complSheets": [
-            ""
-        ],
-        "complCurtains": [
-            ""
-        ],
-        "complPillowCovers": [
-            ""
-        ],
-        "complCushions": [
-            ""
-        ],
-        "complDecoration": [
-            ""
-        ],
-        "pageCopys": [
-            ""
-        ],
-        "pageKeywords": "[]",
-        "pageVideos": [
-            ""
-        ],
-        "pageStatus": "Activa",
-        "pageRelatedProducts": "",
-        "pageIcons": [
-            ""
-        ],
-        "pageSeoTitle": "",
-        "pageSeoDescription": ""
-    },
-    {
-        "SKU": "36638",
-        "productType": "RELLENO ALMOHADA",
-        "productName": "RELLENO ALMOHADA EUROPEA XL BALANCE",
-        "status": "CONT",
-        "productSection": "Página 9 / Básicos",
-        "productOrder": 116,
-        "pageTemplate": "Almohadas",
-        "pageTitle": "Relleno Balance",
-        "pageSubtitle": "",
-        "pageResources": [
-            ""
-        ],
-        "complSheets": [
-            ""
-        ],
-        "complCurtains": [
-            ""
-        ],
-        "complPillowCovers": [
-            ""
-        ],
-        "complCushions": [
-            ""
-        ],
-        "complDecoration": [
-            ""
-        ],
-        "pageCopys": [
-            ""
-        ],
-        "pageKeywords": "[]",
-        "pageVideos": [
-            ""
-        ],
-        "pageStatus": "Activa",
-        "pageRelatedProducts": "",
-        "pageIcons": [
-            ""
-        ],
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -8995,7 +8678,6 @@
         "productOrder": 117,
         "pageTemplate": "ProtectoresDeColchon",
         "pageTitle": "Memory Foam",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9026,6 +8708,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9038,7 +8721,6 @@
         "productOrder": 118,
         "pageTemplate": "ProtectoresDeColchon",
         "pageTitle": "Memory Foam",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9069,6 +8751,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9081,7 +8764,6 @@
         "productOrder": 119,
         "pageTemplate": "ProtectoresDeColchon",
         "pageTitle": "Impermeable",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9112,6 +8794,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9124,7 +8807,6 @@
         "productOrder": 122,
         "pageTemplate": "ProtectoresDeColchon",
         "pageTitle": "Impermeable",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9155,6 +8837,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9167,7 +8850,6 @@
         "productOrder": 126,
         "pageTemplate": "ProtectoresDeColchon",
         "pageTitle": "Básico Plus",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9198,6 +8880,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9210,7 +8893,6 @@
         "productOrder": 130,
         "pageTemplate": "ProtectoresDeColchon",
         "pageTitle": "Vialifresh",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9232,7 +8914,7 @@
         "pageCopys": [
             ""
         ],
-        "pageKeywords": "['vialifresh']",
+        "pageKeywords": "['vialifresh' 'vialifresh']",
         "pageVideos": [
             ""
         ],
@@ -9241,6 +8923,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9253,7 +8936,6 @@
         "productOrder": 133,
         "pageTemplate": "ProtectoresDeColchon",
         "pageTitle": "Sognare Nuo",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9284,6 +8966,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9296,7 +8979,6 @@
         "productOrder": 136,
         "pageTemplate": "ProtectoresDeColchon",
         "pageTitle": "Confort",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9327,6 +9009,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9339,7 +9022,6 @@
         "productOrder": 139,
         "pageTemplate": "ProtectoresDeColchon",
         "pageTitle": "Tencel",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9370,6 +9052,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9382,7 +9065,6 @@
         "productOrder": 1,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Sabia",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9413,6 +9095,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9425,7 +9108,6 @@
         "productOrder": 2,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Negro",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9456,6 +9138,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9468,7 +9151,6 @@
         "productOrder": 3,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9499,6 +9181,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9511,7 +9194,6 @@
         "productOrder": 5,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Harry Potter",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9542,6 +9224,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9554,7 +9237,6 @@
         "productOrder": 7,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Capa Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9585,6 +9267,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9597,7 +9280,6 @@
         "productOrder": 8,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Calcetines Set 2 Pares",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9628,6 +9310,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9640,7 +9323,6 @@
         "productOrder": 9,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9671,6 +9353,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9683,7 +9366,6 @@
         "productOrder": 10,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Live",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9714,6 +9396,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9726,7 +9409,6 @@
         "productOrder": 11,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Azul",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9757,6 +9439,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9769,7 +9452,6 @@
         "productOrder": 12,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9800,6 +9482,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9812,7 +9495,6 @@
         "productOrder": 13,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9843,6 +9525,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9855,7 +9538,6 @@
         "productOrder": 14,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Med/Ch Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9886,6 +9568,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9898,7 +9581,6 @@
         "productOrder": 15,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9929,6 +9611,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9941,7 +9624,6 @@
         "productOrder": 16,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Dinosaurios",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -9972,6 +9654,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -9984,7 +9667,6 @@
         "productOrder": 18,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Harry Potter",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10015,6 +9697,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10027,7 +9710,6 @@
         "productOrder": 1,
         "pageTemplate": "Puffs",
         "pageTitle": "Everest Celeste",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10058,6 +9740,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10070,7 +9753,6 @@
         "productOrder": 2,
         "pageTemplate": "Puffs",
         "pageTitle": "Mini Siberia Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10101,6 +9783,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10113,7 +9796,6 @@
         "productOrder": 3,
         "pageTemplate": "Puffs",
         "pageTitle": "Alpes Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10144,6 +9826,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10156,7 +9839,6 @@
         "productOrder": 4,
         "pageTemplate": "Puffs",
         "pageTitle": "Everest Deep Rose",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10187,6 +9869,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10199,7 +9882,6 @@
         "productOrder": 5,
         "pageTemplate": "Puffs",
         "pageTitle": "Everest Barrow",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10230,6 +9912,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10242,7 +9925,6 @@
         "productOrder": 6,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Everest Nebraska",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10273,6 +9955,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10285,7 +9968,6 @@
         "productOrder": 7,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Everest Celeste",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10316,6 +9998,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10328,7 +10011,6 @@
         "productOrder": 8,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Everest Sweet Pink",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10359,6 +10041,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10371,9 +10054,9 @@
         "productOrder": 9,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Everest Aria",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e1e1dc",
+            "#9b9b8d"
         ],
         "complSheets": [
             ""
@@ -10402,6 +10085,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10414,9 +10098,9 @@
         "productOrder": 10,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Mumbai Hojas",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#dad8d9",
+            "#848081"
         ],
         "complSheets": [
             ""
@@ -10445,6 +10129,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10457,9 +10142,9 @@
         "productOrder": 11,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Mumbai Azul",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#c0c8d0",
+            "#2f4964"
         ],
         "complSheets": [
             ""
@@ -10488,6 +10173,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10500,9 +10186,9 @@
         "productOrder": 12,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Everest Barrow",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e9eaec",
+            "#b7bcc0"
         ],
         "complSheets": [
             ""
@@ -10531,6 +10217,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10543,7 +10230,6 @@
         "productOrder": 13,
         "pageTemplate": "Sublinea",
         "pageTitle": "Deco",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10574,6 +10260,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10586,7 +10273,6 @@
         "productOrder": 14,
         "pageTemplate": "Sublinea",
         "pageTitle": "Gota",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10617,6 +10303,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10629,7 +10316,6 @@
         "productOrder": 15,
         "pageTemplate": "Sublinea",
         "pageTitle": "Asturias",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10660,6 +10346,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10672,7 +10359,6 @@
         "productOrder": 1,
         "pageTemplate": "Sublinea",
         "pageTitle": "Floral Candy",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10703,21 +10389,21 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
     {
         "SKU": "77509",
-        "productType": "Difusor",
+        "productType": "Difusores",
         "productName": "DIFUSOR 60 ML FRUTOS ROJOS",
         "status": "CONT",
         "productSection": "Página 12 / Vialité",
         "productOrder": 2,
         "pageTemplate": "Sublinea",
         "pageTitle": "Frutos Rojos",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -10746,21 +10432,21 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
     {
         "SKU": "86682",
-        "productType": "Difusor",
+        "productType": "Difusores",
         "productName": "DIFUSOR 60 ML LAVANDA",
         "status": "CONT",
         "productSection": "Página 12 / Vialité",
         "productOrder": 3,
         "pageTemplate": "Sublinea",
         "pageTitle": "Lavanda",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -10789,21 +10475,21 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
     {
         "SKU": "57036",
-        "productType": "Difusor",
+        "productType": "Difusores",
         "productName": "DIFUSOR 60 ML MANZANA-CANELA",
         "status": "CONT",
         "productSection": "Página 12 / Vialité",
         "productOrder": 4,
         "pageTemplate": "Sublinea",
         "pageTitle": "Manzana-Canela",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -10832,21 +10518,21 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
     {
         "SKU": "87887",
-        "productType": "Difusor",
+        "productType": "Difusores",
         "productName": "DIFUSOR 60 ML BERRY MANDARIN",
         "status": "CONT",
         "productSection": "Página 12 / Vialité",
         "productOrder": 5,
         "pageTemplate": "Sublinea",
         "pageTitle": "Berry Mandarin",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -10875,6 +10561,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10887,7 +10574,6 @@
         "productOrder": 6,
         "pageTemplate": "Sublinea",
         "pageTitle": "Serenity",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10918,6 +10604,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10930,7 +10617,6 @@
         "productOrder": 7,
         "pageTemplate": "Sublinea",
         "pageTitle": "Repelente De Mosquitos ",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10961,6 +10647,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -10973,7 +10660,6 @@
         "productOrder": 8,
         "pageTemplate": "Sublinea",
         "pageTitle": "Vialifresh",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -10995,7 +10681,7 @@
         "pageCopys": [
             ""
         ],
-        "pageKeywords": "['vialifresh']",
+        "pageKeywords": "['vialifresh' 'vialifresh']",
         "pageVideos": [
             ""
         ],
@@ -11004,6 +10690,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11016,7 +10703,6 @@
         "productOrder": 9,
         "pageTemplate": "Sublinea",
         "pageTitle": "Eucalité",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11047,6 +10733,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11059,9 +10746,8 @@
         "productOrder": 10,
         "pageTemplate": "Sublinea",
         "pageTitle": "Tropical",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -11090,6 +10776,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11102,7 +10789,6 @@
         "productOrder": 11,
         "pageTemplate": "Sublinea",
         "pageTitle": "Berry Mandarin",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11133,6 +10819,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11145,7 +10832,6 @@
         "productOrder": 12,
         "pageTemplate": "Sublinea",
         "pageTitle": "Manzana-Canela",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11176,6 +10862,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11188,7 +10875,6 @@
         "productOrder": 1,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cama Mascota Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11219,6 +10905,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11231,7 +10918,6 @@
         "productOrder": 2,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cama Mascota Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11262,6 +10948,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11274,7 +10961,6 @@
         "productOrder": 3,
         "pageTemplate": "Sublinea",
         "pageTitle": "Suéter Mascota Azul Ch",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11305,6 +10991,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11317,7 +11004,6 @@
         "productOrder": 4,
         "pageTemplate": "Sublinea",
         "pageTitle": "Suéter Mascota Azul",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11348,6 +11034,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11360,7 +11047,6 @@
         "productOrder": 5,
         "pageTemplate": "Sublinea",
         "pageTitle": "Suéter Mascota Lila Ch",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11391,6 +11077,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11403,7 +11090,6 @@
         "productOrder": 6,
         "pageTemplate": "Sublinea",
         "pageTitle": "Suéter Mascota Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11434,6 +11120,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11446,7 +11133,6 @@
         "productOrder": 7,
         "pageTemplate": "Sublinea",
         "pageTitle": "Rosa",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11477,6 +11163,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11489,7 +11176,6 @@
         "productOrder": 8,
         "pageTemplate": "Sublinea",
         "pageTitle": "Max",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11520,6 +11206,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11532,9 +11219,9 @@
         "productOrder": 1,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Catania Celeste",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e0e6e8",
+            "#98aeb5"
         ],
         "complSheets": [
             ""
@@ -11552,7 +11239,8 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Menos luz",
+            "más descanso"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11561,8 +11249,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-BAJ"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11575,9 +11264,9 @@
         "productOrder": 2,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Catania Kaki",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e7e1d8",
+            "#af9b7e"
         ],
         "complSheets": [
             ""
@@ -11595,7 +11284,8 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Menos luz",
+            "más descanso"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11604,8 +11294,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-BAJ"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11618,9 +11309,9 @@
         "productOrder": 5,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Catania Marino",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#b5b3c6",
+            "#0b0441"
         ],
         "complSheets": [
             ""
@@ -11638,7 +11329,8 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Menos luz",
+            "más descanso"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11647,8 +11339,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-BAJ"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11661,9 +11354,9 @@
         "productOrder": 7,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Catania Gris",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#d3d1d2",
+            "#6d6869"
         ],
         "complSheets": [
             ""
@@ -11681,7 +11374,8 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Menos luz",
+            "más descanso"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11690,8 +11384,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-BAJ"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11704,9 +11399,9 @@
         "productOrder": 9,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Catania Beige",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#fbf7e5",
+            "#f4e6ab"
         ],
         "complSheets": [
             ""
@@ -11724,7 +11419,8 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Menos luz",
+            "más descanso"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11733,8 +11429,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-BAJ"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11747,9 +11444,9 @@
         "productOrder": 10,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Catania Deep Rose",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#efdcdb",
+            "#cc8c88"
         ],
         "complSheets": [
             ""
@@ -11767,7 +11464,8 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Menos luz",
+            "más descanso"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11776,8 +11474,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-BAJ"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11790,9 +11489,9 @@
         "productOrder": 12,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Catania Lila",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e6dcdc",
+            "#ae8c8b"
         ],
         "complSheets": [
             ""
@@ -11810,7 +11509,8 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Menos luz",
+            "más descanso"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11819,8 +11519,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-BAJ"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11833,9 +11534,9 @@
         "productOrder": 13,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Marfil",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#fffaf5",
+            "#fff1df"
         ],
         "complSheets": [
             ""
@@ -11853,7 +11554,7 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Reduce el paso de la luz con todo el estilo de sus texturas"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11862,8 +11563,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-MED"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11876,9 +11578,9 @@
         "productOrder": 14,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Kaki",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#ece3d9",
+            "#c0a383"
         ],
         "complSheets": [
             ""
@@ -11896,7 +11598,7 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Reduce el paso de la luz con todo el estilo de sus texturas"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11905,8 +11607,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-MED"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11919,9 +11622,9 @@
         "productOrder": 15,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Gris Glaciar",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#eeeded",
+            "#c9c5c3"
         ],
         "complSheets": [
             ""
@@ -11939,7 +11642,7 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Reduce el paso de la luz con todo el estilo de sus texturas"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11948,8 +11651,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-MED"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -11962,7 +11666,6 @@
         "productOrder": 16,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cortinas Duo 1,30X1,50 Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -11982,7 +11685,8 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Control de luz durante el día",
+            "privacidad durante la noche"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -11991,8 +11695,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-DIA-NOCHE"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12005,7 +11710,6 @@
         "productOrder": 17,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cortinas Duo 1,60X1,50 Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12025,7 +11729,8 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Control de luz durante el día",
+            "privacidad durante la noche"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -12034,8 +11739,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-DIA-NOCHE"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12048,7 +11754,6 @@
         "productOrder": 18,
         "pageTemplate": "Sublinea",
         "pageTitle": "Sujetadores De Cortina Gris",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12079,6 +11784,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12091,7 +11797,6 @@
         "productOrder": 20,
         "pageTemplate": "Sublinea",
         "pageTitle": "Tergal Beige",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12111,7 +11816,7 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Luz natural en tu habitación"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -12120,8 +11825,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-ALT"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12134,7 +11840,6 @@
         "productOrder": 22,
         "pageTemplate": "Sublinea",
         "pageTitle": "Tergal Blanco",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12154,7 +11859,7 @@
             ""
         ],
         "pageCopys": [
-            ""
+            "Luz natural en tu habitación"
         ],
         "pageKeywords": "[]",
         "pageVideos": [
@@ -12163,8 +11868,9 @@
         "pageStatus": "Activa",
         "pageRelatedProducts": "",
         "pageIcons": [
-            ""
+            "ICON-LUZ-ALT"
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12177,7 +11883,6 @@
         "productOrder": 1,
         "pageTemplate": "Sublinea",
         "pageTitle": "Aurea",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12208,6 +11913,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12220,7 +11926,6 @@
         "productOrder": 2,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Snow Tree",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12251,6 +11956,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12263,7 +11969,6 @@
         "productOrder": 3,
         "pageTemplate": "Sublinea",
         "pageTitle": "Rectangular Bright",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12294,6 +11999,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12306,7 +12012,6 @@
         "productOrder": 4,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Cascanueces",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12337,6 +12042,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12349,7 +12055,6 @@
         "productOrder": 5,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Christmas Tree",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12380,6 +12085,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12392,7 +12098,6 @@
         "productOrder": 6,
         "pageTemplate": "Sublinea",
         "pageTitle": "Circular Candy",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12423,6 +12128,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12435,7 +12141,6 @@
         "productOrder": 7,
         "pageTemplate": "Sublinea",
         "pageTitle": "Rectangular Mumbai Holly",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12466,6 +12171,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12478,7 +12184,6 @@
         "productOrder": 8,
         "pageTemplate": "Sublinea",
         "pageTitle": "Rectangular Believe",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12509,6 +12214,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12521,7 +12227,6 @@
         "productOrder": 9,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Feliz Navidad",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12552,6 +12257,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12564,7 +12270,6 @@
         "productOrder": 10,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadrado Belén",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12595,6 +12300,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12607,7 +12313,6 @@
         "productOrder": 11,
         "pageTemplate": "Sublinea",
         "pageTitle": "Navidad",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12638,6 +12343,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12650,7 +12356,6 @@
         "productOrder": 12,
         "pageTemplate": "Sublinea",
         "pageTitle": "Serie De Luces Nápoles",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12681,6 +12386,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12693,7 +12399,6 @@
         "productOrder": 13,
         "pageTemplate": "Sublinea",
         "pageTitle": "Figura Decorativa Belén",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12724,6 +12429,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12736,7 +12442,6 @@
         "productOrder": 14,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadro Nacimiento",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12767,6 +12472,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12779,7 +12485,6 @@
         "productOrder": 15,
         "pageTemplate": "Sublinea",
         "pageTitle": "Figura Decorativa Sagrada Familia",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12810,6 +12515,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12822,7 +12528,6 @@
         "productOrder": 16,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadro Virgen",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12853,6 +12558,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12865,7 +12571,6 @@
         "productOrder": 17,
         "pageTemplate": "Sublinea",
         "pageTitle": "Decoración Cruz",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12896,6 +12601,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12908,7 +12614,6 @@
         "productOrder": 18,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadro Virgen De Guadalupe",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -12939,6 +12644,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12951,9 +12657,8 @@
         "productOrder": 19,
         "pageTemplate": "Sublinea",
         "pageTitle": "Cuadro Angelito",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -12982,6 +12687,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -12994,7 +12700,6 @@
         "productOrder": 20,
         "pageTemplate": "Sublinea",
         "pageTitle": "Proyector Led Multidiseño",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13025,6 +12730,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13037,7 +12743,6 @@
         "productOrder": 21,
         "pageTemplate": "Sublinea",
         "pageTitle": "Figura Decorativa Angelito",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13068,6 +12773,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13080,7 +12786,6 @@
         "productOrder": 22,
         "pageTemplate": "Sublinea",
         "pageTitle": "Figura Decorativa Angelita",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13111,6 +12816,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13123,7 +12829,6 @@
         "productOrder": 23,
         "pageTemplate": "Sublinea",
         "pageTitle": "Pingüinos",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13154,6 +12859,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13166,7 +12872,6 @@
         "productOrder": 24,
         "pageTemplate": "Sublinea",
         "pageTitle": "Santa Claus",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13197,6 +12902,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13209,7 +12915,6 @@
         "productOrder": 25,
         "pageTemplate": "Sublinea",
         "pageTitle": "Reno Beige",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13240,6 +12945,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13252,7 +12958,6 @@
         "productOrder": 26,
         "pageTemplate": "Sublinea",
         "pageTitle": "Gnomo Blanco",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13283,6 +12988,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13295,7 +13001,6 @@
         "productOrder": 27,
         "pageTemplate": "Sublinea",
         "pageTitle": "Árbol Nevado",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13326,6 +13031,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13338,7 +13044,6 @@
         "productOrder": 28,
         "pageTemplate": "Sublinea",
         "pageTitle": "Árbol Blanco Led",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13369,6 +13074,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13381,7 +13087,6 @@
         "productOrder": 29,
         "pageTemplate": "Sublinea",
         "pageTitle": "Nacimiento",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13412,6 +13117,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13424,7 +13130,6 @@
         "productOrder": 30,
         "pageTemplate": "Sublinea",
         "pageTitle": "Pie De Árbol",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13455,6 +13160,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13467,7 +13173,6 @@
         "productOrder": 31,
         "pageTemplate": "Sublinea",
         "pageTitle": "Árbol Colgante Wood",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13498,6 +13203,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13510,7 +13216,6 @@
         "productOrder": 1,
         "pageTemplate": "AmbienteConMiniambiente",
         "pageTitle": "Blanca Navidad",
-        "pageSubtitle": "Juego de cocina",
         "pageResources": [
             "",
             "DOBLE",
@@ -13545,6 +13250,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Juego de cocina",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13557,7 +13263,6 @@
         "productOrder": 2,
         "pageTemplate": "AmbienteConMiniambiente",
         "pageTitle": "Noche Buena",
-        "pageSubtitle": "Juego de cocina",
         "pageResources": [
             "",
             "HORIZONTAL",
@@ -13591,6 +13296,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "Juego de cocina",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13603,7 +13309,6 @@
         "productOrder": 3,
         "pageTemplate": "Sublinea",
         "pageTitle": "Noche Buena",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13634,6 +13339,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13646,7 +13352,6 @@
         "productOrder": 4,
         "pageTemplate": "Sublinea",
         "pageTitle": "Copos",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13677,6 +13382,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13689,7 +13395,6 @@
         "productOrder": 5,
         "pageTemplate": "Sublinea",
         "pageTitle": "Mantel Circular Copos",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13720,6 +13425,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13732,7 +13438,6 @@
         "productOrder": 6,
         "pageTemplate": "Sublinea",
         "pageTitle": "Creta",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13763,6 +13468,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13775,7 +13481,6 @@
         "productOrder": 7,
         "pageTemplate": "Sublinea",
         "pageTitle": "Mantel Circular Blanca Navidad",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13806,6 +13511,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13818,7 +13524,6 @@
         "productOrder": 8,
         "pageTemplate": "Sublinea",
         "pageTitle": "Blanca Navidad",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13849,6 +13554,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13861,7 +13567,6 @@
         "productOrder": 9,
         "pageTemplate": "Sublinea",
         "pageTitle": "Asturias",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13892,6 +13597,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13904,7 +13610,6 @@
         "productOrder": 10,
         "pageTemplate": "Sublinea",
         "pageTitle": "Bambú",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13935,6 +13640,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13947,7 +13653,6 @@
         "productOrder": 11,
         "pageTemplate": "Sublinea",
         "pageTitle": "Oval",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -13978,6 +13683,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -13990,7 +13696,6 @@
         "productOrder": 12,
         "pageTemplate": "Sublinea",
         "pageTitle": "Gold",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -14021,6 +13726,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14033,7 +13739,6 @@
         "productOrder": 13,
         "pageTemplate": "Sublinea",
         "pageTitle": "Ajijic",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -14064,6 +13769,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14076,7 +13782,6 @@
         "productOrder": 14,
         "pageTemplate": "Sublinea",
         "pageTitle": "Japandi",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -14107,6 +13812,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14119,7 +13825,6 @@
         "productOrder": 15,
         "pageTemplate": "Sublinea",
         "pageTitle": "Mumbai Rojo",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -14150,6 +13855,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14162,7 +13868,6 @@
         "productOrder": 16,
         "pageTemplate": "Sublinea",
         "pageTitle": "Navidad",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -14193,6 +13898,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14205,7 +13911,6 @@
         "productOrder": 17,
         "pageTemplate": "Sublinea",
         "pageTitle": "Pinos",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -14236,6 +13941,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14248,7 +13954,6 @@
         "productOrder": 18,
         "pageTemplate": "Sublinea",
         "pageTitle": "Aurea",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -14279,6 +13984,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14291,7 +13997,6 @@
         "productOrder": 19,
         "pageTemplate": "Sublinea",
         "pageTitle": "Mumbai Beige",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -14322,6 +14027,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14334,7 +14040,6 @@
         "productOrder": 20,
         "pageTemplate": "Sublinea",
         "pageTitle": "Mumbai Arena",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -14365,6 +14070,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14377,10 +14083,9 @@
         "productOrder": 21,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Kaki",
-        "pageSubtitle": "",
         "pageResources": [
-            "",
-            "",
+            "#e7e3e0",
+            "#AD9177",
             "VARIANTES"
         ],
         "complSheets": [
@@ -14410,6 +14115,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14422,10 +14128,9 @@
         "productOrder": 22,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Verde",
-        "pageSubtitle": "",
         "pageResources": [
-            "",
-            "",
+            "#e7e4e1",
+            "#A7B4A6",
             "VARIANTES"
         ],
         "complSheets": [
@@ -14455,6 +14160,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14467,7 +14173,6 @@
         "productOrder": 23,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Everest Moka",
-        "pageSubtitle": "",
         "pageResources": [
             "",
             "",
@@ -14500,6 +14205,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14512,10 +14218,9 @@
         "productOrder": 24,
         "pageTemplate": "VariantesDeColor",
         "pageTitle": "Beige",
-        "pageSubtitle": "",
         "pageResources": [
-            "",
-            "",
+            "#d0cdcb",
+            "#B3A79C",
             "VARIANTES"
         ],
         "complSheets": [
@@ -14545,6 +14250,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14557,7 +14263,6 @@
         "productOrder": 25,
         "pageTemplate": "Sublinea",
         "pageTitle": "Toalla Bordada Copos",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -14588,6 +14293,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14600,9 +14306,9 @@
         "productOrder": 1,
         "pageTemplate": "Cobertor",
         "pageTitle": "Happy",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e3e3e6",
+            "#d1d1d6"
         ],
         "complSheets": [
             ""
@@ -14631,6 +14337,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14643,9 +14350,9 @@
         "productOrder": 3,
         "pageTemplate": "Cobertor",
         "pageTitle": "Forest",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#efecec",
+            "#e5e0e0"
         ],
         "complSheets": [
             ""
@@ -14674,6 +14381,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14686,9 +14394,9 @@
         "productOrder": 5,
         "pageTemplate": "Cobertor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#c8c3c0",
+            "#a49b97"
         ],
         "complSheets": [
             ""
@@ -14717,6 +14425,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14729,9 +14438,9 @@
         "productOrder": 7,
         "pageTemplate": "Cobertor",
         "pageTitle": "Azul",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e7dad2",
+            "#d7c2b4"
         ],
         "complSheets": [
             ""
@@ -14760,6 +14469,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14772,9 +14482,9 @@
         "productOrder": 9,
         "pageTemplate": "Cobertor",
         "pageTitle": "Dinos",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#f1f0f0",
+            "#e8e7e6"
         ],
         "complSheets": [
             ""
@@ -14803,6 +14513,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14815,9 +14526,9 @@
         "productOrder": 11,
         "pageTemplate": "Cobertor",
         "pageTitle": "Florencia",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#eee5e0",
+            "#e3d4cc"
         ],
         "complSheets": [
             ""
@@ -14846,6 +14557,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14858,9 +14570,9 @@
         "productOrder": 13,
         "pageTemplate": "Cobertor",
         "pageTitle": "Ballenita",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#f0edea",
+            "#e7e1dd"
         ],
         "complSheets": [
             ""
@@ -14889,6 +14601,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14901,9 +14614,9 @@
         "productOrder": 14,
         "pageTemplate": "Cobertor",
         "pageTitle": "Jirafita",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#f8f8f8",
+            "#f3f4f4"
         ],
         "complSheets": [
             ""
@@ -14932,6 +14645,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14944,15 +14658,15 @@
         "productOrder": 15,
         "pageTemplate": "Cobertor",
         "pageTitle": "Pelotas",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#dfd6d3",
+            "#cbbbb6"
         ],
         "complSheets": [
-            ""
+            "23033"
         ],
         "complCurtains": [
-            ""
+            "88756"
         ],
         "complPillowCovers": [
             ""
@@ -14975,6 +14689,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -14987,15 +14702,15 @@
         "productOrder": 16,
         "pageTemplate": "Cobertor",
         "pageTitle": "Sweet Dino",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#cfcfd1",
+            "#b0b0b2"
         ],
         "complSheets": [
-            ""
+            "88621"
         ],
         "complCurtains": [
-            ""
+            "88756"
         ],
         "complPillowCovers": [
             ""
@@ -15018,6 +14733,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15030,15 +14746,15 @@
         "productOrder": 18,
         "pageTemplate": "Cobertor",
         "pageTitle": "Friends",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#c8c3c0",
+            "#a49b97"
         ],
         "complSheets": [
-            ""
+            "23033"
         ],
         "complCurtains": [
-            ""
+            "88756"
         ],
         "complPillowCovers": [
             ""
@@ -15061,6 +14777,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15073,15 +14790,15 @@
         "productOrder": 19,
         "pageTemplate": "Cobertor",
         "pageTitle": "Conejitas",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e7dad2",
+            "#d7c2b4"
         ],
         "complSheets": [
-            ""
+            "88621"
         ],
         "complCurtains": [
-            ""
+            "88756"
         ],
         "complPillowCovers": [
             ""
@@ -15104,6 +14821,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby ligero",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15116,9 +14834,9 @@
         "productOrder": 21,
         "pageTemplate": "Cobertor",
         "pageTitle": "Cobija Voga Rosa",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#dbcec8",
+            "#c3aea3"
         ],
         "complSheets": [
             ""
@@ -15147,6 +14865,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobija baby voga",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15159,9 +14878,9 @@
         "productOrder": 22,
         "pageTemplate": "Cobertor",
         "pageTitle": "Cobija Voga Azul",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#dadbdd",
+            "#c1c3c7"
         ],
         "complSheets": [
             ""
@@ -15190,6 +14909,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobija baby voga",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15202,9 +14922,9 @@
         "productOrder": 23,
         "pageTemplate": "Cobertor",
         "pageTitle": "Menta",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#f2f4f2",
+            "#eaeee9"
         ],
         "complSheets": [
             ""
@@ -15233,6 +14953,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby nórdico",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15245,9 +14966,9 @@
         "productOrder": 25,
         "pageTemplate": "Cobertor",
         "pageTitle": "Iris",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e8e2e1",
+            "#d9d0cd"
         ],
         "complSheets": [
             ""
@@ -15276,6 +14997,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby nórdico",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15288,15 +15010,15 @@
         "productOrder": 27,
         "pageTemplate": "Cobertor",
         "pageTitle": "Elephant",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#f1f0f0",
+            "#e8e7e6"
         ],
         "complSheets": [
-            ""
+            "23033"
         ],
         "complCurtains": [
-            ""
+            "88756"
         ],
         "complPillowCovers": [
             ""
@@ -15319,6 +15041,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby nórdico",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15331,15 +15054,15 @@
         "productOrder": 29,
         "pageTemplate": "Cobertor",
         "pageTitle": "Spring",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#eee5e0",
+            "#e3d4cc"
         ],
         "complSheets": [
-            ""
+            "88623"
         ],
         "complCurtains": [
-            ""
+            "88756"
         ],
         "complPillowCovers": [
             ""
@@ -15362,6 +15085,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby nórdico",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15374,9 +15098,9 @@
         "productOrder": 31,
         "pageTemplate": "Cobertor",
         "pageTitle": "Safari",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e9eaeb",
+            "#daddde"
         ],
         "complSheets": [
             ""
@@ -15405,6 +15129,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby siberia",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15417,9 +15142,9 @@
         "productOrder": 33,
         "pageTemplate": "Cobertor",
         "pageTitle": "Sweet",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e6dfda",
+            "#d6cac2"
         ],
         "complSheets": [
             ""
@@ -15448,6 +15173,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby siberia",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15460,9 +15186,9 @@
         "productOrder": 35,
         "pageTemplate": "Cobertor",
         "pageTitle": "Blue",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e7e4e0",
+            "#d8d3cb"
         ],
         "complSheets": [
             ""
@@ -15491,6 +15217,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby siberia",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15503,9 +15230,9 @@
         "productOrder": 37,
         "pageTemplate": "Cobertor",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#e6e0df",
+            "#d6cbca"
         ],
         "complSheets": [
             ""
@@ -15534,6 +15261,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby siberia",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15546,15 +15274,15 @@
         "productOrder": 39,
         "pageTemplate": "Cobertor",
         "pageTitle": "Stars",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#f0edea",
+            "#e7e1dd"
         ],
         "complSheets": [
-            ""
+            "88623"
         ],
         "complCurtains": [
-            ""
+            "88756"
         ],
         "complPillowCovers": [
             ""
@@ -15577,6 +15305,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby siberia",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15589,15 +15318,15 @@
         "productOrder": 41,
         "pageTemplate": "Cobertor",
         "pageTitle": "Dinosaurios",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#f8f8f8",
+            "#f3f4f4"
         ],
         "complSheets": [
-            ""
+            "23033"
         ],
         "complCurtains": [
-            ""
+            "88756"
         ],
         "complPillowCovers": [
             ""
@@ -15620,6 +15349,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby siberia",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15632,15 +15362,15 @@
         "productOrder": 43,
         "pageTemplate": "Cobertor",
         "pageTitle": "Nubes",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#dfd6d3",
+            "#cbbbb6"
         ],
         "complSheets": [
-            ""
+            "87252"
         ],
         "complCurtains": [
-            ""
+            "88756"
         ],
         "complPillowCovers": [
             ""
@@ -15663,6 +15393,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby siberia",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15675,15 +15406,15 @@
         "productOrder": 45,
         "pageTemplate": "Cobertor",
         "pageTitle": "Cozy",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "#cfcfd1",
+            "#b0b0b2"
         ],
         "complSheets": [
-            ""
+            "88219"
         ],
         "complCurtains": [
-            ""
+            "88756"
         ],
         "complPillowCovers": [
             ""
@@ -15706,6 +15437,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "cobertor baby siberia",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15718,9 +15450,8 @@
         "productOrder": 47,
         "pageTemplate": "Sublinea",
         "pageTitle": "Kit De Regalo Blue",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -15749,6 +15480,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15761,9 +15493,8 @@
         "productOrder": 48,
         "pageTemplate": "Sublinea",
         "pageTitle": "Kit De Regalo Lila",
-        "pageSubtitle": "",
         "pageResources": [
-            ""
+            "INDIVIDUAL"
         ],
         "complSheets": [
             ""
@@ -15792,6 +15523,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15804,7 +15536,6 @@
         "productOrder": 50,
         "pageTemplate": "Sublinea",
         "pageTitle": "Azul",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -15835,6 +15566,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15847,7 +15579,6 @@
         "productOrder": 51,
         "pageTemplate": "Sublinea",
         "pageTitle": "Lila",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -15878,6 +15609,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15890,7 +15622,6 @@
         "productOrder": 52,
         "pageTemplate": "Sublinea",
         "pageTitle": "Ballenita",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -15921,6 +15652,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15933,7 +15665,6 @@
         "productOrder": 53,
         "pageTemplate": "Sublinea",
         "pageTitle": "Jirafita",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -15964,6 +15695,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     },
@@ -15976,7 +15708,6 @@
         "productOrder": 54,
         "pageTemplate": "Sublinea",
         "pageTitle": "Bolsa De Regalo Bebé 24-25",
-        "pageSubtitle": "",
         "pageResources": [
             ""
         ],
@@ -16007,6 +15738,7 @@
         "pageIcons": [
             ""
         ],
+        "pageSubtitle": "",
         "pageSeoTitle": "",
         "pageSeoDescription": ""
     }
