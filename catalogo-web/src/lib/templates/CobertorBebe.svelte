@@ -113,6 +113,8 @@
         <FormaBebe05 color={plastaColor} opacity="100" />
       {:else if randomIntFromInterval(1, 3) === 3}
         <FormaBebe04 color={plastaColor} opacity="100" />
+      {:else}
+        <FormaBebe02 color={plastaColor} opacity="100" />
       {/if}
     </div>
   {:else}
