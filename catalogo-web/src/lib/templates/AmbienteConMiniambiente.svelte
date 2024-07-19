@@ -83,7 +83,7 @@
               style={miniambienteConfig === EnumAmbienteConMiniambiente.DOBLE
                 ? "width: 50%"
                 : "width: 100%"}
-              class="h-full relative"
+              class="h-full relative border-8 border-white"
             >
               <OptimImg
                 onClick={() =>
@@ -101,7 +101,7 @@
           {/if}
 
           {#if miniambienteConfig === EnumAmbienteConMiniambiente.DOBLE}
-            <div class="w-1/2 h-full relative">
+            <div class="w-1/2 h-full relative border-8 border-white">
               <OptimImg
                 onClick={() =>
                   handleImageClick(page.SKU, page.pageRelatedProducts)}
@@ -119,7 +119,7 @@
           ? `border-width: 0px; bottom: 10vh; transform: scale(1.5); height: 30vh;`
           : `bottom: 0px; height: 40vh;`}
       >
-        <div class="w-full h-full relative">
+        <div class="w-full h-full relative border-8 border-white">
           <OptimImg
             onClick={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
             imgClass={page.pageTitle.toLowerCase().includes("duvet")

@@ -34,7 +34,7 @@
   storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
   variant={EnumEntradaInvierno.SOLO_FOTO}
   titlePosition="bottom-0"
-  storyPosition="top-1/2 right-0 transform -translate-y-1/2"
+  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
   bgImage="/images/invierno/portadillas/ENTRADA-P13-MASCOTAS.webp"
 />
 
