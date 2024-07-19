@@ -8,7 +8,7 @@
   import { onMount } from "svelte";
   import ImageComponent from "$lib/components/imageComponent.svelte";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
-  import { URLS } from "$lib/constants/strings";
+  import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
 
   onMount(() => {
     const script = document.createElement("script");
@@ -25,10 +25,6 @@
 
   let showPopup = false;
 
-  function show() {
-    showPopup = true;
-  }
-
   export let data: PageData;
   const pages = data.props.pages; // guarda el objeto product en una variable
 </script>
@@ -37,12 +33,13 @@
 
 <!-- ENTRADA -->
 <EntradaInvierno
-  backgroundVideo="/images/invierno/portadillas/ENTRADA-P05-NORDICO-VERTICAL.mp4"
-  backgroundImage="/images/invierno/portadillas/ENTRADA-P05-NORDICO.webp"
-  backgroundColor="#EDE3EC"
-  textImage="/images/invierno/copys/.svg"
-  storyMainPhrase="llega la época<br />de abrazos"
-  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+  titleSvg="/images/invierno/copys/ENTRADA-P05-NORDICO.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
+  variant={EnumEntradaInvierno.FOTO_VIDEO}
+  titlePosition="bottom-0 right-0"
+  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  bgImage="/images/invierno/portadillas/ENTRADA-P05-NORDICO.webp"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P05-NORDICO-VERTICAL.mp4"
 />
 
 {#each pages as page, index}
