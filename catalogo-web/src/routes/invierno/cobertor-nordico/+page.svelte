@@ -33,7 +33,7 @@
 
 <!-- ENTRADA -->
 <EntradaInvierno
-  titleSvg="/images/invierno/copys/ENTRADA-P05-NORDICO.svg"
+  titleSvg="/images/invierno/copys/ENTRADA-P05-NORDICO-TITULO.svg"
   storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
   titlePosition="bottom-0 right-0"

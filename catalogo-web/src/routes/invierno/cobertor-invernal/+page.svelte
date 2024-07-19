@@ -4,7 +4,7 @@
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
   import { Catalogs } from "$lib/constants/globalTypes";
   import type { PageData } from "./$types";
-  import { URLS } from "$lib/constants/strings";
+  import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
 
   let visibleIds = [];
@@ -28,12 +28,13 @@
 
 <!-- ENTRADA -->
 <EntradaInvierno
-  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
-  backgroundImage="/videos/poster-Bruselas.jpg"
-  backgroundColor="#EDE3EC"
-  textImage="/images/invierno/copys/03_INVERNAL_TITULO.svg"
-  storyMainPhrase="llega la época<br />de abrazos"
-  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+  titleSvg="/images/invierno/copys/ENTRADA-P04-INVERNAL-TITULO.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
+  variant={EnumEntradaInvierno.FOTO_VIDEO}
+  titlePosition="bottom-0 right-0"
+  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  bgImage="/images/invierno/portadillas/ENTRADA-P04-INVERNAL.webp"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P04-INVERNAL-VERTICAL.mp4"
 />
 
 <div>

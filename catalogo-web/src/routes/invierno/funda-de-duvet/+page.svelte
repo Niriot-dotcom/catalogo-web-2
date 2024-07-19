@@ -34,7 +34,7 @@
 
 <!-- ENTRADA -->
 <EntradaInvierno
-  titleSvg="/images/invierno/copys/ENTRADA-P02-FUNDA-DUVET.svg"
+  titleSvg="/images/invierno/copys/ENTRADA-P02-FUNDA-DUVET-TITULO.svg"
   storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
   titlePosition="bottom-0"

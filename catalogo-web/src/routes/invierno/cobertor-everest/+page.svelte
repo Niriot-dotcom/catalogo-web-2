@@ -9,7 +9,7 @@
   import type { PageData } from "./$types";
   import DiferenciasDeCobertores from "$lib/components/communication/DiferenciasDeCobertores.svelte";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
-  import { URLS } from "$lib/constants/strings";
+  import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
 
   function isSafari() {
     return (
@@ -62,12 +62,13 @@
 
 <!-- ENTRADA -->
 <EntradaInvierno
-  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
-  backgroundImage="/videos/poster-Bruselas.jpg"
-  backgroundColor="#EDE3EC"
-  textImage="/images/invierno/copys/01_EVEREST_TITULO.svg"
-  storyMainPhrase="llega la época<br />de abrazos"
-  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+  titleSvg="/images/invierno/copys/ENTRADA-P01-EVEREST-TITULO.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
+  variant={EnumEntradaInvierno.FOTO_VIDEO}
+  titlePosition="bottom-0 right-0"
+  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  bgImage="/images/invierno/portadillas/ENTRADA-P01-EVEREST.webp"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P01-EVEREST-VERTICAL.mp4"
 />
 
 {#each pages as page, index}

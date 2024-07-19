@@ -10,6 +10,7 @@
   import Cobertor from "$lib/templates/Cobertor.svelte";
   import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
+  import { EnumEntradaInvierno } from "$lib/constants/strings";
 
   let visibleIds: string[] = [];
   function handleVisibleChange(event: any) {
@@ -32,12 +33,13 @@
 
 <!-- ENTRADA -->
 <EntradaInvierno
-  backgroundVideo="/videos/bebe/Entrada-P4-Basicos.mp4"
-  backgroundImage="/videos/poster-Bruselas.jpg"
-  backgroundColor="#EDE3EC"
-  textImage="/images/invierno/copys/06_FRAZADAS_TITULO.svg"
-  storyMainPhrase="llega la época<br />de abrazos"
-  storyCopy="donde la familia se reúne<br />cubre del frío con los<br />cobertores más <b>calientitos.</b>"
+  titleSvg="/images/invierno/copys/ENTRADA-P07-FRAZADAS-TITULO.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
+  variant={EnumEntradaInvierno.FOTO_VIDEO}
+  titlePosition="bottom-0 right-0"
+  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  bgImage="/images/invierno/portadillas/ENTRADA-P07-FRAZADAS.webp"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P07-FRAZADAS-VERTICAL.mp4"
 />
 
 <!-- render pages -->

@@ -24,13 +24,13 @@
 
 <!-- ENTRADA -->
 <EntradaInvierno
-  titleSvg="/images/invierno/copys/08_BASICOS_TITULO.svg"
+  titleSvg="/images/invierno/copys/ENTRADA-P09-BASICOS-TITULO.svg"
   storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
-  variant={EnumEntradaInvierno.FOTO_VIDEO}
-  titlePosition="bottom-0"
-  storyPosition="top-1/2 transform -translate-y-1/2"
-  bgImage="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET.webp"
-  bgVideo="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET-VERTICAL.mp4"
+  variant={EnumEntradaInvierno.VIDEO_FOTO}
+  titlePosition="bottom-0 right-0"
+  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  bgImage="/images/invierno/portadillas/ENTRADA-P09-BASICOS.webp"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P09-BASICOS-VERTICAL.mp4"
 />
 
 <!-- render pages -->
