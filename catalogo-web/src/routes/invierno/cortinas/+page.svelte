@@ -31,7 +31,7 @@
 <!-- ENTRADA -->
 <EntradaInvierno
   titleSvg="/images/invierno/copys/ENTRADA-P14-CORTINAS-TITULO.svg"
-  storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P14-CORTINAS-COPY.svg"
   variant={EnumEntradaInvierno.SOLO_FOTO}
   titlePosition="bottom-0 right-0"
   storyPosition="top-1/2 left-0 transform -translate-y-1/2"

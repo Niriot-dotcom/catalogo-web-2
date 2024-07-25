@@ -54,9 +54,10 @@
           <img class="w-full h-full" src={titleSvg} alt="" />
         </div>
 
-        <div class="z-20 absolute h-1/5 {storyPosition}">
+        <!-- TODO uncomment when SVG files added -->
+        <!-- <div class="z-20 absolute h-1/5 {storyPosition}">
           <img class="w-full h-full" src={storySvg} alt="" />
-        </div>
+        </div> -->
       </div>
     {/if}
 
@@ -69,13 +70,13 @@
         style={`flex-direction: ${variant === EnumEntradaInvierno.VIDEO_FOTO ? "column-reverse" : "column"};`}
       >
         <!-- image -->
-        <div class="w-full h-[50vh]">
+        <div class="w-full h-[45vh]">
           <img class="w-full h-full object-cover" src={bgImage} alt="" />
         </div>
 
         <!-- video -->
         <div
-          class="w-full h-[30vh]"
+          class="w-full h-[25vh]"
           data-poster-url={bgVideo.replace("mp4", "jpg")}
           data-video-urls="{bgVideo},{bgVideo.replace('mp4', 'webm')}"
           data-autoplay="true"
@@ -102,14 +103,14 @@
           </video>
         </div>
 
-        <!-- TODO aqui agregar el svg para el titulo y para el story -->
         <div class="z-20 absolute p-3 {titlePosition} {titleSize}">
           <img class="w-full h-full" src={titleSvg} alt="" />
         </div>
 
-        <div class="z-20 absolute h-1/5 {storyPosition}">
+        <!-- TODO uncomment when SVG files added -->
+        <!-- <div class="z-20 absolute h-1/5 {storyPosition}">
           <img class="w-full h-full" src={storySvg} alt="" />
-        </div>
+        </div> -->
       </div>
     {/if}
   </div>

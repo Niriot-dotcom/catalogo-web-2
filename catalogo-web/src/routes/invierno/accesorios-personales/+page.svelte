@@ -31,12 +31,12 @@
 <!-- ENTRADA -->
 <EntradaInvierno
   titleSvg="/images/invierno/copys/ENTRADA-P10-ACCESORIOS-PERSONALES-TITULO.svg"
-  storySvg="/images/invierno/copys/ENTRADA-P12-VIALITE-COPY.svg"
-  variant={EnumEntradaInvierno.FOTO_VIDEO}
+  storySvg="/images/invierno/copys/ENTRADA-P10-ACCESORIOS-PERSONALES-COPY.svg"
+  variant={EnumEntradaInvierno.SOLO_VIDEO}
+  titleSize="h-[18vh]"
   titlePosition="bottom-0 right-0"
   storyPosition="top-1/2 left-0 transform -translate-y-1/2"
-  bgImage="/images/invierno/portadillas/P10-ACCESORIOS-PERSONALES.webp"
-  bgVideo="/images/invierno/portadillas/P10-ACCESORIOS-PERSONALES-VERTICAL.mp4"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P10-ACCESORIOS-PERSONALES-VERTICAL.mp4"
 />
 
 <!-- render pages -->
