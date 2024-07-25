@@ -16,7 +16,6 @@
   import CategoriesFooter from "./categoriesFooter.svelte";
   import { BiasiFooterHeader } from "$lib/constants/FooterHeaders";
   import { Catalogs } from "$lib/constants/globalTypes";
-  import PhotographicIndex from "./PhotographicIndex.svelte";
   import {
     catalogSections,
     getCurrentPageInfo,
@@ -24,12 +23,11 @@
   import { onMount } from "svelte";
   import CatalogMenu from "./catalogMenu.svelte";
   import { user } from "$lib/firebase";
-  import SlideToTheSides from "./slideToTheSides.svelte";
   import {
     navigateToNextPage,
     navigateToPreviousPage,
   } from "$lib/utils/navigation";
-  import { URLS } from "$lib/constants/strings";
+  import { CATALOGS_DESCRIPTIONS, URLS } from "$lib/constants/strings";
   export let visibleIds: string[] = [];
   export let relatedProducts: string[] = [];
   export let showPopup = false;
@@ -176,6 +174,31 @@
         "transitionend",
         function (e) {
           sectionsList?.classList.add("hidden");
+        },
+        { capture: false, once: true, passive: false },
+      );
+    }
+  }
+  function handleShowCatalogs() {
+    document
+      .getElementById("catalogs-dropdown-arrow")
+      ?.classList.toggle("-rotate-90");
+
+    let catalogsList = document.getElementById("catalogs-list");
+    if (!catalogsList) return;
+    catalogsList.style.transition = "all 0.2s linear";
+
+    if (catalogsList.classList.contains("hidden")) {
+      catalogsList.classList.remove("hidden");
+      setTimeout(function () {
+        catalogsList?.classList.remove("opacity-0");
+      }, 20);
+    } else {
+      catalogsList.classList.add("opacity-0");
+      catalogsList.addEventListener(
+        "transitionend",
+        function (e) {
+          catalogsList?.classList.add("hidden");
         },
         { capture: false, once: true, passive: false },
       );
@@ -789,12 +812,11 @@
                   class="sticky top-4 divide-y divide-gray-300"
                 >
                   <div class="space-y-1 pb-8">
-                    <!-- Current: "bg-gray-200 text-gray-900", Default: "text-gray-700 hover:bg-gray-50" -->
-                    <a
-                      href="/"
-                      class="bg-vianney-400 text-vianney-600 group flex items-center rounded-md px-3 py-2 text-sm font-medium"
-                      aria-current="page"
+                    <button
+                      on:click={handleShowCatalogs}
+                      class="w-full bg-vianney-400 text-vianney-600 group flex items-center rounded-md px-3 py-2 text-sm font-medium"
                     >
+                      <!-- class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium border border-red-400" -->
                       <svg
                         class="text-vianney-600 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
                         fill="none"
@@ -811,7 +833,77 @@
                       </svg>
 
                       <span class="truncate">Catálogos</span>
-                    </a>
+
+                      <div
+                        id="catalogs-dropdown-arrow"
+                        class="flex items-center justify-center cursor-pointer px-2"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          class="w-5 h-5 text-gray-500"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+
+                    <!-- OPTION 1: LIST -->
+                    <!-- <div
+                      id="catalogs-list"
+                      class="mt-3 space-y-1 ml-8"
+                      aria-labelledby="communities-headline"
+                    >
+                      {#each Object.keys(CATALOGS_DESCRIPTIONS) as catalogName}
+                        <a
+                          href={URLS.landing + catalogName}
+                          class="group flex items-center space-x-2 leading-5 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        >
+                          <div class="h-full w-5">
+                            <img
+                              class="h-full w-full object-contain"
+                              src={CATALOGS_DESCRIPTIONS[catalogName].image}
+                              alt=""
+                            />
+                          </div>
+                          <span class="truncate chavos-bold-sm">
+                            {`${CATALOGS_DESCRIPTIONS[catalogName].title} ${CATALOGS_DESCRIPTIONS[catalogName].year}`}
+                          </span>
+                        </a>
+                      {/each}
+                    </div> -->
+
+                    <!-- OPTION 2: GRID -->
+                    <div
+                      id="catalogs-list"
+                      class="mt-3 ml-8 flex flex-wrap text-black items-center justify-center space-x-1"
+                      aria-labelledby="communities-headline"
+                    >
+                      {#each Object.keys(CATALOGS_DESCRIPTIONS) as catalogName, index}
+                        <a
+                          href={URLS.landing + catalogName}
+                          class="w-1/6 flex flex-col items-center justify-center"
+                        >
+                          <div class="h-full w-full mb-1">
+                            <img
+                              class="h-full w-full object-contain"
+                              src={CATALOGS_DESCRIPTIONS[catalogName].image}
+                              alt=""
+                            />
+                          </div>
+
+                          <p class="truncate text-sm">
+                            {CATALOGS_DESCRIPTIONS[catalogName].title}
+                          </p>
+                        </a>
+                      {/each}
+                    </div>
+
                     <button
                       on:click={toggleLogin}
                       class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium"
@@ -918,7 +1010,7 @@
                       </button>
                       <div
                         id="sections-list"
-                        class="mt-3 space-y-1"
+                        class="mt-3 ml-8 space-y-1"
                         aria-labelledby="communities-headline"
                       >
                         {#each catalogSections[catalog] as section}
