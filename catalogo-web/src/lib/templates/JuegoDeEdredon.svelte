@@ -1,6 +1,7 @@
 <script lang="ts">
   import OptimImg from "$lib/components/OptimImg.svelte";
   import LegalLicenses from "$lib/components/communication/LegalLicenses.svelte";
+  import ComplementosCopy from "$lib/components/resources/ComplementosCopy.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import {
     CATALOGS_ROUTES,
@@ -130,16 +131,7 @@
     <!-- complementos -->
     <div class="">
       <div class="h-[10vh] pl-[12%]">
-        <img
-          src="../images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
-            ? 'CambiaElLookConEstosComplementos'
-            : 'AgregaComplementosBlack'}.svg"
-          loading="eager"
-          alt=""
-          class="h-full {currentCatalog === CATALOGS_ROUTES.VIANNEY
-            ? 'scale-[0.8]'
-            : 'scale-150'}"
-        />
+        <ComplementosCopy catalog={currentCatalog} />
       </div>
 
       <div class="grid grid-cols-2 px-6 pb-2">
