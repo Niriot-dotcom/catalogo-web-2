@@ -746,33 +746,19 @@
         >
           <div class="pointer-events-auto w-screen sm:max-w-xs max-w-md">
             <div
-              class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl"
+              class="flex h-full flex-col overflow-y-scroll bg-white py-0 shadow-xl"
               transition:fly={{ x: -400, duration: 500 }}
             >
-              <div class="px-4 sm:px-6">
-                <div class="flex items-center justify-between">
+              <div class="relative mt-4 flex-1 px-4 sm:px-6">
+                <div class="lg:col-start-3 lg:row-end-1 mb-2 flex">
                   <div
-                    class="flex md:absolute md:inset-y-0 md:left-0 lg:static xl:col-span-2 py-2"
+                    class="rounded-lg bg-gray-100 shadow-sm ring-1 ring-gray-200"
                   >
-                    <div class="flex items-center">
-                      <a
-                        href="/"
-                        class="flex flex-row items-center align-middle"
-                      >
-                        <img
-                          src="../images/favicon.png"
-                          class="h-10 w-10"
-                          alt=""
-                        />
-                        <h2
-                          class="ml-4 pr-3 sm:pr-0 block text-base font-semibold text-gray-900"
-                        >
-                          Catálogos Web
-                        </h2>
-                      </a>
-                    </div>
+                    <CatalogMenu />
                   </div>
-                  <div class="ml-3 flex h-7 items-center">
+
+                  <!-- close icon -->
+                  <div class="ml-3 flex h-7 items-center w-fit justify-end">
                     <button
                       on:click={toggleMenu}
                       type="button"
@@ -797,116 +783,11 @@
                     </button>
                   </div>
                 </div>
-              </div>
-              <div class="relative mt-4 flex-1 px-4 sm:px-6">
-                <div class="lg:col-start-3 lg:row-end-1 mb-6">
-                  <h2 class="sr-only">Summary</h2>
-                  <div
-                    class="rounded-lg bg-gray-100 shadow-sm ring-1 ring-gray-200"
-                  >
-                    <CatalogMenu />
-                  </div>
-                </div>
-                <nav
-                  aria-label="Sidebar"
-                  class="sticky top-4 divide-y divide-gray-300"
-                >
-                  <div class="space-y-1 pb-8">
-                    <button
-                      on:click={handleShowCatalogs}
-                      class="w-full bg-vianney-400 text-vianney-600 group flex items-center rounded-md px-3 py-2 text-sm font-medium"
-                    >
-                      <!-- class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium border border-red-400" -->
-                      <svg
-                        class="text-vianney-600 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
-                        />
-                      </svg>
-
-                      <span class="truncate">Catálogos</span>
-
-                      <div
-                        id="catalogs-dropdown-arrow"
-                        class="flex items-center justify-center cursor-pointer px-2"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          class="w-5 h-5 text-gray-500"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    </button>
-
-                    <!-- OPTION 1: LIST -->
-                    <!-- <div
-                      id="catalogs-list"
-                      class="mt-3 space-y-1 ml-8"
-                      aria-labelledby="communities-headline"
-                    >
-                      {#each Object.keys(CATALOGS_DESCRIPTIONS) as catalogName}
-                        <a
-                          href={URLS.landing + catalogName}
-                          class="group flex items-center space-x-2 leading-5 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                        >
-                          <div class="h-full w-5">
-                            <img
-                              class="h-full w-full object-contain"
-                              src={CATALOGS_DESCRIPTIONS[catalogName].image}
-                              alt=""
-                            />
-                          </div>
-                          <span class="truncate chavos-bold-sm">
-                            {`${CATALOGS_DESCRIPTIONS[catalogName].title} ${CATALOGS_DESCRIPTIONS[catalogName].year}`}
-                          </span>
-                        </a>
-                      {/each}
-                    </div> -->
-
-                    <!-- OPTION 2: GRID -->
-                    <div
-                      id="catalogs-list"
-                      class="mt-3 ml-8 flex flex-wrap text-black items-center justify-center space-x-1"
-                      aria-labelledby="communities-headline"
-                    >
-                      {#each Object.keys(CATALOGS_DESCRIPTIONS) as catalogName, index}
-                        <a
-                          href={URLS.landing + catalogName}
-                          class="w-1/6 flex flex-col items-center justify-center"
-                        >
-                          <div class="h-full w-full mb-1">
-                            <img
-                              class="h-full w-full object-contain"
-                              src={CATALOGS_DESCRIPTIONS[catalogName].image}
-                              alt=""
-                            />
-                          </div>
-
-                          <p class="truncate text-sm">
-                            {CATALOGS_DESCRIPTIONS[catalogName].title}
-                          </p>
-                        </a>
-                      {/each}
-                    </div>
-
+                <nav aria-label="Sidebar" class="sticky top-4">
+                  <div class="space-y-1 pb-2">
                     <button
                       on:click={toggleLogin}
-                      class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium"
+                      class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
                     >
                       <svg
                         class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
@@ -929,7 +810,7 @@
                     </button>
                     <button
                       on:click={toggleCart}
-                      class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium"
+                      class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
                     >
                       <svg
                         class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
@@ -955,18 +836,18 @@
                     </button>
 
                     <!--
-                  <a href="#" class="text-gray-700 hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium">
-                    <svg class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-                    </svg>
-                    
-                    <span class="truncate">Decoradora IA</span>
-                  </a> -->
+                    <a href="#" class="text-gray-700 hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium">
+                      <svg class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                      </svg>
+                      
+                      <span class="truncate">Decoradora IA</span>
+                    </a> -->
 
                     {#if catalog === Catalogs.CHAVOS || catalog === Catalogs.VIANNEY || catalog === Catalogs.BEBE || catalog === Catalogs.INVIERNO}
                       <button
                         on:click={handleShowSections}
-                        class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium border border-red-400"
+                        class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
                       >
                         <svg
                           class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
@@ -1016,7 +897,7 @@
                         {#each catalogSections[catalog] as section}
                           <a
                             href={section.link}
-                            class="group flex flex-col leading-5 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                            class="group flex flex-col leading-5 rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                           >
                             <span class="truncate chavos-bold-sm"
                               >{section.title.replaceAll("<br />", " ")}</span
@@ -1060,6 +941,73 @@
                   </div>
                 </div>
                 -->
+
+                  <button
+                    on:click={handleShowCatalogs}
+                    class="w-full bg-vianney-400 text-vianney-600 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
+                  >
+                    <svg
+                      class="text-vianney-600 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+
+                    <span class="truncate">Catálogos</span>
+
+                    <div
+                      id="catalogs-dropdown-arrow"
+                      class="flex items-center justify-center cursor-pointer px-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        class="w-5 h-5 text-gray-500"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+
+                  <div
+                    id="catalogs-list"
+                    class="mt-3 ml-8 mb-12 flex flex-wrap text-black items-center justify-center space-x-1"
+                    aria-labelledby="communities-headline"
+                  >
+                    {#each Object.keys(CATALOGS_DESCRIPTIONS) as catalogName, index}
+                      <!-- href={CATALOGS_DESCRIPTIONS[catalogName].url} -->
+                      <a
+                        href={URLS.landing + catalogName}
+                        class="w-1/6 flex flex-col items-center justify-center"
+                        rel="noopener noreferrer"
+                      >
+                        <div class="h-full w-full mb-1">
+                          <img
+                            class="h-full w-full object-contain"
+                            src={CATALOGS_DESCRIPTIONS[catalogName].image}
+                            alt=""
+                          />
+                        </div>
+
+                        <p class="truncate text-sm">
+                          {CATALOGS_DESCRIPTIONS[catalogName].title}
+                        </p>
+                      </a>
+                    {/each}
+                  </div>
                 </nav>
               </div>
             </div>

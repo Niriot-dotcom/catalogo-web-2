@@ -75,15 +75,15 @@
 </script>
 
 <dl class="flex flex-wrap">
-  <div class="flex-auto pl-6 pt-3">
+  <div class="flex-auto pl-6 pt-2">
     <dd class="mt-1 text-base font-semibold leading-6 text-gray-900">
       {catalogTitle}
+      {catalogYear}
     </dd>
-    <dt class="text-sm font-semibold leading-6 text-gray-900">{catalogYear}</dt>
   </div>
   <a
     href={catalogLaunchVideo}
-    class="mt-3 flex w-full flex-none gap-x-2 border-t border-gray-900/5 px-6 cursor-pointer pt-3"
+    class="mt-2 flex w-full flex-none gap-x-2 border-t border-gray-900/5 px-6 cursor-pointer pt-3"
   >
     <dt class="flex-none">
       <span class="sr-only">Menú Catálogo</span>
@@ -106,7 +106,7 @@
   </a>
   <a
     href={catalogDownloadLink}
-    class="mt-4 flex w-full flex-none gap-x-2 cursor-pointer px-6"
+    class="mt-2 flex w-full flex-none gap-x-2 cursor-pointer px-6"
   >
     <dt class="flex-none">
       <span class="sr-only">Status</span>
@@ -130,7 +130,7 @@
   </a>
   <button
     on:click={openSharePopup}
-    class="my-4 flex w-full flex-none gap-x-2 cursor-pointer px-6 text-vianney-600"
+    class="my-2 flex w-full flex-none gap-x-2 cursor-pointer px-6 text-vianney-600"
   >
     <dt class="flex-none">
       <svg
@@ -149,15 +149,5 @@
     </dd>
   </button>
 </dl>
-<!-- <div class="mt-4 border-t border-gray-900/5 px-6 py-3">
-    <button on:click={openSharePopup} class="text-sm font-semibold leading-6 flex flex-row align-middle justify-center text-vianney-600">
-      Compartir Catálogo
-      <span class="ml-2 pt-0.5" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-          <path d="M13 4.5a2.5 2.5 0 11.702 1.737L6.97 9.604a2.518 2.518 0 010 .792l6.733 3.367a2.5 2.5 0 11-.671 1.341l-6.733-3.367a2.5 2.5 0 110-3.475l6.733-3.366A2.52 2.52 0 0113 4.5z" />
-        </svg>
-      </span>
-    </button>
-  </div> -->
 
 <PopupShare bind:showShare={showSharePopup} />
