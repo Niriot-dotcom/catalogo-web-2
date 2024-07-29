@@ -37,8 +37,9 @@
   titleSvg="/images/invierno/copys/ENTRADA-P02-FUNDA-DUVET-TITULO.svg"
   storySvg="/images/invierno/copys/ENTRADA-P02-FUNDA-DUVET-COPY.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
-  titlePosition="bottom-0"
-  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  titleSize="h-[18vh]"
+  titlePosition="top-2 left-4"
+  storyPosition="top-[12vh] left-5 w-1/2"
   bgImage="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET.webp"
   bgVideo="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET-VERTICAL.mp4"
 />

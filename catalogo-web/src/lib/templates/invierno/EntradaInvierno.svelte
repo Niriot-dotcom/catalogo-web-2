@@ -3,8 +3,8 @@
   import { COLORS, EnumEntradaInvierno } from "$lib/constants/strings";
 
   export let titleSvg: string;
-  export let storySvg: string;
   export let variant: string;
+  export let storySvg: string = "";
   export let titleSize: string = "h-1/3";
   export let titlePosition: string = "";
   export let storyPosition: string = "";
@@ -54,11 +54,17 @@
           <img class="w-full h-full" src={titleSvg} alt="" />
         </div>
 
-        <!-- TODO uncomment when SVG files added -->
-        <!-- <div class="z-20 absolute h-1/5 {storyPosition}">
-          <img class="w-full h-full" src={storySvg} alt="" />
-        </div> -->
+        {#if storySvg && storySvg !== ""}
+          <div class="z-20 absolute h-1/5 {storyPosition}">
+            <img class="w-full h-full" src={storySvg} alt="" />
+          </div>
+        {/if}
       </div>
+
+      <!-- TODO -->
+      <!-- <div>
+        <ScrollDownArrows backgroundColor={bgColor} />
+      </div> -->
     {/if}
 
     <!-- FOTO Y VIDEO -->
@@ -70,13 +76,13 @@
         style={`flex-direction: ${variant === EnumEntradaInvierno.VIDEO_FOTO ? "column-reverse" : "column"};`}
       >
         <!-- image -->
-        <div class="w-full h-[45vh]">
+        <div class="w-full h-[60vh]">
           <img class="w-full h-full object-cover" src={bgImage} alt="" />
         </div>
 
         <!-- video -->
         <div
-          class="w-full h-[25vh]"
+          class="w-full h-[30vh]"
           data-poster-url={bgVideo.replace("mp4", "jpg")}
           data-video-urls="{bgVideo},{bgVideo.replace('mp4', 'webm')}"
           data-autoplay="true"
@@ -107,15 +113,29 @@
           <img class="w-full h-full" src={titleSvg} alt="" />
         </div>
 
-        <!-- TODO uncomment when SVG files added -->
-        <!-- <div class="z-20 absolute h-1/5 {storyPosition}">
-          <img class="w-full h-full" src={storySvg} alt="" />
-        </div> -->
+        {#if storySvg && storySvg !== ""}
+          <div class="z-20 absolute h-1/5 {storyPosition}">
+            <img class="w-full h-full" src={storySvg} alt="" />
+          </div>
+        {/if}
+
+        {#if titleSvg.includes("FUNDA-DUVET")}
+          <div class="z-20 absolute h-1/5 top-[55%]">
+            <img
+              class="w-full h-full"
+              src="/images/invierno/copys/ENTRADA-P02-FUNDA-DUVET-COPY2.svg"
+              alt=""
+            />
+          </div>
+        {/if}
+
+        <div class="z-20 absolute bottom-24">
+          <ScrollDownArrows backgroundColor="transparent" />
+        </div>
       </div>
     {/if}
   </div>
 </div>
-<ScrollDownArrows backgroundColor={bgColor} />
 
 <!-- DESKTOP -->
 <!-- TODO -->

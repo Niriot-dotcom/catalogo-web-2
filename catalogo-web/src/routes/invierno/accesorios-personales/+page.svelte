@@ -31,7 +31,6 @@
 <!-- ENTRADA -->
 <EntradaInvierno
   titleSvg="/images/invierno/copys/ENTRADA-P10-ACCESORIOS-PERSONALES-TITULO.svg"
-  storySvg="/images/invierno/copys/ENTRADA-P10-ACCESORIOS-PERSONALES-COPY.svg"
   variant={EnumEntradaInvierno.SOLO_VIDEO}
   titlePosition="top-1/2 transform -translate-y-1/2 left-0"
   storyPosition="top-1/2 left-0 transform -translate-y-1/2"

@@ -36,8 +36,9 @@
   titleSvg="/images/invierno/copys/ENTRADA-P07-FRAZADAS-TITULO.svg"
   storySvg="/images/invierno/copys/ENTRADA-P07-FRAZADAS-COPY.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
-  titlePosition="bottom-0 right-0"
-  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  titleSize="h-[20vh]"
+  titlePosition="top-[40vh] right-0"
+  storyPosition="top-[70vh] left-0 transform -translate-y-1/2"
   bgImage="/images/invierno/portadillas/ENTRADA-P07-FRAZADAS.webp"
   bgVideo="/images/invierno/portadillas/ENTRADA-P07-FRAZADAS-VERTICAL.mp4"
 />

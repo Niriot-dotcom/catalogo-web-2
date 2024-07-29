@@ -36,11 +36,13 @@
   titleSvg="/images/invierno/copys/ENTRADA-P06-LIGERO-TITULO.svg"
   storySvg="/images/invierno/copys/ENTRADA-P06-LIGERO-COPY.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
-  titlePosition="bottom-0 right-0"
-  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  titleSize="w-2/3"
+  titlePosition="top-[60vh] left-0"
+  storyPosition="top-[43vh] left-12 w-1/2"
   bgImage="/images/invierno/portadillas/ENTRADA-P06-LIGERO.webp"
   bgVideo="/images/invierno/portadillas/ENTRADA-P06-LIGERO-VERTICAL.mp4"
 />
+<!-- titlePosition="bottom-0 left-0 h-1/3" -->
 
 <!-- render pages -->
 {#each pages as page, i}

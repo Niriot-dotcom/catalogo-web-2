@@ -35,7 +35,7 @@
   variant={EnumEntradaInvierno.SOLO_FOTO}
   titleSize="h-[30vh]"
   titlePosition="bottom-0 right-0"
-  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  storyPosition="-bottom-10 left-0"
   bgImage="/images/invierno/portadillas/ENTRADA-P08-COMPLEMENTOS.webp"
 />
 

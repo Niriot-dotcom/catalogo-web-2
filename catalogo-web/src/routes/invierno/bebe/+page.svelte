@@ -35,11 +35,11 @@
 <!-- ENTRADA -->
 <EntradaInvierno
   titleSvg="/images/invierno/copys/ENTRADA-P17-BEBE-TITULO.svg"
-  storySvg="/images/invierno/copys/ENTRADA-P17-BEBE-COPY.svg"
   variant={EnumEntradaInvierno.SOLO_FOTO}
   titlePosition="bottom-0 right-0"
   storyPosition="top-1/2 left-0 transform -translate-y-1/2"
   bgImage="/images/invierno/portadillas/ENTRADA-P17-BEBE.webp"
+  bgColor="#E3E3E6"
 />
 
 <!-- render pages -->

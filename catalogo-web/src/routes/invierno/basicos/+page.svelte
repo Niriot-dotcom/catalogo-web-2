@@ -25,7 +25,6 @@
 <!-- ENTRADA -->
 <EntradaInvierno
   titleSvg="/images/invierno/copys/ENTRADA-P09-BASICOS-TITULO.svg"
-  storySvg="/images/invierno/copys/ENTRADA-P09-BASICOS-COPY.svg"
   variant={EnumEntradaInvierno.SOLO_VIDEO}
   titlePosition="bottom-0 right-0"
   storyPosition="top-1/2 left-0 transform -translate-y-1/2"

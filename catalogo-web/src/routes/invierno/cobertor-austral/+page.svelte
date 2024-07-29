@@ -30,9 +30,8 @@
 <!-- ENTRADA -->
 <EntradaInvierno
   titleSvg="/images/invierno/copys/ENTRADA-P03-AUSTRAL-TITULO.svg"
-  storySvg="/images/invierno/copys/ENTRADA-P03-AUSTRAL-COPY.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
-  titlePosition="bottom-0 right-0"
+  titlePosition="top-[32vh] right-0 w-5/6"
   storyPosition="top-1/2 left-0 transform -translate-y-1/2"
   bgImage="/images/invierno/portadillas/ENTRADA-P03-AUSTRAL.webp"
   bgVideo="/images/invierno/portadillas/ENTRADA-P03-AUSTRAL-VERTICAL.mp4"
