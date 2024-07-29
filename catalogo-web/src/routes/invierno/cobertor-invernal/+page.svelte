@@ -1,27 +1,26 @@
 <script lang="ts">
-  import ImageComponent from "$lib/components/imageComponent.svelte";
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
   import { Catalogs } from "$lib/constants/globalTypes";
   import type { PageData } from "./$types";
   import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import CobertorInvernal from "$lib/templates/invierno/CobertorInvernal.svelte";
 
-  let visibleIds = [];
-
-  function handleVisibleChange(event) {
+  let visibleIds: string[] = [];
+  function handleVisibleChange(event: any) {
     visibleIds = event.detail;
   }
-
+  let relatedProducts: string[] = [];
+  let selectedProduct: null | string = null;
   let showPopup = false;
 
-  function show() {
-    showPopup = true;
-  }
-
-  let isLoaded = false;
   export let data: PageData;
-  const pages = data.props.pages; // guarda el objeto product en una variable
+  const handleImageClick = (sku: string, relatedProds: string[]) => {
+    selectedProduct = sku;
+    relatedProducts = relatedProds;
+  };
+  const pages = data.props.pages;
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
@@ -37,223 +36,17 @@
   bgVideo="/images/invierno/portadillas/ENTRADA-P04-INVERNAL-VERTICAL.mp4"
 />
 
-<div>
-  {#each pages as page, index}
-    {#if index % 2 === 0}
-      <div id={page.pageTitle}>
-        <div
-          data-visible-id={page.SKU}
-          data-w-id="26494cac-c879-c70d-1939-3984a45c1663"
-          class="div-block-40 column-container"
-        >
-          <div
-            style="overflow-x: hidden; max-width: 100vw;"
-            class="columna-invernal-1"
-          >
-            <div class="div-block-43 sm:hidden block">
-              <div class="page-title-box">
-                <div>
-                  <h2 class="heading-4">{page.pageTitle}</h2>
-                  <p class="paragraph product-detail-subtitle alternate">
-                    Cobertor Invernal
-                  </p>
-                </div>
-              </div>
-              {#each page.pageIcons as icon}
-                <ImageComponent
-                  src={icon}
-                  loading="eager"
-                  alt=""
-                  classList="icon-image"
-                />
-              {/each}
-            </div>
-            <ImageComponent
-              src={`${URLS.fotos}${page.SKU}.webp`}
-              loading="eager"
-              alt=""
-              classList="image-26"
-            />
-          </div>
-          <div class="columna-invernal-2 austral">
-            <ImageComponent
-              src={page.pageMainImage}
-              loading="eager"
-              alt=""
-              classList="image-26"
-            />
-            <div class="div-block-43 sm:block hidden">
-              <div class="page-title-box">
-                <div>
-                  <h2 class="heading-4">{page.pageTitle}</h2>
-                  <p class="paragraph product-detail-subtitle alternate">
-                    Cobertor Invernal
-                  </p>
-                </div>
-              </div>
-              {#each page.pageIcons as icon}
-                <ImageComponent
-                  src={icon}
-                  loading="eager"
-                  alt=""
-                  classList="icon-image"
-                />
-              {/each}
-            </div>
-          </div>
-          <div class="columna-invernal-3">
-            <ImageComponent
-              src={`${URLS.fotos}${page.SKU}-2.webp`}
-              loading="eager"
-              alt=""
-              classList="image-26"
-            />
-          </div>
-        </div>
-        <div class="related-products horizontal">
-          <div
-            text-split=""
-            words-slide-from-right=""
-            class="text-block-23 look-book"
-          >
-            Completa<br /><strong class="bold-text">el Look</strong>
-          </div>
-          <div
-            on:click={show}
-            href="#"
-            class="link-block-10 centered w-inline-block"
-          >
-            <img
-              src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
-              loading="eager"
-              alt=""
-              class="image-18 horizontal"
-            />
-            <div class="text-block-22 centered">
-              agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
-            </div>
-          </div>
-          <div href="#" class="link-block-10 centered w-inline-block">
-            <img
-              src={`${URLS.fotos}${page.complSheets[0]}.webp`}
-              loading="eager"
-              alt=""
-              class="image-18 horizontal"
-            />
-            <div on:click={show} class="text-block-22 centered">
-              combina con estas<br />
-              <strong class="bold-text-3"> cortinas</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    {:else}
-      <div id={page.pageTitle}>
-        <div
-          data-visible-id={page.SKU}
-          data-w-id="922ca861-0457-4a76-f593-9ea2a0016e98"
-          class="div-block-40 column-container"
-        >
-          <div
-            style="overflow-x: hidden; max-width: 100vw;"
-            class="columna-invernal-3"
-          >
-            <div class="div-block-43 sm:hidden block">
-              <div class="page-title-box">
-                <div>
-                  <h2 class="heading-4">{page.pageTitle}</h2>
-                  <p class="paragraph product-detail-subtitle alternate">
-                    Cobertor Invernal
-                  </p>
-                </div>
-              </div>
-              {#each page.pageIcons as icon}
-                <div>
-                  <ImageComponent
-                    src={icon}
-                    loading="eager"
-                    alt=""
-                    classList="icon-image"
-                  />
-                </div>
-              {/each}
-            </div>
-            <ImageComponent
-              src={`${URLS.fotos}${page.SKU}.webp`}
-              loading="eager"
-              alt=""
-              classList="image-26"
-            />
-          </div>
-          <div class="columna-invernal-2 austral">
-            <ImageComponent src={page.pageMainImage} classList="image-26" />
-            <div class="div-block-43 sm:block hidden">
-              <div class="page-title-box">
-                <div>
-                  <h2 class="heading-4">{page.pageTitle}</h2>
-                  <p class="paragraph product-detail-subtitle alternate">
-                    Cobertor Invernal
-                  </p>
-                </div>
-              </div>
-              {#each page.pageIcons as icon}
-                <div>
-                  <ImageComponent
-                    src={icon}
-                    loading="eager"
-                    alt=""
-                    classList="icon-image"
-                  />
-                </div>
-              {/each}
-            </div>
-          </div>
-          <div class="columna-invernal-1">
-            <ImageComponent
-              src={`${URLS.fotos}${page.SKU}-2.webp`}
-              loading="eager"
-              alt=""
-              classList="image-26"
-            />
-          </div>
-        </div>
-        <div class="related-products horizontal">
-          <div
-            text-split=""
-            words-slide-from-right=""
-            class="text-block-23 look-book"
-          >
-            Completa<br /><strong class="bold-text">el Look</strong>
-          </div>
-          <a href="#" class="link-block-10 centered w-inline-block">
-            <img
-              src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
-              loading="eager"
-              class="image-18 horizontal"
-            />
-            <div class="text-block-22 centered">
-              agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
-            </div>
-          </a>
-          <a href="#" class="link-block-10 centered w-inline-block">
-            <img
-              src={`${URLS.fotos}${page.complSheets[0]}.webp`}
-              loading="eager"
-              alt=""
-              class="image-18 horizontal"
-            />
-            <div class="text-block-22 centered">
-              combina con estas <br />
-              <strong class="bold-text-3"> cortinas</strong>
-            </div>
-          </a>
-        </div>
-      </div>
-    {/if}
-  {/each}
-</div>
+{#each pages as page, index}
+  <CobertorInvernal {page} inversa={index % 2 !== 0} />
+{/each}
 
-<NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
+<NavigatorMenu
+  catalog={Catalogs.INVIERNO}
+  bind:relatedProducts
+  bind:visibleIds
+  bind:showPopup
+  bind:selectedProduct
+/>
 
 <div>
   <script defer src="../js/webflowPage.js"></script>
