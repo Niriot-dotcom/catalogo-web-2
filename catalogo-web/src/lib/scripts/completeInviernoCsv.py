@@ -452,7 +452,7 @@ def process_csv_file(limit, filename):
                 row['complDecoration'] = get_numeric_array(row['complDecoration'])
 
                 # informacion de la pagina
-                row['pageTitle'], keyw = get_page_title(row['productName'], row['pageTemplate'], row['productType'])
+                row['pageTitle'], keyw = row['pageTitle'], "" if row['pageTitle'] != "" else get_page_title(row['productName'], row['pageTemplate'], row['productType'])
                 row['pageSubtitle'] = get_page_subtitle(row['productType'], row['pageTemplate'], row['pageSubtitle'])
                 row['pageCopys'] = get_numeric_array(row['pageCopys'])
                 row['pageResources'] = get_numeric_array(row['pageResources'], True, sku=sku, pageTemplate=row['pageTemplate'])

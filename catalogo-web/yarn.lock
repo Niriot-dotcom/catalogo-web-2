@@ -3346,10 +3346,9 @@ svelte-algolia-instantsearch@^0.12.1:
     algoliasearch-helper "3.14.0"
     instantsearch.js "4.56.9"
 
-svelte-carousel@vadimkorr/svelte-carousel#pull/142/head:
+"svelte-carousel@github:vadimkorr/svelte-carousel#pull/142/head":
   version "1.0.25"
-  resolved "git+ssh://git@github.com/vadimkorr/svelte-carousel.git"
-  integrity sha512-iadk7YEm5/LJc5svR2j9rGktc2HQJdV8HvJMD+jymqWCiZDkFj+13PUh/+meQ5NfDLKERask0L8XtMOLKdK69w==
+  resolved "git+ssh://git@github.com/vadimkorr/svelte-carousel.git#a299747c626d559ad02dde0a1463243bb07935df"
   dependencies:
     easy-reactive "1.0.4"
 

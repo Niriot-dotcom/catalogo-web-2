@@ -83,6 +83,33 @@ def update_templates(csv_filepath, limit=-1):
         print(f'\n\nProcessed {line_count} lines.')
         return updated_data
 
+def update_fields(fields, csv_filepath, limit=-1):
+    with open(csv_filepath, mode='r') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        line_count = 0
+
+        updated_data = []
+        for row in csv_reader:
+            if line_count == limit:
+                break
+
+            ''' process '''
+            # if productName is empty, then row is empty
+            if 'productName' in row and row['productName'] in ['', 'productName', 'Nombre Producto']:
+                continue
+
+            # si el SKU es valido, se comienzan a llenar los campos
+            # if 'SKU' in row and row['SKU'] != '':
+            #     row["pageTemplate"] = 'Cobertor'
+            #     for field in fields:
+            #         row[field] = 0
+
+            line_count += 1
+            updated_data.append(row)
+            
+        print(f'\n\nProcessed {line_count} lines.')
+        return updated_data
+
 def update_collection_from_json(json_object, firebase_collection_name):
     firebase_admin.initialize_app(cred)
     db = firestore.client()
@@ -96,6 +123,20 @@ def update_collection_from_json(json_object, firebase_collection_name):
             doc_ref.update({
                 "pageTemplate": obj["pageTemplate"]
             })
+
+def update_collection_rows(fields, json_object, firebase_collection_name):
+    firebase_admin.initialize_app(cred)
+    db = firestore.client()
+    collection = db.collection(firebase_collection_name)
+    for obj in json_object:
+        docs = collection.where(
+            filter=FieldFilter("SKU", "==", obj["SKU"])
+        ).get()
+        for doc in docs:
+            doc_ref = collection.document(doc.id)
+            
+            for field in fields:
+                doc_ref.update({ field: obj[field] })
 
 def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
     json_array = []
@@ -135,8 +176,16 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
 
 
 ''' MAIN '''
-new_data = update_templates(CSV_TO_MODIFY)
-write_csv_file(WRITE_CSV, new_data)
+# new_data = update_templates(CSV_TO_MODIFY)
+# write_csv_file(WRITE_CSV, new_data)
 
-json_obj = parse_csv_to_json(WRITE_CSV, 'jsonDeleteSoon.json')
-update_collection_from_json(json_obj, COLLECTION_NAME)
+# json_obj = parse_csv_to_json(WRITE_CSV, 'jsonDeleteSoon.json')
+# update_collection_from_json(json_obj, COLLECTION_NAME)
+
+''' MULTIPLE FIELDS TO UPDATE '''
+FIELDS_TO_UPDATE = [
+    # 'pageResources',
+    'pageTitle',
+]
+json_obj = parse_csv_to_json('./src/lib/scripts/Invierno Completed F0.csv', 'jsonDeleteSoon.json')
+update_collection_rows(FIELDS_TO_UPDATE, json_obj, COLLECTION_NAME)
