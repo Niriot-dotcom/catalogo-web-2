@@ -474,12 +474,3 @@ def process_csv_file(limit, filename):
 ''' MAIN '''
 new_data = process_csv_file(-1, '/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 docs/CAT WEB BD Invierno 2024 - 2025.csv')
 write_csv_file('./src/lib/scripts/Invierno Completed F3.csv', new_data)
-
-# title =  get_page_title('Viasoft Edredón Qs/Mat Xl Bernal')
-# print('title:', title[2])
-
-# try
-# get_numeric_array("['nuit']", keyword='vialifresh')
-# get_numeric_array("['']", keyword='')
-# get_numeric_array("[]", keyword='')
-# get_numeric_array("['#' '#234233']", keyword='')

@@ -84,15 +84,17 @@
                     </div>
                   {/each}
                 </div>
-                <div class="copy-box-everest right ligero">
+
+                <!-- TODO -->
+                <!-- <div class="copy-box-everest right ligero">
                   <div class="text-block-26">
                     <span class="text-span-8">
-                      <!-- TODO -->
+                      TODO
                       page.pageDescriptions[0]
                     </span>
                   </div>
                   <div class="text-block-27">
-                    <!-- TODO -->
+                    TODO
                     page.pageDescriptions[1], page.pageDescriptions[2]
                   </div>
                   <img
@@ -101,7 +103,7 @@
                     alt=""
                     class="arrow-image"
                   />
-                </div>
+                </div> -->
               </div>
             </div>
             <div udesly-before-after="50" class="ligero-container">

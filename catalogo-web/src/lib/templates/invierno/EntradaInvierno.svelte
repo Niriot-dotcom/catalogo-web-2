@@ -17,6 +17,7 @@
 <div style="background-color: {bgColor};" class="md:hidden relative w-screen">
   <div class="flex flex-col space-y-1 min-h-fit relative">
     {#if variant === EnumEntradaInvierno.SOLO_FOTO || variant === EnumEntradaInvierno.SOLO_VIDEO}
+      <!-- <div class="h-fit"> -->
       <div class="w-full h-[70vh]">
         {#if variant === EnumEntradaInvierno.SOLO_FOTO}
           <img class="w-full h-full object-cover" src={bgImage} alt="" />
@@ -62,8 +63,9 @@
       </div>
 
       <!-- TODO -->
-      <!-- <div>
-        <ScrollDownArrows backgroundColor={bgColor} />
+      <!-- <div class="h-fit">
+          <ScrollDownArrows backgroundColor={bgColor} />
+        </div>
       </div> -->
     {/if}
 

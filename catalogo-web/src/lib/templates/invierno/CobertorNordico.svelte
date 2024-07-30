@@ -7,11 +7,11 @@
   export let inversa: boolean = false;
 </script>
 
-<!-- class="plantilla-nordico {inversa ? 'inversa' : ''}"
-{#if !inversa}
-{/if} -->
-
-<div id={page.pageTitle} class="plantilla-nordico" data-visible-id={page.SKU}>
+<div
+  id={page.pageTitle}
+  class="w-screen overflow-x-hidden"
+  data-visible-id={page.SKU}
+>
   <div class="div-block-46">
     <div class="handle-container {inversa ? 'inverse' : ''}">
       {#if !inversa}

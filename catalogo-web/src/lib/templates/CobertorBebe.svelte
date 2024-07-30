@@ -1,5 +1,6 @@
 <script lang="ts">
   import OptimImg from "$lib/components/OptimImg.svelte";
+  import ComplementosCopy from "$lib/components/resources/ComplementosCopy.svelte";
   import FormaBebe01 from "$lib/components/resources/FormaBebe01.svelte";
   import FormaBebe02 from "$lib/components/resources/FormaBebe02.svelte";
   import FormaBebe03 from "$lib/components/resources/FormaBebe03.svelte";
@@ -187,16 +188,7 @@
     <!-- complementos -->
     <div class="mt-3">
       <div class="h-[10vh] pl-[12%]">
-        <img
-          src="../images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
-            ? 'CambiaElLookConEstosComplementos'
-            : 'AgregaComplementosBlack'}.svg"
-          loading="eager"
-          alt=""
-          class="h-full {currentCatalog === CATALOGS_ROUTES.VIANNEY
-            ? 'scale-[0.8]'
-            : 'scale-150'}"
-        />
+        <ComplementosCopy catalog={currentCatalog} />
       </div>
 
       <div class="grid grid-cols-2 gap-x-1 gap-y-3 px-3 pb-2">

@@ -145,6 +145,6 @@
         />
       </g>
     </svg>
-    <span>Agregar todo</span>
+    <span class="text-nowrap">Agregar todo</span>
   </button>
 </div>

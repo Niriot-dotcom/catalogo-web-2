@@ -10,7 +10,7 @@
 <div
   id={page.pageTitle}
   data-visible-id={page.SKU}
-  class="plantilla-everest {inversa ? 'inversa' : ''}"
+  class="plantilla-everest {inversa ? 'inversa' : ''} overflow-x-hidden"
 >
   {#if !inversa}
     <div class="div-block-31">
@@ -50,7 +50,9 @@
         style="background-image:url(&quot;../videos/poster-{page.pageTitle}.jpg&quot;); height: 100%;
   object-fit: cover;"
       />
-      <div class="copy-box-everest right">
+
+      <!-- TODO -->
+      <!-- <div class="copy-box-everest right">
         <div class="text-block-26">
           Pelo <span class="text-span-8">largo</span>
         </div>
@@ -63,7 +65,7 @@
           alt=""
           class="arrow-image"
         />
-      </div>
+      </div> -->
     </div>
     <div class="div-block-33">
       <ImageComponent
@@ -72,13 +74,15 @@
         id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
         classList="image-17"
       />
-      <div class="copy-box-everest">
+
+      <!-- TODO -->
+      <!-- <div class="copy-box-everest">
         <div class="text-block-25" style="text-transform: lowercase;">
-          <!-- TODO -->
+          TODO
           page.pageDescriptions[1]
         </div>
         <div class="text-block-27">
-          <!-- TODO -->
+          TODO
           page.pageDescriptions[2]
         </div>
         <img
@@ -87,7 +91,7 @@
           alt=""
           class="arrow-image"
         />
-      </div>
+      </div> -->
     </div>
     <div class="related-products">
       <div
