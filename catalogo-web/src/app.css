@@ -572,3 +572,11 @@ input:focus {
   right: 0;
   border-right-color: black;
 }
+
+/* scroll bar */
+.hidden-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.hidden-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}

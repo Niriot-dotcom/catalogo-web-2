@@ -1,0 +1,36 @@
+<script lang="ts">
+  import Carousel from "svelte-carousel";
+  let carousel: any;
+</script>
+
+<div class="flex h-[60vh] bg-white relative">
+  <!-- LOGO INVIERNO -->
+  <div class="absolute top-9 left-5 h-1/3 z-10">
+    <img
+      class="w-full h-full object-cover"
+      alt="LOGO INVIERNO"
+      src="/images/invierno/recursos/NOMBRE_INVIERNO.svg"
+    />
+  </div>
+
+  <!-- CAROUSEL -->
+  <div class="h-[60vh] w-full flex items-center">
+    <Carousel bind:this={carousel} autoplay autoplayDuration={3000}>
+      <!-- POINTS -->
+      <div slot="dots" />
+      <div slot="prev" />
+      <div slot="next" />
+
+      <!-- IMAGES -->
+      {#each { length: 3 } as _, i}
+        <div class="overflow-hidden w-full h-[60vh]">
+          <img
+            src="/images/invierno/recursos/INICIO-{i + 1}.webp"
+            alt=""
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+      {/each}
+    </Carousel>
+  </div>
+</div>
