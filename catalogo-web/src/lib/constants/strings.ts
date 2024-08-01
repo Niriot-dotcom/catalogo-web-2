@@ -52,9 +52,11 @@ export const EnumSublinea = {
   DOBLE_VERTICAL: "DOBLE_VERTICAL",
   DOBLE_SLIDER: "DOBLE_SLIDER",
   CUATRO: "CUATRO",
+  CAROUSEL_HORIZONTAL: "CAROUSEL_HORIZONTAL",
 };
 export const EnumVariantesDeColor = {
   SIN_ACERCAMIENTO: "SIN_ACERCAMIENTO",
+  HORIZONTAL: "HORIZONTAL",
 };
 export const EnumEntradaInvierno = {
   FOTO_VIDEO: "FOTO_VIDEO",

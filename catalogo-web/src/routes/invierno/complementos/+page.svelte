@@ -8,6 +8,7 @@
   import Sublinea from "$lib/templates/Sublinea.svelte";
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import { EnumEntradaInvierno } from "$lib/constants/strings";
+  import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
 
   let visibleIds: string[] = [];
   function handleVisibleChange(event: any) {
@@ -24,6 +25,11 @@
   };
 
   const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
+  let sections = [
+    { title: "Cojines y Fundas de Cojín", link: "#section-cojines" },
+    { title: "Fundas de Almohada", link: "#section-fundas-almohada" },
+    { title: "Rellenos", link: "#section-rellenos" },
+  ];
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
@@ -38,6 +44,8 @@
   storyPosition="-bottom-10 left-0"
   bgImage="/images/invierno/portadillas/ENTRADA-P08-COMPLEMENTOS.webp"
 />
+
+<SectionMenu {sections} breakLine={1} paddingTop="12" />
 
 <!-- render pages -->
 {#each Object.keys(groups) as group, i}

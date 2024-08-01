@@ -7,6 +7,7 @@
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import { EnumEntradaInvierno } from "$lib/constants/strings";
+  import InicioInvierno from "$lib/custom-pages/InicioInvierno.svelte";
 
   let visibleIds: string[] = [];
   function handleVisibleChange(event: any) {
@@ -26,6 +27,9 @@
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
+
+<!-- ENTRADA DEL CATALOGO -->
+<InicioInvierno />
 
 <!-- [COMUNICACION] Diferencias de Cobertores -->
 <DiferenciasDeCobertores />

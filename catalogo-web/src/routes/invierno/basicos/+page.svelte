@@ -7,6 +7,7 @@
   import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
   import { EnumEntradaInvierno } from "$lib/constants/strings";
+  import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
 
   let visibleIds: string[] = [];
   let relatedProducts: string[] = [];
@@ -20,6 +21,30 @@
   };
 
   const groups: Record<string, []> = data.props.groupedPages;
+  let groupedPagess: Record<string, []> = data.props.groupedPages;
+  let sections = [
+    {
+      title: "Almohadas",
+      productTypes: ["ALMOHADA", "ALMOHADA VIAFOAM", "Almohada Abrazable"],
+    },
+    {
+      title: "Sábanas",
+      productTypes: [
+        "Sábanas Siberia",
+        "Sábanas Siberia Ligero",
+        "Sábanas Andes-Polar",
+        "Sábanas Franela",
+        "Sábanas Camiseta",
+      ],
+    },
+    { title: "Rodapiés", productTypes: ["Rodapié"] },
+    {
+      title: "Fundas de Almohada",
+      productTypes: ["Funda De Almohada"],
+    },
+    { title: "Protectores de Colchón", productTypes: ["PROTECTOR DE COLCHÓN"] },
+  ];
+  let activeTitle = sections[0].title;
 </script>
 
 <!-- ENTRADA -->
@@ -31,8 +56,17 @@
   bgVideo="/images/invierno/portadillas/ENTRADA-P09-BASICOS-VERTICAL.mp4"
 />
 
+<!-- <SectionMenu {sections} activeTitle={sections[0].title} /> -->
+<SectionMenu
+  {sections}
+  breakLine={2}
+  {activeTitle}
+  constPages={data.props.groupedPages}
+  bind:groupedPagess
+/>
+
 <!-- render pages -->
-{#each Object.keys(groups) as group, i}
+{#each Object.keys(groupedPagess) as group, i}
   {#if groups[group][0].pageTemplate == "AmbienteConMiniambiente"}
     {#each groups[group] as juego, i}
       <AmbienteConMiniambiente page={juego} {handleImageClick} />

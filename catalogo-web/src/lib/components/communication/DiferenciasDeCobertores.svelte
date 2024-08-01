@@ -205,12 +205,3 @@
     {/each}
   </div>
 </div>
-
-<style>
-  .hidden-scroll::-webkit-scrollbar-thumb {
-    background: transparent;
-  }
-  .hidden-scroll::-webkit-scrollbar-track {
-    background: transparent;
-  }
-</style>
