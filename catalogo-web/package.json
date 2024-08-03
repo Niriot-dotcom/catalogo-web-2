@@ -27,6 +27,7 @@
     "tailwindcss": "^3.3.3",
     "tslib": "^2.4.1",
     "typescript": "^5.0.0",
+    "svelte-carousel": "github:vadimkorr/svelte-carousel#pull/142/head",
     "vite": "^5.0.0"
   },
   "dependencies": {
