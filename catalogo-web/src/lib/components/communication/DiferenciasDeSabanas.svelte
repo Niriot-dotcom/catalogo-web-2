@@ -7,14 +7,14 @@
     {
       title: "Camiseta",
       subtitle: "",
-      image: "/images/invierno/recortes/EVEREST_MARFIL_RECORTE",
+      image: "/images/invierno/recortes/SABANAS-CAMISETA.webp",
       link: "",
       description: "Frescura en el verano,<br />calidez en el invierno",
     },
     {
       title: "Franela",
       subtitle: "",
-      image: "/images/invierno/recortes/EVEREST_MARFIL_RECORTE",
+      image: "/images/invierno/recortes/SABANAS-FRANELA.webp",
       link: "",
       description:
         "Ligeras y calientitas<br />Especiales para cuando<br />empieza a hacer frío",
@@ -22,21 +22,21 @@
     {
       title: "Siberia",
       subtitle: "",
-      image: "/images/invierno/recortes/FUNDA_DUVET_INCIENSO_RECORTE",
+      image: "/images/invierno/recortes/SABANAS-SIBERIA.webp",
       link: "",
       description: "La más calientitas por su<br />suave textura de borrega",
     },
     {
       title: "Siberia",
       subtitle: "con cobertor ligero",
-      image: "/images/invierno/recortes/AUSTRAL_ROSETA_RECORTE",
+      image: "/images/invierno/recortes/SABANAS-SIBERIACOBERTOR.webp",
       link: "",
       description: "La más calientitas por su<br />suave textura de borrega",
     },
     {
       title: "Andes Polar",
       subtitle: "",
-      image: "/images/invierno/recortes/AUSTRAL_ROSETA_RECORTE",
+      image: "/images/invierno/recortes/SABANAS-POLAR.webp",
       link: "",
       description:
         "Textura suave,<br />Calidez y suavidad ideales<br />para la temporada",
@@ -45,13 +45,15 @@
 </script>
 
 <div class="overflow-hidden w-screen text-black relative bg-[#f3ece7] pb-8">
-  <p class="text-center text-nowrap w-full text-[#a5722f] pt-8 pb-5 text-5xl">
+  <p class="text-center text-nowrap w-full pt-8 pb-5 chavos-5xl font-[100]">
     Sábanas
   </p>
 
   <!-- MOBILE -->
-  <div class="md:hidden flex overflow-x-scroll hidden-scroll">
-    <button class="absolute z-30 left-0 top-1/2 ml-[8vw] cursor-pointer">
+  <div
+    class="md:hidden flex overflow-x-scroll hidden-scroll px-3 space-x-1 sticky"
+  >
+    <button class="absolute z-30 left-0 top-[30%] ml-[8vw] cursor-pointer">
       <ArrowRight color="#fff" />
     </button>
 
@@ -62,17 +64,12 @@
         href={sabana.link}
         class="link-block-5 w-inline-block"
       >
-        <div class="min-w-[60vw] text-[#6c5750]">
+        <div class="min-w-[35vw] text-[#6c5750]">
           <div class="md:hidden flex text-center justify-center">
-            <div
-              style="background-color: #6c5750;"
-              class="rounded-[50%] w-[20vh] h-[20vh]"
-            >
+            <div class="rounded-[50%] w-[25vh] h-[25vh]">
               <img
-                src={`${sabana.image}-500.webp`}
+                src={sabana.image}
                 loading="eager"
-                sizes="(max-width: 479px) 92vw, (max-width: 767px) 83vw, 29vw"
-                srcset={`${sabana.image}-500.webp 500w, ${sabana.image}-800.webp 800w, ${sabana.image}-1080.webp 1080w, ${sabana.image}-1800.webp 1800w`}
                 alt=""
                 class="rounded-[50%] object-cover w-full h-full"
               />
@@ -93,13 +90,15 @@
           </div>
 
           <!-- description -->
-          <p class="text-center relative">{@html sabana.description}</p>
+          <p class="text-center relative text-nowrap leading-tight">
+            {@html sabana.description}
+          </p>
         </div>
       </a>
     {/each}
 
     <button
-      class="absolute z-30 right-0 top-1/2 mr-[8vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+      class="absolute z-30 right-0 top-[30%] mr-[16vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
     >
       <ArrowLeft color="#fff" />
     </button>
