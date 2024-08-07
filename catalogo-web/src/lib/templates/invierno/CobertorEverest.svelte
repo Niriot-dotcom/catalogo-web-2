@@ -15,7 +15,7 @@
   {#if !inversa}
     <div class="div-block-31">
       <ImageComponent
-        src={page.pageMainImage}
+        src={`${URLS.fotos}${page.SKU}.webp`}
         loading="eager"
         id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
         classList="image-16"
@@ -43,12 +43,17 @@
 
   <section class="section-6">
     <div class="background-video-2 w-background-video w-background-video-atom">
-      <img
+      <!-- <img
         src="../videos/poster-{page.pageTitle}.jpg"
         loading="eager"
         alt=""
         style="background-image:url(&quot;../videos/poster-{page.pageTitle}.jpg&quot;); height: 100%;
   object-fit: cover;"
+      /> -->
+      <ImageComponent
+        src={`${URLS.fotos}${page.SKU}-2.webp`}
+        loading="eager"
+        classList="h-full object-cover"
       />
 
       <!-- TODO -->

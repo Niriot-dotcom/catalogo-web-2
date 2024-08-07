@@ -45,9 +45,10 @@
 </script>
 
 <div class="overflow-hidden w-screen text-black relative bg-[#f3ece7] pb-8">
-  <p class="text-center text-nowrap w-full pt-8 pb-5 chavos-5xl font-[100]">
+  <!-- <p class="text-center text-nowrap w-full pt-8 pb-5 chavos-5xl font-[100]">
     Sábanas
-  </p>
+  </p> -->
+  <p class="text-black chavos-base pl-5 xs:chavos-xl">Sábanas</p>
 
   <!-- MOBILE -->
   <div
@@ -84,13 +85,17 @@
             class="goto-section text-center mb-3 relative"
           >
             <p class="title text-center leading-none mt-5">{sabana.title}</p>
-            <p class="text-nowrap w-full leading-none font-bold">
+            <p
+              class="text-nowrap w-full leading-none font-bold chavos-bold-base"
+            >
               {sabana.subtitle}
             </p>
           </div>
 
           <!-- description -->
-          <p class="text-center relative text-nowrap leading-tight">
+          <p class="text-center relative chavos-base text-nowrap leading-tight">
+            <!-- <p class="text-black  pl-5 xs:chavos-xl">Sábanas</p> -->
+
             {@html sabana.description}
           </p>
         </div>

@@ -5,7 +5,7 @@
 
 <div class="flex h-[60vh] bg-white relative">
   <!-- LOGO INVIERNO -->
-  <div class="absolute top-9 left-5 h-1/3 z-10">
+  <div class="absolute top-3 left-2 h-[45%] z-10">
     <img
       class="w-full h-full object-cover"
       alt="LOGO INVIERNO"

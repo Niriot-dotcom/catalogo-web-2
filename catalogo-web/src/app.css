@@ -404,8 +404,8 @@ input:focus {
     font-style: normal;
     line-height: 1.125rem;
     font-variation-settings:
-      "wdth" 60,
-      "wght" 70,
+      "wght" 60,
+      "wdth" 70,
       "slnt" 1;
   }
   .chavos-bold-lg {

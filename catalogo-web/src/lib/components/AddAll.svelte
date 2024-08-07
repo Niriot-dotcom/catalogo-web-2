@@ -120,7 +120,7 @@
 <div class="w-fit">
   <button
     on:click={() => handleAddAllProducts()}
-    class="text-white text-right chavos-sm bg-vianney-600 flex items-center mr-5 px-3 py-1.5 rounded-2xl xs:chavos-base"
+    class="text-white text-right chavos-sm bg-[#6c5750] flex items-center mr-5 px-3 py-1.5 rounded-2xl xs:chavos-base"
   >
     <svg
       class="text-white group-hover:text-gray-500 -ml-0 mr-1 h-6 w-6 flex-shrink-0"
@@ -141,7 +141,7 @@
         />
       </g>
     </svg>
-    <span class="text-nowrap">Agregar todo</span>
+    <span class="text-nowrap">Añadir todo</span>
   </button>
 </div>
 
