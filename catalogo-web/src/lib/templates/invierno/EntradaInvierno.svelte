@@ -144,6 +144,6 @@
 
 <!-- DESKTOP -->
 <!-- TODO -->
-<div
+<!-- <div
   class="hidden md:block relative w-screen h-[85vh] bg-cover bg-center"
-></div>
+></div> -->

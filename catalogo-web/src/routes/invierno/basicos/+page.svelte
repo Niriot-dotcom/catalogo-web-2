@@ -65,14 +65,13 @@
   bgVideo="/images/invierno/portadillas/ENTRADA-P09-BASICOS-VERTICAL.mp4"
 />
 
-<!-- <SectionMenu {sections} activeTitle={sections[0].title} /> -->
-<SectionMenu
+<!-- <SectionMenu
   {sections}
   breakLine={2}
   {activeTitle}
   constPages={data.props.groupedPages}
   bind:groupedPagess
-/>
+/> -->
 
 <!-- render pages -->
 {#each Object.keys(groupedPagess) as group, i}

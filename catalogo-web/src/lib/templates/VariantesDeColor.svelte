@@ -54,6 +54,20 @@
     data-visible-id={groupPages[selectedColorIndex].SKU}
     class="w-full overflow-hidden px-5 relative py-2 bg-beige"
   >
+    <!-- line header text -->
+    <div class="w-full text-center mb-5 text-black mt-5">
+      {#if title.split(" ").length > 1}
+        <p class="chavos-bold-2xl xs:chavos-bold-3xl">{title.split(" ")[0]}</p>
+        <p class="chavos-4xl xs:chavos-5xl">
+          {title.replace(title.split(" ")[0], "")}
+        </p>
+      {:else}
+        <p class="chavos-4xl xs:chavos-5xl">
+          {title.split(" ")[0]}
+        </p>
+      {/if}
+    </div>
+
     <!-- color title -->
     <p class="text-black chavos-base xs:chavos-xl">
       {groupPages[selectedColorIndex].pageTitle}
@@ -127,7 +141,7 @@
 {:else}
   <div
     style={`background-color: ${groupPages[selectedColorIndex].pageResources[0]}`}
-    class="md:hidden relative text-black w-screen min-h-[85vh] pt-8 pb-24 px-3 flex flex-col justify-center overflow-hidden"
+    class="md:hidden relative text-black w-screen min-h-[85vh] pt-8 pb-0 px-3 flex flex-col justify-center overflow-hidden"
   >
     <!-- line header text -->
     <div class="w-full text-center mb-5">

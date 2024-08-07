@@ -74,10 +74,10 @@
     </div>
     <div class="div-block-33">
       <ImageComponent
-        src={`${URLS.fotos}${page.SKU}.webp`}
+        src={`${URLS.fotos}${page.SKU}-3.webp`}
         loading="eager"
         id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
-        classList="image-17"
+        classList="image-17 h-full object-cover"
       />
 
       <!-- TODO -->
@@ -141,7 +141,7 @@
   {#if inversa}
     <div class="div-block-31">
       <ImageComponent
-        src={page.pageMainImage}
+        src={`${URLS.fotos}${page.SKU}.webp`}
         loading="eager"
         id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
         classList="image-16"

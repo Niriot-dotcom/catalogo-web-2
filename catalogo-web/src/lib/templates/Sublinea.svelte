@@ -79,7 +79,7 @@
   class="md:hidden py-0 overflow-x-hidden"
 >
   <!-- text header -->
-  <div class="text-black px-5">
+  <div class="text-black px-5 mt-5">
     <!-- LOGO -->
     {#if groupPages[0].pageResources[0] === EnumSublinea.CAROUSEL_HORIZONTAL}
       <!-- if HAY UNA IMAGEN EN PAGE RESOURCES, else SE PONE EL TITULO-->
@@ -94,10 +94,6 @@
       {:else}
         <p class="chavos-3xl xs:chavos-4xl">{title}</p>
       {/if}
-
-      <div class="w-full h-5 min-h-5 flex items-end justify-end">
-        <HorizontalScroll />
-      </div>
     {:else}
       <p class="chavos-3xl xs:chavos-4xl">{title}</p>
     {/if}
@@ -105,7 +101,7 @@
 
   {#if groupPages[0].pageResources[0] === EnumSublinea.CAROUSEL_HORIZONTAL}
     <div
-      class="md:hidden sticky flex space-x-1 overflow-x-scroll hidden-scroll"
+      class="md:hidden relative flex space-x-1 overflow-x-scroll hidden-scroll"
     >
       <!-- TODO fix position -->
       <!-- <button class="absolute z-30 left-8 top-1/2">
@@ -134,11 +130,15 @@
       <!-- <button class="absolute z-30 right-8 top-1/2">
         <ArrowLeft color="#fff" />
       </button> -->
+
+      <div class="absolute -bottom-0 w-1/2 h-12 min-h-12 flex right-0">
+        <HorizontalScroll />
+      </div>
     </div>
   {:else}
     <!-- images -->
     {#each groupPages as page, i}
-      <div class="w-full pt-5">
+      <div class="w-full {groupPages.length > 1 ? 'pt-5' : 'pt-1'}">
         {#if groupPages.length > 1}
           <p class="text-black chavos-base pl-5 xs:chavos-xl">
             {page.pageTitle}

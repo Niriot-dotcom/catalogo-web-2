@@ -110,7 +110,7 @@
             </div>
             <div udesly-before-after="50" class="ligero-container">
               <ImageComponent
-                src={page.pageMainImage}
+                src={`${URLS.fotos}${page.SKU}.webp`}
                 loading="eager"
                 id="adfea8dd-6554-1c71-61f8-1c4b232589e5"
                 classList="image-31"

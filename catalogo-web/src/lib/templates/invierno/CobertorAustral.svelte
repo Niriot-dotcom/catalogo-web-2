@@ -9,7 +9,7 @@
 <div id={page.pageTitle} class="plantilla-austral" data-visible-id={page.SKU}>
   <section class="section-7">
     <div
-      data-poster-url="../videos/poster-{page.pageTitle}.jpg"
+      data-poster-url={`${URLS.fotos}${page.SKU}.webp`}
       data-video-urls="../videos/video-{page.pageTitle}.mp4,../videos/video-{page.pageTitle}.webm"
       data-autoplay="true"
       data-loop="true"
@@ -20,20 +20,20 @@
         id="03aaf391-43fe-3144-f30a-a9a620053ba8-video"
         autoplay="true"
         loop="true"
-        style="background-image:url(&quot;../videos/poster-{page.pageTitle}.jpg&quot;)"
+        style="background-image:url(&quot;{`${URLS.fotos}${page.SKU}-2.webp`}&quot;)"
         muted="true"
         playsinline=""
         data-wf-ignore="true"
         data-object-fit="cover"
       >
-        <source
+        <!-- <source
           src="../videos/video-{page.pageTitle}.mp4"
           data-wf-ignore="true"
         />
         <source
           src="../videos/video-{page.pageTitle}.webm"
           data-wf-ignore="true"
-        />
+        /> -->
       </video>
       <div class="div-block-37">
         <ImageComponent

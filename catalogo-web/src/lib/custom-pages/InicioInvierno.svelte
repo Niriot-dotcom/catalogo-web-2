@@ -15,8 +15,17 @@
 
   <!-- CAROUSEL -->
   <div class="h-[60vh] w-full flex items-center">
-    <Carousel bind:this={carousel} autoplay autoplayDuration={3000}>
-      <!-- POINTS -->
+    <Carousel
+      bind:this={carousel}
+      autoplayDuration={0}
+      duration={3000}
+      autoplay
+      timingFunction="linear"
+      dots={false}
+      arrows={false}
+      swiping={false}
+    >
+      <!-- POINTS (hidden) -->
       <div slot="dots" />
       <div slot="prev" />
       <div slot="next" />

@@ -47,7 +47,7 @@
   bgImage="/images/invierno/portadillas/ENTRADA-P08-COMPLEMENTOS.webp"
 />
 
-<SectionMenu {sections} breakLine={1} paddingTop="12" />
+<!-- <SectionMenu {sections} breakLine={1} paddingTop="12" /> -->
 
 <!-- render pages -->
 {#each Object.keys(groups) as group, i}

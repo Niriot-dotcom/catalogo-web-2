@@ -76,26 +76,25 @@
   ];
 </script>
 
-<div class="overflow-hidden w-screen text-black relative bg-[#f3ece7] py-8">
+<div class="overflow-hidden w-screen text-black relative bg-[#f3ece7] py-3">
   <!-- header -->
   <div class="w-full pl-10 flex">
     <!-- text -->
-    <div class="title text-nowrap w-2/3 text-[#a5722f]">
+    <div class="title text-nowrap w-2/3 text-[#a5722f] text-2xl">
       <span class="">Encuentra tu</span>
-      <br />
       <span class="font-bold">cobertor ideal:</span>
-    </div>
-
-    <!-- hand -->
-    <div class="w-1/6 h-full min-h-16">
-      <HorizontalScroll />
     </div>
   </div>
 
   <!-- MOBILE -->
   <div class="md:hidden flex overflow-x-scroll hidden-scroll">
+    <!-- hand -->
+    <div class="absolute top-[18%] z-10 w-1/2 h-12 min-h-12 flex right-0">
+      <HorizontalScroll />
+    </div>
+
     <button
-      class="absolute z-30 left-0 top-1/2 ml-[8vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+      class="absolute z-30 left-0 top-[38%] ml-[8vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
     >
       <ArrowRight color="#6b5751" />
     </button>
@@ -109,7 +108,7 @@
       >
         <div class="min-w-[60vw] text-[#6c5750]">
           <!-- images (product and plasta) -->
-          <div class="md:hidden pt-10 relative">
+          <div class="md:hidden pt-0 relative">
             <div class="w-2/3 h-2/3 absolute z-0 bottom-5 -right-1">
               <CircleBehind color="#e2d9cf" />
             </div>
@@ -161,47 +160,67 @@
     {/each}
 
     <button
-      class="absolute z-30 right-0 top-1/2 mr-[8vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+      class="absolute z-30 right-0 top-[38%] mr-[8vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
     >
       <ArrowLeft color="#6b5751" />
     </button>
   </div>
 
   <!-- DESKTOP -->
-  <div class="hidden md:grid grid-cols-3 grid-rows-2 m-5 gap-5">
+  <div class="hidden lg:grid grid-cols-3 grid-rows-2 m-5 gap-5">
     {#each cobertoresInfos as cobertor, i}
-      <div class="">
-        <!-- images (product and plasta) -->
-        <div class="relative">
-          <img
-            src="../images/invierno_fotos_ENTRADA-03.png"
-            loading="eager"
-            sizes="(max-width: 479px) 92vw, (max-width: 767px) 83vw, 29vw"
-            srcset="../images/invierno_fotos_ENTRADA-03-p-500.png 500w, ../images/invierno_fotos_ENTRADA-03-p-800.png 800w, ../images/invierno_fotos_ENTRADA-03-p-1080.png 1080w, ../images/invierno_fotos_ENTRADA-03.png 1280w"
-            alt=""
-            class="z-20"
-          />
+      <a
+        data-sveltekit-preload-data="tap"
+        data-sveltekit-reload
+        href={cobertor.link}
+        class="link-block-5 w-inline-block text-[#6c5750]"
+      >
+        <div class="">
+          <!-- images (product and plasta) -->
+          <div class="md:hidden pt-10 relative">
+            <div class="w-2/3 h-2/3 absolute z-0 bottom-5 -right-1">
+              <CircleBehind color="#e2d9cf" />
+            </div>
 
-          <div class="absolute top-0 z-10">
-            <CircleBehind color="#e2d9cf" />
+            <!-- text header -->
+            <div class="relative w-12 h-12">
+              <img
+                src={`${cobertor.image}-500.webp`}
+                loading="eager"
+                sizes="(max-width: 479px) 92vw, (max-width: 767px) 83vw, 29vw"
+                srcset={`${cobertor.image}-500.webp 500w, ${cobertor.image}-800.webp 800w, ${cobertor.image}-1080.webp 1080w, ${cobertor.image}-1800.webp 1800w`}
+                alt=""
+                class="z-20 inset-0"
+              />
+            </div>
+            <!-- <div class="relative w-12 h-12">
+              <img
+                src={`${cobertor.image}-500.webp`}
+                loading="eager"
+                sizes="(max-width: 479px) 92vw, (max-width: 767px) 83vw, 29vw"
+                srcset={`${cobertor.image}-500.webp 500w, ${cobertor.image}-800.webp 800w, ${cobertor.image}-1080.webp 1080w, ${cobertor.image}-1800.webp 1800w`}
+                alt=""
+                class="z-20 inset-0"
+              />
+            </div> -->
           </div>
-        </div>
 
-        <!-- cobertor title -->
-        <div
-          data-tippy-content="Ir a la sección →"
-          words-slide-from-right=""
-          text-split=""
-          class="title goto-section text-center mb-3"
-        >
-          {cobertor.title}
-        </div>
+          <!-- cobertor title -->
+          <div
+            data-tippy-content="Ir a la sección →"
+            words-slide-from-right=""
+            text-split=""
+            class="title goto-section text-center mb-3 relative"
+          >
+            {cobertor.title}
+          </div>
 
-        <!-- characteristics -->
-        {#each cobertor.characteristics as characteristic, i}
-          <p class="text-center">{characteristic}</p>
-        {/each}
-      </div>
+          <!-- characteristics -->
+          {#each cobertor.characteristics as characteristic, i}
+            <p class="text-center relative">{@html characteristic}</p>
+          {/each}
+        </div>
+      </a>
     {/each}
   </div>
 </div>
