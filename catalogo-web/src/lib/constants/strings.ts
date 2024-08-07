@@ -99,8 +99,8 @@ export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
     title: "Invierno",
     year: "2024-2025",
     url: "/invierno",
-    launchVideo: "",
-    downloadLink: "",
+    launchVideo: "https://www.youtube.com/watch?v=cQ9SO630Pes",
+    downloadLink: "https://bit.ly/INVIERNO_24_25_MX",
     image: "/images/invierno/PORTADA_INVIERNO_24-25.jpg",
     description:
       "Una de las temporadas más esperadas del año, ¡El invierno! Los días comienzan a ser más fríos y es momento de transformar nuestro hogar en un lugar más cálido y acogedor en familia. Desde la habitación, con texturas súper suaves y calientitas, hasta la sala y la cocina, creando ambientes llenos de magia en donde se disfrutan momentos de alegría junto a nuestros seres queridos por la llegada de la Navidad. Vive con nosotros esta época de compartir tradiciones juntos, alimentar el espíritu de la fé y fortalecer la armonía y el amor en el hogar.",
