@@ -1,4 +1,5 @@
 <script lang="ts">
+  import HorizontalScroll from "$lib/components/HorizontalScroll.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import LegalLicenses from "$lib/components/communication/LegalLicenses.svelte";
   import ImageComponent from "$lib/components/imageComponent.svelte";
@@ -75,23 +76,41 @@
 <!-- MOBILE -->
 <div
   style="background-color: {bgColor};"
-  class="md:hidden py-10 overflow-x-hidden"
+  class="md:hidden py-0 overflow-x-hidden"
 >
   <!-- text header -->
   <div class="text-black px-5">
     <!-- LOGO -->
-    {#if groupPages[0].pageResources[0] === EnumSublinea.CAROUSEL_HORIZONTAL}{:else}
+    {#if groupPages[0].pageResources[0] === EnumSublinea.CAROUSEL_HORIZONTAL}
+      <!-- if HAY UNA IMAGEN EN PAGE RESOURCES, else SE PONE EL TITULO-->
+      {#if groupPages[0].pageResources.length > 1 && groupPages[0].pageResources[1] !== ""}
+        <div class="w-full h-[10vh] my-3">
+          <img
+            alt={title}
+            src={groupPages[0].pageResources[1]}
+            class="w-full h-full"
+          />
+        </div>
+      {:else}
+        <p class="chavos-3xl xs:chavos-4xl">{title}</p>
+      {/if}
+
+      <div class="w-full h-5 min-h-5 flex items-end justify-end">
+        <HorizontalScroll />
+      </div>
+    {:else}
       <p class="chavos-3xl xs:chavos-4xl">{title}</p>
     {/if}
   </div>
 
   {#if groupPages[0].pageResources[0] === EnumSublinea.CAROUSEL_HORIZONTAL}
     <div
-      class="md:hidden relative flex space-x-1 overflow-x-scroll hidden-scroll"
+      class="md:hidden sticky flex space-x-1 overflow-x-scroll hidden-scroll"
     >
-      <button class="absolute z-30 left-0 top-1/2 ml-[8vw]">
+      <!-- TODO fix position -->
+      <!-- <button class="absolute z-30 left-8 top-1/2">
         <ArrowRight color="#fff" />
-      </button>
+      </button> -->
 
       {#each groupPages as page, i}
         <div
@@ -111,9 +130,10 @@
         </div>
       {/each}
 
-      <button class="absolute z-30 right-0 top-1/2 mr-[8vw]">
+      <!-- TODO fix position -->
+      <!-- <button class="absolute z-30 right-8 top-1/2">
         <ArrowLeft color="#fff" />
-      </button>
+      </button> -->
     </div>
   {:else}
     <!-- images -->
