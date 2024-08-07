@@ -103,14 +103,14 @@
               ? `background-color: ${
                   groupPages[i].pageResources &&
                   groupPages[i].pageResources.length > 1
-                    ? "#00f"
+                    ? groupPages[i].pageResources[1]
                     : "#888"
-                }; border: 4px solid #00f;`
+                }; border: 4px solid ${groupPages[i].pageResources[1]};`
               : `background-color: ${
                   groupPages[i].pageResources &&
                   groupPages[i].pageResources.length > 1
                     ? "#888"
-                    : "#00f"
+                    : groupPages[i].pageResources[1]
                 };`}
           />
 

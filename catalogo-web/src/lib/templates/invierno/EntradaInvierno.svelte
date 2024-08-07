@@ -1,5 +1,6 @@
 <script lang="ts">
   import ScrollDownArrows from "$lib/components/animations/ScrollDownArrows.svelte";
+  import SectionsPaginationArrows from "$lib/components/navigation/SectionsPaginationArrows.svelte";
   import { COLORS, EnumEntradaInvierno } from "$lib/constants/strings";
 
   export let titleSvg: string;
@@ -15,10 +16,12 @@
 
 <!-- MOBILE -->
 <div style="background-color: {bgColor};" class="md:hidden relative w-screen">
+  <SectionsPaginationArrows />
+
   <div class="flex flex-col space-y-1 min-h-fit relative">
     {#if variant === EnumEntradaInvierno.SOLO_FOTO || variant === EnumEntradaInvierno.SOLO_VIDEO}
       <!-- <div class="h-fit"> -->
-      <div class="w-full h-[70vh]">
+      <div class="w-full h-[72vh]">
         {#if variant === EnumEntradaInvierno.SOLO_FOTO}
           <img class="w-full h-full object-cover" src={bgImage} alt="" />
         {:else if variant === EnumEntradaInvierno.SOLO_VIDEO}

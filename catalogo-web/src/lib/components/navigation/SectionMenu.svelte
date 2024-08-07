@@ -1,5 +1,6 @@
 <script lang="ts">
   import DiferenciasDeSabanas from "$lib/components/communication/DiferenciasDeSabanas.svelte";
+  import ScrollDownArrows from "../animations/ScrollDownArrows.svelte";
 
   export let sections: {}[];
   export let paddingTop: string = "5";
@@ -27,7 +28,7 @@
 </script>
 
 <div
-  class="bg-beige w-full items-center justify-center pt-{paddingTop} px-0 pb-5 flex space-x-8 flex-wrap flex-row"
+  class="bg-beige w-full items-center justify-center pt-{paddingTop} px-0 pb-0 flex space-x-8 flex-wrap flex-row"
 >
   {#each sections as section, i}
     <button
@@ -47,6 +48,8 @@
     {/if}
   {/each}
 </div>
+
+<ScrollDownArrows />
 
 <!-- [COMUNICACION] Diferencias de Cobertores -->
 {#if activeTitle === "Sábanas"}
