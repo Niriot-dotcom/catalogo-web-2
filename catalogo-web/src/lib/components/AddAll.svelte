@@ -10,23 +10,27 @@
   } from "firebase/firestore";
   import { db } from "$lib/firebase";
   import { createEventDispatcher } from "svelte";
+  import PopupSelectSizes from "./PopupSelectSizes.svelte";
 
   export let skus: any[];
   export let clickProduct: string | null = null;
-
-  let selectedProduct = null;
-  let selectedVariant = null;
-  let selectedVariantId = null;
+  export let showModal: boolean = false;
+  let cartItems: any[] = [];
+  let totalItems: any[] = [];
 
   async function handleAddAllProducts() {
     for await (const sku of skus) {
-      fetchProductDetail("", Number(sku));
+      // let productsSizes = fetchProductSizes("", Number(sku));
+      cartItems = await fetchProductSizes("", Number(sku));
+      console.log("cartItems: ", cartItems);
+      totalItems.push(cartItems);
     }
+
+    console.log("totalItems: ", totalItems);
+    showModal = true;
   }
 
-  async function fetchProductDetail(event: any, clickId: any) {
-    console.log("clickId: ", clickId);
-
+  async function fetchProductSizes(event: any, clickId: any) {
     let productsWithSameName: any = [];
 
     if (clickId) {
@@ -80,7 +84,7 @@
     );
 
     // 3. Combinar la información del producto y su precio en un solo objeto
-    selectedProduct = productsWithSameName.map((product) => {
+    return productsWithSameName.map((product) => {
       // Encuentra el precio correspondiente al ID del producto
       const productPrice = pricesForProducts.find(
         (price) => price && price.Id === product.Id,
@@ -91,20 +95,12 @@
         price: productPrice,
       };
     });
-
-    selectedVariant = selectedProduct[0];
-    selectedVariantId = selectedProduct[0].product.Id.toString(); // Seleccionar el primer producto de la lista
-    console.log("selectedVariant: ", selectedVariant);
-
-    console.log("here aniandiendo al carrito...");
-    addToCartClick(selectedVariant);
   }
 
   const dispatch = createEventDispatcher();
   let quantity = 1;
 
   function addToCartClick(product) {
-    console.log("addToCartClick product: ", product);
     selectedProduct = null;
     clickProduct = null;
     product.quantity = Number(quantity); // Añadir la cantidad al producto
@@ -148,3 +144,5 @@
     <span class="text-nowrap">Agregar todo</span>
   </button>
 </div>
+
+<PopupSelectSizes bind:show={showModal} bind:totalItems />

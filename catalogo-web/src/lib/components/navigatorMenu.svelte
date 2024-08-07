@@ -147,6 +147,13 @@
     pageInfo = getCurrentPageInfo(url);
     loggedAdi = localStorage.getItem("adi");
     mounted = true;
+
+    // setTimeout(() => {
+    //   showViewPrices = true;
+    //   document
+    //     .getElementById("bottom-button-prices")
+    //     ?.classList.toggle("hidden");
+    // }, 1000);
   });
 
   let showCollections = false;
