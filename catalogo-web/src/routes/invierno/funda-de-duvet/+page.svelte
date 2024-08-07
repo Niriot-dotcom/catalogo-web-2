@@ -14,8 +14,10 @@
   import DiferenciasDeCobertores from "$lib/components/communication/DiferenciasDeCobertores.svelte";
 
   let visibleIds: string[] = [];
+  let showViewPrices = false;
   function handleVisibleChange(event: any) {
     visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
   }
   let relatedProducts: string[] = [];
   let selectedProduct: null | string = null;
@@ -44,9 +46,6 @@
   bgVideo="/images/invierno/portadillas/ENTRADA-P02-FUNDA-DUVET-VERTICAL.mp4"
 />
 
-<!-- [COMUNICACION] Diferencias de Cobertores -->
-<DiferenciasDeCobertores />
-
 <!-- render pages -->
 {#each pages as page, i}
   {#if page.pageTemplate == "JuegoDeEdredon"}
@@ -69,6 +68,7 @@
   bind:relatedProducts
   bind:visibleIds
   bind:showPopup
+  bind:showViewPrices
   bind:selectedProduct
 />
 

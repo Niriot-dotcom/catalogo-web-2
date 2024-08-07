@@ -8,8 +8,14 @@
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
   import { EnumEntradaInvierno } from "$lib/constants/strings";
   import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
+  import VisibleDetector from "$lib/components/visibleDetector.svelte";
 
   let visibleIds: string[] = [];
+  let showViewPrices = false;
+  function handleVisibleChange(event: any) {
+    visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
+  }
   let relatedProducts: string[] = [];
   let selectedProduct: null | string = null;
   let showPopup = false;
@@ -47,12 +53,15 @@
   let activeTitle = sections[0].title;
 </script>
 
+<VisibleDetector on:visibleChange={handleVisibleChange} />
+
 <!-- ENTRADA -->
 <EntradaInvierno
   titleSvg="/images/invierno/copys/ENTRADA-P09-BASICOS-TITULO.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P09-BASICOS-COPY.svg"
   variant={EnumEntradaInvierno.SOLO_VIDEO}
   titlePosition="bottom-0 right-0"
-  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  storyPosition="top-16 left-5"
   bgVideo="/images/invierno/portadillas/ENTRADA-P09-BASICOS-VERTICAL.mp4"
 />
 
@@ -88,6 +97,7 @@
   bind:relatedProducts
   bind:visibleIds
   bind:showPopup
+  bind:showViewPrices
   bind:selectedProduct
 />
 

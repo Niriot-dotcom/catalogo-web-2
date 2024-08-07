@@ -10,8 +10,10 @@
   import { EnumEntradaInvierno } from "$lib/constants/strings";
 
   let visibleIds: string[] = [];
+  let showViewPrices = false;
   function handleVisibleChange(event: any) {
     visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
   }
   let relatedProducts: string[] = [];
   let selectedProduct: null | string = null;
@@ -61,6 +63,7 @@
   bind:relatedProducts
   bind:visibleIds
   bind:showPopup
+  bind:showViewPrices
   bind:selectedProduct
 />
 
