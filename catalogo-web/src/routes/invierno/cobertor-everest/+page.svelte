@@ -11,6 +11,7 @@
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
   import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
   import InicioInvierno from "$lib/custom-pages/InicioInvierno.svelte";
+  import OptimImg from "$lib/components/OptimImg.svelte";
 
   function isSafari() {
     return (
@@ -170,11 +171,9 @@
             style="cursor:pointer;"
             class="link-block-10 w-inline-block"
           >
-            <img
-              src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
-              loading="eager"
-              alt=""
-              class="image-18"
+            <OptimImg
+              imgClass="image-18"
+              source={`${URLS.fotos}${page.complSheets[0]}.webp`}
             />
             <div class="text-block-22">
               agrega <br />estas<br /><strong>sábanas</strong>
@@ -185,11 +184,9 @@
             style="cursor:pointer;"
             class="link-block-10 w-inline-block"
           >
-            <img
-              src={`${URLS.fotos}${page.complSheets[0]}.webp`}
-              loading="eager"
-              alt=""
-              class="image-18"
+            <OptimImg
+              imgClass="image-18"
+              source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             />
             <div class="text-block-22">
               combina con <br />estas <br /><strong>cortinas</strong>
@@ -273,11 +270,9 @@
             style="cursor:pointer;"
             class="link-block-10 w-inline-block"
           >
-            <img
-              src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
-              loading="eager"
-              alt=""
-              class="image-18"
+            <OptimImg
+              imgClass="image-18"
+              source={`${URLS.fotos}${page.complSheets[0]}.webp`}
             />
             <div class="text-block-22">
               agrega <br />estas<br /><strong>sábanas</strong>
@@ -288,11 +283,9 @@
             style="cursor:pointer;"
             class="link-block-10 w-inline-block"
           >
-            <img
-              src={`${URLS.fotos}${page.complSheets[0]}.webp`}
-              loading="eager"
-              alt=""
-              class="image-18"
+            <OptimImg
+              imgClass="image-18"
+              source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             />
             <div class="text-block-22">
               combina con <br />estas <br /><strong>cortinas</strong>

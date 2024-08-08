@@ -36,27 +36,12 @@
     class="image logo-catalogo"
   />
   <img
-    src="images/invierno/recursos/COPY.svg"
-    loading="eager"
-    style="opacity: 0"
-    alt=""
-    class="image logo-catalogo"
-  />
-  <img
     src="images/invierno/recursos/LOGOTIPO_INVIERNO.svg"
     loading="eager"
     alt=""
     class="image logo-catalogo movil"
   />
 
-  <!-- below part -->
-  <img
-    src="images/invierno/recursos/COPY.svg"
-    loading="eager"
-    alt=""
-    class="image logo-catalogo movil"
-    style="top: 18%;"
-  />
   <div
     data-poster-url="videos/PORTADA-poster-00001.jpg"
     data-video-urls="videos/invierno/Portada-Invierno-24-25.mp4,videos/PORTADA-transcode.webm"

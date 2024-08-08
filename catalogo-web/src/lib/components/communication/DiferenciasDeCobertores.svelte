@@ -153,7 +153,9 @@
 
           <!-- characteristics -->
           {#each cobertor.characteristics as characteristic, i}
-            <p class="text-center relative">{@html characteristic}</p>
+            <p class="text-center relative chavos-sm">
+              {@html characteristic}
+            </p>
           {/each}
         </div>
       </a>

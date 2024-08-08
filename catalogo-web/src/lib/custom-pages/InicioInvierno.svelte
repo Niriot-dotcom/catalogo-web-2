@@ -25,11 +25,6 @@
       arrows={false}
       swiping={false}
     >
-      <!-- POINTS (hidden) -->
-      <div slot="dots" />
-      <div slot="prev" />
-      <div slot="next" />
-
       <!-- IMAGES -->
       {#each { length: 3 } as _, i}
         <div class="overflow-hidden w-full h-[60vh]">

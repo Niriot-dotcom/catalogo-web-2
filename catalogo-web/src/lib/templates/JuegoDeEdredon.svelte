@@ -4,6 +4,7 @@
   import ComplementosCopy from "$lib/components/resources/ComplementosCopy.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import {
+    CATALOGS_NAMES,
     CATALOGS_ROUTES,
     COLORS,
     LEGALES_SVGS,
@@ -75,7 +76,8 @@
       )
         ? ' mb-9'
         : ''}"
-      style={page.pageTitle.toLowerCase().includes("duvet")
+      style={page.pageTitle.toLowerCase().includes("duvet") &&
+      currentCatalog !== CATALOGS_ROUTES.INVIERNO
         ? `border-width: 0px; bottom: 10vh; transform: scale(1.5); height: 30vh;`
         : `bottom: 0px; height: 40vh;`}
     >
@@ -92,7 +94,8 @@
         {:else}
           <OptimImg
             onClick={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
-            imgClass={page.pageTitle.toLowerCase().includes("duvet")
+            imgClass={page.pageTitle.toLowerCase().includes("duvet") &&
+            currentCatalog !== CATALOGS_ROUTES.INVIERNO
               ? "object-contain w-full h-full"
               : "object-cover w-full h-full"}
             source={`${URLS.fotos}${page.SKU}-3.webp`}

@@ -12,6 +12,7 @@
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import CobertorBebe from "$lib/templates/CobertorBebe.svelte";
   import { EnumEntradaInvierno } from "$lib/constants/strings";
+  import Sublinea from "$lib/templates/Sublinea.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -30,6 +31,7 @@
   };
 
   const pages: DatabasePage[] = data.props.pages;
+  const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
@@ -60,6 +62,21 @@
     <EdredonVoga bind:page {handleImageClick} />
   {:else if page.pageTemplate == "AmbienteConMiniambiente"}
     <AmbienteConMiniambiente bind:page {handleImageClick} />
+  {/if}
+{/each}
+
+<!-- {#if Object.keys(groups).length > 0}
+{#each groups as group, i}
+<Sublinea
+    groupPages={groups[Object.keys(groups)[0]]}
+    title={Object.keys(groups)[0]}
+    {handleImageClick}
+  />
+{/each}
+{/if} -->
+{#each Object.keys(groups) as group, i}
+  {#if groups[group][0].pageTemplate == "Sublinea"}
+    <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
   {/if}
 {/each}
 

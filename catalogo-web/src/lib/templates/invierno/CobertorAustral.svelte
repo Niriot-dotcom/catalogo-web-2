@@ -1,5 +1,6 @@
 <script lang="ts">
   import ImageComponent from "$lib/components/imageComponent.svelte";
+  import OptimImg from "$lib/components/OptimImg.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import { URLS } from "$lib/constants/strings";
 
@@ -82,23 +83,19 @@
       >
         Completa<br /><strong class="bold-text">el Look</strong>
       </div>
-      <a href="#" class="link-block-10 w-inline-block"
-        ><img
-          src={`${URLS.fotos}${page.complCurtains[0]}.webp`}
-          loading="eager"
-          alt=""
-          class="image-18"
+      <a href="#" class="link-block-10 w-inline-block">
+        <OptimImg
+          imgClass="image-18"
+          source={`${URLS.fotos}${page.complSheets[0]}.webp`}
         />
         <div class="text-block-22">
           agrega estas<strong class="bold-text-6"><br />sábanas</strong>
         </div>
       </a>
-      <a href="#" class="link-block-10 w-inline-block"
-        ><img
-          src={`${URLS.fotos}${page.complSheets[0]}.webp`}
-          loading="eager"
-          alt=""
-          class="image-18"
+      <a href="#" class="link-block-10 w-inline-block">
+        <OptimImg
+          imgClass="image-18"
+          source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
         />
         <div class="text-block-22">
           combina con estas <br />‍<strong>cortinas</strong>

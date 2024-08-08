@@ -126,6 +126,6 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
 
 
 ''' MAIN '''
-# delete_collection(COLLECTION_NAME, 5)
+delete_collection(COLLECTION_NAME, 5)
 json_obj = parse_csv_to_json(CSV_DB, OUT_JSON)
 json_to_firebase(json_obj, COLLECTION_NAME)

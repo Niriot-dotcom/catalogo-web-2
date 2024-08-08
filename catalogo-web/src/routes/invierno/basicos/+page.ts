@@ -19,12 +19,17 @@ export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   });
   pages.sort((a, b) => (a.productOrder > b.productOrder ? 1 : -1));
 
+  let pillowsPages = [];
+  let mattressProtectorsPages = [];
   let groupedPages = {};
   for (const page of pages) {
-    if (
-      page.pageTemplate == "Sublinea" ||
-      page.pageTemplate == "VariantesDeColor"
-    ) {
+    if (page.pageTemplate == "") continue;
+
+    if (page.pageTemplate === "Almohadas") {
+      pillowsPages.push(page);
+    } else if (page.pageTemplate === "ProtectoresDeColchon") {
+      mattressProtectorsPages.push(page);
+    } else {
       if (groupedPages[page.productType] === undefined) {
         groupedPages[page.productType] = [page];
       } else {
@@ -33,5 +38,11 @@ export const load = async ({ params }: Parameters<PageLoad>[0]) => {
     }
   }
 
-  return { props: { pages, groupedPages } };
+  return {
+    props: {
+      groupedPages,
+      pillowsPages,
+      mattressProtectorsPages,
+    },
+  };
 };

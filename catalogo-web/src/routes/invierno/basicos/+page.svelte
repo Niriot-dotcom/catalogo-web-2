@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { PageData } from "./$types";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import { Catalogs } from "$lib/constants/globalTypes";
+  import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
   import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
   import Sublinea from "$lib/templates/Sublinea.svelte";
   import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
@@ -9,6 +9,8 @@
   import { EnumEntradaInvierno } from "$lib/constants/strings";
   import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
+  import ProtectoresDeColchon from "$lib/templates/ProtectoresDeColchon.svelte";
+  import Almohadas from "$lib/templates/Almohadas.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -26,8 +28,8 @@
     relatedProducts = relatedProds;
   };
 
-  const groups: Record<string, []> = data.props.groupedPages;
-  let groupedPagess: Record<string, []> = data.props.groupedPages;
+  const groupedPages: Record<string, DatabasePage[]> = data.props.groupedPages;
+  const { pillowsPages, mattressProtectorsPages } = data.props;
   let sections = [
     {
       title: "Almohadas",
@@ -74,22 +76,28 @@
 /> -->
 
 <!-- render pages -->
-{#each Object.keys(groupedPagess) as group, i}
-  {#if groups[group][0].pageTemplate == "AmbienteConMiniambiente"}
-    {#each groups[group] as juego, i}
+{#each Object.keys(groupedPages) as group, i}
+  {#if groupedPages[group][0].pageTemplate == "AmbienteConMiniambiente"}
+    {#each groupedPages[group] as juego, i}
       <AmbienteConMiniambiente page={juego} {handleImageClick} />
     {/each}
-  {:else if groups[group][0].pageTemplate == "Sublinea"}
-    <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
-  {:else if groups[group][0].pageTemplate == "VariantesDeColor"}
+  {:else if groupedPages[group][0].pageTemplate == "Sublinea"}
+    <Sublinea
+      groupPages={groupedPages[group]}
+      title={group}
+      {handleImageClick}
+    />
+  {:else if groupedPages[group][0].pageTemplate == "VariantesDeColor"}
     <VariantesDeColor
       bind:visibleIds
-      groupPages={groups[group]}
+      groupPages={groupedPages[group]}
       title={group}
       {handleImageClick}
     />
   {/if}
 {/each}
+<Almohadas pages={pillowsPages} {handleImageClick} />
+<ProtectoresDeColchon pages={mattressProtectorsPages} {handleImageClick} />
 
 <NavigatorMenu
   catalog={Catalogs.INVIERNO}

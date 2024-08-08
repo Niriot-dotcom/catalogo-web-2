@@ -141,7 +141,10 @@
 {:else}
   <div
     style={`background-color: ${groupPages[selectedColorIndex].pageResources[0]}`}
-    class="md:hidden relative text-black w-screen min-h-[85vh] pt-8 pb-0 px-3 flex flex-col justify-center overflow-hidden"
+    class="md:hidden relative text-black w-screen min-h-[85vh] pt-8 {title ===
+      'Rodapié' && currentCatalog === CATALOGS_ROUTES.INVIERNO
+      ? 'pb-28'
+      : 'pb-0'} px-3 flex flex-col justify-center overflow-hidden"
   >
     <!-- line header text -->
     <div class="w-full text-center mb-5">
