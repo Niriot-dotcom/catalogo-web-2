@@ -44,7 +44,7 @@
 />
 
 {#each pages as page, index}
-  {#if page.pageTitle === "Bariloche"}
+  {#if page.pageTitle === "Bariloche" || page.pageTitle === "Loket"}
     <div data-visible-id={page.SKU}>
       <div class="plantilla-nordico">
         <div class="div-block-46">

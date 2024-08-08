@@ -125,7 +125,9 @@
             imgClass={page.pageTitle.toLowerCase().includes("duvet")
               ? "object-contain w-full h-full"
               : "object-cover h-full"}
-            source={`${URLS.fotos}${page.SKU}-3.webp`}
+            source={page.pageTitle === "Térmica"
+              ? `${URLS.fotos}${page.SKU}-2.webp`
+              : `${URLS.fotos}${page.SKU}-3.webp`}
           />
 
           {#if page.pageCopys && page.pageCopys.length > 0 && page.pageCopys[0] !== ""}

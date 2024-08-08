@@ -184,7 +184,7 @@
             ""
         ],
         "complSheets": [
-            ""
+            "88809"
         ],
         "complCurtains": [
             "63932"
@@ -399,10 +399,10 @@
             "#e4dbd2"
         ],
         "complSheets": [
-            ""
+            "88975"
         ],
         "complCurtains": [
-            ""
+            "88573"
         ],
         "complPillowCovers": [
             "88975"
@@ -442,10 +442,10 @@
             "#dbdddf"
         ],
         "complSheets": [
-            ""
+            "89054"
         ],
         "complCurtains": [
-            ""
+            "89059"
         ],
         "complPillowCovers": [
             "89054"
@@ -485,10 +485,10 @@
             ""
         ],
         "complSheets": [
-            ""
+            "88216"
         ],
         "complCurtains": [
-            ""
+            "88802"
         ],
         "complPillowCovers": [
             "88216"
@@ -528,10 +528,10 @@
             "#ece6e4"
         ],
         "complSheets": [
-            ""
+            "88811"
         ],
         "complCurtains": [
-            ""
+            "88973"
         ],
         "complPillowCovers": [
             "88811"
@@ -2039,10 +2039,10 @@
             "#e2e3e2"
         ],
         "complSheets": [
-            ""
+            "89041"
         ],
         "complCurtains": [
-            ""
+            "87964"
         ],
         "complPillowCovers": [
             ""
@@ -2479,10 +2479,10 @@
             "#939790"
         ],
         "complSheets": [
-            ""
+            "88106"
         ],
         "complCurtains": [
-            ""
+            "87961"
         ],
         "complPillowCovers": [
             ""
@@ -2780,10 +2780,12 @@
         "status": "NVO",
         "productSection": "Página 7 / Frazadas",
         "productOrder": 1,
-        "pageTemplate": "JuegoDeEdredon",
+        "pageTemplate": "AmbienteConMiniambiente",
         "pageTitle": "Ivory",
         "pageResources": [
-            "#ebe6e1"
+            "#ebe6e1",
+            "VERTICAL",
+            "NADA"
         ],
         "complSheets": [
             ""
@@ -2823,10 +2825,12 @@
         "status": "CONT",
         "productSection": "Página 7 / Frazadas",
         "productOrder": 2,
-        "pageTemplate": "JuegoDeEdredon",
+        "pageTemplate": "AmbienteConMiniambiente",
         "pageTitle": "Gante",
         "pageResources": [
-            "#e1ded9"
+            "#e1ded9",
+            "VERTICAL",
+            "NADA"
         ],
         "complSheets": [
             ""
@@ -2866,10 +2870,12 @@
         "status": "NVO",
         "productSection": "Página 7 / Frazadas",
         "productOrder": 3,
-        "pageTemplate": "JuegoDeEdredon",
+        "pageTemplate": "AmbienteConMiniambiente",
         "pageTitle": "Chenille Rose",
         "pageResources": [
-            "#d9d0c9"
+            "#d9d0c9",
+            "VERTICAL",
+            "NADA"
         ],
         "complSheets": [
             ""
@@ -2909,10 +2915,12 @@
         "status": "NVO",
         "productSection": "Página 7 / Frazadas",
         "productOrder": 4,
-        "pageTemplate": "JuegoDeEdredon",
+        "pageTemplate": "AmbienteConMiniambiente",
         "pageTitle": "Térmica",
         "pageResources": [
-            "#c9c9ca"
+            "#c9c9ca",
+            "VERTICAL",
+            "NADA"
         ],
         "complSheets": [
             ""

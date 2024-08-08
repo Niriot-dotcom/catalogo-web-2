@@ -120,13 +120,15 @@
           />
           <div class="copy-box-everest right">
             <div class="text-block-26">
-              Pelo <span class="text-span-8">largo</span>
+              {page.pageCopys[0]}
+              <span class="text-span-8 leading-none">{page.pageCopys[1]}</span>
             </div>
-            <div class="text-block-27" style="text-transform: capitalize;">
+            <!-- TODO -->
+            <!-- <div class="text-block-27" style="text-transform: capitalize;">
               {typeof page.pageCopys[1] !== "undefined"
                 ? page.pageCopys[1]
                 : ""}
-            </div>
+            </div> -->
             <img
               src="../images/Flechas.svg"
               loading="eager"
@@ -142,22 +144,22 @@
             id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
             classList="image-17"
           />
-          <div class="copy-box-everest">
-            <div class="text-block-25" style="text-transform: lowercase;">
-              <!-- TODO -->
-              page.pageDescriptions[1]
+          {#if page.pageCopys && page.pageCopys.length > 3 && page.pageCopys[2] !== ""}
+            <div class="copy-box-everest">
+              <div class="text-block-25" style="text-transform: lowercase;">
+                {page.pageCopys[2]}
+              </div>
+              <div class="text-block-27">
+                {page.pageCopys[3]}
+              </div>
+              <img
+                src="../images/Flechas-1.svg"
+                loading="eager"
+                alt=""
+                class="arrow-image"
+              />
             </div>
-            <div class="text-block-27">
-              <!-- TODO -->
-              page.pageDescriptions[2]
-            </div>
-            <img
-              src="../images/Flechas-1.svg"
-              loading="eager"
-              alt=""
-              class="arrow-image"
-            />
-          </div>
+          {/if}
         </div>
         <div class="related-products">
           <div
@@ -225,13 +227,15 @@
 
           <div class="copy-box-everest right">
             <div class="text-block-26">
-              Pelo <span class="text-span-8">largo</span>
+              {page.pageCopys[0]}
+              <span class="text-span-8 leading-none">{page.pageCopys[1]}</span>
             </div>
-            <div class="text-block-27" style="text-transform: capitalize;">
+            <!-- TODO -->
+            <!-- <div class="text-block-27" style="text-transform: capitalize;">
               {typeof page.pageCopys[1] !== "undefined"
                 ? page.pageCopys[1]
                 : ""}
-            </div>
+            </div> -->
             <img
               src="../images/Flechas.svg"
               loading="eager"
@@ -247,21 +251,22 @@
             id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
             classList="image-17"
           />
-          <div class="copy-box-everest">
-            <div class="text-block-25" style="text-transform: lowercase;">
-              <!-- TODO -->
-              page.pageDescriptions[1]
+          {#if page.pageCopys && page.pageCopys.length > 3 && page.pageCopys[2] !== ""}
+            <div class="copy-box-everest">
+              <div class="text-block-25" style="text-transform: lowercase;">
+                {page.pageCopys[2]}
+              </div>
+              <div class="text-block-27">
+                {page.pageCopys[3]}
+              </div>
+              <img
+                src="../images/Flechas-1.svg"
+                loading="eager"
+                alt=""
+                class="arrow-image"
+              />
             </div>
-            <div class="text-block-27 hidden">
-              This is some text inside of a div block.
-            </div>
-            <img
-              src="../images/Flechas-1.svg"
-              loading="eager"
-              alt=""
-              class="arrow-image"
-            />
-          </div>
+          {/if}
         </div>
         <div class="related-products">
           <div

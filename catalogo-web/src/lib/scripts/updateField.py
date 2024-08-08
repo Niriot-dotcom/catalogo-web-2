@@ -138,6 +138,25 @@ def update_collection_rows(fields, json_object, firebase_collection_name):
             for field in fields:
                 doc_ref.update({ field: obj[field] })
 
+def get_numeric_array(arr: str, resources=False, keyword='', sku='', pageTemplate=''):
+    # arr can be:
+    #    an empty string (''),
+    #    ['12345' '12345']
+    #    [12345, 12345]
+    #    12345,12345
+    if arr == '' or arr == '[]':
+        arr = []
+    elif "'" in arr and '[' in arr:
+        arr = arr.replace(" '", ", '").strip('[]').replace("'", "").split(', ')
+    elif not "'" in arr and '[' in arr and ','in arr:
+        arr = arr.strip('[]').split(', ')
+    elif not "'" in arr and '[' in arr and ','in arr:
+        arr = arr.split(',')
+    else:
+        raise Exception('get_numeric_array ERROR ==> Invalid input string arr:\ntype: %s\nstring (arr): %s' % (type(arr), arr))
+
+    return arr
+
 def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
     json_array = []
     with open(csv_filepath, mode='r') as csv_file:
@@ -156,7 +175,8 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
                 row['productOrder'] = int(row['productOrder'] if row['productOrder'].isdigit() else -1)
             for field in ARRAY_ROWS:
                 try:
-                    row[field] = row[field].strip('[]').replace("'", "").split()
+                    # row[field] = row[field].strip('[]').replace("'", "").split()
+                    row[field] = get_numeric_array(row[field])
                 except:
                     print("An exception occurred in ", field)
 
@@ -185,7 +205,8 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
 ''' MULTIPLE FIELDS TO UPDATE '''
 FIELDS_TO_UPDATE = [
     # 'pageResources',
-    'pageTitle',
+    # 'pageTitle',
+    'pageCopys'
 ]
-json_obj = parse_csv_to_json('./src/lib/scripts/Invierno Completed F0.csv', 'jsonDeleteSoon.json')
+json_obj = parse_csv_to_json('/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 docs/Templates CAT WEB BD Invierno 2024 - 2025.csv', 'jsonDeleteSoon.json')
 update_collection_rows(FIELDS_TO_UPDATE, json_obj, COLLECTION_NAME)
