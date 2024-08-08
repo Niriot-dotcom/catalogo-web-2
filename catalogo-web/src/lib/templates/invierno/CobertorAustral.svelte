@@ -10,7 +10,8 @@
 
 <div id={page.pageTitle} class="plantilla-austral" data-visible-id={page.SKU}>
   <section class="section-7">
-    <div
+    <div class="h-full bg-transparent">
+      <!-- <div
       data-poster-url={`${URLS.fotos}${page.SKU}.webp`}
       data-video-urls="../videos/video-{page.pageTitle}.mp4,../videos/video-{page.pageTitle}.webm"
       data-autoplay="true"
@@ -28,21 +29,20 @@
         data-wf-ignore="true"
         data-object-fit="cover"
       >
-        <!-- <source
+        <source
           src="../videos/video-{page.pageTitle}.mp4"
           data-wf-ignore="true"
         />
         <source
           src="../videos/video-{page.pageTitle}.webm"
           data-wf-ignore="true"
-        /> -->
-      </video>
-      <div class="div-block-37">
+        />
+      </video> -->
+      <div class="div-block-37 opacity-100">
         <ImageComponent
-          id="13bb5612-fe92-2612-82a1-47ecd004a28d"
           alt=""
           src={`${URLS.fotos}${page.SKU}.webp`}
-          classList="image-25"
+          classList="image-25 opacity-100"
         />
         <div class="div-block-11 title-right">
           <div class="page-title-box">
@@ -77,15 +77,20 @@
   </section>
   <div class="div-block-39">
     <div class="related-products austral">
-      <div
-        text-split=""
-        words-slide-from-right=""
-        class="text-block-23 look-book"
-      >
-        Completa<br /><strong class="bold-text">el Look</strong>
-      </div>
-      <div class="h-[10vh] pl-[12%] flex justify-between">
-        <AddAll skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]} />
+      <div>
+        <div
+          text-split=""
+          words-slide-from-right=""
+          class="text-block-23 look-book"
+        >
+          Completa<br /><strong class="bold-text">el Look</strong>
+        </div>
+
+        <div class="h-[10vh] pl-[12%] flex justify-between">
+          <AddAll
+            skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]}
+          />
+        </div>
       </div>
       <a href="#" class="link-block-10 w-inline-block">
         <OptimImg

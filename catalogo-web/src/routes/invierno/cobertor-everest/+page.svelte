@@ -149,14 +149,14 @@
               <div class="text-block-25" style="text-transform: lowercase;">
                 {page.pageCopys[2]}
               </div>
-              <div class="text-block-27">
+              <div class="text-block-27 mt-0 leading-none">
                 {page.pageCopys[3]}
               </div>
               <img
                 src="../images/Flechas-1.svg"
                 loading="eager"
                 alt=""
-                class="arrow-image"
+                class="arrow-image mt-0 ml-20"
               />
             </div>
           {/if}
@@ -256,14 +256,14 @@
               <div class="text-block-25" style="text-transform: lowercase;">
                 {page.pageCopys[2]}
               </div>
-              <div class="text-block-27">
+              <div class="text-block-27 mt-0 leading-none">
                 {page.pageCopys[3]}
               </div>
               <img
                 src="../images/Flechas-1.svg"
                 loading="eager"
                 alt=""
-                class="arrow-image"
+                class="arrow-image mt-0 ml-20"
               />
             </div>
           {/if}

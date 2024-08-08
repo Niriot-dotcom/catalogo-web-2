@@ -46,7 +46,7 @@
     </div>
     <div class="columna-invernal-2 austral">
       <ImageComponent
-        src={`${URLS.fotos}${page.SKU}.webp`}
+        src={`${URLS.fotos}${page.SKU}-3.webp`}
         loading="eager"
         alt=""
         classList="image-26"
