@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { addToCart } from "$lib/components/cartLogic.js";
   import {
     collection,
     query,
@@ -9,25 +8,26 @@
     doc,
   } from "firebase/firestore";
   import { db } from "$lib/firebase";
-  import { createEventDispatcher } from "svelte";
   import PopupSelectSizes from "./PopupSelectSizes.svelte";
 
   export let skus: any[];
-  export let clickProduct: string | null = null;
   export let showModal: boolean = false;
-  let cartItems: any[] = [];
-  let totalItems: any[] = [];
+  let cartItems: [] = [];
+  let totalItems: [] = [];
+  let selectedItems: [];
+  let loading: boolean = false;
 
   async function handleAddAllProducts() {
+    loading = true;
+    showModal = true;
+
     for await (const sku of skus) {
-      // let productsSizes = fetchProductSizes("", Number(sku));
       cartItems = await fetchProductSizes("", Number(sku));
-      console.log("cartItems: ", cartItems);
       totalItems.push(cartItems);
     }
 
-    console.log("totalItems: ", totalItems);
-    showModal = true;
+    loading = false;
+    selectedItems = totalItems.map((item) => item[0]);
   }
 
   async function fetchProductSizes(event: any, clickId: any) {
@@ -96,28 +96,9 @@
       };
     });
   }
-
-  const dispatch = createEventDispatcher();
-  let quantity = 1;
-
-  function addToCartClick(product) {
-    selectedProduct = null;
-    clickProduct = null;
-    product.quantity = Number(quantity); // Añadir la cantidad al producto
-    addToCart(product);
-    dispatch("addtocart");
-
-    // TODO habilitar gtag
-    // if (typeof gtag !== "undefined") {
-    //   gtag("event", "add_to_cart", {
-    //     event_category: "ecommerce",
-    //     event_label: product.product.Name,
-    //   });
-    // }
-  }
 </script>
 
-<div class="w-fit">
+<div class="w-fit mt-3">
   <button
     on:click={() => handleAddAllProducts()}
     class="text-white text-right chavos-sm bg-[#6c5750] flex items-center mr-5 px-3 py-1.5 rounded-2xl xs:chavos-base"
@@ -145,4 +126,9 @@
   </button>
 </div>
 
-<PopupSelectSizes bind:show={showModal} bind:totalItems />
+<PopupSelectSizes
+  bind:show={showModal}
+  bind:totalItems
+  bind:selectedItems
+  bind:loading
+/>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import AddAll from "$lib/components/AddAll.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import LegalLicenses from "$lib/components/communication/LegalLicenses.svelte";
   import ComplementosCopy from "$lib/components/resources/ComplementosCopy.svelte";
@@ -133,8 +134,10 @@
   {#if !page.pageResources?.includes("NADA")}
     <!-- complementos -->
     <div class="">
-      <div class="h-[10vh] pl-[12%]">
+      <div class="h-[10vh] pl-[12%] flex justify-between">
         <ComplementosCopy catalog={currentCatalog} />
+
+        <AddAll skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]} />
       </div>
 
       <div class="grid grid-cols-2 px-6 pb-2">

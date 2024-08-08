@@ -1,4 +1,5 @@
 <script lang="ts">
+  import AddAll from "$lib/components/AddAll.svelte";
   import ImageComponent from "$lib/components/imageComponent.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
@@ -85,6 +86,9 @@
       class="text-block-23 look-book"
     >
       Completa<br /><strong class="bold-text">el Look</strong>
+    </div>
+    <div class="h-[10vh] pl-[12%] flex justify-between">
+      <AddAll skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]} />
     </div>
     <div class="link-block-10 centered w-inline-block">
       <OptimImg

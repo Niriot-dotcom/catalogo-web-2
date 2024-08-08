@@ -12,6 +12,7 @@
   import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
   import InicioInvierno from "$lib/custom-pages/InicioInvierno.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
+  import AddAll from "$lib/components/AddAll.svelte";
 
   function isSafari() {
     return (
@@ -166,6 +167,11 @@
           >
             Completa<br /><strong class="bold-text">el Look</strong>
           </div>
+          <div class="h-[10vh] pl-[12%] flex justify-between">
+            <AddAll
+              skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]}
+            />
+          </div>
           <div
             on:click={show}
             style="cursor:pointer;"
@@ -264,6 +270,11 @@
             class="text-block-23 look-book"
           >
             Completa<br /><strong class="bold-text">el Look</strong>
+          </div>
+          <div class="h-[10vh] pl-[12%] flex justify-between">
+            <AddAll
+              skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]}
+            />
           </div>
           <div
             on:click={show}

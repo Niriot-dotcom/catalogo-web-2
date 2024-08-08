@@ -53,6 +53,19 @@ input:focus {
   outline: none;
 }
 
+/* COMPONENTS */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #830048;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+  padding: 0;
+  position: inherit;
+}
+
 /* BIASI ANIMATIONS */
 .animate-up {
   transform: translateY(0);
