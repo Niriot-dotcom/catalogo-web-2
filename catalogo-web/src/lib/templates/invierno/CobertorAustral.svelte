@@ -49,7 +49,7 @@
             <h2
               text-split=""
               words-slide-from-right=""
-              class="heading-4 alternate"
+              class="heading-4 alternate mt-12"
             >
               {page.pageTitle}
             </h2>
