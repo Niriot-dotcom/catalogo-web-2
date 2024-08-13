@@ -53,6 +53,7 @@
   <div
     data-visible-id={groupPages[selectedColorIndex].SKU}
     class="w-full overflow-hidden px-5 relative py-2 bg-beige"
+    style={`background-color: ${groupPages[selectedColorIndex].pageResources[0]}`}
   >
     <!-- line header text -->
     <div class="w-full text-center mb-5 text-black mt-5">
@@ -119,12 +120,12 @@
                   groupPages[i].pageResources.length > 1
                     ? groupPages[i].pageResources[1]
                     : "#888"
-                }; border: 4px solid ${groupPages[i].pageResources[1]};`
+                }; border: 4px solid #fff;`
               : `background-color: ${
                   groupPages[i].pageResources &&
                   groupPages[i].pageResources.length > 1
-                    ? "#888"
-                    : groupPages[i].pageResources[1]
+                    ? groupPages[i].pageResources[1]
+                    : "#fff"
                 };`}
           />
 

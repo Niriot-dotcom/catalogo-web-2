@@ -268,10 +268,15 @@
               <OptimImg
                 imgClass="{title.toLowerCase() === 'cojín' ||
                 title.toLowerCase() === 'cojínes' ||
+                title.toLowerCase() === 'cojines' ||
                 title.toLowerCase() === 'cojínes everest' ||
+                title.toLowerCase() === 'cojines everest' ||
                 title.toLowerCase() === 'cojínes xl' ||
+                title.toLowerCase() === 'cojines xl' ||
                 title.toLowerCase() === 'fundas de cojín' ||
-                title.toLowerCase() === 'fundas de almohada'
+                title.toLowerCase() === 'fundas de almohada' ||
+                (page.pageResources?.length > 2 &&
+                  page.pageResources[2] === 'CONTAIN')
                   ? 'object-contain'
                   : 'object-cover'} w-full h-full"
                 source={`${URLS.fotos}${page.SKU}.webp`}

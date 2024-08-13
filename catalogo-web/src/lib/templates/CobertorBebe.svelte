@@ -91,7 +91,7 @@
     let randomInt = randomIntFromInterval(1, 10);
     plastaIndex = +randomInt < 10 ? "0" + randomInt : randomInt;
     componentType = "FormaBebe" + plastaIndex;
-    console.log("componentType: ", componentType);
+    // console.log("componentType: ", componentType);
     loadComponent();
   });
   // $: {

@@ -8,6 +8,7 @@
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
   import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
   import CobertorNordico from "$lib/templates/invierno/CobertorNordico.svelte";
+  import OptimImg from "$lib/components/OptimImg.svelte";
 
   onMount(() => {
     const script = document.createElement("script");
@@ -72,7 +73,7 @@
                       words-slide-from-right=""
                       class="paragraph product-detail-subtitle alternate"
                     >
-                      Cobertor Ligero
+                      Cobertor Nórdico
                     </p>
                   </div>
                   {#each page.pageIcons as icon}
@@ -87,25 +88,24 @@
                   {/each}
                 </div>
 
-                <!-- TODO -->
-                <!-- <div class="copy-box-everest right ligero">
-                  <div class="text-block-26">
-                    <span class="text-span-8">
-                      TODO
-                      page.pageDescriptions[0]
-                    </span>
+                {#if page.pageCopys && page.pageCopys.length > 3 && page.pageCopys[2] !== ""}
+                  <div class="copy-box-everest right ligero">
+                    <div class="text-block-26">
+                      <span class="text-span-8">
+                        {page.pageCopys[2]}
+                      </span>
+                    </div>
+                    <div class="text-block-27">
+                      {page.pageCopys[3]}
+                    </div>
+                    <img
+                      src="../images/Flechas.svg"
+                      loading="eager"
+                      alt=""
+                      class="arrow-image"
+                    />
                   </div>
-                  <div class="text-block-27">
-                    TODO
-                    page.pageDescriptions[1], page.pageDescriptions[2]
-                  </div>
-                  <img
-                    src="../images/Flechas.svg"
-                    loading="eager"
-                    alt=""
-                    class="arrow-image"
-                  />
-                </div> -->
+                {/if}
               </div>
             </div>
             <div udesly-before-after="50" class="ligero-container">
@@ -126,23 +126,19 @@
           >
             Completa<br /><strong class="bold-text">el Look</strong>
           </div>
-          <a href="#" class="link-block-10 centered w-inline-block"
-            ><img
-              src={`${URLS.fotos}${page.SKU}.webp`}
-              loading="eager"
-              alt=""
-              class="image-18 horizontal"
+          <a href="#" class="link-block-10 centered w-inline-block">
+            <OptimImg
+              imgClass="image-18 horizontal"
+              source={`${URLS.fotos}${page.complSheets[0]}.webp`}
             />
             <div class="text-block-22 centered">
               agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
             </div>
           </a>
-          <a href="#" class="link-block-10 centered w-inline-block"
-            ><img
-              src={`${URLS.fotos}${page.SKU}-2.webp`}
-              loading="eager"
-              alt=""
-              class="image-18 horizontal"
+          <a href="#" class="link-block-10 centered w-inline-block">
+            <OptimImg
+              imgClass="image-18 horizontal"
+              source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             />
             <div class="text-block-22 centered">
               combina con estas<br />

@@ -76,7 +76,7 @@
 /> -->
 
 <!-- render pages -->
-{#each Object.keys(groupedPages) as group, i}
+{#each Object.keys(groupedPagess) as group, i}
   {#if groupedPages[group][0].pageTemplate == "AmbienteConMiniambiente"}
     {#each groupedPages[group] as juego, i}
       <AmbienteConMiniambiente page={juego} {handleImageClick} />
@@ -96,8 +96,13 @@
     />
   {/if}
 {/each}
-<Almohadas pages={pillowsPages} {handleImageClick} />
-<ProtectoresDeColchon pages={mattressProtectorsPages} {handleImageClick} />
+
+{#if activeTitle === "Almohadas"}
+  <Almohadas pages={pillowsPages} {handleImageClick} />
+{/if}
+{#if activeTitle === "Protectores de Colchón"}
+  <ProtectoresDeColchon pages={mattressProtectorsPages} {handleImageClick} />
+{/if}
 
 <NavigatorMenu
   catalog={Catalogs.INVIERNO}

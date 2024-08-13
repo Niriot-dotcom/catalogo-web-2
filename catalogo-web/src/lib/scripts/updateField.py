@@ -204,9 +204,11 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
 
 ''' MULTIPLE FIELDS TO UPDATE '''
 FIELDS_TO_UPDATE = [
-    # 'pageResources',
+    'pageResources',
     # 'pageTitle',
-    'pageCopys'
+    # 'pageCopys',
+    # 'complSheets',
+    # 'complCurtains'
 ]
 json_obj = parse_csv_to_json('/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 docs/Templates CAT WEB BD Invierno 2024 - 2025.csv', 'jsonDeleteSoon.json')
 update_collection_rows(FIELDS_TO_UPDATE, json_obj, COLLECTION_NAME)

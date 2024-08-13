@@ -80,7 +80,7 @@
     <div
       id={page.pageTitle}
       data-visible-id={page.SKU}
-      class="plantilla-everest"
+      class="plantilla-everest overflow-x-hidden"
     >
       <div class="div-block-31">
         <ImageComponent
@@ -212,7 +212,7 @@
     <div
       id={page.pageTitle}
       data-visible-id="{page.SKU},"
-      class="plantilla-everest inversa"
+      class="plantilla-everest inversa overflow-x-hidden"
     >
       <section class="section-6">
         <div
