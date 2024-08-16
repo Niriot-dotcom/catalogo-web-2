@@ -38,6 +38,7 @@
   let catalogUrl: string;
   let catalogLaunchVideo: string;
   let catalogDownloadLink: string;
+  let catalogLogo: string;
 
   // when catalogDetail changes, update catalogTitle and catalogDescription
   $: switch (catalogDetail) {
@@ -49,6 +50,7 @@
       catalogImage = CATALOGS_DESCRIPTIONS.invierno.image;
       catalogLaunchVideo = CATALOGS_DESCRIPTIONS.invierno.launchVideo;
       catalogDownloadLink = CATALOGS_DESCRIPTIONS.invierno.downloadLink;
+      catalogLogo = CATALOGS_DESCRIPTIONS.invierno.logo;
       break;
     case "biasi":
       catalogTitle = CATALOGS_DESCRIPTIONS.biasi.title;
@@ -58,6 +60,7 @@
       catalogImage = CATALOGS_DESCRIPTIONS.biasi.image;
       catalogLaunchVideo = CATALOGS_DESCRIPTIONS.biasi.launchVideo;
       catalogDownloadLink = CATALOGS_DESCRIPTIONS.biasi.downloadLink;
+      catalogLogo = CATALOGS_DESCRIPTIONS.biasi.image;
       break;
     case "chavos":
       catalogTitle = CATALOGS_DESCRIPTIONS.chavos.title;
@@ -67,6 +70,7 @@
       catalogImage = CATALOGS_DESCRIPTIONS.chavos.image;
       catalogLaunchVideo = CATALOGS_DESCRIPTIONS.chavos.launchVideo;
       catalogDownloadLink = CATALOGS_DESCRIPTIONS.chavos.downloadLink;
+      catalogLogo = CATALOGS_DESCRIPTIONS.chavos.image;
       break;
     case "vianney":
       catalogTitle = CATALOGS_DESCRIPTIONS.vianney.title;
@@ -76,6 +80,7 @@
       catalogImage = CATALOGS_DESCRIPTIONS.vianney.image;
       catalogLaunchVideo = CATALOGS_DESCRIPTIONS.vianney.launchVideo;
       catalogDownloadLink = CATALOGS_DESCRIPTIONS.vianney.downloadLink;
+      catalogLogo = CATALOGS_DESCRIPTIONS.vianney.image;
       break;
     case "bebe":
       catalogTitle = CATALOGS_DESCRIPTIONS.bebe.title;
@@ -85,6 +90,7 @@
       catalogImage = CATALOGS_DESCRIPTIONS.bebe.image;
       catalogLaunchVideo = CATALOGS_DESCRIPTIONS.bebe.launchVideo;
       catalogDownloadLink = CATALOGS_DESCRIPTIONS.bebe.downloadLink;
+      catalogLogo = CATALOGS_DESCRIPTIONS.bebe.image;
       break;
   }
 
@@ -149,9 +155,11 @@
               <div>
                 <div class="pb-1 sm:pb-6">
                   <div>
-                    <div class="relative h-40 sm:h-56">
+                    <div
+                      class="relative h-[40vh] m-3 sm:h-56 overflow-hidden max-w-5/6 flex justify-center"
+                    >
                       <img
-                        class="absolute h-full w-full object-cover"
+                        class="absolute h-full object-contain"
                         src={catalogImage}
                         alt=""
                       />

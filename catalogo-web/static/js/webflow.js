@@ -8771,7 +8771,7 @@
             } catch (error) {
               if (head) notify();
               else last = void 0;
-              throw error;
+              error;
             }
           }
           last = void 0;

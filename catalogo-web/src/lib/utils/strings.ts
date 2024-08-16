@@ -12,3 +12,11 @@ export function randomIntFromInterval(min: number, max: number) {
 export function capitalizeFirstLetter(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+export function deleteSubArray(totalItems: [], item: []) {
+  const itemString = JSON.stringify(item);
+
+  return totalItems.filter((subArray) => {
+    return JSON.stringify(subArray) !== itemString;
+  });
+}

@@ -1,13 +1,23 @@
 <script lang="ts">
   import type { PageData } from "./$types";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import { Catalogs } from "$lib/constants/globalTypes";
+  import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
   import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
   import Sublinea from "$lib/templates/Sublinea.svelte";
   import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
-  import EntradaBebe from "$lib/templates/EntradaBebe.svelte";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import { EnumEntradaInvierno } from "$lib/constants/strings";
+  import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
+  import VisibleDetector from "$lib/components/visibleDetector.svelte";
+  import ProtectoresDeColchon from "$lib/templates/ProtectoresDeColchon.svelte";
+  import Almohadas from "$lib/templates/Almohadas.svelte";
 
   let visibleIds: string[] = [];
+  let showViewPrices = false;
+  function handleVisibleChange(event: any) {
+    visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
+  }
   let relatedProducts: string[] = [];
   let selectedProduct: null | string = null;
   let showPopup = false;
@@ -18,46 +28,88 @@
     relatedProducts = relatedProds;
   };
 
-  const groups: Record<string, []> = data.props.groupedPages;
+  const groupedPages: Record<string, DatabasePage[]> = data.props.groupedPages;
+  const { pillowsPages, mattressProtectorsPages } = data.props;
+  let sections = [
+    {
+      title: "Almohadas",
+      productTypes: ["ALMOHADA", "ALMOHADA VIAFOAM", "Almohada Abrazable"],
+    },
+    {
+      title: "Sábanas",
+      productTypes: [
+        "Sábanas Siberia",
+        "Sábanas Siberia Ligero",
+        "Sábanas Andes-Polar",
+        "Sábanas Franela",
+        "Sábanas Camiseta",
+      ],
+    },
+    { title: "Rodapiés", productTypes: ["Rodapié"] },
+    {
+      title: "Fundas de Almohada",
+      productTypes: ["Funda De Almohada"],
+    },
+    { title: "Protectores de Colchón", productTypes: ["PROTECTOR DE COLCHÓN"] },
+  ];
+  let activeTitle = sections[0].title;
 </script>
 
-<!-- tutorial -->
-<!-- <Tutorial showHorizontalHand /> -->
+<VisibleDetector on:visibleChange={handleVisibleChange} />
 
-<!-- entrada -->
-<EntradaBebe
-  backgroundVideo="../videos/bebe/Entrada-P3-Accesorios.mp4"
-  backgroundImage="/images/bebe/copys/Entrada-P3-AccesoriosFondo.svg"
-  backgroundColor="#FBECEA"
-  textImage="/images/bebe/copys/Entrada-P3-Accesorios.svg"
-  textColor="#F0BDB8"
-  storyMainPhrase="Las aventuras de los pequeños"
-  storyCopy="se viven mejor en un ambiente adecuado a ellos."
+<!-- ENTRADA -->
+<EntradaInvierno
+  titleSvg="/images/invierno/copys/ENTRADA-P09-BASICOS-TITULO.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P09-BASICOS-COPY.svg"
+  variant={EnumEntradaInvierno.SOLO_VIDEO}
+  titlePosition="bottom-0 right-0"
+  storyPosition="top-16 left-5"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P09-BASICOS-VERTICAL.mp4"
 />
 
+<!-- <SectionMenu
+  {sections}
+  breakLine={2}
+  {activeTitle}
+  constPages={data.props.groupedPages}
+  bind:groupedPagess
+/> -->
+
 <!-- render pages -->
-{#each Object.keys(groups) as group, i}
-  {#if groups[group][0].pageTemplate == "AmbienteConMiniambiente"}
-    {#each groups[group] as juego, i}
+{#each Object.keys(groupedPagess) as group, i}
+  {#if groupedPages[group][0].pageTemplate == "AmbienteConMiniambiente"}
+    {#each groupedPages[group] as juego, i}
       <AmbienteConMiniambiente page={juego} {handleImageClick} />
     {/each}
-  {:else if groups[group][0].pageTemplate == "Sublinea"}
-    <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
-  {:else if groups[group][0].pageTemplate == "VariantesDeColor"}
+  {:else if groupedPages[group][0].pageTemplate == "Sublinea"}
+    <Sublinea
+      groupPages={groupedPages[group]}
+      title={group}
+      {handleImageClick}
+    />
+  {:else if groupedPages[group][0].pageTemplate == "VariantesDeColor"}
     <VariantesDeColor
       bind:visibleIds
-      groupPages={groups[group]}
+      groupPages={groupedPages[group]}
       title={group}
       {handleImageClick}
     />
   {/if}
 {/each}
 
+{#if activeTitle === "Almohadas"}
+  <Almohadas pages={pillowsPages} {handleImageClick} />
+{/if}
+{#if activeTitle === "Protectores de Colchón"}
+  <ProtectoresDeColchon pages={mattressProtectorsPages} {handleImageClick} />
+{/if}
+
 <NavigatorMenu
-  catalog={Catalogs.BEBE}
+  catalog={Catalogs.INVIERNO}
   bind:relatedProducts
   bind:visibleIds
   bind:showPopup
+  bind:showViewPrices
   bind:selectedProduct
 />
 

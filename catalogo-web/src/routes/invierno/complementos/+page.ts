@@ -2,14 +2,14 @@
 import type { PageLoad } from "./$types";
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "$lib/firebase";
-import { BebeCollectionName } from "$lib/constants/DB";
+import { InviernoCollectionName } from "$lib/constants/DB";
 
 export type VisibleIds = string[];
 
 export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   const q = query(
-    collection(db, BebeCollectionName),
-    where("productSection", "==", "Página 3 / Accesorios"),
+    collection(db, InviernoCollectionName),
+    where("productSection", "==", "Página 8 / Complementos"),
     where("pageStatus", "==", "Activa"),
   );
   const querySnapshot = await getDocs(q);

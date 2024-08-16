@@ -1,245 +1,76 @@
 <script lang="ts">
-  import ImageComponent from "$lib/components/imageComponent.svelte";
-  import VisibleDetector from "$lib/components/visibleDetector.svelte";
-  import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
-  import { Catalogs } from "$lib/constants/globalTypes";
-  import { catalogSections } from "$lib/components/currentCatalogPage";
   import type { PageData } from "./$types";
+  import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
+  import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import EdredonVoga from "$lib/templates/EdredonVoga.svelte";
+  import JuegoDeEdredon from "$lib/templates/JuegoDeEdredon.svelte";
+  import EdredonNovo from "$lib/templates/EdredonNovo.svelte";
+  import EdredonNuut from "$lib/templates/EdredonNuut.svelte";
+  import Cobertor from "$lib/templates/Cobertor.svelte";
+  import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
+  import VisibleDetector from "$lib/components/visibleDetector.svelte";
+  import { EnumEntradaInvierno } from "$lib/constants/strings";
 
-  let visibleIds = [];
-
-  function handleVisibleChange(event) {
+  let visibleIds: string[] = [];
+  let showViewPrices = false;
+  function handleVisibleChange(event: any) {
     visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
   }
-
+  let relatedProducts: string[] = [];
+  let selectedProduct: null | string = null;
   let showPopup = false;
 
-  function show() {
-    showPopup = true;
-  }
-
   export let data: PageData;
-  const products = data.props.products; // guarda el objeto product en una variable
+  const handleImageClick = (sku: string, relatedProds: string[]) => {
+    selectedProduct = sku;
+    relatedProducts = relatedProds;
+  };
+
+  const pages: DatabasePage[] = data.props.pages;
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 
-{#each products as product, index}
-  <div
-    id={product.pageTitle}
-    data-visible-id="{product.pageProducts}, {product
-      .pageProductsImages[0]}, {product.pageProductsImages[1]}"
-  >
-    <div class="plantilla-nordico">
-      <div class="div-block-46">
-        <div class="handle-container">
-          <div class="div-block-45">
-            <ImageComponent
-              src={product.pageImages[1]}
-              loading="eager"
-              id="f09abdcc-902f-003f-2d59-9712f02a5bd1"
-              alt=""
-              classList="image-28"
-            />
-            <div class="div-block-43 ligero">
-              <div class="div-block-48">
-                <div class="page-title-box">
-                  <h2 text-split="" words-slide-from-right="" class="heading-4">
-                    {product.pageTitle}
-                  </h2>
-                  <p
-                    text-split=""
-                    words-slide-from-right=""
-                    class="paragraph product-detail-subtitle alternate"
-                  >
-                    Cobertor Ligero
-                  </p>
-                </div>
-                {#each product.pageIcons as icon}
-                  <div>
-                    <ImageComponent
-                      src={icon}
-                      loading="eager"
-                      alt=""
-                      classList="icon-image"
-                    />
-                  </div>
-                {/each}
-              </div>
-              <div class="copy-box-everest right ligero">
-                <div class="text-block-26">
-                  <span class="text-span-8">{product.pageDescriptions[0]}</span>
-                </div>
-                <div class="text-block-27">
-                  {product.pageDescriptions[1]}, {product.pageDescriptions[2]}
-                </div>
-                <img
-                  src="../images/Flechas.svg"
-                  loading="eager"
-                  alt=""
-                  class="arrow-image"
-                />
-              </div>
-            </div>
-          </div>
-          <div udesly-before-after="50" class="ligero-container">
-            <ImageComponent
-              src={product.pageMainImage}
-              loading="eager"
-              id="adfea8dd-6554-1c71-61f8-1c4b232589e5"
-              classList="image-31"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="related-products horizontal">
-        <div
-          text-split=""
-          words-slide-from-right=""
-          class="text-block-23 look-book"
-        >
-          Completa<br /><strong class="bold-text">el Look</strong>
-        </div>
-        <a href="#" class="link-block-10 centered w-inline-block"
-          ><img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[0]}.jpg"
-            loading="eager"
-            alt=""
-            class="image-18 horizontal"
-          />
-          <div class="text-block-22 centered">
-            agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
-          </div>
-        </a>
-        <a href="#" class="link-block-10 centered w-inline-block"
-          ><img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[1]}.jpg"
-            loading="eager"
-            alt=""
-            class="image-18 horizontal"
-          />
-          <div class="text-block-22 centered">
-            combina con estas<br />
-            <strong class="bold-text-3"> cortinas</strong>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-{:else}
-  <div
-    id={products.pageTitle}
-    data-visible-id="{product.pageProducts}, {product
-      .pageProductsImages[0]}, {product.pageProductsImages[1]}"
-  >
-    <div class="plantilla-nordico">
-      <div class="div-block-46">
-        <div class="handle-container">
-          <div class="div-block-45">
-            <ImageComponent
-              src={product.pageImages[1]}
-              loading="eager"
-              id="f09abdcc-902f-003f-2d59-9712f02a5bd1"
-              alt=""
-              classList="image-28"
-            />
-            <div class="div-block-43 ligero">
-              <div class="div-block-48">
-                <div class="page-title-box">
-                  <h2 text-split="" words-slide-from-right="" class="heading-4">
-                    {product.pageTitle}
-                  </h2>
-                  <p
-                    text-split=""
-                    words-slide-from-right=""
-                    class="paragraph product-detail-subtitle alternate"
-                  >
-                    Cobertor Ligero
-                  </p>
-                </div>
-                {#each product.pageIcons as icon}
-                  <div>
-                    <ImageComponent
-                      src={icon}
-                      loading="eager"
-                      alt=""
-                      classList="icon-image"
-                    />
-                  </div>
-                {/each}
-              </div>
-              <div class="copy-box-everest right ligero">
-                <div class="text-block-26 hidden">
-                  Pelo <span class="text-span-8">largo</span>
-                </div>
-                <div class="hidden text-block-27">
-                  This is some text inside of a div block.
-                </div>
-                <img
-                  src="../images/Flechas.svg"
-                  loading="eager"
-                  alt=""
-                  class="arrow-image"
-                />
-              </div>
-            </div>
-          </div>
-          <div udesly-before-after="50" class="ligero-container">
-            <ImageComponent
-              src={product.pageMainImage}
-              loading="eager"
-              id="adfea8dd-6554-1c71-61f8-1c4b232589e5"
-              classList="image-31"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="related-products horizontal">
-        <div
-          text-split=""
-          words-slide-from-right=""
-          class="text-block-23 look-book"
-        >
-          Completa<br /><strong class="bold-text">el Look</strong>
-        </div>
-        <a href="#" class="link-block-10 centered w-inline-block"
-          ><img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[0]}.jpg"
-            loading="eager"
-            alt=""
-            class="image-18 horizontal"
-          />
-          <div class="text-block-22 centered">
-            agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
-          </div>
-        </a>
-        <a href="#" class="link-block-10 centered w-inline-block"
-          ><img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[1]}.jpg"
-            loading="eager"
-            alt=""
-            class="image-18 horizontal"
-          />
-          <div class="text-block-22 centered">
-            combina con estas<br />
-            <strong class="bold-text-3"> cortinas</strong>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
+<!-- ENTRADA -->
+<EntradaInvierno
+  titleSvg="/images/invierno/copys/ENTRADA-P06-LIGERO-TITULO.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P06-LIGERO-COPY.svg"
+  variant={EnumEntradaInvierno.FOTO_VIDEO}
+  titleSize="w-2/3"
+  titlePosition="top-[60vh] left-0"
+  storyPosition="top-[43vh] left-12 w-1/2"
+  bgImage="/images/invierno/portadillas/ENTRADA-P06-LIGERO.webp"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P06-LIGERO-VERTICAL.mp4"
+/>
+<!-- titlePosition="bottom-0 left-0 h-1/3" -->
+
+<!-- render pages -->
+{#each pages as page, i}
+  {#if page.pageTemplate == "JuegoDeEdredon"}
+    <JuegoDeEdredon bind:page {handleImageClick} />
+  {:else if page.pageTemplate == "EdredonNovo"}
+    <EdredonNovo bind:page {handleImageClick} />
+  {:else if page.pageTemplate == "EdredonNuut"}
+    <EdredonNuut bind:page {handleImageClick} />
+  {:else if page.pageTemplate == "Cobertor"}
+    <Cobertor bind:page {handleImageClick} />
+  {:else if page.pageTemplate == "EdredonVoga"}
+    <EdredonVoga bind:page {handleImageClick} />
+  {:else if page.pageTemplate == "AmbienteConMiniambiente"}
+    <AmbienteConMiniambiente bind:page {handleImageClick} />
+  {/if}
 {/each}
 
-<CategoriesFooter
+<NavigatorMenu
   catalog={Catalogs.INVIERNO}
-  categories={catalogSections.INVIERNO}
+  bind:relatedProducts
+  bind:visibleIds
+  bind:showPopup
+  bind:showViewPrices
+  bind:selectedProduct
 />
-<NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
 
 <div>
   <script defer src="../js/webflowPage.js"></script>

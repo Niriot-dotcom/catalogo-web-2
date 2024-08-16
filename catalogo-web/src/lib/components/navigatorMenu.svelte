@@ -16,7 +16,6 @@
   import CategoriesFooter from "./categoriesFooter.svelte";
   import { BiasiFooterHeader } from "$lib/constants/FooterHeaders";
   import { Catalogs } from "$lib/constants/globalTypes";
-  import PhotographicIndex from "./PhotographicIndex.svelte";
   import {
     catalogSections,
     getCurrentPageInfo,
@@ -24,15 +23,15 @@
   import { onMount } from "svelte";
   import CatalogMenu from "./catalogMenu.svelte";
   import { user } from "$lib/firebase";
-  import SlideToTheSides from "./slideToTheSides.svelte";
   import {
     navigateToNextPage,
     navigateToPreviousPage,
   } from "$lib/utils/navigation";
-  import { URLS } from "$lib/constants/strings";
+  import { CATALOGS_DESCRIPTIONS, URLS } from "$lib/constants/strings";
   export let visibleIds: string[] = [];
   export let relatedProducts: string[] = [];
   export let showPopup = false;
+  export let showViewPrices = false;
   export let showLogin = false;
   export let showCart = false;
   export let selectedProduct: null | string = null;
@@ -148,6 +147,13 @@
     pageInfo = getCurrentPageInfo(url);
     loggedAdi = localStorage.getItem("adi");
     mounted = true;
+
+    // setTimeout(() => {
+    //   showViewPrices = true;
+    //   document
+    //     .getElementById("bottom-button-prices")
+    //     ?.classList.toggle("hidden");
+    // }, 1000);
   });
 
   let showCollections = false;
@@ -176,6 +182,31 @@
         "transitionend",
         function (e) {
           sectionsList?.classList.add("hidden");
+        },
+        { capture: false, once: true, passive: false },
+      );
+    }
+  }
+  function handleShowCatalogs() {
+    document
+      .getElementById("catalogs-dropdown-arrow")
+      ?.classList.toggle("-rotate-90");
+
+    let catalogsList = document.getElementById("catalogs-list");
+    if (!catalogsList) return;
+    catalogsList.style.transition = "all 0.2s linear";
+
+    if (catalogsList.classList.contains("hidden")) {
+      catalogsList.classList.remove("hidden");
+      setTimeout(function () {
+        catalogsList?.classList.remove("opacity-0");
+      }, 20);
+    } else {
+      catalogsList.classList.add("opacity-0");
+      catalogsList.addEventListener(
+        "transitionend",
+        function (e) {
+          catalogsList?.classList.add("hidden");
         },
         { capture: false, once: true, passive: false },
       );
@@ -243,10 +274,6 @@
           categories={catalogSections.BEBE}
         />
       {:else if catalog === Catalogs.INVIERNO}
-        <!-- {console.log(
-          "show catalogs invierno aksdfkhajksdf",
-          catalogSections.INVIERNO,
-        )} -->
         <CategoriesFooter
           {catalog}
           showOnlyGrid={true}
@@ -258,107 +285,112 @@
 {/if}
 
 <!-- Action menú -->
-<div class="menu-options div-block-44">
-  {#if mounted}
-    <div
-      in:fly={{ y: 10, duration: 400, easing: cubicIn }}
-      class="w-auto pointer-events-auto h-auto rounded-3xl bg-white flex flex-col justify-center duration-500 transition-all ease-in shadow-xl"
-    >
-      {#if showCollections}
-        <ul
-          in:fly={{ y: -10, duration: 400, easing: cubicOut }}
-          out:fly={{ y: 10, duration: 400, easing: cubicIn }}
-          role="list"
-          class="px-2 mt-2 rounded-[18px]"
-        >
-          <li
-            class="flex flex-wrap hover:bg-gray-100 rounded-2xl items-center justify-between gap-x-6 gap-y-4 pb-4 pt-2 px-2 sm:flex-nowrap"
+{#if showViewPrices}
+  <div id="bottom-button-prices" class="menu-options flex">
+    {#if mounted}
+      <div
+        in:fly={{ y: 10, duration: 400, easing: cubicIn }}
+        class="w-auto pointer-events-auto h-auto rounded-3xl bg-white flex flex-col justify-center duration-500 transition-all ease-in shadow-xl"
+      >
+        {#if showCollections}
+          <ul
+            in:fly={{ y: -10, duration: 400, easing: cubicOut }}
+            out:fly={{ y: 10, duration: 400, easing: cubicIn }}
+            role="list"
+            class="px-2 mt-2 rounded-[18px]"
           >
-            <div>
-              <p class="text-sm font-semibold leading-6 text-gray-900">
-                <a href="#" class="">Regalos para mi mamá</a>
-              </p>
-              <div
-                class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500"
-              >
-                <p>
-                  <a href="#" class="">Guardar en la colección</a>
+            <li
+              class="flex flex-wrap hover:bg-gray-100 rounded-2xl items-center justify-between gap-x-6 gap-y-4 pb-4 pt-2 px-2 sm:flex-nowrap"
+            >
+              <div>
+                <p class="text-sm font-semibold leading-6 text-gray-900">
+                  <a href="#" class="">Regalos para mi mamá</a>
                 </p>
-                <svg viewBox="0 0 2 2" class="h-0.5 w-0.5 fill-current">
-                  <circle cx="1" cy="1" r="1" />
-                </svg>
-                <p><time datetime="2023-01-22T12:59Z">3d ago</time></p>
-              </div>
-            </div>
-            <dl class="flex w-full flex-none justify-between gap-x-8 sm:w-auto">
-              <div class="flex w-auto gap-x-2.5">
-                <dt>
-                  <span class="sr-only">Total comments</span>
-
-                  <svg
-                    class="h-6 w-6 text-gray-400"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
+                <div
+                  class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500"
+                >
+                  <p>
+                    <a href="#" class="">Guardar en la colección</a>
+                  </p>
+                  <svg viewBox="0 0 2 2" class="h-0.5 w-0.5 fill-current">
+                    <circle cx="1" cy="1" r="1" />
                   </svg>
-                </dt>
+                  <p><time datetime="2023-01-22T12:59Z">3d ago</time></p>
+                </div>
               </div>
-            </dl>
-          </li>
-          <li
-            class="flex flex-wrap hover:bg-gray-100 rounded-2xl items-center justify-between gap-x-6 gap-y-4 pb-4 pt-2 px-2 sm:flex-nowrap"
-          >
-            <div>
-              <p class="text-sm font-semibold leading-6 text-gray-900">
-                <a href="#" class="">Remodelación recámara</a>
-              </p>
-              <div
-                class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500"
+              <dl
+                class="flex w-full flex-none justify-between gap-x-8 sm:w-auto"
               >
-                <p>
-                  <a href="#" class="">Agregar a la colección</a>
-                </p>
-                <svg viewBox="0 0 2 2" class="h-0.5 w-0.5 fill-current">
-                  <circle cx="1" cy="1" r="1" />
-                </svg>
-                <p><time datetime="2023-01-22T12:59Z">3d ago</time></p>
-              </div>
-            </div>
-            <dl class="flex w-full flex-none justify-between gap-x-8 sm:w-auto">
-              <div class="flex w-auto gap-x-2.5">
-                <dt>
-                  <span class="sr-only">Total comments</span>
-                  <svg
-                    class="h-6 w-6 text-gray-400"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </dt>
-              </div>
-            </dl>
-          </li>
-        </ul>
-      {/if}
+                <div class="flex w-auto gap-x-2.5">
+                  <dt>
+                    <span class="sr-only">Total comments</span>
 
-      <div class="p-1.5 flex flex-row justify-center">
-        <button
+                    <svg
+                      class="h-6 w-6 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </dt>
+                </div>
+              </dl>
+            </li>
+            <li
+              class="flex flex-wrap hover:bg-gray-100 rounded-2xl items-center justify-between gap-x-6 gap-y-4 pb-4 pt-2 px-2 sm:flex-nowrap"
+            >
+              <div>
+                <p class="text-sm font-semibold leading-6 text-gray-900">
+                  <a href="#" class="">Remodelación recámara</a>
+                </p>
+                <div
+                  class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500"
+                >
+                  <p>
+                    <a href="#" class="">Agregar a la colección</a>
+                  </p>
+                  <svg viewBox="0 0 2 2" class="h-0.5 w-0.5 fill-current">
+                    <circle cx="1" cy="1" r="1" />
+                  </svg>
+                  <p><time datetime="2023-01-22T12:59Z">3d ago</time></p>
+                </div>
+              </div>
+              <dl
+                class="flex w-full flex-none justify-between gap-x-8 sm:w-auto"
+              >
+                <div class="flex w-auto gap-x-2.5">
+                  <dt>
+                    <span class="sr-only">Total comments</span>
+                    <svg
+                      class="h-6 w-6 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </dt>
+                </div>
+              </dl>
+            </li>
+          </ul>
+        {/if}
+
+        <div class="p-1.5 flex flex-row justify-center">
+          <!-- <button
           use:tippy={{ content: "Colecciones", placement: "top" }}
           on:click={handleShowCollections}
           class="hidden flex-row rounded-[18px] cursor-pointer w-auto h-auto px-3 py-3 bg-gray-100 hover:bg-gray-200 mr-1"
@@ -369,22 +401,23 @@
             alt=""
             class=""
           />
-        </button>
-        <button
-          on:click={togglePopup}
-          class="flex flex-row align-middle justify-center rounded-[18px] cursor-pointer w-auto h-auto px-3 py-3 bg-gray-100 hover:bg-gray-200"
-        >
-          <img src="../images/CurrencyPrices.svg" loading="eager" alt="" />
-          <span
-            style="font-family: Helvetica;"
-            class="text-base px-1 text-gray-900 font-medium leading-6 my-auto"
-            >Ver precios</span
+        </button> -->
+          <button
+            on:click={togglePopup}
+            class="flex flex-row align-middle justify-center rounded-[18px] cursor-pointer w-auto h-auto px-3 py-3 bg-gray-100 hover:bg-gray-200"
           >
-        </button>
+            <img src="../images/CurrencyPrices.svg" loading="eager" alt="" />
+            <span
+              style="font-family: Helvetica;"
+              class="text-base px-1 text-gray-900 font-medium leading-6 my-auto"
+              >Ver precios</span
+            >
+          </button>
+        </div>
       </div>
-    </div>
-  {/if}
-</div>
+    {/if}
+  </div>
+{/if}
 
 <!-- Navbar movil -->
 
@@ -638,59 +671,61 @@
   </div>
 </div>
 
-<!-- Left navigation button -->
-<div
-  class="fixed left-0 top-1/2 transform -translate-y-1/2"
-  style="z-index: 800;"
->
-  <button
-    on:click={navigateToPreviousPage}
-    use:tippy={{ content: "Página anterior", placement: "left" }}
-    class="bg-white text-gray-900 py-2 pr-2 pl-1 rounded-tr-full rounded-br-full shadow-xl focus:outline-none hover:bg-gray-100"
+{#if catalog !== Catalogs.INVIERNO}
+  <!-- Left navigation button -->
+  <div
+    class="fixed left-0 top-1/2 transform -translate-y-1/2"
+    style="z-index: 800;"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
+    <button
+      on:click={navigateToPreviousPage}
+      use:tippy={{ content: "Página anterior", placement: "left" }}
+      class="bg-white text-gray-900 py-2 pr-2 pl-1 rounded-tr-full rounded-br-full shadow-xl focus:outline-none hover:bg-gray-100"
     >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M15 19l-7-7 7-7"
-      />
-    </svg>
-  </button>
-</div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"
+        />
+      </svg>
+    </button>
+  </div>
 
-<!-- Right navigation button -->
-<div
-  class="fixed right-0 top-1/2 transform -translate-y-1/2"
-  style="z-index: 800;"
->
-  <button
-    on:click={navigateToNextPage}
-    use:tippy={{ content: "Siguiente Página", placement: "right" }}
-    class="bg-white text-gray-900 py-2 sm:pr-0 pl-2 rounded-tl-full rounded-bl-full shadow-xl focus:outline-none hover:bg-gray-100 pr-1"
+  <!-- Right navigation button -->
+  <div
+    class="fixed right-0 top-1/2 transform -translate-y-1/2"
+    style="z-index: 800;"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
+    <button
+      on:click={navigateToNextPage}
+      use:tippy={{ content: "Siguiente Página", placement: "right" }}
+      class="bg-white text-gray-900 py-2 sm:pr-0 pl-2 rounded-tl-full rounded-bl-full shadow-xl focus:outline-none hover:bg-gray-100 pr-1"
     >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M9 5l7 7-7 7"
-      />
-    </svg>
-  </button>
-</div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"
+        />
+      </svg>
+    </button>
+  </div>
+{/if}
 
 <!-- Panel Busqueda -->
 
@@ -727,33 +762,19 @@
         >
           <div class="pointer-events-auto w-screen sm:max-w-xs max-w-md">
             <div
-              class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl"
+              class="flex h-full flex-col overflow-y-scroll bg-white py-0 shadow-xl"
               transition:fly={{ x: -400, duration: 500 }}
             >
-              <div class="px-4 sm:px-6">
-                <div class="flex items-center justify-between">
+              <div class="relative mt-4 flex-1 px-4 sm:px-6">
+                <div class="lg:col-start-3 lg:row-end-1 mb-2 flex">
                   <div
-                    class="flex md:absolute md:inset-y-0 md:left-0 lg:static xl:col-span-2 py-2"
+                    class="rounded-lg bg-gray-100 shadow-sm ring-1 ring-gray-200"
                   >
-                    <div class="flex items-center">
-                      <a
-                        href="/"
-                        class="flex flex-row items-center align-middle"
-                      >
-                        <img
-                          src="../images/favicon.png"
-                          class="h-10 w-10"
-                          alt=""
-                        />
-                        <h2
-                          class="ml-4 pr-3 sm:pr-0 block text-base font-semibold text-gray-900"
-                        >
-                          Catálogos Web
-                        </h2>
-                      </a>
-                    </div>
+                    <CatalogMenu />
                   </div>
-                  <div class="ml-3 flex h-7 items-center">
+
+                  <!-- close icon -->
+                  <div class="ml-3 flex h-7 items-center w-fit justify-end">
                     <button
                       on:click={toggleMenu}
                       type="button"
@@ -778,47 +799,11 @@
                     </button>
                   </div>
                 </div>
-              </div>
-              <div class="relative mt-4 flex-1 px-4 sm:px-6">
-                <div class="lg:col-start-3 lg:row-end-1 mb-6">
-                  <h2 class="sr-only">Summary</h2>
-                  <div
-                    class="rounded-lg bg-gray-100 shadow-sm ring-1 ring-gray-200"
-                  >
-                    <CatalogMenu />
-                  </div>
-                </div>
-                <nav
-                  aria-label="Sidebar"
-                  class="sticky top-4 divide-y divide-gray-300"
-                >
-                  <div class="space-y-1 pb-8">
-                    <!-- Current: "bg-gray-200 text-gray-900", Default: "text-gray-700 hover:bg-gray-50" -->
-                    <a
-                      href="/"
-                      class="bg-vianney-400 text-vianney-600 group flex items-center rounded-md px-3 py-2 text-sm font-medium"
-                      aria-current="page"
-                    >
-                      <svg
-                        class="text-vianney-600 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
-                        />
-                      </svg>
-
-                      <span class="truncate">Catálogos</span>
-                    </a>
+                <nav aria-label="Sidebar" class="sticky top-4">
+                  <div class="space-y-1 pb-2">
                     <button
                       on:click={toggleLogin}
-                      class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium"
+                      class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
                     >
                       <svg
                         class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
@@ -841,7 +826,7 @@
                     </button>
                     <button
                       on:click={toggleCart}
-                      class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium"
+                      class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
                     >
                       <svg
                         class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
@@ -867,18 +852,18 @@
                     </button>
 
                     <!--
-                  <a href="#" class="text-gray-700 hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium">
-                    <svg class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-                    </svg>
-                    
-                    <span class="truncate">Decoradora IA</span>
-                  </a> -->
+                    <a href="#" class="text-gray-700 hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium">
+                      <svg class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                      </svg>
+                      
+                      <span class="truncate">Decoradora IA</span>
+                    </a> -->
 
-                    {#if catalog === Catalogs.CHAVOS || catalog === Catalogs.VIANNEY || catalog === Catalogs.BEBE}
+                    {#if catalog === Catalogs.CHAVOS || catalog === Catalogs.VIANNEY || catalog === Catalogs.BEBE || catalog === Catalogs.INVIERNO}
                       <button
                         on:click={handleShowSections}
-                        class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-2 text-sm font-medium border border-red-400"
+                        class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
                       >
                         <svg
                           class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
@@ -922,16 +907,16 @@
                       </button>
                       <div
                         id="sections-list"
-                        class="mt-3 space-y-1"
+                        class="mt-3 ml-8 space-y-1"
                         aria-labelledby="communities-headline"
                       >
                         {#each catalogSections[catalog] as section}
                           <a
                             href={section.link}
-                            class="group flex flex-col leading-5 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                            class="group flex flex-col leading-5 rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                           >
                             <span class="truncate chavos-bold-sm"
-                              >{section.title}</span
+                              >{section.title.replaceAll("<br />", " ")}</span
                             >
                             <span class="truncate chavos-xs"
                               >{section.subtitle}</span
@@ -972,6 +957,73 @@
                   </div>
                 </div>
                 -->
+
+                  <button
+                    on:click={handleShowCatalogs}
+                    class="w-full bg-vianney-400 text-vianney-600 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
+                  >
+                    <svg
+                      class="text-vianney-600 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+
+                    <span class="truncate">Catálogos</span>
+
+                    <div
+                      id="catalogs-dropdown-arrow"
+                      class="flex items-center justify-center cursor-pointer px-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        class="w-5 h-5 text-gray-500"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+
+                  <div
+                    id="catalogs-list"
+                    class="mt-3 ml-8 mb-12 flex flex-wrap text-black items-center justify-center space-x-1"
+                    aria-labelledby="communities-headline"
+                  >
+                    {#each Object.keys(CATALOGS_DESCRIPTIONS) as catalogName, index}
+                      <!-- href={CATALOGS_DESCRIPTIONS[catalogName].url} -->
+                      <a
+                        href={URLS.landing + catalogName}
+                        class="w-1/6 flex flex-col items-center justify-center"
+                        rel="noopener noreferrer"
+                      >
+                        <div class="h-full w-full mb-1">
+                          <img
+                            class="h-full w-full object-contain"
+                            src={CATALOGS_DESCRIPTIONS[catalogName].image}
+                            alt=""
+                          />
+                        </div>
+
+                        <p class="truncate text-sm">
+                          {CATALOGS_DESCRIPTIONS[catalogName].title}
+                        </p>
+                      </a>
+                    {/each}
+                  </div>
                 </nav>
               </div>
             </div>

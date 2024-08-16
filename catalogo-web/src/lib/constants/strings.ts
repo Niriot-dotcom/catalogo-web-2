@@ -52,9 +52,17 @@ export const EnumSublinea = {
   DOBLE_VERTICAL: "DOBLE_VERTICAL",
   DOBLE_SLIDER: "DOBLE_SLIDER",
   CUATRO: "CUATRO",
+  CAROUSEL_HORIZONTAL: "CAROUSEL_HORIZONTAL",
 };
 export const EnumVariantesDeColor = {
   SIN_ACERCAMIENTO: "SIN_ACERCAMIENTO",
+  HORIZONTAL: "HORIZONTAL",
+};
+export const EnumEntradaInvierno = {
+  FOTO_VIDEO: "FOTO_VIDEO",
+  VIDEO_FOTO: "VIDEO_FOTO",
+  SOLO_FOTO: "SOLO_FOTO",
+  SOLO_VIDEO: "SOLO_VIDEO",
 };
 type CatalogDetail = {
   title: string;
@@ -64,6 +72,7 @@ type CatalogDetail = {
   downloadLink: string;
   image: string;
   description: string;
+  logo: string;
 };
 export const CATALOGS_NAMES = [
   "invierno",
@@ -88,14 +97,14 @@ export const VIALIFRESH_ICONS = [
 export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
   invierno: {
     title: "Invierno",
-    year: "2023-2024",
+    year: "2024-2025",
     url: "/invierno",
-    launchVideo: "https://youtu.be/EAtqYyzO9Pk",
-    downloadLink: "https://bit.ly/Invierno-23-24-MX",
-    image:
-      "https://vianney.vtexassets.com/assets/vtex.file-manager-graphql/images/c7104c05-f633-433a-8d83-323203c3fb42___a659a03e2331c7b7505e1cba67787823.jpg",
+    launchVideo: "https://www.youtube.com/watch?v=cQ9SO630Pes",
+    downloadLink: "https://bit.ly/INVIERNO_24_25_MX",
+    image: "/images/invierno/PORTADA_INVIERNO_24-25.jpg",
     description:
-      "Este año, el catálogo de Invierno nos lleva al mundo de Sofía, una artista que no solo ama lo que hace, sino que encuentra significado en los momentos más cotidianos. Al abrir sus páginas, la vemos en su departamento, hojeando un sketchbook lleno de recuerdos. Dibujos que nos llevan a su infancia, a esos días en los que soñaba con llenar el mundo de color y sentimientos.",
+      "Una de las temporadas más esperadas del año, ¡El invierno! Los días comienzan a ser más fríos y es momento de transformar nuestro hogar en un lugar más cálido y acogedor en familia. Desde la habitación, con texturas súper suaves y calientitas, hasta la sala y la cocina, creando ambientes llenos de magia en donde se disfrutan momentos de alegría junto a nuestros seres queridos por la llegada de la Navidad. Vive con nosotros esta época de compartir tradiciones juntos, alimentar el espíritu de la fé y fortalecer la armonía y el amor en el hogar.",
+    logo: "/images/invierno/recursos/LOGOTIPO_INVIERNO.svg",
   },
   biasi: {
     title: "Biasi",
@@ -107,6 +116,7 @@ export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
       "https://vianney.vtexassets.com/assets/vtex.file-manager-graphql/images/a4088526-d654-4c2a-89d1-0b32c8e4ac62___af699926a12561adc26e1db51b175351.jpg",
     description:
       "Con Biasi 2023-2024 Vive simple, vive en familia. En este catálogo encontrarás los artículos ideales para organizar, amueblar y decorar cada espacio de tu hogar.",
+    logo: "",
   },
   chavos: {
     title: "Chavos",
@@ -117,6 +127,7 @@ export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
     image: "/images/chavos/portadas/PortadaChavos24.jpeg",
     description:
       "¡Disfruta de un increíble viaje donde la tendencia, la textura y la modernidad se fusionan para dar vida a la esencia del estilo juvenil en tus espacios favoritos! Inspirado en la inolvidable travesía de Valeria, su familia y sus amigos, quienes celebraron su graduación con un emocionante viaje a la playa. Descubre cómo los recuerdos de este increíble viaje te brindarán colecciones únicas de textiles que reflejan la frescura, la diversión y la modernidad que caracterizan tu vida juvenil.",
+    logo: "",
   },
   vianney: {
     title: "Vianney",
@@ -127,6 +138,7 @@ export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
     image: "/images/vianney/PortadaVianney24_25.jpg",
     description:
       "¡Recrea looks maravillosos con las exquisitas texturas, colores y confecciones diseñadas para cada rincón de tu hogar! Inspirado en un recuerdo entrañable: “La casa de los abuelos”, donde cada espacio nos transporta a momentos inolvidables. Desde la cocina, donde las recetas especiales se convierten en la herencia culinaria de la familia, hasta la sala, testigo de risas y juegos entre hijos, hermanos y nietos. La recámara de los abuelos, impregnada con un aroma que nos lleva a instantes de sabiduría, cuidado y cariño. Únete a nosotros en este fascinante recorrido por un hogar que ha florecido con el tiempo, transformándose en la pasión compartida de cada generación que lo habita.",
+    logo: "",
   },
   bebe: {
     title: "Bebé",
@@ -137,5 +149,6 @@ export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
     image: "/images/bebe/PortadaBebe24_25.jpeg",
     description:
       "Imagina una habitación llena de amor y dulzura, donde cada rincón esté impregnado de colores y texturas inspiradas en la ternura e ilusión por la llegada de un bebé, un momento especial en que mamá está creando una nueva vida. Comparte con nosotros todas las emocionantes aventuras, las nuevas experiencias, el amor incondicional y la felicidad de la maravillosa etapa de convertirse en papás y crecer juntos de la mano.",
+    logo: "",
   },
 };
