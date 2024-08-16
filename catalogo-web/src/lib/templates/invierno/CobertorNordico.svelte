@@ -7,6 +7,7 @@
 
   export let page: DatabasePage;
   export let inversa: boolean = false;
+  export let handleImageClick: (sku: string, relatedProds: string[]) => void;
 </script>
 
 <div
@@ -140,6 +141,7 @@
     </div>
     <div class="link-block-10 centered w-inline-block">
       <OptimImg
+        onClick={() => handleImageClick(page.complSheets[0], [])}
         imgClass="image-18 horizontal"
         source={`${URLS.fotos}${page.complSheets[0]}.webp`}
       />
@@ -149,6 +151,7 @@
     </div>
     <div class="link-block-10 centered w-inline-block">
       <OptimImg
+        onClick={() => handleImageClick(page.complCurtains[0], [])}
         imgClass="image-18 horizontal"
         source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
       />

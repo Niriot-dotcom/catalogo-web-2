@@ -1,13 +1,10 @@
 <script lang="ts">
-  import ImageComponent from "$lib/components/imageComponent.svelte";
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
   import { Catalogs } from "$lib/constants/globalTypes";
   import type { PageData } from "./$types";
-  import { catalogSections } from "$lib/components/currentCatalogPage";
-  import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
-  import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
+  import { EnumEntradaInvierno } from "$lib/constants/strings";
   import CobertorAustral from "$lib/templates/invierno/CobertorAustral.svelte";
 
   let visibleIds: string[] = [];

@@ -44,6 +44,22 @@
           src={`${URLS.fotos}${page.SKU}.webp`}
           classList="image-25 opacity-100"
         />
+        {#if page.pageCopys && page.pageCopys.length >= 1 && page.pageCopys[0] !== ""}
+          <div class="copy-box-everest mb-80">
+            <div class="text-block-25" style="text-transform: lowercase;">
+              {page.pageCopys[0]}
+            </div>
+            <div class="text-block-27 mt-0 leading-none">
+              {page.pageCopys[1] || ""}
+            </div>
+            <img
+              src="../images/Flechas-1.svg"
+              loading="eager"
+              alt=""
+              class="arrow-image mt-0 ml-20"
+            />
+          </div>
+        {/if}
         <div class="div-block-11 title-right">
           <div class="page-title-box">
             <h2

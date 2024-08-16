@@ -28,6 +28,10 @@
   let showPopup = false;
 
   export let data: PageData;
+  const handleImageClick = (sku: string, relatedProds: string[]) => {
+    selectedProduct = sku;
+    relatedProducts = relatedProds;
+  };
   const pages = data.props.pages;
 </script>
 
@@ -126,17 +130,19 @@
           >
             Completa<br /><strong class="bold-text">el Look</strong>
           </div>
-          <a href="#" class="link-block-10 centered w-inline-block">
+          <div class="link-block-10 centered w-inline-block">
             <OptimImg
+              onClick={() => handleImageClick(page.complSheets[0], [])}
               imgClass="image-18 horizontal"
               source={`${URLS.fotos}${page.complSheets[0]}.webp`}
             />
             <div class="text-block-22 centered">
               agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
             </div>
-          </a>
-          <a href="#" class="link-block-10 centered w-inline-block">
+          </div>
+          <div class="link-block-10 centered w-inline-block">
             <OptimImg
+              onClick={() => handleImageClick(page.complCurtains[0], [])}
               imgClass="image-18 horizontal"
               source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             />
@@ -144,12 +150,12 @@
               combina con estas<br />
               <strong class="bold-text-3"> cortinas</strong>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
   {:else}
-    <CobertorNordico {page} inversa={index % 2 !== 0} />
+    <CobertorNordico {page} inversa={index % 2 !== 0} {handleImageClick} />
   {/if}
 {/each}
 
