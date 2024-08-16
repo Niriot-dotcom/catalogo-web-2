@@ -2,14 +2,14 @@
 import type { PageLoad } from "./$types";
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "$lib/firebase";
-import { BebeCollectionName } from "$lib/constants/DB";
+import { InviernoCollectionName } from "$lib/constants/DB";
 
 export type VisibleIds = string[];
 
 export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   const q = query(
-    collection(db, BebeCollectionName),
-    where("productSection", "==", "Página 3 / Accesorios"),
+    collection(db, InviernoCollectionName),
+    where("productSection", "==", "Página 7 / Frazadas"),
     where("pageStatus", "==", "Activa"),
   );
   const querySnapshot = await getDocs(q);
@@ -21,14 +21,17 @@ export const load = async ({ params }: Parameters<PageLoad>[0]) => {
 
   let groupedPages = {};
   for (const page of pages) {
-    if (page.pageTemplate == "") continue;
-
-    if (groupedPages[page.productType] === undefined) {
-      groupedPages[page.productType] = [page];
-    } else {
-      groupedPages[page.productType].push(page);
+    if (
+      page.pageTemplate == "Sublinea" ||
+      page.pageTemplate == "VariantesDeColor"
+    ) {
+      if (groupedPages[page.productType] === undefined) {
+        groupedPages[page.productType] = [page];
+      } else {
+        groupedPages[page.productType].push(page);
+      }
     }
   }
 
-  return { props: { groupedPages } };
+  return { props: { pages, groupedPages } };
 };

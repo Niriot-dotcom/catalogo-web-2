@@ -4,6 +4,7 @@
   import { BiasiFooterHeader } from "$lib/constants/FooterHeaders";
   import { Catalogs } from "$lib/constants/globalTypes";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
+  import { onMount } from "svelte";
   let visibleIds: string[] = [];
   let selectedProduct: null | string = null;
   let showPopup = false;
@@ -13,8 +14,6 @@
   function show() {
     showPopup = true;
   }
-
-  import { onMount } from "svelte";
 
   let mounted = false;
   onMount(() => {
@@ -109,55 +108,59 @@
   />
 
   <style>
-[text-split] {opacity: 0;}
-html.w-editor [text-split] {opacity: 1;}
-.word {
-	overflow: inherit;
-  padding-bottom: 0.1em;
-  margin-bottom: -0.1em;
-  transform-origin: bottom;
-}
-::selection {
-background: #FDF886 !important;
-color: #000 !important;
-}
-.tippy-content{
-  font-family: "Helvetica", sans-serif; !important
-  }
-  .menu-options {
-  pointer-events: none;
-  /* other styles for the parent div */
-}
-.navigator {
-  pointer-events: auto;
-  /* other styles for the child div */
-}
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/biasi/entrada.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* transition: opacity 3s ease; */
-}
-@media (min-width: 768px) {
-    .background-image {
-        opacity: 0.6; /* Adjust the opacity value as needed */
+    [text-split] {
+      opacity: 0;
     }
-}
-.background-image2 {
-    /* position: absolute;
+    html.w-editor [text-split] {
+      opacity: 1;
+    }
+    .word {
+      overflow: inherit;
+      padding-bottom: 0.1em;
+      margin-bottom: -0.1em;
+      transform-origin: bottom;
+    }
+    ::selection {
+      background: #fdf886 !important;
+      color: #000 !important;
+    }
+    .tippy-content {
+      font-family: "Helvetica", sans-serif !important;
+    }
+    .menu-options {
+      pointer-events: none;
+      /* other styles for the parent div */
+    }
+    .navigator {
+      pointer-events: auto;
+      /* other styles for the child div */
+    }
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../images/biasi/entrada.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      /* transition: opacity 3s ease; */
+    }
+    @media (min-width: 768px) {
+      .background-image {
+        opacity: 0.6; /* Adjust the opacity value as needed */
+      }
+    }
+    .background-image2 {
+      /* position: absolute;
     top: 0;
     left: 0; */
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/biasi/entrada2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+      width: 100%;
+      height: 100%;
+      background-image: url("../images/biasi/entrada2.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   </style>
 </div>
 {#if !mounted}

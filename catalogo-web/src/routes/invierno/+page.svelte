@@ -29,26 +29,28 @@
   class="loader_img-wrap"
 >
   <img
-    src="images/Recurso-1Invierno.svg"
+    src="images/invierno/recursos/LOGOTIPO_INVIERNO.svg"
     loading="eager"
-    style="opacity:0"
+    style="opacity: 0"
     alt=""
     class="image logo-catalogo"
-  /><img
-    src="images/Recurso-1Invierno.svg"
+  />
+  <img
+    src="images/invierno/recursos/LOGOTIPO_INVIERNO.svg"
     loading="eager"
     alt=""
     class="image logo-catalogo movil"
   />
+
   <div
     data-poster-url="videos/PORTADA-poster-00001.jpg"
-    data-video-urls="videos/PORTADA-transcode.mp4,videos/PORTADA-transcode.webm"
+    data-video-urls="videos/invierno/Portada-Invierno-24-25.mp4,videos/PORTADA-transcode.webm"
     data-autoplay="true"
     data-loop="true"
     data-wf-ignore="true"
     class="loader_img is-middle cover w-background-video w-background-video-atom"
   >
-    <!-- <video
+    <video
       id="daa6ea3e-1745-dd4d-5171-e63e5d2d6b5b-video"
       autoplay
       loop
@@ -56,16 +58,21 @@
       muted
       playsinline
     >
-      <source src="videos/PORTADA-transcode.mp4" data-wf-ignore="true" />
+      <source
+        src="videos/invierno/Portada-Invierno-24-25.mp4"
+        data-wf-ignore="true"
+      />
       <source src="videos/PORTADA-transcode.webm" data-wf-ignore="true" />
     </video>
     <script>
       document
         .getElementById("daa6ea3e-1745-dd4d-5171-e63e5d2d6b5b-video")
         .play();
-    </script> -->
+    </script>
   </div>
 </div>
+
+<!-- VER CATALOGO BUTTON -->
 <div
   data-w-id="a065ae01-88da-7301-488b-fc63d5f5e07c"
   style="display:none;-webkit-transform:translate3d(0, 200px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
@@ -88,6 +95,7 @@
     </div>
   </div>
 </div>
+
 <div>
   <script defer src="../js/webflowPage.js"></script>
   <script

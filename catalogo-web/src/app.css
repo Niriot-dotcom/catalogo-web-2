@@ -53,6 +53,19 @@ input:focus {
   outline: none;
 }
 
+/* COMPONENTS */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #830048;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+  padding: 0;
+  position: inherit;
+}
+
 /* BIASI ANIMATIONS */
 .animate-up {
   transform: translateY(0);
@@ -404,8 +417,8 @@ input:focus {
     font-style: normal;
     line-height: 1.125rem;
     font-variation-settings:
-      "wdth" 60,
-      "wght" 70,
+      "wght" 60,
+      "wdth" 70,
       "slnt" 1;
   }
   .chavos-bold-lg {
@@ -571,4 +584,12 @@ input:focus {
   left: 0;
   right: 0;
   border-right-color: black;
+}
+
+/* scroll bar */
+.hidden-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.hidden-scroll::-webkit-scrollbar-track {
+  background: transparent;
 }

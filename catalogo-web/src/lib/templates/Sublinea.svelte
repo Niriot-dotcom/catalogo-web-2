@@ -1,7 +1,10 @@
 <script lang="ts">
+  import HorizontalScroll from "$lib/components/HorizontalScroll.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import LegalLicenses from "$lib/components/communication/LegalLicenses.svelte";
   import ImageComponent from "$lib/components/imageComponent.svelte";
+  import ArrowLeft from "$lib/components/resources/ArrowLeft.svelte";
+  import ArrowRight from "$lib/components/resources/ArrowRight.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import {
     COLORS,
@@ -73,116 +76,173 @@
 <!-- MOBILE -->
 <div
   style="background-color: {bgColor};"
-  class="md:hidden py-10 overflow-x-hidden"
+  class="md:hidden py-0 overflow-x-hidden"
 >
   <!-- text header -->
-  <div class="text-black px-5">
-    <p class="chavos-3xl xs:chavos-4xl">{title}</p>
+  <div class="text-black px-5 mt-5">
+    <!-- LOGO -->
+    {#if groupPages[0].pageResources[0] === EnumSublinea.CAROUSEL_HORIZONTAL}
+      <!-- if HAY UNA IMAGEN EN PAGE RESOURCES, else SE PONE EL TITULO-->
+      {#if groupPages[0].pageResources.length > 1 && groupPages[0].pageResources[1] !== ""}
+        <div class="w-full h-[10vh] my-3">
+          <img
+            alt={title}
+            src={groupPages[0].pageResources[1]}
+            class="w-full h-full"
+          />
+        </div>
+      {:else}
+        <p class="chavos-3xl xs:chavos-4xl">{title}</p>
+      {/if}
+    {:else}
+      <p class="chavos-3xl xs:chavos-4xl">{title}</p>
+    {/if}
   </div>
 
-  <!-- images -->
-  {#each groupPages as page, i}
-    <div class="w-full pt-5">
-      {#if groupPages.length > 1}
-        <p class="text-black chavos-base pl-5 xs:chavos-xl">{page.pageTitle}</p>
-      {/if}
+  {#if groupPages[0].pageResources[0] === EnumSublinea.CAROUSEL_HORIZONTAL}
+    <div
+      class="md:hidden relative flex space-x-1 overflow-x-scroll hidden-scroll"
+    >
+      <!-- TODO fix position -->
+      <!-- <button class="absolute z-30 left-8 top-1/2">
+        <ArrowRight color="#fff" />
+      </button> -->
 
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div
-        data-visible-id={page.SKU}
-        class="w-full grid grid-cols-8 gap-1 overflow-hidden px-3 relative"
-        style="{page.pageResources &&
-          page.pageResources.length > 0 &&
-          page.pageResources[0] ===
-            EnumSublinea.INDIVIDUAL} ? 'height: 30vh' : '40vh'"
-        on:click={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
-      >
-        {#if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.INDIVIDUAL}
-          <!-- main image -->
-          <div class="col-span-8 h-[30vh]">
-            <OptimImg
-              imgClass="object-contain w-full h-full"
-              source={`${URLS.fotos}${page.SKU}.webp`}
-              style={page.pageTitle === "Tropical" ? "transform: scale(2)" : ""}
-            />
-          </div>
-        {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.DOBLE}
-          <div class="col-span-4 h-[25vh]">
-            <OptimImg
-              imgClass="object-contain w-full h-full"
-              source={`${URLS.fotos}${page.SKU}.webp`}
-            />
-          </div>
-
-          <!-- environment image -->
-          <div class="col-span-4 h-[25vh]">
-            <OptimImg
-              imgClass="object-contain w-full h-full"
-              source={`${URLS.fotos}${page.SKU}-${
-                page.pageResources?.length > 1 && page.pageResources[1] !== ""
-                  ? page.pageResources[1]
-                  : "2"
-              }.webp`}
-            />
-          </div>
-        {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.CUATRO}
-          {#each { length: 4 } as _, i}
-            <div class="col-span-4 h-[25vh]">
-              <OptimImg
-                imgClass="object-contain w-full h-full"
-                source={`${URLS.fotos}${page.SKU}${i === 0 ? "" : `-${i + 1}`}.webp`}
-              />
-            </div>
-          {/each}
-        {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.DOBLE_VERTICAL}
-          <div class="col-span-8 h-[25vh] w-full">
+      {#each groupPages as page, i}
+        <div
+          class="flex flex-col"
+          data-visible-id={page.SKU}
+          on:click={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
+        >
+          <p class="text-black chavos-base pl-5 xs:chavos-xl">
+            {page.pageTitle}
+          </p>
+          <div class="min-w-[60vw] max-w-[60vw] h-[30vh]">
             <OptimImg
               imgClass="object-cover w-full h-full"
               source={`${URLS.fotos}${page.SKU}.webp`}
             />
           </div>
+        </div>
+      {/each}
 
-          <!-- environment image -->
-          <div class="col-span-8 h-[20vh]">
-            <OptimImg
-              imgClass="w-full h-full {page.pageTitle === 'jgo repisas tonalá'
-                ? 'object-contain scale-[1]'
-                : 'object-cover'}"
-              source={`${URLS.fotos}${page.SKU}-${
-                page.pageResources?.length > 1 && page.pageResources[1] !== ""
-                  ? page.pageResources[1]
-                  : "2"
-              }.webp`}
-            />
-          </div>
-        {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.DOBLE_SLIDER}
-          <div
-            udesly-before-after="50"
-            slider-height="30vh"
-            class="col-span-8 px-5 w-full flex-col justify-center items-center mb-0 mr-0 flex relative overflow-hidden max-w-none"
-          >
-            <ImageComponent
-              classList="z-0 w-auto object-cover absolute"
-              src={`${URLS.fotos}${page.SKU}.webp`}
-              image="right"
-            />
-            <ImageComponent
-              classList="z-[1] w-auto object-cover absolute"
-              src={`${URLS.fotos}${page.SKU}-${
-                page.pageResources?.length > 1 && page.pageResources[1] !== ""
-                  ? page.pageResources[1]
-                  : "2"
-              }.webp`}
-              image="left"
-            />
-            <div before-after="handle" class="handle-bar">
-              <div class="circle-wrapper"></div>
+      <!-- TODO fix position -->
+      <!-- <button class="absolute z-30 right-8 top-1/2">
+        <ArrowLeft color="#fff" />
+      </button> -->
+
+      <div class="absolute -bottom-0 w-1/2 h-12 min-h-12 flex right-0">
+        <HorizontalScroll />
+      </div>
+    </div>
+  {:else}
+    <!-- images -->
+    {#each groupPages as page, i}
+      <div class="w-full {groupPages.length > 1 ? 'pt-5' : 'pt-1'}">
+        {#if groupPages.length > 1}
+          <p class="text-black chavos-base pl-5 xs:chavos-xl">
+            {page.pageTitle}
+          </p>
+        {/if}
+
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
+        <div
+          data-visible-id={page.SKU}
+          class="w-full grid grid-cols-8 gap-1 overflow-hidden px-3 relative"
+          style="{page.pageResources &&
+            page.pageResources.length > 0 &&
+            page.pageResources[0] ===
+              EnumSublinea.INDIVIDUAL} ? 'height: 30vh' : '40vh'"
+          on:click={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
+        >
+          {#if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.INDIVIDUAL}
+            <!-- main image -->
+            <div class="col-span-8 h-[30vh]">
+              <OptimImg
+                imgClass="object-contain w-full h-full"
+                source={`${URLS.fotos}${page.SKU}.webp`}
+                style={page.pageTitle === "Tropical"
+                  ? "transform: scale(2)"
+                  : ""}
+              />
             </div>
-          </div>
-        {:else}
-          <!-- acercamiento -->
-          <!-- {#if page.productType === "Par de Sabanitas Pol"}
+          {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.DOBLE}
+            <div class="col-span-4 h-[25vh]">
+              <OptimImg
+                imgClass="object-contain w-full h-full"
+                source={`${URLS.fotos}${page.SKU}.webp`}
+              />
+            </div>
+
+            <!-- environment image -->
+            <div class="col-span-4 h-[25vh]">
+              <OptimImg
+                imgClass="object-contain w-full h-full"
+                source={`${URLS.fotos}${page.SKU}-${
+                  page.pageResources?.length > 1 && page.pageResources[1] !== ""
+                    ? page.pageResources[1]
+                    : "2"
+                }.webp`}
+              />
+            </div>
+          {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.CUATRO}
+            {#each { length: 4 } as _, i}
+              <div class="col-span-4 h-[25vh]">
+                <OptimImg
+                  imgClass="object-contain w-full h-full"
+                  source={`${URLS.fotos}${page.SKU}${i === 0 ? "" : `-${i + 1}`}.webp`}
+                />
+              </div>
+            {/each}
+          {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.DOBLE_VERTICAL}
+            <div class="col-span-8 h-[25vh] w-full">
+              <OptimImg
+                imgClass="object-cover w-full h-full"
+                source={`${URLS.fotos}${page.SKU}.webp`}
+              />
+            </div>
+
+            <!-- environment image -->
+            <div class="col-span-8 h-[20vh]">
+              <OptimImg
+                imgClass="w-full h-full {page.pageTitle === 'jgo repisas tonalá'
+                  ? 'object-contain scale-[1]'
+                  : 'object-cover'}"
+                source={`${URLS.fotos}${page.SKU}-${
+                  page.pageResources?.length > 1 && page.pageResources[1] !== ""
+                    ? page.pageResources[1]
+                    : "2"
+                }.webp`}
+              />
+            </div>
+          {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.DOBLE_SLIDER}
+            <div
+              udesly-before-after="50"
+              slider-height="30vh"
+              class="col-span-8 px-5 w-full flex-col justify-center items-center mb-0 mr-0 flex relative overflow-hidden max-w-none"
+            >
+              <ImageComponent
+                classList="z-0 w-auto object-cover absolute"
+                src={`${URLS.fotos}${page.SKU}.webp`}
+                image="right"
+              />
+              <ImageComponent
+                classList="z-[1] w-auto object-cover absolute"
+                src={`${URLS.fotos}${page.SKU}-${
+                  page.pageResources?.length > 1 && page.pageResources[1] !== ""
+                    ? page.pageResources[1]
+                    : "2"
+                }.webp`}
+                image="left"
+              />
+              <div before-after="handle" class="handle-bar">
+                <div class="circle-wrapper"></div>
+              </div>
+            </div>
+          {:else}
+            <!-- acercamiento -->
+            <!-- {#if page.productType === "Par de Sabanitas Pol"}
             <div
               style="background-color: {bgColor};"
               class="rounded-full w-[18vh] h-[18vh] border-2 border-white text-black absolute flex flex-col z-10 -top-[2vh] left-0 ml-5"
@@ -194,9 +254,9 @@
             </div>
           {/if} -->
 
-          <!-- main image -->
-          <div class="col-span-5 h-[40vh]">
-            <!-- <OptimImg
+            <!-- main image -->
+            <div class="col-span-5 h-[40vh]">
+              <!-- <OptimImg
               imgClass="{title === 'Bolsa De Regalo' ||
               title === 'Caminos De Mesa' ||
               title === 'Cortinas' ||
@@ -205,45 +265,51 @@
                 : 'object-contain'} w-full h-full"
               source={`${URLS.fotos}${page.SKU}.webp`}
             /> -->
-            <OptimImg
-              imgClass="{title.toLowerCase() === 'cojín' ||
-              title.toLowerCase() === 'cojínes' ||
-              title.toLowerCase() === 'cojínes everest' ||
-              title.toLowerCase() === 'cojínes xl' ||
-              title.toLowerCase() === 'fundas de cojín' ||
-              title.toLowerCase() === 'fundas de almohada'
-                ? 'object-contain'
-                : 'object-cover'} w-full h-full"
-              source={`${URLS.fotos}${page.SKU}.webp`}
-            />
-          </div>
+              <OptimImg
+                imgClass="{title.toLowerCase() === 'cojín' ||
+                title.toLowerCase() === 'cojínes' ||
+                title.toLowerCase() === 'cojines' ||
+                title.toLowerCase() === 'cojínes everest' ||
+                title.toLowerCase() === 'cojines everest' ||
+                title.toLowerCase() === 'cojínes xl' ||
+                title.toLowerCase() === 'cojines xl' ||
+                title.toLowerCase() === 'fundas de cojín' ||
+                title.toLowerCase() === 'fundas de almohada' ||
+                (page.pageResources?.length > 2 &&
+                  page.pageResources[2] === 'CONTAIN')
+                  ? 'object-contain'
+                  : 'object-cover'} w-full h-full"
+                source={`${URLS.fotos}${page.SKU}.webp`}
+              />
+            </div>
 
-          <!-- environment image -->
-          <div class="col-span-3 h-[40vh]">
-            <OptimImg
-              imgClass="object-cover w-full h-full"
-              source={`${URLS.fotos}${page.SKU}-${
-                page.pageResources?.length > 1 && page.pageResources[1] !== ""
-                  ? page.pageResources[1]
-                  : "2"
-              }.webp`}
+            <!-- environment image -->
+            <div class="col-span-3 h-[40vh]">
+              <OptimImg
+                imgClass="object-cover w-full h-full"
+                source={`${URLS.fotos}${page.SKU}-${
+                  page.pageResources?.length > 1 && page.pageResources[1] !== ""
+                    ? page.pageResources[1]
+                    : "2"
+                }.webp`}
+              />
+            </div>
+          {/if}
+        </div>
+
+        <!-- licenses -->
+        {#if LEGALES_SVGS.hasOwnProperty(page.pageTitle
+            .replaceAll(" ", "")
+            .toUpperCase())}
+          <div>
+            <LegalLicenses
+              license={page.pageTitle.replaceAll(" ", "").toUpperCase()}
             />
           </div>
         {/if}
       </div>
-
-      <!-- licenses -->
-      {#if LEGALES_SVGS.hasOwnProperty(page.pageTitle
-          .replaceAll(" ", "")
-          .toUpperCase())}
-        <div>
-          <LegalLicenses
-            license={page.pageTitle.replaceAll(" ", "").toUpperCase()}
-          />
-        </div>
-      {/if}
-    </div>
-  {/each}
+    {/each}
+  {/if}
 </div>
 
 <!-- DESKTOP -->

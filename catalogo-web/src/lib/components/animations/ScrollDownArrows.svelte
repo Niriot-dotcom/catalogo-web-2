@@ -1,7 +1,8 @@
 <script lang="ts">
+  import { COLORS } from "$lib/constants/strings";
   import { onMount } from "svelte";
 
-  export let backgroundColor: string;
+  export let backgroundColor: string = COLORS.beige;
 
   onMount(() => {
     const script = document.createElement("script");

@@ -1,12 +1,14 @@
 <script lang="ts">
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
   import { Catalogs } from "$lib/constants/globalTypes";
-  import { catalogSections } from "$lib/components/currentCatalogPage";
   import type { PageData } from "./$types";
   import { onMount } from "svelte";
   import ImageComponent from "$lib/components/imageComponent.svelte";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
+  import CobertorNordico from "$lib/templates/invierno/CobertorNordico.svelte";
+  import OptimImg from "$lib/components/OptimImg.svelte";
 
   onMount(() => {
     const script = document.createElement("script");
@@ -15,150 +17,46 @@
     document.body.appendChild(script);
   });
 
-  let visibleIds = [];
-
-  function handleVisibleChange(event) {
+  let visibleIds: string[] = [];
+  let showViewPrices = false;
+  function handleVisibleChange(event: any) {
     visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
   }
-
+  let relatedProducts: string[] = [];
+  let selectedProduct: null | string = null;
   let showPopup = false;
 
-  function show() {
-    showPopup = true;
-  }
-
   export let data: PageData;
-  const products = data.props.products; // guarda el objeto product en una variable
-
-  function removeSpecialChars(str) {
-    return str.replace(/["\[\]]/g, "");
-  }
+  const handleImageClick = (sku: string, relatedProds: string[]) => {
+    selectedProduct = sku;
+    relatedProducts = relatedProds;
+  };
+  const pages = data.props.pages;
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 
-{#each products as product, index}
-  {#if index % 2 === 0}
-    <div
-      id={product.pageTitle}
-      class="plantilla-nordico"
-      data-visible-id="{product.pageProducts}, {product
-        .pageProductsImages[0]}, {product.pageProductsImages[1]}"
-    >
-      <div class="div-block-46">
-        <div class="handle-container">
-          <div class="div-block-45">
-            <ImageComponent
-              src={product.pageImages[1]}
-              loading="eager"
-              id="f09abdcc-902f-003f-2d59-9712f02a5bd1"
-              alt=""
-              classList="image-28"
-            />
-            <div class="div-block-43 ligero">
-              <div class="div-block-48">
-                <div class="page-title-box">
-                  <h2 text-split="" words-slide-from-right="" class="heading-4">
-                    {product.pageTitle}
-                  </h2>
-                  <p
-                    text-split=""
-                    words-slide-from-right=""
-                    class="paragraph product-detail-subtitle alternate"
-                  >
-                    Cobertor Nórdico
-                  </p>
-                </div>
-                {#each product.pageIcons as icon}
-                  <div>
-                    <ImageComponent
-                      src={icon}
-                      loading="eager"
-                      alt=""
-                      classList="icon-image"
-                    />
-                  </div>
-                {/each}
-              </div>
-              <img
-                src="../images/CopyNordico.svg"
-                loading="eager"
-                alt=""
-                class="image-30"
-              />
-            </div>
-          </div>
-          <div udesly-before-after="50" class="handle-wrapper">
-            <ImageComponent
-              classList="image-right"
-              src={product.pageImages[0]}
-              alt=""
-              image="right"
-            />
-            <ImageComponent
-              classList="image-left"
-              src={product.pageMainImage}
-              alt=""
-              image="left"
-            />
-            <div before-after="handle" class="handle-bar">
-              <div class="circle-wrapper"></div>
-            </div>
-            <div image="left-label" class="before">
-              <h1 class="handle">1er vista</h1>
-            </div>
-            <div image="right-label" class="after">
-              <h1 class="handle">2da vista</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="related-products horizontal">
-        <div
-          text-split=""
-          words-slide-from-right=""
-          class="text-block-23 look-book"
-        >
-          Completa<br /><strong class="bold-text">el Look</strong>
-        </div>
-        <div class="link-block-10 centered w-inline-block">
-          <img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[0]}.jpg"
-            loading="eager"
-            alt=""
-            class="image-18 horizontal"
-          />
-          <div class="text-block-22 centered">
-            agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
-          </div>
-        </div>
-        <div class="link-block-10 centered w-inline-block">
-          <img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[1]}.jpg"
-            loading="eager"
-            alt=""
-            class="image-18 horizontal"
-          />
-          <div class="text-block-22 centered">
-            combina con estas<br />
-            <strong class="bold-text-3"> cortinas</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-  {:else if product.pageTitle === "Bariloche"}
-    <div
-      data-visible-id="{product.pageProducts}, {product
-        .pageProductsImages[0]}, {product.pageProductsImages[1]}"
-    >
+<!-- ENTRADA -->
+<EntradaInvierno
+  titleSvg="/images/invierno/copys/ENTRADA-P05-NORDICO-TITULO.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P05-NORDICO-COPY.svg"
+  variant={EnumEntradaInvierno.FOTO_VIDEO}
+  titlePosition="top-[30vh] left-5"
+  storyPosition="top-[70vh] left-0 transform -translate-y-1/2"
+  bgImage="/images/invierno/portadillas/ENTRADA-P05-NORDICO.webp"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P05-NORDICO-VERTICAL.mp4"
+/>
+
+{#each pages as page, index}
+  {#if page.pageTitle === "Bariloche" || page.pageTitle === "Loket"}
+    <div data-visible-id={page.SKU}>
       <div class="plantilla-nordico">
         <div class="div-block-46">
           <div class="handle-container">
             <div class="div-block-45">
               <ImageComponent
-                src={product.pageImages[1]}
+                src={`${URLS.fotos}${page.SKU}-2.webp`}
                 loading="eager"
                 id="f09abdcc-902f-003f-2d59-9712f02a5bd1"
                 alt=""
@@ -172,17 +70,17 @@
                       words-slide-from-right=""
                       class="heading-4"
                     >
-                      {product.pageTitle}
+                      {page.pageTitle}
                     </h2>
                     <p
                       text-split=""
                       words-slide-from-right=""
                       class="paragraph product-detail-subtitle alternate"
                     >
-                      Cobertor Ligero
+                      Cobertor Nórdico
                     </p>
                   </div>
-                  {#each product.pageIcons as icon}
+                  {#each page.pageIcons as icon}
                     <div>
                       <ImageComponent
                         src={icon}
@@ -193,27 +91,30 @@
                     </div>
                   {/each}
                 </div>
-                <div class="copy-box-everest right ligero">
-                  <div class="text-block-26">
-                    <span class="text-span-8"
-                      >{product.pageDescriptions[0]}</span
-                    >
+
+                {#if page.pageCopys && page.pageCopys.length > 3 && page.pageCopys[2] !== ""}
+                  <div class="copy-box-everest right ligero">
+                    <div class="text-block-26">
+                      <span class="text-span-8">
+                        {page.pageCopys[2]}
+                      </span>
+                    </div>
+                    <div class="text-block-27">
+                      {page.pageCopys[3]}
+                    </div>
+                    <img
+                      src="../images/Flechas.svg"
+                      loading="eager"
+                      alt=""
+                      class="arrow-image"
+                    />
                   </div>
-                  <div class="text-block-27">
-                    {product.pageDescriptions[1]}, {product.pageDescriptions[2]}
-                  </div>
-                  <img
-                    src="../images/Flechas.svg"
-                    loading="eager"
-                    alt=""
-                    class="arrow-image"
-                  />
-                </div>
+                {/if}
               </div>
             </div>
             <div udesly-before-after="50" class="ligero-container">
               <ImageComponent
-                src={product.pageMainImage}
+                src={`${URLS.fotos}${page.SKU}.webp`}
                 loading="eager"
                 id="adfea8dd-6554-1c71-61f8-1c4b232589e5"
                 classList="image-31"
@@ -229,150 +130,43 @@
           >
             Completa<br /><strong class="bold-text">el Look</strong>
           </div>
-          <a href="#" class="link-block-10 centered w-inline-block"
-            ><img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[0]}.jpg"
-              loading="eager"
-              alt=""
-              class="image-18 horizontal"
+          <div class="link-block-10 centered w-inline-block">
+            <OptimImg
+              onClick={() => handleImageClick(page.complSheets[0], [])}
+              imgClass="image-18 horizontal"
+              source={`${URLS.fotos}${page.complSheets[0]}.webp`}
             />
             <div class="text-block-22 centered">
               agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
             </div>
-          </a>
-          <a href="#" class="link-block-10 centered w-inline-block"
-            ><img
-              src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-                .pageProductsImages[1]}.jpg"
-              loading="eager"
-              alt=""
-              class="image-18 horizontal"
+          </div>
+          <div class="link-block-10 centered w-inline-block">
+            <OptimImg
+              onClick={() => handleImageClick(page.complCurtains[0], [])}
+              imgClass="image-18 horizontal"
+              source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             />
             <div class="text-block-22 centered">
               combina con estas<br />
               <strong class="bold-text-3"> cortinas</strong>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
   {:else}
-    <div
-      id={product.pageTitle}
-      class="plantilla-nordico"
-      data-visible-id="{product.pageProducts}, {product
-        .pageProductsImages[0]}, {product.pageProductsImages[1]}"
-    >
-      <div>
-        <div class="handle-container inverse">
-          <div udesly-before-after="50" class="handle-wrapper">
-            <ImageComponent
-              classList="image-right"
-              src={product.pageImages[0]}
-              alt=""
-              image="right"
-            />
-            <ImageComponent
-              classList="image-left"
-              src={product.pageMainImage}
-              alt=""
-              image="left"
-            />
-            <div before-after="handle" class="handle-bar">
-              <div class="circle-wrapper"></div>
-            </div>
-            <div image="left-label" class="before">
-              <h1 class="handle">1er vista</h1>
-            </div>
-            <div image="right-label" class="after">
-              <h1 class="handle">2da vista</h1>
-            </div>
-          </div>
-          <div class="div-block-45 left">
-            <ImageComponent
-              src={product.pageImages[1]}
-              loading="eager"
-              id="1fd515fa-fb89-8c4a-3025-2143feb88432"
-              alt=""
-              classList="image-28"
-            />
-            <div class="div-block-43 ligero">
-              <div class="div-block-48">
-                <div class="page-title-box">
-                  <h2 text-split="" words-slide-from-right="" class="heading-4">
-                    {product.pageTitle}
-                  </h2>
-                  <p
-                    text-split=""
-                    words-slide-from-right=""
-                    class="paragraph product-detail-subtitle alternate"
-                  >
-                    Cobertor Nórdico
-                  </p>
-                </div>
-                {#each product.pageIcons as icon}
-                  <ImageComponent
-                    src={icon}
-                    loading="eager"
-                    alt=""
-                    classList="icon-image"
-                  />
-                {/each}
-              </div>
-              <img
-                src="../images/CopyNordico.svg"
-                loading="eager"
-                alt=""
-                class="image-30"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="related-products horizontal">
-        <div
-          text-split=""
-          words-slide-from-right=""
-          class="text-block-23 look-book"
-        >
-          Completa<br /><strong class="bold-text">el Look</strong>
-        </div>
-        <a href="#" class="link-block-10 centered w-inline-block"
-          ><img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[0]}.jpg"
-            loading="eager"
-            alt=""
-            class="image-18 horizontal"
-          />
-          <div class="text-block-22 centered">
-            agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
-          </div>
-        </a>
-        <a href="#" class="link-block-10 centered w-inline-block"
-          ><img
-            src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{product
-              .pageProductsImages[1]}.jpg"
-            loading="eager"
-            alt=""
-            class="image-18 horizontal"
-          />
-          <div class="text-block-22 centered">
-            combina con estas<br />
-            <strong class="bold-text-3"> cortinas</strong>
-          </div>
-        </a>
-      </div>
-    </div>
+    <CobertorNordico {page} inversa={index % 2 !== 0} {handleImageClick} />
   {/if}
 {/each}
 
-<CategoriesFooter
+<NavigatorMenu
   catalog={Catalogs.INVIERNO}
-  categories={catalogSections.INVIERNO}
+  bind:relatedProducts
+  bind:visibleIds
+  bind:showPopup
+  bind:showViewPrices
+  bind:selectedProduct
 />
-<NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
 
 <div>
   <script defer src="../js/webflowPage.js"></script>

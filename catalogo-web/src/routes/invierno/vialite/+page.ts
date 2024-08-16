@@ -1,23 +1,34 @@
+// @ts-nocheck
 import type { PageLoad } from "./$types";
-import { collection, query, getDocs, where, orderBy } from "firebase/firestore";
+import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "$lib/firebase";
+import { InviernoCollectionName } from "$lib/constants/DB";
 
-export const load: PageLoad = async ({ params }) => {
-  // firebase query to get all the documents in the collection with pageType: "Cojín" or "Funda de Cojín"
+export type VisibleIds = string[];
+
+export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   const q = query(
-    collection(db, "catalogPages"),
-    where("pageCategory", "==", "Vialité"),
+    collection(db, InviernoCollectionName),
+    where("productSection", "==", "Página 12 / Vialité"),
+    where("pageStatus", "==", "Activa"),
   );
-
   const querySnapshot = await getDocs(q);
+  var pages: any = [];
+  querySnapshot.forEach((doc) => {
+    pages.push(doc.data());
+  });
+  pages.sort((a, b) => (a.productOrder > b.productOrder ? 1 : -1));
 
-  const products = querySnapshot.docs
-    .map((doc) => doc.data())
-    .filter((product) => product.pageSeoTitle !== "Cojines Navideños");
+  let groupedPages = {};
+  for (const page of pages) {
+    if (page.pageTemplate == "") continue;
 
-  return {
-    props: {
-      products: products,
-    },
-  };
+    if (groupedPages[page.productType] === undefined) {
+      groupedPages[page.productType] = [page];
+    } else {
+      groupedPages[page.productType].push(page);
+    }
+  }
+
+  return { props: { groupedPages } };
 };

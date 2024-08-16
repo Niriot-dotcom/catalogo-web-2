@@ -1,93 +1,149 @@
 <script lang="ts">
   import ScrollDownArrows from "$lib/components/animations/ScrollDownArrows.svelte";
+  import SectionsPaginationArrows from "$lib/components/navigation/SectionsPaginationArrows.svelte";
+  import { COLORS, EnumEntradaInvierno } from "$lib/constants/strings";
 
-  export let backgroundVideo: string;
-  export let backgroundImage: string;
-  export let backgroundColor: string;
-  export let textColor: string;
-  export let textImage: string;
-  export let storyMainPhrase: string;
-  export let storyCopy: string;
+  export let titleSvg: string;
+  export let variant: string;
+  export let storySvg: string = "";
+  export let titleSize: string = "h-1/3";
+  export let titlePosition: string = "";
+  export let storyPosition: string = "";
+  export let bgImage: string = "";
+  export let bgVideo: string = "";
+  export let bgColor: string = COLORS.beige;
 </script>
 
-<div
-  style="background-color: {backgroundColor};"
-  class="md:hidden relative w-screen h-[75vh]"
->
-  <div class="w-full h-[35vh]">
-    <div
-      data-poster-url={backgroundVideo.replace("mp4", "jpg")}
-      data-video-urls="{backgroundVideo},{backgroundVideo.replace(
-        'mp4',
-        'webm',
-      )}"
-      data-autoplay="true"
-      data-loop="true"
-      data-wf-ignore="true"
-      class="w-full h-full"
-    >
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        style="background-image: url(&quot;{backgroundVideo.replace(
-          'mp4',
-          'jpg',
-        )}&quot;)"
-        data-wf-ignore="true"
-        class="w-full h-full object-cover"
+<!-- MOBILE -->
+<div style="background-color: {bgColor};" class="md:hidden relative w-screen">
+  <SectionsPaginationArrows />
+
+  <div class="flex flex-col space-y-1 min-h-fit relative">
+    {#if variant === EnumEntradaInvierno.SOLO_FOTO || variant === EnumEntradaInvierno.SOLO_VIDEO}
+      <!-- <div class="h-fit"> -->
+      <div class="w-full h-[72vh]">
+        {#if variant === EnumEntradaInvierno.SOLO_FOTO}
+          <img class="w-full h-full object-cover" src={bgImage} alt="" />
+        {:else if variant === EnumEntradaInvierno.SOLO_VIDEO}
+          <div
+            data-poster-url={bgVideo.replace("mp4", "jpg")}
+            data-video-urls="{bgVideo},{bgVideo.replace('mp4', 'webm')}"
+            data-autoplay="true"
+            data-loop="true"
+            data-wf-ignore="true"
+            class="w-full h-full"
+          >
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              style="background-image: url(&quot;{bgVideo.replace(
+                'mp4',
+                'jpg',
+              )}&quot;)"
+              data-wf-ignore="true"
+              class="w-full h-full object-cover"
+            >
+              <source src={bgVideo} data-wf-ignore="true" />
+              <source
+                src={bgVideo.replace("mp4", "webm")}
+                data-wf-ignore="true"
+              />
+            </video>
+          </div>
+        {/if}
+
+        <div class="z-20 absolute p-3 {titlePosition} {titleSize}">
+          <img class="w-full h-full" src={titleSvg} alt="" />
+        </div>
+
+        {#if storySvg && storySvg !== ""}
+          <div class="z-20 absolute h-1/5 {storyPosition}">
+            <img class="w-full h-full" src={storySvg} alt="" />
+          </div>
+        {/if}
+      </div>
+
+      <!-- TODO -->
+      <!-- <div class="h-fit">
+          <ScrollDownArrows backgroundColor={bgColor} />
+        </div>
+      </div> -->
+    {/if}
+
+    <!-- FOTO Y VIDEO -->
+    {#if variant === EnumEntradaInvierno.FOTO_VIDEO || variant === EnumEntradaInvierno.VIDEO_FOTO}
+      <div
+        class="w-full flex space-y-1 {variant === EnumEntradaInvierno.VIDEO_FOTO
+          ? 'space-y-reverse'
+          : ''}"
+        style={`flex-direction: ${variant === EnumEntradaInvierno.VIDEO_FOTO ? "column-reverse" : "column"};`}
       >
-        <source src={backgroundVideo} data-wf-ignore="true" />
-        <source
-          src={backgroundVideo.replace("mp4", "webm")}
+        <!-- image -->
+        <div class="w-full h-[60vh]">
+          <img class="w-full h-full object-cover" src={bgImage} alt="" />
+        </div>
+
+        <!-- video -->
+        <div
+          class="w-full h-[30vh]"
+          data-poster-url={bgVideo.replace("mp4", "jpg")}
+          data-video-urls="{bgVideo},{bgVideo.replace('mp4', 'webm')}"
+          data-autoplay="true"
+          data-loop="true"
           data-wf-ignore="true"
-        />
-      </video>
-    </div>
-  </div>
+        >
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            style="background-image: url(&quot;{bgVideo.replace(
+              'mp4',
+              'jpg',
+            )}&quot;)"
+            data-wf-ignore="true"
+            class="w-full h-full object-cover"
+          >
+            <source src={bgVideo} data-wf-ignore="true" />
+            <source
+              src={bgVideo.replace("mp4", "webm")}
+              data-wf-ignore="true"
+            />
+          </video>
+        </div>
 
-  <div class="w-full h-[45vh]">
-    <img class="w-full h-full object-cover" src={backgroundImage} alt="" />
-  </div>
+        <div class="z-20 absolute p-3 {titlePosition} {titleSize}">
+          <img class="w-full h-full" src={titleSvg} alt="" />
+        </div>
 
-  <div class="z-20 absolute h-1/3 bottom-0 ml-5">
-    <img class="w-full h-full" src={textImage} alt="" />
-  </div>
+        {#if storySvg && storySvg !== ""}
+          <div class="z-20 absolute h-1/5 {storyPosition}">
+            <img class="w-full h-full" src={storySvg} alt="" />
+          </div>
+        {/if}
 
-  <div
-    style="color: {textColor};"
-    class="absolute bottom-0 right-0 rounded-3xl w-[60%] p-6 mb-4 mr-3 z-10 overflow-hidden"
-  >
-    <p class="title">{storyMainPhrase}</p>
-    <p class="chavos-lg">{@html storyCopy}</p>
+        {#if titleSvg.includes("FUNDA-DUVET")}
+          <div class="z-20 absolute h-1/5 top-[55%]">
+            <img
+              class="w-full h-full"
+              src="/images/invierno/copys/ENTRADA-P02-FUNDA-DUVET-COPY2.svg"
+              alt=""
+            />
+          </div>
+        {/if}
+
+        <div class="z-20 absolute bottom-24">
+          <ScrollDownArrows backgroundColor="transparent" />
+        </div>
+      </div>
+    {/if}
   </div>
 </div>
-<ScrollDownArrows {backgroundColor} />
 
 <!-- DESKTOP -->
-<div class="hidden md:block relative w-screen h-[85vh] bg-cover bg-center">
-  <div class="w-10/12 h-full">
-    <video
-      autoplay
-      loop
-      muted
-      playsinline
-      src={backgroundVideo}
-      class="w-full h-full object-cover"
-    ></video>
-  </div>
-
-  <div class="absolute w-4/12 mr-12 top-0 text-right right-0 text-black">
-    <div class="mx-6">
-      <img src={textImage} loading="eager" alt="" class="h-full" />
-    </div>
-  </div>
-
-  <div
-    class="absolute bottom-0 left-0 rounded-3xl w-5/12 bg-white px-16 py-12 mb-4 ml-8 z-10 overflow-hidden text-black opacity-80"
-  >
-    <p class="chavos-bold-3xl">{storyMainPhrase}</p>
-    <p class="chavos-3xl">{storyCopy}</p>
-  </div>
-</div>
+<!-- TODO -->
+<!-- <div
+  class="hidden md:block relative w-screen h-[85vh] bg-cover bg-center"
+></div> -->

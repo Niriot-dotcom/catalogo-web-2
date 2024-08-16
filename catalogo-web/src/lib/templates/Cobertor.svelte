@@ -1,13 +1,10 @@
 <script lang="ts">
+  import AddAll from "$lib/components/AddAll.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import LegalLicenses from "$lib/components/communication/LegalLicenses.svelte";
+  import ComplementosCopy from "$lib/components/resources/ComplementosCopy.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
-  import {
-    CATALOGS_ROUTES,
-    COLORS,
-    LEGALES_SVGS,
-    URLS,
-  } from "$lib/constants/strings";
+  import { COLORS, LEGALES_SVGS, URLS } from "$lib/constants/strings";
   import { getCurrentCatalog } from "$lib/utils/navigation";
   import { onMount } from "svelte";
 
@@ -57,6 +54,8 @@
       complementCard.classList.remove("-my-5");
     }
   }
+
+  function handleAddAllProducts() {}
 
   let currentCatalog: string;
   onMount(() => {
@@ -125,17 +124,10 @@
   {#if !page.pageResources?.includes("NADA")}
     <!-- complementos -->
     <div class="mt-3">
-      <div class="h-[10vh] pl-[12%]">
-        <img
-          src="../images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
-            ? 'CambiaElLookConEstosComplementos'
-            : 'AgregaComplementosBlack'}.svg"
-          loading="eager"
-          alt=""
-          class="h-full {currentCatalog === CATALOGS_ROUTES.VIANNEY
-            ? 'scale-[0.8]'
-            : 'scale-150'}"
-        />
+      <div class="h-[10vh] pl-[12%] flex justify-between">
+        <ComplementosCopy catalog={currentCatalog} />
+
+        <AddAll skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]} />
       </div>
 
       <div class="grid grid-cols-2 gap-x-1 gap-y-3 px-3 pb-2">

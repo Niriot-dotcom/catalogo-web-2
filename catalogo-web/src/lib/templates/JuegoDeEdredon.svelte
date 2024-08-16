@@ -1,8 +1,11 @@
 <script lang="ts">
+  import AddAll from "$lib/components/AddAll.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import LegalLicenses from "$lib/components/communication/LegalLicenses.svelte";
+  import ComplementosCopy from "$lib/components/resources/ComplementosCopy.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import {
+    CATALOGS_NAMES,
     CATALOGS_ROUTES,
     COLORS,
     LEGALES_SVGS,
@@ -74,7 +77,8 @@
       )
         ? ' mb-9'
         : ''}"
-      style={page.pageTitle.toLowerCase().includes("duvet")
+      style={page.pageTitle.toLowerCase().includes("duvet") &&
+      currentCatalog !== CATALOGS_ROUTES.INVIERNO
         ? `border-width: 0px; bottom: 10vh; transform: scale(1.5); height: 30vh;`
         : `bottom: 0px; height: 40vh;`}
     >
@@ -91,7 +95,8 @@
         {:else}
           <OptimImg
             onClick={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
-            imgClass={page.pageTitle.toLowerCase().includes("duvet")
+            imgClass={page.pageTitle.toLowerCase().includes("duvet") &&
+            currentCatalog !== CATALOGS_ROUTES.INVIERNO
               ? "object-contain w-full h-full"
               : "object-cover w-full h-full"}
             source={`${URLS.fotos}${page.SKU}-3.webp`}
@@ -129,17 +134,10 @@
   {#if !page.pageResources?.includes("NADA")}
     <!-- complementos -->
     <div class="">
-      <div class="h-[10vh] pl-[12%]">
-        <img
-          src="../images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
-            ? 'CambiaElLookConEstosComplementos'
-            : 'AgregaComplementosBlack'}.svg"
-          loading="eager"
-          alt=""
-          class="h-full {currentCatalog === CATALOGS_ROUTES.VIANNEY
-            ? 'scale-[0.8]'
-            : 'scale-150'}"
-        />
+      <div class="h-[10vh] pl-[12%] flex justify-between">
+        <ComplementosCopy catalog={currentCatalog} />
+
+        <AddAll skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]} />
       </div>
 
       <div class="grid grid-cols-2 px-6 pb-2">

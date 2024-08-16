@@ -1,224 +1,70 @@
 <script lang="ts">
-  import ImageComponent from "$lib/components/imageComponent.svelte";
-  import VisibleDetector from "$lib/components/visibleDetector.svelte";
-  import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
-  import { Catalogs } from "$lib/constants/globalTypes";
-  import { catalogSections } from "$lib/components/currentCatalogPage";
   import type { PageData } from "./$types";
-  import { page } from "$app/stores";
+  import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
+  import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
+  import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
+  import Sublinea from "$lib/templates/Sublinea.svelte";
+  import VisibleDetector from "$lib/components/visibleDetector.svelte";
+  import { EnumEntradaInvierno } from "$lib/constants/strings";
 
-  let visibleIds = [];
-
-  function handleVisibleChange(event) {
+  let visibleIds: string[] = [];
+  let showViewPrices = false;
+  function handleVisibleChange(event: any) {
     visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
   }
-
+  let relatedProducts: string[] = [];
+  let selectedProduct: null | string = null;
   let showPopup = false;
 
-  function show() {
-    showPopup = true;
-  }
-
   export let data: PageData;
+  const handleImageClick = (sku: string, relatedProds: string[]) => {
+    selectedProduct = sku;
+    relatedProducts = relatedProds;
+  };
 
-  const products = data.props.products; // guarda el objeto product en una variable
+  const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 
-<div style="overflow-x: hidden;">
-  {#each products as product, index}
-    {#if index % 2 === 0}
-      <div id={product.pageTitle} style="overflow-x: hidden;">
-        <div class="div-block-52">
-          <div class="div-block-53">
-            <ImageComponent
-              src={product.pageMainImage}
-              loading="eager"
-              alt=""
-              classList="image-40"
-            />
-            <div class="div-block-43 align-bottom accesorios">
-              <div class="page-title-box align-left">
-                <h2
-                  text-split=""
-                  words-slide-up=""
-                  class="heading-4 accesorios"
-                  style="font-size: 3.5rem;"
-                >
-                  {product.pageTitle}<br />{product.pageSubtitle}
-                </h2>
-                <p
-                  text-split=""
-                  words-slide-up=""
-                  class="paragraph product-detail-subtitle alternate hidden"
-                  style="max-width: 350px; text-align:left;"
-                >
-                  {product.pageCopys[0]}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="div-block-54" style="background-color: white;">
-            <div class="div-block-55 to-bottom">
-              {#each product.pageProductsImages.slice(0, 2) as item}
-                <div
-                  data-visible-id={item}
-                  class="div-block-57 rounded-lg"
-                  on:click={show}
-                  style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
-                >
-                  <img
-                    src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{item}.jpg"
-                    loading="eager"
-                    alt=""
-                    class="image-41"
-                  />
-                </div>
-              {/each}
-            </div>
-            {#if product.pageProductsImages.length > 6}
-              <div class="div-block-55 to-top">
-                {#each product.pageProductsImages.slice(2, 4) as item}
-                  <div
-                    data-visible-id={item}
-                    class="div-block-57 rounded-lg"
-                    on:click={show}
-                    style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
-                  >
-                    <img
-                      src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{item}.jpg"
-                      loading="eager"
-                      alt=""
-                      class="image-41"
-                    />
-                  </div>
-                {/each}
-              </div>
-            {/if}
-          </div>
-        </div>
-        <div class="div-block-54 _3-column" style="overflow-x: hidden;">
-          <div class="div-block-55 to-bottom">
-            {#each product.pageProductsImages.slice(product.pageProductsImages.length > 6 ? 4 : 2) as item}
-              <div
-                data-visible-id={item}
-                class="div-block-57 rounded-lg"
-                on:click={show}
-                style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
-              >
-                <img
-                  src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{item}.jpg"
-                  loading="eager"
-                  alt=""
-                  class="image-41"
-                />
-              </div>
-            {/each}
-          </div>
-        </div>
-      </div>
-    {:else}
-      <div id={product.pageTitle} style="overflow-x: hidden;">
-        <div class="div-block-52 inverse">
-          <div class="div-block-54" style="background-color: white;">
-            <div class="div-block-55 to-bottom">
-              {#each product.pageProductsImages.slice(0, 2) as item}
-                <div
-                  data-visible-id={item}
-                  class="div-block-57 rounded-lg"
-                  on:click={show}
-                  style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
-                >
-                  <img
-                    src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{item}.jpg"
-                    loading="eager"
-                    alt=""
-                    class="image-41"
-                  />
-                </div>
-              {/each}
-            </div>
-            {#if product.pageProductsImages.length > 6}
-              <div class="div-block-55 to-top">
-                {#each product.pageProductsImages.slice(2, 4) as item}
-                  <div
-                    data-visible-id={item}
-                    class="div-block-57 rounded-lg"
-                    on:click={show}
-                    style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
-                  >
-                    <img
-                      src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{item}.jpg"
-                      loading="eager"
-                      alt=""
-                      class="image-41"
-                    />
-                  </div>
-                {/each}
-              </div>
-            {/if}
-          </div>
-
-          <div class="div-block-53 inverse" style="overflow-x:hidden">
-            <ImageComponent
-              src={product.pageMainImage}
-              loading="eager"
-              alt=""
-              classList="image-40"
-            />
-            <div class="div-block-43 align-bottom right">
-              <div class="page-title-box align-left">
-                <h2
-                  text-split=""
-                  words-slide-up=""
-                  class="heading-4 left"
-                  style="font-size: 3.5rem;"
-                >
-                  {product.pageTitle}<br />{product.pageSubtitle}
-                </h2>
-                <p
-                  text-split=""
-                  words-slide-up=""
-                  class="paragraph product-detail-subtitle alternate"
-                  style="text-align: right;"
-                >
-                  {product.pageCopys[0]}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="div-block-54 _3-column" style="overflow-x: hidden;">
-          <div class="div-block-55 to-bottom">
-            {#each product.pageProductsImages.slice(product.pageProductsImages.length > 6 ? 4 : 2) as item}
-              <div
-                data-visible-id={item}
-                class="div-block-57 rounded-lg"
-                on:click={show}
-                style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
-              >
-                <img
-                  src="https://storage.googleapis.com/imagenes-productos/Productos_Vianney/{item}.jpg"
-                  loading="eager"
-                  alt=""
-                  class="image-41"
-                />
-              </div>
-            {/each}
-          </div>
-        </div>
-      </div>
-    {/if}
-  {/each}
-</div>
-
-<CategoriesFooter
-  catalog={Catalogs.INVIERNO}
-  categories={catalogSections.INVIERNO}
+<!-- ENTRADA -->
+<EntradaInvierno
+  titleSvg="/images/invierno/copys/ENTRADA-P15-NAVIDAD-TITULO.svg"
+  variant={EnumEntradaInvierno.SOLO_VIDEO}
+  titlePosition="bottom-0 right-0"
+  storyPosition="top-1/2 left-0 transform -translate-y-1/2"
+  bgVideo="/images/invierno/portadillas/ENTRADA-P15-NAVIDAD-VERTICAL.mp4"
 />
-<NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
+
+<!-- render pages -->
+{#each Object.keys(groups) as group, i}
+  {#if groups[group][0].pageTemplate == "AmbienteConMiniambiente"}
+    {#each groups[group] as juego, i}
+      <AmbienteConMiniambiente page={juego} {handleImageClick} />
+    {/each}
+  {:else if groups[group][0].pageTemplate == "Sublinea"}
+    <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
+  {:else if groups[group][0].pageTemplate == "VariantesDeColor"}
+    <VariantesDeColor
+      bind:visibleIds
+      groupPages={groups[group]}
+      title={group}
+      {handleImageClick}
+    />
+  {/if}
+{/each}
+
+<NavigatorMenu
+  catalog={Catalogs.INVIERNO}
+  bind:relatedProducts
+  bind:visibleIds
+  bind:showPopup
+  bind:showViewPrices
+  bind:selectedProduct
+/>
 
 <div>
   <script defer src="../js/webflowPage.js"></script>

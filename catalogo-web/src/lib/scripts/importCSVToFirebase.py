@@ -1,7 +1,7 @@
 ''' COMMAND '''
 '''
 
-python3 src/lib/scripts/importCSVToFirebase.py
+python src/lib/scripts/importCSVToFirebase.py
 
 '''
 
@@ -26,14 +26,16 @@ class NumpyArrayEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, obj)
 
 ''' CREDENTIALS '''
-cred = credentials.Certificate('/Users/Paty.Lopez/Vianney/keys/mx-vianney-001-firebase-adminsdk-q5ydi-71a4661d43.json')
+cred = credentials.Certificate('/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 keys/mx-vianney-001-firebase-adminsdk-q5ydi-84d2becdf3.json')
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 ''' CONSTANTS '''
 COLLECTION_NAME = "testPages"
-# csv_file = '/Users/Paty.Lopez/Desktop/biasi.csv'
-csv_filepath = '/Users/Paty.Lopez/Desktop/out.csv'
+OUT_JSON = 'jsonInvierno.json'
+CSV_DB = './src/lib/scripts/Invierno Completed F3.csv'
+
+csv_filepath = '/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 docs/out.csv'
 ARRAY_ROWS = [
     'complSheets',
     'complCurtains',
@@ -85,28 +87,31 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
         csv_reader = csv.DictReader(csv_file)
         line_count = 0
         for row in csv_reader:
-            # custom stop
-            if line_count == count_stop: break
+            try: 
+                # custom stop
+                if line_count == count_stop: break
 
-            # avoid columns
-            if line_count == 0:
+                # avoid columns
+                if line_count == 0:
+                    line_count += 1
+
+                # process rows
+                if row['productOrder'] != "":
+                    row['productOrder'] = int(row['productOrder'] if row['productOrder'].isdigit() else -1)
+                if row['pageCopys'] != "":
+                    row['pageCopys'] = row['pageCopys'].replace(" '", ", '").strip('[]').replace("'", "").split(', ')
+                for field in ARRAY_ROWS:
+                    try:
+                        row[field] = row[field].replace(" '", ", '").strip('[]').replace("'", "").split(', ')
+                    except:
+                        print("An exception occurred in ", field)
+
+                # add row to array
+                json_array.append(row)
+                
                 line_count += 1
-
-            # process rows
-            if row['productOrder'] != "":
-                row['productOrder'] = int(row['productOrder'] if row['productOrder'].isdigit() else -1)
-            if row['pageCopys'] != "":
-                row['pageCopys'] = row['pageCopys'].replace(" '", ", '").strip('[]').replace("'", "").split(', ')
-            for field in ARRAY_ROWS:
-                try:
-                    row[field] = row[field].replace(" '", ", '").strip('[]').replace("'", "").split(', ')
-                except:
-                    print("An exception occurred in ", field)
-
-            # add row to array
-            json_array.append(row)
-            
-            line_count += 1
+            except:
+                print("An exception occurred in ROW", row)
 
     # write file is json_filepath is provided
     if json_filepath != "":
@@ -121,49 +126,6 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
 
 
 ''' MAIN '''
-# delete_collection('chavosPages', 5)
-# json_obj = parse_csv_to_json('/Users/Paty.Lopez/Documents/GitHub/catalogo-web/catalogo-web/src/lib/scripts/Vianney Hogar.csv', 'jsonVianney.json', 5)
-
-# json_obj = parse_csv_to_json('./src/lib/scripts/Vianney Hogar More Completed F6.csv', 'jsonVianneyCompleted.json')
-# json_to_firebase(json_obj, 'vianneyPages')
-
-json_obj = parse_csv_to_json('./src/lib/scripts/Bebe More Completed F2.csv', 'jsonBebe.json')
-json_to_firebase(json_obj, 'bebePages')
-
-# DEPRECATED
-def add_data_from_csv():
-    cols = ''
-    with open(csv_file, mode='r') as csv_file:
-        csv_reader = csv.DictReader(csv_file)
-        line_count = 0
-        for row in csv_reader:
-            # if line_count == 3: break
-            if line_count == 0:
-                cols = ", ".join(row)
-                line_count += 1
-            
-            # 
-            # Add data
-            doc_ref = db.collection(COLLECTION_NAME).document()
-            doc_ref.set({
-            "pageTitle": [substring.replace('\\', '') for substring in re.split(r'(?<!\\),', row["pageTitle"])],
-            "pageTemplate": row["pageTemplate"],
-            "pageCategory": row["pageCategory"],
-            "pageSubtitle": row["pageSubtitle"],
-            "pageCopys": [substring.replace('\\', '') for substring in re.split(r'(?<!\\),', row["pageCopys"])],
-            "pageDescriptions": [substring.replace('\\', '') for substring in re.split(r'(?<!\\),', row["pageDescriptions"])],
-            "pageProducts": row["pageProducts"].split(','),
-            "pageIcons": row["pageIcons"].split(','),
-            "pageProductsImagesPosition": row["pageProductsImagesPosition"].split(','),
-            "pageVideos": row["pageVideos"].split(','),
-            "pageResources": [substring.replace('\\', '') for substring in re.split(r'(?<!\\),', row["pageResources"])],
-            "pageStatus": row["pageStatus"] == 'Activa',
-            "pageSeoDescription": row["pageSeoDescription"],
-            "pageSeoTitle": row["pageSeoTitle"],
-            "pageKeywords": [substring.replace('\\', '') for substring in re.split(r'(?<!\\),', row["pageKeywords"])],
-            })
-            # 
-            line_count += 1
-        print(f'Processed {line_count} lines.')
-
-    # print(cols)
+# delete_collection(COLLECTION_NAME, 5)
+json_obj = parse_csv_to_json(CSV_DB, OUT_JSON)
+json_to_firebase(json_obj, COLLECTION_NAME)

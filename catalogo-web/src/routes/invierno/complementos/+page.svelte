@@ -1,13 +1,21 @@
 <script lang="ts">
   import type { PageData } from "./$types";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import { Catalogs } from "$lib/constants/globalTypes";
+  import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
+  import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
+  import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
   import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
   import Sublinea from "$lib/templates/Sublinea.svelte";
-  import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
-  import EntradaBebe from "$lib/templates/EntradaBebe.svelte";
+  import VisibleDetector from "$lib/components/visibleDetector.svelte";
+  import { EnumEntradaInvierno } from "$lib/constants/strings";
+  import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
 
   let visibleIds: string[] = [];
+  let showViewPrices = false;
+  function handleVisibleChange(event: any) {
+    visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
+  }
   let relatedProducts: string[] = [];
   let selectedProduct: null | string = null;
   let showPopup = false;
@@ -18,22 +26,28 @@
     relatedProducts = relatedProds;
   };
 
-  const groups: Record<string, []> = data.props.groupedPages;
+  const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
+  let sections = [
+    { title: "Cojines y Fundas de Cojín", link: "#section-cojines" },
+    { title: "Fundas de Almohada", link: "#section-fundas-almohada" },
+    { title: "Rellenos", link: "#section-rellenos" },
+  ];
 </script>
 
-<!-- tutorial -->
-<!-- <Tutorial showHorizontalHand /> -->
+<VisibleDetector on:visibleChange={handleVisibleChange} />
 
-<!-- entrada -->
-<EntradaBebe
-  backgroundVideo="../videos/bebe/Entrada-P3-Accesorios.mp4"
-  backgroundImage="/images/bebe/copys/Entrada-P3-AccesoriosFondo.svg"
-  backgroundColor="#FBECEA"
-  textImage="/images/bebe/copys/Entrada-P3-Accesorios.svg"
-  textColor="#F0BDB8"
-  storyMainPhrase="Las aventuras de los pequeños"
-  storyCopy="se viven mejor en un ambiente adecuado a ellos."
+<!-- ENTRADA -->
+<EntradaInvierno
+  titleSvg="/images/invierno/copys/ENTRADA-P08-COMPLEMENTOS-TITULO.svg"
+  storySvg="/images/invierno/copys/ENTRADA-P08-COMPLEMENTOS-COPY.svg"
+  variant={EnumEntradaInvierno.SOLO_FOTO}
+  titleSize="h-[30vh]"
+  titlePosition="bottom-0 right-0"
+  storyPosition="-bottom-10 left-0"
+  bgImage="/images/invierno/portadillas/ENTRADA-P08-COMPLEMENTOS.webp"
 />
+
+<!-- <SectionMenu {sections} breakLine={1} paddingTop="12" /> -->
 
 <!-- render pages -->
 {#each Object.keys(groups) as group, i}
@@ -54,10 +68,11 @@
 {/each}
 
 <NavigatorMenu
-  catalog={Catalogs.BEBE}
+  catalog={Catalogs.INVIERNO}
   bind:relatedProducts
   bind:visibleIds
   bind:showPopup
+  bind:showViewPrices
   bind:selectedProduct
 />
 
