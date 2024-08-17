@@ -6,7 +6,7 @@
   export let titleSvg: string;
   export let variant: string;
   export let storySvg: string = "";
-  export let titleSize: string = "h-1/3";
+  export let titleSize: string = "h-1/3 md:h-1/2";
   export let titlePosition: string = "";
   export let storyPosition: string = "";
   export let bgImage: string = "";
@@ -143,7 +143,131 @@
 </div>
 
 <!-- DESKTOP -->
-<!-- TODO -->
-<!-- <div
-  class="hidden md:block relative w-screen h-[85vh] bg-cover bg-center"
-></div> -->
+<div
+  class="hidden md:block relative w-screen h-[85vh] bg-cover bg-center bg-white border-2 border-red-400"
+>
+  <SectionsPaginationArrows />
+
+  <div class="flex relative w-full h-full">
+    {#if variant === EnumEntradaInvierno.SOLO_FOTO || variant === EnumEntradaInvierno.SOLO_VIDEO}
+      <div class="w-full h-screen">
+        {#if variant === EnumEntradaInvierno.SOLO_FOTO}
+          <img class="w-full h-full object-cover" src={bgImage} alt="" />
+        {:else if variant === EnumEntradaInvierno.SOLO_VIDEO}
+          <div
+            data-poster-url={bgVideo.replace("mp4", "jpg")}
+            data-video-urls="{bgVideo},{bgVideo.replace('mp4', 'webm')}"
+            data-autoplay="true"
+            data-loop="true"
+            data-wf-ignore="true"
+            class="w-full h-full"
+          >
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              style="background-image: url(&quot;{bgVideo.replace(
+                'mp4',
+                'jpg',
+              )}&quot;)"
+              data-wf-ignore="true"
+              class="w-full h-full object-cover"
+            >
+              <source src={bgVideo} data-wf-ignore="true" />
+              <source
+                src={bgVideo.replace("mp4", "webm")}
+                data-wf-ignore="true"
+              />
+            </video>
+          </div>
+        {/if}
+
+        <div class="z-20 absolute p-3 {titlePosition} {titleSize}">
+          <img class="w-full h-full" src={titleSvg} alt="" />
+        </div>
+
+        {#if storySvg && storySvg !== ""}
+          <div class="z-20 absolute h-1/5 {storyPosition}">
+            <img class="w-full h-full" src={storySvg} alt="" />
+          </div>
+        {/if}
+      </div>
+
+      <!-- TODO -->
+      <!-- <div class="h-fit">
+          <ScrollDownArrows backgroundColor={bgColor} />
+        </div>
+      </div> -->
+    {/if}
+
+    <!-- FOTO Y VIDEO -->
+    {#if variant === EnumEntradaInvierno.FOTO_VIDEO || variant === EnumEntradaInvierno.VIDEO_FOTO}
+      <div
+        class="w-full h-full flex space-x-1.5 {variant ===
+        EnumEntradaInvierno.VIDEO_FOTO
+          ? 'space-x-reverse'
+          : ''}"
+        style={`flex-direction: ${variant === EnumEntradaInvierno.VIDEO_FOTO ? "row-reverse" : "row"};`}
+      >
+        <!-- video -->
+        <div
+          class="h-full w-[70vw]"
+          data-poster-url={bgVideo.replace("mp4", "jpg")}
+          data-video-urls="{bgVideo},{bgVideo.replace('mp4', 'webm')}"
+          data-autoplay="true"
+          data-loop="true"
+          data-wf-ignore="true"
+        >
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            style="background-image: url(&quot;{bgVideo.replace(
+              'mp4',
+              'jpg',
+            )}&quot;)"
+            data-wf-ignore="true"
+            class="w-full h-full object-cover"
+          >
+            <source src={bgVideo} data-wf-ignore="true" />
+            <source
+              src={bgVideo.replace("mp4", "webm")}
+              data-wf-ignore="true"
+            />
+          </video>
+        </div>
+
+        <!-- image -->
+        <div class="h-full w-[30vw]">
+          <img class="w-full h-full object-cover" src={bgImage} alt="" />
+        </div>
+
+        <div class="z-20 absolute p-3 {titlePosition} {titleSize}">
+          <img class="w-full h-full" src={titleSvg} alt="" />
+        </div>
+
+        {#if storySvg && storySvg !== ""}
+          <div class="z-20 absolute h-1/5 {storyPosition}">
+            <img class="w-full h-full" src={storySvg} alt="" />
+          </div>
+        {/if}
+
+        {#if titleSvg.includes("FUNDA-DUVET")}
+          <div class="z-20 absolute h-1/5 top-[55%]">
+            <img
+              class="w-full h-full"
+              src="/images/invierno/copys/ENTRADA-P02-FUNDA-DUVET-COPY2.svg"
+              alt=""
+            />
+          </div>
+        {/if}
+
+        <div class="z-20 absolute bottom-24">
+          <ScrollDownArrows backgroundColor="transparent" />
+        </div>
+      </div>
+    {/if}
+  </div>
+</div>

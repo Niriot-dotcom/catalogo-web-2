@@ -38,9 +38,9 @@
   titleSvg="/images/invierno/copys/ENTRADA-P06-LIGERO-TITULO.svg"
   storySvg="/images/invierno/copys/ENTRADA-P06-LIGERO-COPY.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
-  titleSize="w-2/3"
-  titlePosition="top-[60vh] left-0"
-  storyPosition="top-[43vh] left-12 w-1/2"
+  titleSize="w-2/3 md:w-full md:h-1/2"
+  titlePosition="top-[60vh] left-0 md:top-1/3"
+  storyPosition="top-[43vh] left-12 w-1/2 md:w-1/3"
   bgImage="/images/invierno/portadillas/ENTRADA-P06-LIGERO.webp"
   bgVideo="/images/invierno/portadillas/ENTRADA-P06-LIGERO-VERTICAL.mp4"
 />

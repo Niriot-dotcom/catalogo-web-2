@@ -106,8 +106,8 @@
 <EntradaInvierno
   titleSvg="/images/invierno/copys/ENTRADA-P04-INVERNAL-TITULO.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
-  titleSize="h-[35vh]"
-  titlePosition="top-[25vh] left-0"
+  titleSize="h-[35vh] md:h-2/3"
+  titlePosition="top-[25vh] left-0 md:top-[15vh]"
   storyPosition="top-1/2 left-0 transform -translate-y-1/2"
   bgImage="/images/invierno/portadillas/ENTRADA-P04-INVERNAL.webp"
   bgVideo="/images/invierno/portadillas/ENTRADA-P04-INVERNAL-VERTICAL.mp4"

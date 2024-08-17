@@ -11,6 +11,7 @@
     URLS,
   } from "$lib/constants/strings";
   import { getCurrentCatalog } from "$lib/utils/navigation";
+  import { productTypeToSectionId } from "$lib/utils/strings";
   import { onMount } from "svelte";
 
   export let visibleIds: string[];
@@ -51,8 +52,9 @@
 <!-- MOBILE -->
 {#if config === EnumVariantesDeColor.HORIZONTAL}
   <div
+    id="section-{productTypeToSectionId(title)}"
     data-visible-id={groupPages[selectedColorIndex].SKU}
-    class="w-full overflow-hidden px-5 relative py-2 bg-beige"
+    class="md:hidden w-full overflow-hidden px-5 relative py-2 bg-beige"
     style={`background-color: ${groupPages[selectedColorIndex].pageResources[0]}`}
   >
     <!-- line header text -->
@@ -316,6 +318,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="desktop-section-{productTypeToSectionId(title)}"
   style={`background-color: ${groupPages[selectedColorIndex].pageResources[0]}`}
   class="hidden md:block w-screen h-screen"
 >

@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+:target {
+  scroll-margin-top: 100px;
+}
+
 input,
 input:before,
 input:after {

@@ -92,7 +92,7 @@
           />
         </div>
       {:else}
-        <p class="chavos-3xl xs:chavos-4xl">{title}</p>
+        <p class="chavos-3xl xs:chavos-4xl pb-5">{title}</p>
       {/if}
     {:else}
       <p class="chavos-3xl xs:chavos-4xl">{title}</p>
@@ -119,7 +119,9 @@
           </p>
           <div class="min-w-[60vw] max-w-[60vw] h-[30vh]">
             <OptimImg
-              imgClass="object-cover w-full h-full"
+              imgClass="object-{title.toLowerCase() === 'rellenos de cojín'
+                ? 'contain'
+                : 'cover'} w-full h-full"
               source={`${URLS.fotos}${page.SKU}.webp`}
             />
           </div>
@@ -275,6 +277,7 @@
                 title.toLowerCase() === 'cojines xl' ||
                 title.toLowerCase() === 'fundas de cojín' ||
                 title.toLowerCase() === 'fundas de almohada' ||
+                title.toLowerCase() === 'funda de almohada' ||
                 (page.pageResources?.length > 2 &&
                   page.pageResources[2] === 'CONTAIN')
                   ? 'object-contain'
@@ -313,7 +316,7 @@
 </div>
 
 <!-- DESKTOP -->
-<div style="background-color: {bgColor};" class="hidden md:block w-screen">
+<div style="background-color: {bgColor};" class="hidden md:block w-screen p-5">
   <!-- products -->
   {#if groupPages.length === 1}
     <div class="w-full h-full flex space-x-1">
@@ -371,9 +374,20 @@
       style="background-color: {bgColor};"
       class="text-black mt-24 absolute left-1/2 translate-x-[-50%] flex flex-col text-center justify-center z-10 py-3 px-6"
     >
-      <p class="chavos-4xl xs:chavos-5xl">{title}</p>
-      {#if groupPages[0].pageCopys && groupPages[0].pageCopys.length > 0 && groupPages[0].pageCopys[0] !== ""}
-        <p class="chavos-sm xs:chavos-base"></p>
+      {#if groupPages[0].pageResources.length > 1 && groupPages[0].pageResources[1] !== ""}
+        <div class="w-full h-[10vh] my-3">
+          <img
+            alt={title}
+            src={groupPages[0].pageResources[1]}
+            class="w-full h-full"
+          />
+        </div>
+      {:else}
+        <!-- <p class="chavos-3xl xs:chavos-4xl pb-5">{title}</p> -->
+        <p class="chavos-4xl xs:chavos-5xl">{title}</p>
+        {#if groupPages[0].pageCopys && groupPages[0].pageCopys.length > 0 && groupPages[0].pageCopys[0] !== ""}
+          <p class="chavos-sm xs:chavos-base"></p>
+        {/if}
       {/if}
     </div>
 

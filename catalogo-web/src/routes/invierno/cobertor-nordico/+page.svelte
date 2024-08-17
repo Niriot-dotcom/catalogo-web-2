@@ -42,7 +42,8 @@
   titleSvg="/images/invierno/copys/ENTRADA-P05-NORDICO-TITULO.svg"
   storySvg="/images/invierno/copys/ENTRADA-P05-NORDICO-COPY.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
-  titlePosition="top-[30vh] left-5"
+  titleSize="h-1/3 lg:h-2/3"
+  titlePosition="top-[30vh] left-5 md:top-0"
   storyPosition="top-[70vh] left-0 transform -translate-y-1/2"
   bgImage="/images/invierno/portadillas/ENTRADA-P05-NORDICO.webp"
   bgVideo="/images/invierno/portadillas/ENTRADA-P05-NORDICO-VERTICAL.mp4"

@@ -68,8 +68,8 @@
 <EntradaInvierno
   titleSvg="/images/invierno/copys/ENTRADA-P01-EVEREST-TITULO.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
-  titleSize="w-5/6"
-  titlePosition="top-[60vh] left-0"
+  titleSize="w-5/6 md:w-full"
+  titlePosition="top-[60vh] left-0 md:bottom-0"
   storyPosition="top-1/2 left-0 transform -translate-y-1/2"
   bgImage="/images/invierno/portadillas/ENTRADA-P01-EVEREST.webp"
   bgVideo="/images/invierno/portadillas/ENTRADA-P01-EVEREST-VERTICAL.mp4"
