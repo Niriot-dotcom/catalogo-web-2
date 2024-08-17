@@ -11,6 +11,7 @@
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import ProtectoresDeColchon from "$lib/templates/ProtectoresDeColchon.svelte";
   import Almohadas from "$lib/templates/Almohadas.svelte";
+  import DiferenciasDeSabanas from "$lib/components/communication/DiferenciasDeSabanas.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -29,6 +30,7 @@
   };
 
   const groupedPages: Record<string, DatabasePage[]> = data.props.groupedPages;
+  let groupedPagess: Record<string, []> = data.props.groupedPages;
   const { pillowsPages, mattressProtectorsPages } = data.props;
   let sections = [
     {
@@ -38,11 +40,11 @@
     {
       title: "Sábanas",
       productTypes: [
-        "Sábanas Siberia",
-        "Sábanas Siberia Ligero",
-        "Sábanas Andes-Polar",
-        "Sábanas Franela",
         "Sábanas Camiseta",
+        "Sábanas Franela",
+        "Sábanas Siberia",
+        "Sábanas Siberia Con Cobertor Ligero",
+        "Sábanas Andes-Polar",
       ],
     },
     { title: "Rodapiés", productTypes: ["Rodapié"] },
@@ -67,36 +69,42 @@
   bgVideo="/images/invierno/portadillas/ENTRADA-P09-BASICOS-VERTICAL.mp4"
 />
 
-<!-- <SectionMenu
+<SectionMenu
   {sections}
   breakLine={2}
-  {activeTitle}
+  bind:activeTitle
   constPages={data.props.groupedPages}
   bind:groupedPagess
-/> -->
+/>
+
+<!-- [COMUNICACION] Diferencias de Sábanas -->
+{#if activeTitle === "Sábanas"}
+  <DiferenciasDeSabanas />
+{/if}
 
 <!-- render pages -->
 {#each Object.keys(groupedPagess) as group, i}
-  {#if groupedPages[group][0].pageTemplate == "AmbienteConMiniambiente"}
-    {#each groupedPages[group] as juego, i}
+  {#if groupedPagess[group][0].pageTemplate == "AmbienteConMiniambiente"}
+    {#each groupedPagess[group] as juego, i}
       <AmbienteConMiniambiente page={juego} {handleImageClick} />
     {/each}
-  {:else if groupedPages[group][0].pageTemplate == "Sublinea"}
+  {:else if groupedPagess[group][0].pageTemplate == "Sublinea"}
     <Sublinea
-      groupPages={groupedPages[group]}
+      groupPages={groupedPagess[group]}
       title={group}
       {handleImageClick}
     />
-  {:else if groupedPages[group][0].pageTemplate == "VariantesDeColor"}
+  {:else if groupedPagess[group][0].pageTemplate == "VariantesDeColor"}
     <VariantesDeColor
       bind:visibleIds
-      groupPages={groupedPages[group]}
+      groupPages={groupedPagess[group]}
       title={group}
       {handleImageClick}
     />
   {/if}
 {/each}
 
+<!-- CUSTOM PAGES -->
 {#if activeTitle === "Almohadas"}
   <Almohadas pages={pillowsPages} {handleImageClick} />
 {/if}

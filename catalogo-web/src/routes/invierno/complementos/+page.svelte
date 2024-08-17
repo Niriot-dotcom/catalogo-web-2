@@ -9,6 +9,7 @@
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import { EnumEntradaInvierno } from "$lib/constants/strings";
   import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
+  import { deleteSubArray } from "$lib/utils/strings";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -26,12 +27,26 @@
     relatedProducts = relatedProds;
   };
 
-  const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
+  // const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
+  let groups: Record<string, []> = data.props.groupedPages;
   let sections = [
-    { title: "Cojines y Fundas de Cojín", link: "#section-cojines" },
-    { title: "Fundas de Almohada", link: "#section-fundas-almohada" },
-    { title: "Rellenos", link: "#section-rellenos" },
+    {
+      title: "Cojines y Fundas de Cojín",
+      productTypes: ["Cojines", "Funda De Cojín", "Fundas De Cojín Velvet", ""],
+      link: "#section-cojines",
+    },
+    {
+      title: "Fundas de Almohada",
+      productTypes: ["Funda De Almohada"],
+      link: "#section-fundas-almohada",
+    },
+    {
+      title: "Rellenos",
+      productTypes: ["Rellenos De Cojín"],
+      link: "#section-rellenos",
+    },
   ];
+  let activeTitle = sections[0].title;
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
@@ -47,7 +62,14 @@
   bgImage="/images/invierno/portadillas/ENTRADA-P08-COMPLEMENTOS.webp"
 />
 
-<!-- <SectionMenu {sections} breakLine={1} paddingTop="12" /> -->
+<SectionMenu
+  {sections}
+  paddingTop="12"
+  bind:activeTitle
+  breakLine={1}
+  constPages={data.props.groupedPages}
+  bind:groupedPagess={groups}
+/>
 
 <!-- render pages -->
 {#each Object.keys(groups) as group, i}

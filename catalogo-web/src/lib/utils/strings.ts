@@ -20,3 +20,7 @@ export function deleteSubArray(totalItems: [], item: []) {
     return JSON.stringify(subArray) !== itemString;
   });
 }
+
+export function productTypeToSectionId(productType: string) {
+  return productType.replaceAll(" ", "-").toLowerCase();
+}
