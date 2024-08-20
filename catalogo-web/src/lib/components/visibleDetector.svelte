@@ -36,7 +36,7 @@
                                 //     dispatch('visibleChange', currentVisibleIds);
                                 //     timeouts.delete(id);
                                 // }
-                                if (currentVisibleIds.length > 4) {
+                                if (currentVisibleIds.length > 3) {
                                     currentVisibleIds.splice(0, 1);
                                     dispatch('visibleChange', currentVisibleIds);
                                     timeouts.delete(id);
