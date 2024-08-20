@@ -27,7 +27,7 @@
     >
       <!-- IMAGES -->
       {#each { length: 3 } as _, i}
-        <div class="overflow-hidden w-full h-full">
+        <div class="overflow-hidden w-full h-[60vh] md:h-[80vh]">
           <img
             src="/images/invierno/recursos/INICIO-{i + 1}.webp"
             alt=""

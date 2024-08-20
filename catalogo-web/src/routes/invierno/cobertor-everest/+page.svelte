@@ -2,9 +2,7 @@
   import ImageComponent from "$lib/components/imageComponent.svelte";
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
   import { Catalogs } from "$lib/constants/globalTypes";
-  import { catalogSections } from "$lib/components/currentCatalogPage";
   import { onMount } from "svelte";
   import type { PageData } from "./$types";
   import DiferenciasDeCobertores from "$lib/components/communication/DiferenciasDeCobertores.svelte";
@@ -33,20 +31,22 @@
     }
   });
 
-  let visibleIds = [];
-
-  function handleVisibleChange(event) {
+  let visibleIds: string[] = [];
+  let showViewPrices = false;
+  function handleVisibleChange(event: any) {
     visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
   }
-
+  let relatedProducts: string[] = [];
+  let selectedProduct: null | string = null;
   let showPopup = false;
-
-  function show() {
-    showPopup = true;
-  }
 
   export let data: PageData;
   const pages = data.props.pages;
+  const handleImageClick = (sku: string, relatedProds: string[]) => {
+    selectedProduct = sku;
+    relatedProducts = relatedProds;
+  };
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
@@ -174,12 +174,9 @@
               skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]}
             />
           </div>
-          <div
-            on:click={show}
-            style="cursor:pointer;"
-            class="link-block-10 w-inline-block"
-          >
+          <div style="cursor:pointer;" class="link-block-10 w-inline-block">
             <OptimImg
+              onClick={() => handleImageClick(page.complSheets[0], [])}
               imgClass="image-18"
               source={`${URLS.fotos}${page.complSheets[0]}.webp`}
             />
@@ -187,12 +184,9 @@
               agrega <br />estas<br /><strong>sábanas</strong>
             </div>
           </div>
-          <div
-            on:click={show}
-            style="cursor:pointer;"
-            class="link-block-10 w-inline-block"
-          >
+          <div style="cursor:pointer;" class="link-block-10 w-inline-block">
             <OptimImg
+              onClick={() => handleImageClick(page.complCurtains[0], [])}
               imgClass="image-18"
               source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             />
@@ -281,12 +275,9 @@
               skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]}
             />
           </div>
-          <div
-            on:click={show}
-            style="cursor:pointer;"
-            class="link-block-10 w-inline-block"
-          >
+          <div style="cursor:pointer;" class="link-block-10 w-inline-block">
             <OptimImg
+              onClick={() => handleImageClick(page.complSheets[0], [])}
               imgClass="image-18"
               source={`${URLS.fotos}${page.complSheets[0]}.webp`}
             />
@@ -294,12 +285,9 @@
               agrega <br />estas<br /><strong>sábanas</strong>
             </div>
           </div>
-          <div
-            on:click={show}
-            style="cursor:pointer;"
-            class="link-block-10 w-inline-block"
-          >
+          <div style="cursor:pointer;" class="link-block-10 w-inline-block">
             <OptimImg
+              onClick={() => handleImageClick(page.complCurtains[0], [])}
               imgClass="image-18"
               source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             />
@@ -344,7 +332,14 @@
   {/if}
 {/each}
 
-<NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
+<NavigatorMenu
+  catalog={Catalogs.INVIERNO}
+  bind:relatedProducts
+  bind:visibleIds
+  bind:showPopup
+  bind:showViewPrices
+  bind:selectedProduct
+/>
 
 <div>
   <script defer src="../js/webflowPage.js"></script>

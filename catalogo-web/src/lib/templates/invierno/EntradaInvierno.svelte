@@ -64,12 +64,6 @@
           </div>
         {/if}
       </div>
-
-      <!-- TODO -->
-      <!-- <div class="h-fit">
-          <ScrollDownArrows backgroundColor={bgColor} />
-        </div>
-      </div> -->
     {/if}
 
     <!-- FOTO Y VIDEO -->
@@ -144,7 +138,7 @@
 
 <!-- DESKTOP -->
 <div
-  class="hidden md:block relative w-screen h-[85vh] bg-cover bg-center bg-white border-2 border-red-400"
+  class="hidden md:block relative w-screen h-[85vh] bg-cover bg-center bg-white"
 >
   <SectionsPaginationArrows />
 
@@ -193,12 +187,6 @@
           </div>
         {/if}
       </div>
-
-      <!-- TODO -->
-      <!-- <div class="h-fit">
-          <ScrollDownArrows backgroundColor={bgColor} />
-        </div>
-      </div> -->
     {/if}
 
     <!-- FOTO Y VIDEO -->

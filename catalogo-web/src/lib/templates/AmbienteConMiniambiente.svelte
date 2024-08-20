@@ -42,6 +42,7 @@
 
 <!-- MOBILE -->
 <div
+  data-visible-id={page.SKU}
   style="background-color: {bgColor};"
   class="md:hidden pt-10 overflow-x-hidden w-screen"
 >
@@ -218,6 +219,7 @@
 
 <!-- DESKTOP -->
 <div
+  data-visible-id={page.SKU}
   style="background-color: {bgColor};"
   class="hidden md:block w-screen h-screen overflow-hidden"
 >

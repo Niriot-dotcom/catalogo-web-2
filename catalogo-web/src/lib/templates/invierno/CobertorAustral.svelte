@@ -108,16 +108,19 @@
           />
         </div>
       </div>
-      <a href="#" class="link-block-10 w-inline-block">
+      <div class="link-block-10 w-inline-block">
         <OptimImg
           imgClass="image-18"
           source={`${URLS.fotos}${page.complSheets[0]}.webp`}
         />
-        <div class="text-block-22">
+        <div data-visible-id={page.complSheets[0]} class="text-block-22">
           agrega estas<strong class="bold-text-6"><br />sábanas</strong>
         </div>
-      </a>
-      <a href="#" class="link-block-10 w-inline-block">
+      </div>
+      <div
+        data-visible-id={page.complCurtains[0]}
+        class="link-block-10 w-inline-block"
+      >
         <OptimImg
           imgClass="image-18"
           source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
@@ -125,7 +128,7 @@
         <div class="text-block-22">
           combina con estas <br />‍<strong>cortinas</strong>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </div>

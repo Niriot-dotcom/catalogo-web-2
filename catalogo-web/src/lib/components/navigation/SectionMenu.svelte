@@ -1,6 +1,8 @@
 <script lang="ts">
   import DiferenciasDeSabanas from "$lib/components/communication/DiferenciasDeSabanas.svelte";
+  import { onMount } from "svelte";
   import ScrollDownArrows from "../animations/ScrollDownArrows.svelte";
+  import VisibleDetector from "../visibleDetector.svelte";
 
   export let sections: {}[];
   export let paddingTop: string = "5";
@@ -8,9 +10,25 @@
   export let breakLine: number;
   export let constPages: Record<string, []>;
   export let groupedPagess: Record<string, []>;
+  export let loadingSection: boolean = true;
+  export let visibleIds: string[] = [];
+  export let handleVisibleChange: (event: any) => void;
+
+  onMount(() => {
+    loadingSection = false;
+  });
 
   function setActiveTitle(title: string) {
     activeTitle = title;
+    toggleLoadingSection();
+    // visibleIds = [groupedPagess[title][0].SKU];
+  }
+
+  function toggleLoadingSection() {
+    loadingSection = true;
+    setTimeout(() => {
+      loadingSection = false;
+    }, 100);
   }
 
   function filterBySections(title: string, productTypes: string[]) {
@@ -30,12 +48,12 @@
         (s) => s.title.toLowerCase() == activeTitle.toLowerCase(),
       )[0].productTypes,
     );
-
-    console.log("groupedPagess: ", groupedPagess);
   }
 
   $: activeTitle && updateGroupsOfPages();
 </script>
+
+<VisibleDetector on:visibleChange={handleVisibleChange} />
 
 <div
   class="bg-beige w-full items-center justify-center pt-{paddingTop} px-0 pb-0 flex space-x-8 flex-wrap flex-row md:pt-32 md:pb-10 md:space-x-16 md:top-0 md:z-50 md:start-0"

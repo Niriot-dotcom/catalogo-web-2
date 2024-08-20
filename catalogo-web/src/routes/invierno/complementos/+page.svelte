@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { PageData } from "./$types";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
+  import { Catalogs } from "$lib/constants/globalTypes";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
   import AmbienteConMiniambiente from "$lib/templates/AmbienteConMiniambiente.svelte";
   import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
@@ -9,17 +9,18 @@
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import { EnumEntradaInvierno } from "$lib/constants/strings";
   import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
-  import { deleteSubArray } from "$lib/utils/strings";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
   function handleVisibleChange(event: any) {
     visibleIds = event.detail;
     showViewPrices = visibleIds.length > 0;
+    console.log("visibleIds: ", visibleIds);
   }
   let relatedProducts: string[] = [];
   let selectedProduct: null | string = null;
   let showPopup = false;
+  let loadingSection: boolean;
 
   export let data: PageData;
   const handleImageClick = (sku: string, relatedProds: string[]) => {
@@ -27,18 +28,17 @@
     relatedProducts = relatedProds;
   };
 
-  // const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
   let groups: Record<string, []> = data.props.groupedPages;
   let sections = [
-    {
-      title: "Cojines y Fundas de Cojín",
-      productTypes: ["Cojines", "Funda De Cojín", "Fundas De Cojín Velvet", ""],
-      link: "#section-cojines",
-    },
     {
       title: "Fundas de Almohada",
       productTypes: ["Funda De Almohada"],
       link: "#section-fundas-almohada",
+    },
+    {
+      title: "Cojines y Fundas de Cojín",
+      productTypes: ["Cojines", "Funda De Cojín", "Fundas De Cojín Velvet", ""],
+      link: "#section-cojines",
     },
     {
       title: "Rellenos",
@@ -69,25 +69,34 @@
   breakLine={1}
   constPages={data.props.groupedPages}
   bind:groupedPagess={groups}
+  bind:loadingSection
+  bind:visibleIds
+  {handleVisibleChange}
 />
 
-<!-- render pages -->
-{#each Object.keys(groups) as group, i}
-  {#if groups[group][0].pageTemplate == "AmbienteConMiniambiente"}
-    {#each groups[group] as juego, i}
-      <AmbienteConMiniambiente page={juego} {handleImageClick} />
-    {/each}
-  {:else if groups[group][0].pageTemplate == "Sublinea"}
-    <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
-  {:else if groups[group][0].pageTemplate == "VariantesDeColor"}
-    <VariantesDeColor
-      bind:visibleIds
-      groupPages={groups[group]}
-      title={group}
-      {handleImageClick}
-    />
-  {/if}
-{/each}
+{#if loadingSection}
+  <div class="w-full h-screen bg-beige">
+    <div class="loader"></div>
+  </div>
+{:else}
+  <!-- render pages -->
+  {#each Object.keys(groups) as group, i}
+    {#if groups[group][0].pageTemplate == "AmbienteConMiniambiente"}
+      {#each groups[group] as juego, i}
+        <AmbienteConMiniambiente page={juego} {handleImageClick} />
+      {/each}
+    {:else if groups[group][0].pageTemplate == "Sublinea"}
+      <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
+    {:else if groups[group][0].pageTemplate == "VariantesDeColor"}
+      <VariantesDeColor
+        bind:visibleIds
+        groupPages={groups[group]}
+        title={group}
+        {handleImageClick}
+      />
+    {/if}
+  {/each}
+{/if}
 
 <NavigatorMenu
   catalog={Catalogs.INVIERNO}

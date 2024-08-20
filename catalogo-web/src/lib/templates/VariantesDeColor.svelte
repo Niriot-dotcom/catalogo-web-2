@@ -122,7 +122,12 @@
                   groupPages[i].pageResources.length > 1
                     ? groupPages[i].pageResources[1]
                     : "#888"
-                }; border: 4px solid #fff;`
+                }; border: 3px solid ${
+                  currentCatalog === CATALOGS_ROUTES.INVIERNO
+                    ? groupPages[selectedColorIndex].pageResources[0] +
+                      "; box-shadow: 0 0 0 1px black;"
+                    : ""
+                }`
               : `background-color: ${
                   groupPages[i].pageResources &&
                   groupPages[i].pageResources.length > 1
@@ -294,7 +299,12 @@
                     groupPages[i].pageResources.length > 1
                       ? groupPages[i].pageResources[1]
                       : "#888"
-                  }; border: 4px solid #fff;`
+                  }; border: 3px solid ${
+                    currentCatalog === CATALOGS_ROUTES.INVIERNO
+                      ? groupPages[selectedColorIndex].pageResources[0] +
+                        "; box-shadow: 0 0 0 1px black;"
+                      : ""
+                  }`
                 : `background-color: ${
                     groupPages[i].pageResources &&
                     groupPages[i].pageResources.length > 1
@@ -400,7 +410,12 @@
                       groupPages[i].pageResources.length > 1
                         ? groupPages[i].pageResources[1]
                         : "#888"
-                    }; border: 4px solid #fff;`
+                    }; border: 3px solid ${
+                      currentCatalog === CATALOGS_ROUTES.INVIERNO
+                        ? groupPages[selectedColorIndex].pageResources[0] +
+                          "; box-shadow: 0 0 0 1px black;"
+                        : ""
+                    }`
                   : `background-color: ${
                       groupPages[i].pageResources &&
                       groupPages[i].pageResources.length > 1

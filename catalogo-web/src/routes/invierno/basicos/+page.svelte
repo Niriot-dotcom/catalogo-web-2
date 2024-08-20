@@ -22,6 +22,7 @@
   let relatedProducts: string[] = [];
   let selectedProduct: null | string = null;
   let showPopup = false;
+  let loadingSection: boolean;
 
   export let data: PageData;
   const handleImageClick = (sku: string, relatedProds: string[]) => {
@@ -48,10 +49,6 @@
       ],
     },
     { title: "Rodapiés", productTypes: ["Rodapié"] },
-    {
-      title: "Fundas de Almohada",
-      productTypes: ["Funda De Almohada"],
-    },
     { title: "Protectores de Colchón", productTypes: ["PROTECTOR DE COLCHÓN"] },
   ];
   let activeTitle = sections[0].title;
@@ -71,10 +68,11 @@
 
 <SectionMenu
   {sections}
-  breakLine={2}
+  breakLine={1}
   bind:activeTitle
   constPages={data.props.groupedPages}
   bind:groupedPagess
+  bind:loadingSection
 />
 
 <!-- [COMUNICACION] Diferencias de Sábanas -->

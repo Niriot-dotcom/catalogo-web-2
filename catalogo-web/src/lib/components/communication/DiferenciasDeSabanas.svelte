@@ -44,20 +44,25 @@
   ];
 </script>
 
-<div class="overflow-hidden w-screen text-black relative bg-beige pb-8">
-  <p
-    class="text-black text-nowrap chavos-5xl md:chavos-7xl text-center mt-5 mb-3"
-  >
+<div
+  class="overflow-hidden w-screen text-black relative bg-beige py-3 md:py-12"
+>
+  <p class="text-nowrap chavos-5xl md:chavos-7xl text-center mt-5 mb-3">
     Sábanas
   </p>
 
   <!-- MOBILE -->
-  <div
-    class="md:hidden flex overflow-x-scroll hidden-scroll px-3 space-x-1 sticky"
-  >
-    <button class="absolute z-30 left-0 top-[30%] ml-[8vw] cursor-pointer">
+  <div class="md:hidden flex overflow-x-scroll hidden-scroll">
+    <!-- hand -->
+    <div class="absolute top-[30%] z-10 w-1/2 h-12 min-h-12 flex right-0">
+      <HorizontalScroll />
+    </div>
+
+    <div
+      class="absolute z-30 left-0 top-[45%] ml-[8vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+    >
       <ArrowRight color="#fff" />
-    </button>
+    </div>
 
     {#each sabanasInfos as sabana, i}
       <a
@@ -95,21 +100,18 @@
             </p>
           </div>
 
-          <!-- description -->
           <p class="text-center relative chavos-base text-nowrap leading-tight">
-            <!-- <p class="text-black  pl-5 xs:chavos-xl">Sábanas</p> -->
-
             {@html sabana.description}
           </p>
         </div>
       </a>
     {/each}
 
-    <button
-      class="absolute z-30 right-0 top-[30%] mr-[16vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+    <div
+      class="absolute z-30 right-0 top-[45%] mr-[8vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
     >
       <ArrowLeft color="#fff" />
-    </button>
+    </div>
   </div>
 
   <!-- DESKTOP -->

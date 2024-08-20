@@ -122,7 +122,7 @@
         />
       </g>
     </svg>
-    <span class="text-nowrap">Añadir todo</span>
+    <span class="text-nowrap chavos-sm">Añadir todo</span>
   </button>
 </div>
 

@@ -30,9 +30,14 @@
                     } else {
                         if (!timeouts.has(id)) {
                             const timeout = setTimeout(() => {
-                                const index = currentVisibleIds.indexOf(id);
-                                if (index > -1) {
-                                    currentVisibleIds.splice(index, 1);
+                                // const index = currentVisibleIds.indexOf(id);
+                                // if (index > -1) {
+                                //     currentVisibleIds.splice(index, 1);
+                                //     dispatch('visibleChange', currentVisibleIds);
+                                //     timeouts.delete(id);
+                                // }
+                                if (currentVisibleIds.length > 4) {
+                                    currentVisibleIds.splice(0, 1);
                                     dispatch('visibleChange', currentVisibleIds);
                                     timeouts.delete(id);
                                 }

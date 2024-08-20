@@ -33,13 +33,12 @@
     addToCart(product);
     dispatch("addtocart");
 
-    // TODO habilitar gtag
-    // if (typeof gtag !== "undefined") {
-    //   gtag("event", "add_to_cart", {
-    //     event_category: "ecommerce",
-    //     event_label: product.product.Name,
-    //   });
-    // }
+    if (typeof gtag !== "undefined") {
+      gtag("event", "add_to_cart", {
+        event_category: "ecommerce",
+        event_label: product.product.Name,
+      });
+    }
   }
 
   function handleConfirm() {

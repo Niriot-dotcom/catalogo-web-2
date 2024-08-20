@@ -170,7 +170,7 @@
   {#if LEGALES_SVGS.hasOwnProperty(page.pageTitle
       .replaceAll(" ", "")
       .toUpperCase())}
-    <div>
+    <div class="w-full h-[8vh]">
       <LegalLicenses
         license={page.pageTitle.replaceAll(" ", "").toUpperCase()}
       />
