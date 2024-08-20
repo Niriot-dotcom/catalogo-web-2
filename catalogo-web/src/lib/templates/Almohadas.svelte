@@ -1,16 +1,8 @@
 <script lang="ts">
-  import { browser } from "$app/environment";
   import OptimImg from "$lib/components/OptimImg.svelte";
-  import ImageComponent from "$lib/components/imageComponent.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import { COLORS, URLS, VIALIFRESH_ICONS } from "$lib/constants/strings";
-  import { onMount } from "svelte";
   import Carousel from "svelte-carousel";
-  let visibleIds: string[] = [];
-  let selectedProduct: null | string = null;
-  function handleVisibleChange(event) {
-    visibleIds = event.detail;
-  }
 
   export let pages: DatabasePage[];
   export let handleImageClick: (sku: string, relatedProds: string[]) => void;
@@ -214,7 +206,7 @@
         <button
           slot="prev"
           on:click={() => carousel.goToPrev()}
-          class="absolute z-30 left-0 top-[53%] ml-[8vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+          class="absolute z-30 left-0 top-[25%] ml-[8vw] p-5 cursor-pointer"
         >
           <svg
             class="dark:text-gray-900"
@@ -233,10 +225,12 @@
             />
           </svg>
         </button>
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
         {#each filteredPages as product, i}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div
             data-visible-id={product.SKU}
-            on:click={() => handleImageClick(product.pageProducts[0])}
+            on:click={() => handleImageClick(product.SKU, [])}
             class="w-full h-[45vh] select-none rounded-xl p-3 relative"
             style={`background-color: ${
               product.pageKeywords.includes("vialifresh")
@@ -255,14 +249,14 @@
             />
             <div class="w-full">
               <p
-                class="text-3xl"
+                class="chavos-3xl"
                 style={product.pageKeywords.includes("nuit")
                   ? `color: #fff`
                   : ""}
               >
-                {product.pageTitle}
+                {@html product.pageTitle}
               </p>
-              <p class="text-base h-[3%]">{@html product.pageSubtitle}</p>
+              <p class="chavos-base h-[3%]">{@html product.pageSubtitle}</p>
             </div>
 
             <div class="grid grid-cols-4 gap-3 my-3">
@@ -283,7 +277,7 @@
             </div>
             <div class="mb-3">
               {#each product.pageCopys as copy, i}
-                <p class="text-sm mb-1">{copy}</p>
+                <p class="chavos-sm mb-1">{@html copy}</p>
               {/each}
             </div>
             {#if product.pageKeywords.includes("vialifresh")}
@@ -336,7 +330,7 @@
         <button
           slot="next"
           on:click={() => carousel.goToNext()}
-          class="absolute z-30 right-0 top-[53%] mr-[8vw] focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+          class="absolute z-30 right-0 top-[25%] mr-[8vw] p-5 cursor-pointer"
         >
           <svg
             class="dark:text-gray-900"
@@ -578,14 +572,14 @@
             <!-- source={`https://storage.googleapis.com/catalogo-web/biasi/fotos/${product.pageProducts[0]}.webp`} -->
             <div class="w-full">
               <p
-                class="text-3xl"
-                style={product.pageKeywords.includes("nuit")
+                class="chavos-3xl"
+                style={product.pageKeywords?.includes("nuit")
                   ? `color: #fff`
                   : ""}
               >
-                {product.pageTitle}
+                {@html product.pageTitle}
               </p>
-              <p class="text-base h-[3%]">{@html product.pageSubtitle}</p>
+              <p class="chavos-base h-[3%]">{@html product.pageSubtitle}</p>
             </div>
 
             <div class="grid grid-cols-4 gap-3 my-3">
@@ -606,7 +600,7 @@
             </div>
             <div class="mb-3">
               {#each product.pageCopys as copy, i}
-                <p class="text-sm mb-1">{copy}</p>
+                <p class="chavos-sm mb-1">{@html copy}</p>
               {/each}
             </div>
             {#if product.pageKeywords.includes("vialifresh")}
