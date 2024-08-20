@@ -3,19 +3,11 @@
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
   import { Catalogs } from "$lib/constants/globalTypes";
   import type { PageData } from "./$types";
-  import { onMount } from "svelte";
   import ImageComponent from "$lib/components/imageComponent.svelte";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
   import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
   import CobertorNordico from "$lib/templates/invierno/CobertorNordico.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
-
-  onMount(() => {
-    const script = document.createElement("script");
-    script.src = "../js/nordicSlider.js";
-    script.async = true;
-    document.body.appendChild(script);
-  });
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -50,19 +42,46 @@
 />
 
 {#each pages as page, index}
-  {#if page.pageTitle === "Bariloche" || page.pageTitle === "Loket"}
-    <div data-visible-id={page.SKU}>
+  {#if page.pageResources?.length > 0 && page.pageResources.includes("UNA_VISTA")}
+    <div
+      data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
+        .complCurtains[0]}"
+    >
       <div class="plantilla-nordico">
         <div class="div-block-46">
           <div class="handle-container">
             <div class="div-block-45">
-              <ImageComponent
-                src={`${URLS.fotos}${page.SKU}-2.webp`}
-                loading="eager"
-                id="f09abdcc-902f-003f-2d59-9712f02a5bd1"
-                alt=""
-                classList="image-28"
-              />
+              {#if page.pageVideos.length > 0 && page.pageVideos[0].includes(".mp4")}
+                <video
+                  id="03aaf391-43fe-3144-f30a-a9a620053ba8-video"
+                  autoplay
+                  loop
+                  style="background-image:url(&quot;{`${URLS.fotos}${page.SKU}-2.webp`}&quot;)"
+                  muted
+                  playsinline
+                  data-wf-ignore
+                  data-object-fit="cover"
+                  class="image-28"
+                >
+                  <source
+                    src="../videos/invierno/NORDICO/{page.pageTitle.toUpperCase()}/video-{page.pageTitle}.mp4"
+                    data-wf-ignore="true"
+                  />
+                  <source
+                    src="../videos/invierno/NORDICO/{page.pageTitle.toUpperCase()}/video-{page.pageTitle}.webm"
+                    data-wf-ignore="true"
+                  />
+                </video>
+              {:else}
+                <ImageComponent
+                  src={`${URLS.fotos}${page.SKU}-2.webp`}
+                  loading="eager"
+                  id="f09abdcc-902f-003f-2d59-9712f02a5bd1"
+                  alt=""
+                  classList="image-28"
+                />
+              {/if}
+
               <div class="div-block-43 ligero">
                 <div class="div-block-48">
                   <div class="page-title-box">
@@ -113,7 +132,7 @@
                 {/if}
               </div>
             </div>
-            <div udesly-before-after="50" class="ligero-container">
+            <div class="ligero-container">
               <ImageComponent
                 src={`${URLS.fotos}${page.SKU}.webp`}
                 loading="eager"

@@ -114,47 +114,79 @@
 />
 
 {#each pages as page, index}
-  {#if index % 2 === 0}
-    <div id={page.pageTitle}>
+  <!-- {#if index % 2 === 0} -->
+  <div id={page.pageTitle}>
+    <div
+      data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
+        .complCurtains[0]}"
+      data-w-id="26494cac-c879-c70d-1939-3984a45c1663"
+      class="div-block-40 column-container"
+    >
       <div
-        data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
-          .complCurtains[0]}"
-        data-w-id="26494cac-c879-c70d-1939-3984a45c1663"
-        class="div-block-40 column-container"
+        style="overflow-x: hidden; max-width: 100vw;"
+        class="columna-invernal-1"
       >
-        <div
-          style="overflow-x: hidden; max-width: 100vw;"
-          class="columna-invernal-1"
-        >
-          <div class="div-block-43 xs:hidden block">
-            <div class="page-title-box">
-              <div>
-                <h2 class="heading-4 mt-12">{page.pageTitle}</h2>
-                <p class="paragraph product-detail-subtitle alternate">
-                  Cobertor Invernal
-                </p>
-              </div>
+        <div class="div-block-43 smm:hidden block">
+          <div class="page-title-box">
+            <div class="mt-24">
+              <h2 class="heading-4">{page.pageTitle}</h2>
+              <p class="paragraph product-detail-subtitle alternate">
+                Cobertor Invernal
+              </p>
             </div>
-            {#each page.pageIcons as icon}
-              <ImageComponent
-                src={icon}
-                loading="eager"
-                alt=""
-                classList="icon-image"
-              />
-            {/each}
           </div>
-          <OptimImg
-            onClick={() =>
-              handleImageClick(page.SKU, [
-                page.complSheets[0],
-                page.complCurtains[0],
-              ])}
-            source={`${URLS.fotos}${page.SKU}.webp`}
-            imgClass="image-26"
-          />
+          {#each page.pageIcons as icon}
+            <ImageComponent
+              src={icon}
+              loading="eager"
+              alt=""
+              classList="icon-image"
+            />
+          {/each}
         </div>
-        <div class="columna-invernal-2 austral">
+        <OptimImg
+          onClick={() =>
+            handleImageClick(page.SKU, [
+              page.complSheets[0],
+              page.complCurtains[0],
+            ])}
+          source={`${URLS.fotos}${page.SKU}.webp`}
+          imgClass="image-26"
+        />
+
+        {#if page.pageCopys && page.pageCopys.length >= 1 && page.pageCopys[0] !== ""}
+          <div
+            class="copy-box-everest w-11/12 mx-auto text-center bottom-0 mb-40"
+          >
+            <div class="text-block-25" style="text-transform: lowercase;">
+              {page.pageCopys[0]}
+            </div>
+            <div class="text-block-27 mt-4 leading-none">
+              {page.pageCopys[1] || ""}
+            </div>
+          </div>
+        {/if}
+      </div>
+      <div class="columna-invernal-2 austral">
+        {#if page.pageVideos.length > 0 && page.pageVideos[0].includes(".mp4")}
+          <video
+            id="03aaf391-43fe-3144-f30a-a9a620053ba8-video"
+            autoplay
+            loop
+            style="background-image:url(&quot;{`${URLS.fotos}${page.SKU}-2.webp`}&quot;)"
+            muted
+            playsinline
+            data-wf-ignore
+            data-object-fit="cover"
+            class="image-28"
+          >
+            <source src={page.pageVideos[0]} data-wf-ignore="true" />
+            <source
+              src={page.pageVideos[0].replace("mp4", "webm")}
+              data-wf-ignore="true"
+            />
+          </video>
+        {:else}
           <OptimImg
             onClick={() =>
               handleImageClick(page.SKU, [
@@ -164,103 +196,90 @@
             source={`${URLS.fotos}${page.SKU}-2.webp`}
             imgClass="image-26"
           />
-          {#if page.pageCopys && page.pageCopys.length >= 1 && page.pageCopys[0] !== ""}
-            <div class="copy-box-everest w-full text-center mt-32">
-              <div class="text-block-25" style="text-transform: lowercase;">
-                {page.pageCopys[0]}
-              </div>
-              <div class="text-block-27 mt-4 leading-none">
-                {page.pageCopys[1] || ""}
-              </div>
-              <img
-                src="../images/Flechas-1.svg"
-                loading="eager"
-                alt=""
-                class="arrow-image mt-0 ml-20"
-              />
+        {/if}
+
+        <div class="div-block-43 smm:block hidden">
+          <div class="page-title-box">
+            <div class="mt-24">
+              <h2 class="heading-4">{page.pageTitle}</h2>
+              <p class="paragraph product-detail-subtitle alternate">
+                Cobertor Invernal
+              </p>
             </div>
-          {/if}
-          <div class="div-block-43 xs:block hidden">
-            <div class="page-title-box">
-              <div>
-                <h2 class="heading-4 mt-12">{page.pageTitle}</h2>
-                <p class="paragraph product-detail-subtitle alternate">
-                  Cobertor Invernal
-                </p>
-              </div>
-            </div>
-            {#each page.pageIcons as icon}
-              <ImageComponent
-                src={icon}
-                loading="eager"
-                alt=""
-                classList="icon-image"
-              />
-            {/each}
           </div>
-        </div>
-        <div class="columna-invernal-3 relative">
-          <OptimImg
-            onClick={() =>
-              handleImageClick(page.SKU, [
-                page.complSheets[0],
-                page.complCurtains[0],
-              ])}
-            source={`${URLS.fotos}${page.SKU}-3.webp`}
-            imgClass="image-26"
-          />
-          {#if page.pageCopys && page.pageCopys.length >= 3 && page.pageCopys[2] !== ""}
-            <div
-              class="copy-box-everest absolute top-0 w-full text-center mt-32"
-            >
-              <div class="text-block-25" style="text-transform: lowercase;">
-                {page.pageCopys[2]}
-              </div>
-              <div class="text-block-27 mt-4 leading-none">
-                {page.pageCopys[3] || ""}
-              </div>
-              <img
-                src="../images/Flechas-1.svg"
-                loading="eager"
-                alt=""
-                class="arrow-image mt-0 ml-20"
-              />
-            </div>
-          {/if}
+          {#each page.pageIcons as icon}
+            <ImageComponent
+              src={icon}
+              loading="eager"
+              alt=""
+              classList="icon-image"
+            />
+          {/each}
         </div>
       </div>
-      <div class="related-products horizontal">
-        <div
-          text-split=""
-          words-slide-from-right=""
-          class="text-block-23 look-book"
-        >
-          Completa<br /><strong class="bold-text">el Look</strong>
-        </div>
-        <div class="link-block-10 centered w-inline-block">
-          <OptimImg
-            onClick={() => handleImageClick(page.complSheets[0], [])}
-            source={`${URLS.fotos}${page.complSheets[0]}.webp`}
-            imgClass="image-18 horizontal"
-          />
-          <div class="text-block-22 centered">
-            agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
+      <div class="columna-invernal-3">
+        <OptimImg
+          onClick={() =>
+            handleImageClick(page.SKU, [
+              page.complSheets[0],
+              page.complCurtains[0],
+            ])}
+          imgClass="image-26"
+          source={`${URLS.fotos}${page.SKU}-3.webp`}
+        />
+
+        <!-- {#if page.pageCopys && page.pageCopys.length >= 3 && page.pageCopys[2] !== ""}
+          <div
+            class="copy-box-everest absolute bottom-0 w-full text-center mb-72 sm:hidden"
+          >
+            <div class="text-block-25" style="text-transform: lowercase;">
+              {page.pageCopys[2]}
+            </div>
+            <div class="text-block-27 mt-4 leading-none">
+              {page.pageCopys[3] || ""}
+            </div>
+            <img
+              src="../images/Flechas-1.svg"
+              loading="eager"
+              alt=""
+              class="arrow-image mt-0 ml-20"
+            />
           </div>
+        {/if} -->
+      </div>
+    </div>
+    <div class="related-products horizontal">
+      <div
+        text-split=""
+        words-slide-from-right=""
+        class="text-block-23 look-book"
+      >
+        Completa<br /><strong class="bold-text">el Look</strong>
+      </div>
+      <div class="link-block-10 centered w-inline-block">
+        <OptimImg
+          onClick={() => handleImageClick(page.complSheets[0], [])}
+          source={`${URLS.fotos}${page.complSheets[0]}.webp`}
+          imgClass="image-18 horizontal"
+        />
+        <div class="text-block-22 centered">
+          agrega estas<br />‍<strong class="bold-text-2"> sábanas</strong>
         </div>
-        <div class="link-block-10 centered w-inline-block">
-          <OptimImg
-            onClick={() => handleImageClick(page.complCurtains[0], [])}
-            source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
-            imgClass="image-18 horizontal"
-          />
-          <div class="text-block-22 centered">
-            combina con estas<br />
-            <strong class="bold-text-3"> cortinas</strong>
-          </div>
+      </div>
+      <div class="link-block-10 centered w-inline-block">
+        <OptimImg
+          onClick={() => handleImageClick(page.complCurtains[0], [])}
+          source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
+          imgClass="image-18 horizontal"
+        />
+        <div class="text-block-22 centered">
+          combina con estas<br />
+          <strong class="bold-text-3"> cortinas</strong>
         </div>
       </div>
     </div>
-  {:else}
+  </div>
+  <!-- {:else}
     <div id={page.pageTitle}>
       <div
         data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
@@ -272,10 +291,10 @@
           style="overflow-x: hidden; max-width: 100vw;"
           class="columna-invernal-3"
         >
-          <div class="div-block-43 xs:hidden block">
+          <div class="div-block-43 smm:hidden block">
             <div class="page-title-box">
-              <div>
-                <h2 class="heading-4 mt-12">{page.pageTitle}</h2>
+              <div class="mt-12">
+                <h2 class="heading-4">{page.pageTitle}</h2>
                 <p class="paragraph product-detail-subtitle alternate">
                   Cobertor Invernal
                 </p>
@@ -312,26 +331,11 @@
             source={`${URLS.fotos}${page.SKU}-2.webp`}
             imgClass="image-26"
           />
-          {#if page.pageCopys && page.pageCopys.length >= 1 && page.pageCopys[0] !== ""}
-            <div class="copy-box-everest w-full text-center mt-32">
-              <div class="text-block-25" style="text-transform: lowercase;">
-                {page.pageCopys[0]}
-              </div>
-              <div class="text-block-27 mt-4 leading-none">
-                {page.pageCopys[1] || ""}
-              </div>
-              <img
-                src="../images/Flechas-1.svg"
-                loading="eager"
-                alt=""
-                class="arrow-image mt-0 ml-20"
-              />
-            </div>
-          {/if}
-          <div class="div-block-43 xs:block hidden">
+
+          <div class="div-block-43 smm:block hidden">
             <div class="page-title-box">
-              <div>
-                <h2 class="heading-4 mt-12">{page.pageTitle}</h2>
+              <div class="mt-12">
+                <h2 class="heading-4">{page.pageTitle}</h2>
                 <p class="paragraph product-detail-subtitle alternate">
                   Cobertor Invernal
                 </p>
@@ -349,7 +353,7 @@
             {/each}
           </div>
         </div>
-        <div class="columna-invernal-1 relative">
+        <div class="columna-invernal-1">
           <OptimImg
             onClick={() =>
               handleImageClick(page.SKU, [
@@ -359,24 +363,7 @@
             source={`${URLS.fotos}${page.SKU}-3.webp`}
             imgClass="image-26"
           />
-          {#if page.pageCopys && page.pageCopys.length >= 3 && page.pageCopys[2] !== ""}
-            <div
-              class="copy-box-everest absolute top-0 w-full text-center mt-32"
-            >
-              <div class="text-block-25" style="text-transform: lowercase;">
-                {page.pageCopys[2]}
-              </div>
-              <div class="text-block-27 mt-4 leading-none">
-                {page.pageCopys[3] || ""}
-              </div>
-              <img
-                src="../images/Flechas-1.svg"
-                loading="eager"
-                alt=""
-                class="arrow-image mt-0 ml-20"
-              />
-            </div>
-          {/if}
+
         </div>
       </div>
       <div class="related-products horizontal">
@@ -410,7 +397,7 @@
         </div>
       </div>
     </div>
-  {/if}
+  {/if} -->
 {/each}
 
 <NavigatorMenu

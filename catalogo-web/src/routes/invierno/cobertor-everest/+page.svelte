@@ -11,6 +11,7 @@
   import InicioInvierno from "$lib/custom-pages/InicioInvierno.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import AddAll from "$lib/components/AddAll.svelte";
+  import Tutorial from "$lib/components/tutorial.svelte";
 
   function isSafari() {
     return (
@@ -51,6 +52,9 @@
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 
+<!-- TUTORIAL -->
+<Tutorial showHorizontalHand />
+
 <InicioInvierno />
 <div>
   <style>
@@ -79,8 +83,9 @@
   {#if index % 2 === 0}
     <div
       id={page.pageTitle}
-      data-visible-id={page.SKU}
-      class="plantilla-everest overflow-x-hidden"
+      data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
+        .complCurtains[0]}"
+      class="plantilla-everest"
     >
       <div class="div-block-31">
         <ImageComponent
@@ -90,7 +95,7 @@
           classList="image-16"
         />
         <div class="div-block-11">
-          <div class="page-title-box">
+          <div class="page-title-box mt-24">
             <h2 class="heading-4">{page.pageTitle}</h2>
             <p class="paragraph product-detail-subtitle alternate">
               Cobertor Everest
@@ -112,12 +117,32 @@
         <div
           class="background-video-2 w-background-video w-background-video-atom"
         >
-          <ImageComponent
-            src={`${URLS.fotos}${page.SKU}-2.webp`}
-            loading="eager"
-            id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
-            classList="image-16 h-full object-cover"
-          />
+          {#if page.pageVideos.length > 0 && page.pageVideos[0].includes(".mp4")}
+            <video
+              id="03aaf391-43fe-3144-f30a-a9a620053ba8-video"
+              autoplay
+              loop
+              style="background-image:url(&quot;{`${URLS.fotos}${page.SKU}-2.webp`}&quot;)"
+              muted
+              playsinline
+              data-wf-ignore
+              data-object-fit="cover"
+              class="image-28"
+            >
+              <source src={page.pageVideos[0]} data-wf-ignore="true" />
+              <source
+                src={page.pageVideos[0].replace("mp4", "webm")}
+                data-wf-ignore="true"
+              />
+            </video>
+          {:else}
+            <OptimImg
+              source={`${URLS.fotos}${page.SKU}-2.webp`}
+              id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
+              imgClass="image-16 h-full object-cover"
+            />
+          {/if}
+
           <div class="copy-box-everest right">
             <div class="text-block-26">
               {page.pageCopys[0]}
@@ -205,19 +230,40 @@
   {:else}
     <div
       id={page.pageTitle}
-      data-visible-id="{page.SKU},"
-      class="plantilla-everest inversa overflow-x-hidden"
+      data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
+        .complCurtains[0]}"
+      class="plantilla-everest inversa"
     >
       <section class="section-6">
         <div
           class="background-video-2 w-background-video w-background-video-atom"
         >
-          <ImageComponent
-            src={`${URLS.fotos}${page.SKU}.webp`}
-            loading="eager"
-            id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
-            classList="image-17"
-          />
+          {#if page.pageVideos.length > 0 && page.pageVideos[0].includes(".mp4")}
+            <video
+              id="03aaf391-43fe-3144-f30a-a9a620053ba8-video"
+              autoplay
+              loop
+              style="background-image:url(&quot;{`${URLS.fotos}${page.SKU}-2.webp`}&quot;)"
+              muted
+              playsinline
+              data-wf-ignore
+              data-object-fit="cover"
+              class="image-28"
+            >
+              <source src={page.pageVideos[0]} data-wf-ignore="true" />
+              <source
+                src={page.pageVideos[0].replace("mp4", "webm")}
+                data-wf-ignore="true"
+              />
+            </video>
+          {:else}
+            <OptimImg
+              source={`${URLS.fotos}${page.SKU}.webp`}
+              id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
+              imgClass="image-17"
+            />
+            <!-- imgClass="image-16 h-full object-cover" -->
+          {/if}
 
           <div class="copy-box-everest right">
             <div class="text-block-26">
@@ -310,7 +356,7 @@
           classList="image-16"
         />
         <div class="div-block-11">
-          <div class="page-title-box">
+          <div class="page-title-box mt-24">
             <h2 class="heading-4">{page.pageTitle}</h2>
             <p class="paragraph product-detail-subtitle alternate">
               Cobertor Everest
