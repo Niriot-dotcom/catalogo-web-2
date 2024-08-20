@@ -103,7 +103,10 @@
     {/if}
 
     <!-- recommendation text -->
-    <div class="h-full text-center">
+    <div class="h-full text-center w-full flex flex-col space-y-3">
+      <p class="xs:chavos-base chavos-sm">
+        Da click en los productos para ver precios y tallas.
+      </p>
       <p class="xs:chavos-base chavos-sm">
         Se recomienda usar Google Chrome como navegador.
       </p>

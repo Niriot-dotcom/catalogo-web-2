@@ -375,7 +375,7 @@
               <p
                 class="uppercase text-black chavos-sm bg-white px-3 py-1.5 w-fit rounded-2xl absolute bottom-0 right-0 mb-3 mr-3 xs:chavos-base"
               >
-                {groupPages[selectedColorIndex].pageCopys[0]}
+                {@html groupPages[selectedColorIndex].pageCopys[0]}
               </p>
             {/if}
           </div>

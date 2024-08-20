@@ -86,7 +86,7 @@
   >
     <!-- main image -->
     <div class="h-[50vh] w-full">
-      {#if page.pageVideos?.length > 0 && page.pageVideos[0] !== ""}
+      {#if page.pageVideos?.length === 1 && page.pageVideos[0] !== ""}
         <video
           autoplay
           loop
@@ -106,10 +106,21 @@
 
     <!-- texture image -->
     <div class="h-[20vh] w-full relative">
-      <OptimImg
-        imgClass="object-cover w-full h-full"
-        source={`${URLS.fotos}${page.SKU}-4.webp`}
-      />
+      {#if page.pageVideos?.length > 1 && page.pageVideos[1] === "TEXTURA"}
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          src={`${page.pageVideos[0]}`}
+          class="w-full h-full object-cover"
+        />
+      {:else}
+        <OptimImg
+          imgClass="object-cover w-full h-full"
+          source={`${URLS.fotos}${page.SKU}-4.webp`}
+        />
+      {/if}
 
       {#if page.pageCopys && page.pageCopys.length > 0 && page.pageCopys[0] !== ""}
         <p

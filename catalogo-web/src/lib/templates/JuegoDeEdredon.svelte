@@ -77,8 +77,7 @@
       )
         ? ' mb-9'
         : ''}"
-      style={page.pageTitle.toLowerCase().includes("duvet") &&
-      currentCatalog !== CATALOGS_ROUTES.INVIERNO
+      style={page.pageResources?.includes("WITHOUT_BORDER")
         ? `border-width: 0px; bottom: 10vh; transform: scale(1.5); height: 30vh;`
         : `bottom: 0px; height: 40vh;`}
     >
@@ -95,8 +94,7 @@
         {:else}
           <OptimImg
             onClick={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
-            imgClass={page.pageTitle.toLowerCase().includes("duvet") &&
-            currentCatalog !== CATALOGS_ROUTES.INVIERNO
+            imgClass={page.pageResources?.includes("WITHOUT_BORDER")
               ? "object-contain w-full h-full"
               : "object-cover w-full h-full"}
             source={`${URLS.fotos}${page.SKU}-3.webp`}
