@@ -77,7 +77,7 @@
   <div class="h-screen w-full flex">
     <div class="grid grid-rows-6 h-full w-full place-items-center">
       <!-- title -->
-      <div class="flex w-full h-full items-end">
+      <div class="flex w-full h-full items-end justify-center">
         <p class="chavos-4xl xs:chavos-5xl text-center relative">
           la guía de <span class="italic">almohadas</span>
         </p>

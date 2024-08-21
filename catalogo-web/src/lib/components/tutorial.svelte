@@ -21,6 +21,7 @@
       if (window.scrollY > 40) {
         window.removeEventListener("scroll", handleScroll);
         tutorialDiv.style.opacity = "0";
+        tutorialDiv.style.display = "none";
       }
     }
   };
