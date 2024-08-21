@@ -745,14 +745,23 @@
                 </div>
                 <div class="">
                   <div class="mt-6">
-                    <button
+                    <!-- <button
                       on:click={handleCompra}
                       type="submit"
                       class="w-full rounded-md border border-transparent bg-vianney-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-vianney-700 focus:outline-none focus:ring-2 focus:ring-vianney-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                       >{loggedAdi
                         ? "Hacer pedido a mi ADI"
                         : "Comprar ahora"}</button
+                    > -->
+
+                    <!--  -->
+                    <button
+                      on:click={handleCompra}
+                      type="submit"
+                      class="w-full rounded-md border border-transparent bg-vianney-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-vianney-700 focus:outline-none focus:ring-2 focus:ring-vianney-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                     >
+                      Compartir a mi ADI por WhatsApp
+                    </button>
                   </div>
                 </div>
               </div>
@@ -763,7 +772,7 @@
                     <!-- Current: "border-vianney-500 text-vianney-600", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
                     <span
                       class="border-vianney-500 text-vianney-600 whitespace-nowrap border-b-2 px-1 pb-2 text-sm font-medium"
-                      >Articulos en el carrito</span
+                      >Artículos en el carrito</span
                     >
                   </nav>
                 </div>

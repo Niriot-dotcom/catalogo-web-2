@@ -298,7 +298,7 @@
               <p class="text-base font-medium text-vianney-600">
                 {loggedAdi
                   ? "¡Gracias por tu pedido!"
-                  : "¡Tu pedido esta listo!"}
+                  : "¡Tu pedido está listo!"}
               </p>
               <h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
                 {loggedAdi
@@ -308,7 +308,7 @@
               <p class="mt-2 text-base text-gray-500">
                 {loggedAdi
                   ? "Los detalles de tu pedido ya fueron enviados a tu ADI y se pondra en contácto a la brevedad."
-                  : "Los detalles de tu pedido ya fueron enviados a nuestra página web, completa tu compra lo antes posible o continua explorando nuestro catálogo web y añade mas articulos al carrito."}
+                  : "Los detalles de tu pedido ya fueron enviados a nuestra página web, completa tu compra lo antes posible o continua explorando nuestro catálogo web y añade más artículos al carrito."}
               </p>
               <div class="mt-4">
                 <button
