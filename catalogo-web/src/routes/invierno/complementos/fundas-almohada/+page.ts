@@ -9,7 +9,8 @@ export type VisibleIds = string[];
 export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   const q = query(
     collection(db, InviernoCollectionName),
-    where("productSection", "==", "Página 9 / Básicos"),
+    where("productSection", "==", "Página 8 / Complementos"),
+    where("productType", "==", "Funda De Almohada"),
     where("pageStatus", "==", "Activa"),
   );
   const querySnapshot = await getDocs(q);
@@ -38,11 +39,6 @@ export const load = async ({ params }: Parameters<PageLoad>[0]) => {
     }
   }
 
-  return {
-    props: {
-      groupedPages,
-      pillowsPages,
-      mattressProtectorsPages,
-    },
-  };
+  console.log("groupedPages: ", groupedPages);
+  return { props: { groupedPages } };
 };
