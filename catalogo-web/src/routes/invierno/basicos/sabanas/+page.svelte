@@ -62,9 +62,7 @@
   </div>
 {:else}
   <!-- [COMUNICACION] Diferencias de Sábanas -->
-  {#if activeTitle === "Sábanas"}
-    <DiferenciasDeSabanas />
-  {/if}
+  <DiferenciasDeSabanas />
 
   <!-- render pages -->
   {#each Object.keys(groupedPagess) as group, i}

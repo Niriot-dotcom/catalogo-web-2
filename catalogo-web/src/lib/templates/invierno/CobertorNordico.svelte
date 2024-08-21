@@ -19,11 +19,11 @@
 </script>
 
 <div
-  id={page.pageTitle}
+  id={page.SKU}
   class="w-screen overflow-x-hidden"
   data-visible-id="{page.SKU}, {page.complSheets[0]}, {page.complCurtains[0]}"
 >
-  <div class="div-block-46">
+  <div class="div-block-46" id="{page.SKU}d">
     <div class="handle-container {inversa ? 'inverse' : ''}">
       {#if !inversa}
         <div class="div-block-45">

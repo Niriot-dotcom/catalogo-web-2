@@ -8,8 +8,8 @@
   export let page: DatabasePage;
 </script>
 
-<div id={page.pageTitle} class="plantilla-austral" data-visible-id={page.SKU}>
-  <section class="section-7">
+<div id={page.SKU} class="plantilla-austral" data-visible-id={page.SKU}>
+  <section id="{page.SKU}d" class="section-7">
     <div class="h-full">
       <div
         data-poster-url={`${URLS.fotos}${page.SKU}.webp`}

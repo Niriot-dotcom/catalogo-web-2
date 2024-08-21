@@ -23,6 +23,7 @@
     "a17bedcd85471acaf00cd03f4331cdaf",
   );
   import PopupShop from "./popupShop.svelte";
+  import { onMount } from "svelte";
 
   let currentSearchFromChild: any;
 
@@ -44,6 +45,7 @@
   let selectedProduct = "52353";
   let showShop = false;
   let showDifferent = false;
+  let isDesktop: boolean;
 
   $: if (showSearch == true && showShop == true && showDifferent == false) {
     showShop = false;
@@ -55,6 +57,10 @@
     selectedProduct = sku;
     showShop = true;
   };
+
+  onMount(() => {
+    isDesktop = window.innerWidth >= 768;
+  });
 </script>
 
 <InstantSearch indexName="shopify_products" {searchClient}>
@@ -168,7 +174,10 @@
                 <!-- Active: "bg-indigo-600 text-white" -->
 
                 <Hits let:hit>
-                  <a data-sveltekit-reload href={`${hit.sectionUrl}`}>
+                  <a
+                    data-sveltekit-reload
+                    href={`${hit.sectionUrl}${isDesktop ? "d" : ""}`}
+                  >
                     <li
                       class="group flex cursor-default select-none items-center px-4 py-2 w-full hover:bg-gray-200 cursor-pointer"
                       id="option-1"

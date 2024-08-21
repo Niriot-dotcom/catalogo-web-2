@@ -24,6 +24,7 @@
 
 <!-- MOBILE -->
 <div
+  id={page.SKU}
   class="md:hidden overflow-x-hidden"
   style={`background-color: ${mainColor};`}
 >
@@ -80,6 +81,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="{page.SKU}d"
   style="background-color: {bgColor};"
   class="hidden md:block w-screen h-screen overflow-hidden"
 >

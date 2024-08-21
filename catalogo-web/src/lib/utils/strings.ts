@@ -22,5 +22,9 @@ export function deleteSubArray(totalItems: [], item: []) {
 }
 
 export function productTypeToSectionId(productType: string) {
-  return productType.replaceAll(" ", "-").toLowerCase();
+  return productType
+    .replaceAll(" ", "-")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 }

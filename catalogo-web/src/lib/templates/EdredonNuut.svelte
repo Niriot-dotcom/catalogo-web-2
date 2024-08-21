@@ -54,9 +54,8 @@
 </script>
 
 <!-- MOBILE -->
-
-<!-- 'edredones nuut' header -->
 <div
+  id={page.SKU}
   class="md:hidden overflow-x-hidden"
   style={`background-color: ${bgColor};`}
 >
@@ -151,6 +150,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="{page.SKU}d"
   style={`background-color: ${bgColor}; border-color: ${bgColor};`}
   class="hidden md:block w-screen h-screen overflow-hidden border-[32px]"
 >

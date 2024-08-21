@@ -82,12 +82,12 @@
 {#each pages as page, index}
   {#if index % 2 === 0}
     <div
-      id={page.pageTitle}
+      id={page.SKU}
       data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
         .complCurtains[0]}"
       class="plantilla-everest"
     >
-      <div class="div-block-31">
+      <div id="{page.SKU}d" class="div-block-31">
         <ImageComponent
           src={`${URLS.fotos}${page.SKU}.webp`}
           loading="eager"
@@ -229,12 +229,12 @@
     </div>
   {:else}
     <div
-      id={page.pageTitle}
+      id={page.SKU}
       data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
         .complCurtains[0]}"
       class="plantilla-everest inversa"
     >
-      <section class="section-6">
+      <section id="{page.SKU}d" class="section-6">
         <div
           class="background-video-2 w-background-video w-background-video-atom"
         >

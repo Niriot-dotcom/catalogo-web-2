@@ -96,6 +96,7 @@
 
 <!-- MOBILE -->
 <div
+  id={page.SKU}
   style="background-color: {bgColor};"
   class="md:hidden pt-10 overflow-x-hidden relative"
 >
@@ -240,6 +241,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="{page.SKU}d"
   class="hidden md:block w-screen h-screen relative bg-beige bg-no-repeat bg-cover overflow-hidden"
   style={`background-image: url('${URLS.fotos}${page.SKU}-${textureIndex}-1280.webp')`}
 >

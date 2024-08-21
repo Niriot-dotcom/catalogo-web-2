@@ -115,8 +115,9 @@
 
 {#each pages as page, index}
   <!-- {#if index % 2 === 0} -->
-  <div id={page.pageTitle}>
+  <div id={page.SKU}>
     <div
+      id="{page.SKU}d"
       data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
         .complCurtains[0]}"
       data-w-id="26494cac-c879-c70d-1939-3984a45c1663"

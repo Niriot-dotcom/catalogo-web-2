@@ -103,6 +103,7 @@
     >
       {#each groupPages as page, i}
         <div
+          id={page.SKU}
           class="flex flex-col"
           data-visible-id={page.SKU}
           on:click={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
@@ -146,6 +147,7 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
+          id={page.SKU}
           data-visible-id={page.SKU}
           class="w-full grid grid-cols-8 gap-1 overflow-hidden px-3 relative"
           style={`height: ${
@@ -326,7 +328,7 @@
   {#if groupPages.length === 1}
     <div class="w-full h-full flex space-x-1">
       <!-- main image -->
-      <div class="w-full h-full relative">
+      <div id="{groupPages[0].SKU}d" class="w-full h-full relative">
         <div class="w-full h-full">
           <OptimImg
             onClick={() =>
@@ -399,11 +401,13 @@
     <div class="w-full grid grid-cols-12">
       {#each groupPages as page, i}
         <button
+          id="{page.SKU}d"
           data-visible-id={page.SKU}
           class="w-full h-full relative cursor-pointer {getGridColsConfig(
             groupPages.length,
             i,
           )}"
+          on:click={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
           on:mouseenter={() => handleShowZoom(i, true)}
           on:mouseleave={() => handleShowZoom(i, false)}
         >

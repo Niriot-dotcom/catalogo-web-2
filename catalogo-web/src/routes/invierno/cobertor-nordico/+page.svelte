@@ -44,10 +44,11 @@
 {#each pages as page, index}
   {#if page.pageResources?.length > 0 && page.pageResources.includes("UNA_VISTA")}
     <div
+      id={page.SKU}
       data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
         .complCurtains[0]}"
     >
-      <div class="plantilla-nordico">
+      <div class="plantilla-nordico" id="{page.SKU}d">
         <div class="div-block-46">
           <div class="handle-container">
             <div class="div-block-45">

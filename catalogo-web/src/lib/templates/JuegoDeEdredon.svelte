@@ -33,6 +33,7 @@
 
 <!-- MOBILE -->
 <div
+  id={page.SKU}
   style="background-color: {bgColor};"
   class="md:hidden pt-10 overflow-x-hidden"
 >
@@ -178,6 +179,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="{page.SKU}d"
   style="background-color: {bgColor};"
   class="hidden md:block w-screen h-screen overflow-hidden"
 >

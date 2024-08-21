@@ -328,7 +328,7 @@
 
 <!-- DESKTOP -->
 <div
-  id="desktop-section-{productTypeToSectionId(title)}"
+  id="section-{productTypeToSectionId(title)}d"
   style={`background-color: ${groupPages[selectedColorIndex].pageResources[0]}`}
   class="hidden md:block w-screen h-screen"
 >

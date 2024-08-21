@@ -86,9 +86,7 @@
 {/if}
 
 <!-- CUSTOM PAGES -->
-{#if activeTitle === "Almohadas"}
-  <Almohadas pages={pillowsPages} {handleImageClick} />
-{/if}
+<Almohadas pages={pillowsPages} {handleImageClick} />
 
 <NavigatorMenu
   catalog={Catalogs.INVIERNO}

@@ -85,10 +85,7 @@
   {/each}
 {/if}
 
-<!-- CUSTOM PAGES -->
-{#if activeTitle === "Protectores de Colchón"}
-  <ProtectoresDeColchon pages={mattressProtectorsPages} {handleImageClick} />
-{/if}
+<ProtectoresDeColchon pages={mattressProtectorsPages} {handleImageClick} />
 
 <NavigatorMenu
   catalog={Catalogs.INVIERNO}

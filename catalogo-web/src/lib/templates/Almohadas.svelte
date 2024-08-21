@@ -231,8 +231,10 @@
         {#each filteredPages as product, i}
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div
+            id={product.SKU}
             data-visible-id={product.SKU}
-            on:click={() => handleImageClick(product.SKU, [])}
+            on:click={() =>
+              handleImageClick(product.SKU, product.pageRelatedProducts)}
             class="w-full h-[45vh] select-none rounded-xl p-3 relative"
             style={`background-color: ${
               product.pageKeywords?.includes("vialifresh")
@@ -564,8 +566,10 @@
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div
+            id="{product.SKU}d"
             data-visible-id={product.SKU}
-            on:click={() => handleImageClick(product.SKU, [])}
+            on:click={() =>
+              handleImageClick(product.SKU, product.pageRelatedProducts)}
             class="h-[70vh] rounded-xl p-3 relative"
             style={`background-color: ${
               product.pageKeywords?.includes("vialifresh")
@@ -582,7 +586,6 @@
               loading="eager"
               source="{URLS.fotos}{product.SKU}.webp"
             />
-            <!-- source={`https://storage.googleapis.com/catalogo-web/biasi/fotos/${product.pageProducts[0]}.webp`} -->
             <div class="w-full">
               <p
                 class="chavos-3xl"

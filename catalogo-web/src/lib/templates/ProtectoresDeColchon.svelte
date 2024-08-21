@@ -71,17 +71,18 @@
         {#each filteredPages as product, i}
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div
+            id={product.SKU}
             data-visible-id={product.SKU}
             on:click={() => handleImageClick(product.SKU, [])}
             class="w-full h-[45vh] select-none rounded-xl p-3 relative"
             style={`background-color: ${
-              product.pageKeywords.includes("vialifresh")
+              product.pageKeywords?.includes("vialifresh")
                 ? COLORS.bgVialifresh
-                : product.pageKeywords.includes("viafoam")
+                : product.pageKeywords?.includes("viafoam")
                   ? COLORS.bgViafoam
                   : product.pageTitle.toLowerCase() === "tencel"
                     ? COLORS.bgTencel
-                    : product.pageKeywords.includes("nuit")
+                    : product.pageKeywords?.includes("nuit")
                       ? COLORS.bgNuit
                       : COLORS.bgBasicPillow
             }`}
@@ -94,7 +95,7 @@
             <div class="w-full">
               <p
                 class="chavos-3xl"
-                style={product.pageKeywords.includes("nuit")
+                style={product.pageKeywords?.includes("nuit")
                   ? `color: #fff`
                   : ""}
               >
@@ -124,7 +125,7 @@
                 <p class="chavos-sm mb-1">{@html copy}</p>
               {/each}
             </div>
-            {#if product.pageKeywords.includes("vialifresh")}
+            {#if product.pageKeywords?.includes("vialifresh")}
               <div class="grid grid-cols-4 gap-3 my-3">
                 {#each VIALIFRESH_ICONS as icon}
                   <img
@@ -135,7 +136,7 @@
                   />
                 {/each}
               </div>
-            {:else if product.pageKeywords.includes("viafoam")}
+            {:else if product.pageKeywords?.includes("viafoam")}
               <div class="flex max-h-[10%]">
                 <img src="/images/viafom.svg" loading="eager" alt="" class="" />
                 <img
@@ -212,6 +213,7 @@
         </p>
       </div>
       <div class="w-full flex items-center justify-center justify-items-center">
+        <!-- svelte-ignore a11y-missing-attribute -->
         <iframe
           width="300"
           height="300"
@@ -258,18 +260,22 @@
         class="h-full gap-8 grid w-8/12 grid-cols-1 sm:w-11/12 sm:grid-cols-2 lg:w-11/12 lg:grid-cols-3 xl:w-8/12 xl:grid-cols-3"
       >
         {#each filteredPages as product, i}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div
+            id="{product.SKU}d"
             data-visible-id={product.SKU}
-            on:click={() => handleImageClick(product.pageProducts[0])}
-            class="h-[70vh] rounded-xl p-3 relative"
+            on:click={() =>
+              handleImageClick(product.SKU, product.pageRelatedProducts)}
+            class="h-[70vh] rounded-xl p-3 relative cursor-pointer"
             style={`background-color: ${
-              product.pageKeywords.includes("vialifresh")
+              product.pageKeywords?.includes("vialifresh")
                 ? COLORS.bgVialifresh
-                : product.pageKeywords.includes("viafoam")
+                : product.pageKeywords?.includes("viafoam")
                   ? COLORS.bgViafoam
                   : product.pageTitle.toLowerCase() === "tencel"
                     ? COLORS.bgTencel
-                    : product.pageKeywords.includes("nuit")
+                    : product.pageKeywords?.includes("nuit")
                       ? COLORS.bgNuit
                       : COLORS.bgBasicPillow
             }`}
@@ -279,11 +285,10 @@
               loading="eager"
               source="{URLS.fotos}{product.SKU}.webp"
             />
-            <!-- source={`https://storage.googleapis.com/catalogo-web/biasi/fotos/${product.pageProducts[0]}.webp`} -->
             <div class="w-full">
               <p
                 class="chavos-3xl"
-                style={product.pageKeywords.includes("nuit")
+                style={product.pageKeywords?.includes("nuit")
                   ? `color: #fff`
                   : ""}
               >
@@ -313,7 +318,7 @@
                 <p class="chavos-sm mb-1">{@html copy}</p>
               {/each}
             </div>
-            {#if product.pageKeywords.includes("vialifresh")}
+            {#if product.pageKeywords?.includes("vialifresh")}
               <div class="grid grid-cols-4 gap-3 my-3">
                 {#each VIALIFRESH_ICONS as icon}
                   <img
@@ -324,7 +329,7 @@
                   />
                 {/each}
               </div>
-            {:else if product.pageKeywords.includes("viafoam")}
+            {:else if product.pageKeywords?.includes("viafoam")}
               <div class="flex max-h-[10%]">
                 <img src="/images/viafom.svg" loading="eager" alt="" class="" />
                 <img
