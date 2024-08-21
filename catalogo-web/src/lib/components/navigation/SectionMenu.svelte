@@ -22,7 +22,6 @@
     activeTitle = newSection.title;
     activeLink = newSection.link;
     toggleLoadingSection();
-    // goto("/" + currentCatalog + "/" + currentPageRoute + "/" + activeLink);
   }
 
   function toggleLoadingSection() {

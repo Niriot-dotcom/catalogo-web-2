@@ -34,7 +34,7 @@
         <a
           data-sveltekit-preload-data="tap"
           data-sveltekit-reload
-          href={category.link}
+          href={"/" + catalog.toLowerCase() + "/" + category.link}
           aria-current="page"
           class="link-block-11 w-inline-block w--current"
         >
