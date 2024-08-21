@@ -20,7 +20,7 @@ export function navigateToNextPage() {
   }
   let currentUrl = window.location.pathname;
   let nextPage = getNextPage(currentUrl);
-  let baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf("/"));
+  let baseUrl = currentUrl.split("/").slice(0, 2).join("/");
   window.location.href = `${window.location.origin}${baseUrl}/${nextPage}`;
 }
 
@@ -33,6 +33,6 @@ export function navigateToPreviousPage() {
   }
   let currentUrl = window.location.pathname;
   let previousPage = getPreviousPage(currentUrl);
-  let baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf("/"));
+  let baseUrl = currentUrl.split("/").slice(0, 2).join("/");
   window.location.href = `${window.location.origin}${baseUrl}/${previousPage}`;
 }
