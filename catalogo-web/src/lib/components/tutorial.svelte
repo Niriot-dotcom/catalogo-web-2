@@ -95,7 +95,7 @@
           <!-- text -->
           <div class="h-full text-center">
             <p class="xs:chavos-lg chavos-base">
-              desliza a los lados o usa las flechas para cambiar de sección
+              usa las flechas para cambiar de sección
             </p>
           </div>
         </div>
