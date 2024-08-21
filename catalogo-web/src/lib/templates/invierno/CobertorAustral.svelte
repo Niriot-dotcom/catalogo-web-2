@@ -54,7 +54,7 @@
                 {page.pageCopys[1] || ""}
               </div>
               <img
-                src="../images/Flechas-1.svg"
+                src="/images/Flechas-1.svg"
                 loading="eager"
                 alt=""
                 class="arrow-image mt-0 ml-20"

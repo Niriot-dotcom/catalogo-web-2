@@ -65,7 +65,7 @@
 
   onMount(() => {
     const script = document.createElement("script");
-    script.src = "../js/customSlider.js";
+    script.src = "/js/customSlider.js";
     script.async = true;
     document.body.appendChild(script);
   });

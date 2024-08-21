@@ -21,7 +21,7 @@
       currentCatalog = getCurrentCatalog();
     }
     const script = document.createElement("script");
-    script.src = "../js/customSlider.js";
+    script.src = "/js/customSlider.js";
     script.async = true;
     document.body.appendChild(script);
   });
@@ -90,7 +90,7 @@
   <div class="mt-3">
     <div class="h-[10vh] pl-[12%]">
       <img
-        src="../images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
+        src="/images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
           ? 'CambiaElLookConEstosComplementos'
           : 'AgregaComplementosBlack'}.svg"
         loading="eager"

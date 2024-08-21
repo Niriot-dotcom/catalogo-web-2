@@ -389,7 +389,7 @@
           class="hidden flex-row rounded-[18px] cursor-pointer w-auto h-auto px-3 py-3 bg-gray-100 hover:bg-gray-200 mr-1"
         >
           <img
-            src="../images/icons/colecciones.svg"
+            src="/images/icons/colecciones.svg"
             loading="lazy"
             alt=""
             class=""
@@ -399,7 +399,7 @@
             on:click={togglePopup}
             class="flex flex-row align-middle justify-center rounded-[18px] cursor-pointer w-auto h-auto px-3 py-3 bg-gray-100 hover:bg-gray-200"
           >
-            <img src="../images/CurrencyPrices.svg" loading="eager" alt="" />
+            <img src="/images/CurrencyPrices.svg" loading="eager" alt="" />
             <span
               style="font-family: Helvetica;"
               class="text-base px-1 text-gray-900 font-medium leading-6 my-auto"
@@ -525,7 +525,7 @@
           <div>
             <button on:click={toggleCart} class="py-3 pr-2 flex flex-row">
               <img
-                src="../images/Shopping-cart.svg"
+                src="/images/Shopping-cart.svg"
                 loading="lazy"
                 alt=""
                 class="image-6 w-6 h-5 pr-1"
@@ -652,7 +652,7 @@
       class="pl-2 py-3 pr-2 flex flex-row"
     >
       <img
-        src="../images/Shopping-cart.svg"
+        src="/images/Shopping-cart.svg"
         loading="lazy"
         alt=""
         class="image-6 w-6 h-5 pr-1"

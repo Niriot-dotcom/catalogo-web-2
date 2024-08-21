@@ -13,7 +13,6 @@
   export let bgVideo: string = "";
   export let bgColor: string = COLORS.beige;
 
-  // TODO maybe, use this instead of the configuration from each +page.svelte file
   function getSectionNameByTitleSvg(): string {
     return titleSvg
       .replace("/images/invierno/copys/ENTRADA-", "")

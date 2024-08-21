@@ -242,7 +242,7 @@
 
       <img
         id="pillows-grid-desktop"
-        src="../images/abajo.svg"
+        src="/images/abajo.svg"
         loading="eager"
         style="opacity:0"
         data-w-id="ea4b971a-27e3-8638-3274-44384a88c49a"
@@ -366,7 +366,7 @@
 </div>
 
 <div>
-  <script defer src="../js/webflowPage.js"></script>
+  <script defer src="/js/webflowPage.js"></script>
 
   <script
     defer
@@ -384,7 +384,7 @@
     defer
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
   ></script>
-  <script defer src="../js/animations.js" type="text/javascript"></script>
+  <script defer src="/js/animations.js" type="text/javascript"></script>
 </div>
 
 <style>

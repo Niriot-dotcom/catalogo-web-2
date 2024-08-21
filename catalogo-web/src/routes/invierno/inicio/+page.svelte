@@ -12,7 +12,7 @@
   onMount(() => {
     mounted = true;
     const script = document.createElement("script");
-    script.src = "../js/webflow.js";
+    script.src = "/js/webflow.js";
     script.type = "text/javascript";
     script.defer = true;
     document.head.appendChild(script);
@@ -38,7 +38,7 @@
 {#if !mounted}
   <div style="position: fixed; z-index: 900;" class="pre-loader">
     <img
-      src="../images/Rolling-1s-200px.gif"
+      src="/images/Rolling-1s-200px.gif"
       loading="lazy"
       data-w-id="1f5e2a88-0001-12a7-db16-3b8a774a2252"
       alt=""
@@ -58,7 +58,7 @@
     class="lottie-animation-2"
     data-w-id="1f700f8d-934b-35eb-3365-1457a93be06f"
     data-animation-type="lottie"
-    data-src="../documents/animation_lkkxzewl.json"
+    data-src="/documents/animation_lkkxzewl.json"
     data-loop="1"
     data-direction="1"
     data-autoplay="1"
@@ -90,7 +90,7 @@
               class="lottie-animation"
               data-w-id="e37d71ea-2f7e-d30b-df49-c890c74b5ee0"
               data-animation-type="lottie"
-              data-src="../documents/9261-scroll-down.json"
+              data-src="/documents/9261-scroll-down.json"
               data-loop="1"
               data-direction="1"
               data-autoplay="1"
@@ -115,10 +115,10 @@
       <div class="div-block-5">
         <div class="div-block-6 everest-ideal">
           <img
-            src="../images/invierno_fotos_ENTRADA-02.png"
+            src="/images/invierno_fotos_ENTRADA-02.png"
             loading="lazy"
             sizes="(max-width: 479px) 92vw, (max-width: 767px) 83vw, 30vw"
-            srcset="../images/invierno_fotos_ENTRADA-02-p-500.png 500w, ../images/invierno_fotos_ENTRADA-02-p-800.png 800w, ../images/invierno_fotos_ENTRADA-02-p-1080.png 1080w, ../images/invierno_fotos_ENTRADA-02.png 1280w"
+            srcset="/images/invierno_fotos_ENTRADA-02-p-500.png 500w, /images/invierno_fotos_ENTRADA-02-p-800.png 800w, /images/invierno_fotos_ENTRADA-02-p-1080.png 1080w, /images/invierno_fotos_ENTRADA-02.png 1280w"
             alt=""
           />
           <div class="div-block-20">
@@ -136,7 +136,7 @@
               href="cobertor-everest"
               class="link-block-5 w-inline-block"
               ><img
-                src="../images/mini-link.svg"
+                src="/images/mini-link.svg"
                 loading="lazy"
                 style="opacity:0"
                 data-w-id="fc43544f-8d87-75cf-a494-d1d7c1345924"
@@ -154,10 +154,10 @@
         </div>
         <div class="div-block-7">
           <img
-            src="../images/invierno_fotos_ENTRADA-03.png"
+            src="/images/invierno_fotos_ENTRADA-03.png"
             loading="lazy"
             sizes="(max-width: 479px) 92vw, (max-width: 767px) 83vw, 29vw"
-            srcset="../images/invierno_fotos_ENTRADA-03-p-500.png 500w, ../images/invierno_fotos_ENTRADA-03-p-800.png 800w, ../images/invierno_fotos_ENTRADA-03-p-1080.png 1080w, ../images/invierno_fotos_ENTRADA-03.png 1280w"
+            srcset="/images/invierno_fotos_ENTRADA-03-p-500.png 500w, /images/invierno_fotos_ENTRADA-03-p-800.png 800w, /images/invierno_fotos_ENTRADA-03-p-1080.png 1080w, /images/invierno_fotos_ENTRADA-03.png 1280w"
             alt=""
             class="image-14"
           />
@@ -176,7 +176,7 @@
               href="cobertor-austral"
               class="link-block-4 w-inline-block"
               ><img
-                src="../images/mini-link.svg"
+                src="/images/mini-link.svg"
                 loading="lazy"
                 style="opacity:0"
                 data-w-id="60274898-b04a-decc-f3e0-aeb36354a8b3"
@@ -193,10 +193,10 @@
         </div>
         <div class="div-block-8">
           <img
-            src="../images/invierno_fotos_ENTRADA-04.png"
+            src="/images/invierno_fotos_ENTRADA-04.png"
             loading="lazy"
             sizes="(max-width: 479px) 94vw, (max-width: 767px) 87vw, 29vw"
-            srcset="../images/invierno_fotos_ENTRADA-04-p-500.png 500w, ../images/invierno_fotos_ENTRADA-04-p-800.png 800w, ../images/invierno_fotos_ENTRADA-04-p-1080.png 1080w, ../images/invierno_fotos_ENTRADA-04.png 1280w"
+            srcset="/images/invierno_fotos_ENTRADA-04-p-500.png 500w, /images/invierno_fotos_ENTRADA-04-p-800.png 800w, /images/invierno_fotos_ENTRADA-04-p-1080.png 1080w, /images/invierno_fotos_ENTRADA-04.png 1280w"
             alt=""
           />
           <div class="div-block-20">
@@ -214,7 +214,7 @@
               href="cobertor-invernal"
               class="link-block-6 w-inline-block"
               ><img
-                src="../images/mini-link.svg"
+                src="/images/mini-link.svg"
                 loading="lazy"
                 style="opacity:0"
                 data-w-id="4a607cd0-4d64-440d-a9b9-27e680034daa"
@@ -234,10 +234,10 @@
       <div class="div-block-5">
         <div class="div-block-6">
           <img
-            src="../images/invierno_fotos_ENTRADA-05.png"
+            src="/images/invierno_fotos_ENTRADA-05.png"
             loading="lazy"
             sizes="(max-width: 479px) 94vw, (max-width: 767px) 87vw, (max-width: 991px) 30vw, 29vw"
-            srcset="../images/invierno_fotos_ENTRADA-05-p-500.png 500w, ../images/invierno_fotos_ENTRADA-05-p-800.png 800w, ../images/invierno_fotos_ENTRADA-05-p-1080.png 1080w, ../images/invierno_fotos_ENTRADA-05.png 1280w"
+            srcset="/images/invierno_fotos_ENTRADA-05-p-500.png 500w, /images/invierno_fotos_ENTRADA-05-p-800.png 800w, /images/invierno_fotos_ENTRADA-05-p-1080.png 1080w, /images/invierno_fotos_ENTRADA-05.png 1280w"
             alt=""
           />
           <div class="div-block-20">
@@ -255,7 +255,7 @@
               href="cobertor-nordico"
               class="link-block-7 w-inline-block"
               ><img
-                src="../images/mini-link.svg"
+                src="/images/mini-link.svg"
                 loading="lazy"
                 style="opacity:0"
                 data-w-id="d1103af4-132a-ff2b-b336-e627bb744360"
@@ -272,10 +272,10 @@
         </div>
         <div class="div-block-6">
           <img
-            src="../images/invierno_fotos_ENTRADA-06.png"
+            src="/images/invierno_fotos_ENTRADA-06.png"
             loading="lazy"
             sizes="(max-width: 479px) 94vw, (max-width: 767px) 87vw, (max-width: 991px) 30vw, 29vw"
-            srcset="../images/invierno_fotos_ENTRADA-06-p-500.png 500w, ../images/invierno_fotos_ENTRADA-06-p-800.png 800w, ../images/invierno_fotos_ENTRADA-06-p-1080.png 1080w, ../images/invierno_fotos_ENTRADA-06.png 1280w"
+            srcset="/images/invierno_fotos_ENTRADA-06-p-500.png 500w, /images/invierno_fotos_ENTRADA-06-p-800.png 800w, /images/invierno_fotos_ENTRADA-06-p-1080.png 1080w, /images/invierno_fotos_ENTRADA-06.png 1280w"
             alt=""
           />
           <div class="div-block-20">
@@ -293,7 +293,7 @@
               href="cobertor-nordico"
               class="link-block-8 w-inline-block"
               ><img
-                src="../images/mini-link.svg"
+                src="/images/mini-link.svg"
                 loading="lazy"
                 style="opacity:0"
                 data-w-id="30999afb-b57a-fcb3-4f2e-1808f1855884"
@@ -310,9 +310,9 @@
         </div>
         <div class="div-block-8">
           <img
-            src="../images/invierno_fotos_ENTRADA-07.png"
+            src="/images/invierno_fotos_ENTRADA-07.png"
             loading="lazy"
-            srcset="../images/invierno_fotos_ENTRADA-07-p-500.png 500w, ../images/invierno_fotos_ENTRADA-07-p-800.png 800w, ../images/invierno_fotos_ENTRADA-07-p-1080.png 1080w, ../images/invierno_fotos_ENTRADA-07.png 1280w"
+            srcset="/images/invierno_fotos_ENTRADA-07-p-500.png 500w, /images/invierno_fotos_ENTRADA-07-p-800.png 800w, /images/invierno_fotos_ENTRADA-07-p-1080.png 1080w, /images/invierno_fotos_ENTRADA-07.png 1280w"
             sizes="(max-width: 479px) 94vw, (max-width: 767px) 87vw, (max-width: 991px) 30vw, 29vw"
             alt=""
           />
@@ -331,7 +331,7 @@
               href="cobertor-ligero"
               class="link-block-9 w-inline-block"
               ><img
-                src="../images/mini-link.svg"
+                src="/images/mini-link.svg"
                 loading="lazy"
                 style="opacity:0"
                 data-w-id="18834c1d-478e-d88b-655c-6fe9d9473b8f"
@@ -354,7 +354,7 @@
           <section class="hero-image-left cloth-hero">
             <div class="div-block-29">
               <img
-                src="../images/overlay-textures.svg"
+                src="/images/overlay-textures.svg"
                 loading="lazy"
                 width="100"
                 data-w-id="89edf476-53ad-eba9-6756-9a72f2d57ba7"
@@ -394,10 +394,10 @@
                       <div class="thanks-panel_img is-1">
                         <div class="thanks-panel_img-height">
                           <img
-                            src="../images/INTRO-06.png"
+                            src="/images/INTRO-06.png"
                             loading="eager"
                             sizes="(max-width: 479px) 68vw, (max-width: 991px) 34vw, 19vw"
-                            srcset="../images/INTRO-06-p-500.png 500w, ../images/INTRO-06-p-800.png 800w, ../images/INTRO-06-p-1080.png 1080w, ../images/INTRO-06.png 1280w"
+                            srcset="/images/INTRO-06-p-500.png 500w, /images/INTRO-06-p-800.png 800w, /images/INTRO-06-p-1080.png 1080w, /images/INTRO-06.png 1280w"
                             alt=""
                             class="thanks-panel_photo"
                           />
@@ -406,10 +406,10 @@
                       <div class="thanks-panel_img is-2">
                         <div class="thanks-panel_img-height">
                           <img
-                            src="../images/INTRO-13.png"
+                            src="/images/INTRO-13.png"
                             loading="eager"
                             sizes="(max-width: 479px) 62vw, (max-width: 991px) 36vw, 16vw"
-                            srcset="../images/INTRO-13-p-500.png 500w, ../images/INTRO-13-p-800.png 800w, ../images/INTRO-13-p-1080.png 1080w, ../images/INTRO-13.png 1280w"
+                            srcset="/images/INTRO-13-p-500.png 500w, /images/INTRO-13-p-800.png 800w, /images/INTRO-13-p-1080.png 1080w, /images/INTRO-13.png 1280w"
                             alt=""
                             class="thanks-panel_photo"
                           />
@@ -418,10 +418,10 @@
                       <div class="thanks-panel_img is-3">
                         <div class="thanks-panel_img-height">
                           <img
-                            src="../images/INTRO-12.png"
+                            src="/images/INTRO-12.png"
                             loading="eager"
                             sizes="(max-width: 479px) 57vw, (max-width: 991px) 33vw, 18vw"
-                            srcset="../images/INTRO-12-p-500.png 500w, ../images/INTRO-12-p-800.png 800w, ../images/INTRO-12-p-1080.png 1080w, ../images/INTRO-12.png 1280w"
+                            srcset="/images/INTRO-12-p-500.png 500w, /images/INTRO-12-p-800.png 800w, /images/INTRO-12-p-1080.png 1080w, /images/INTRO-12.png 1280w"
                             alt=""
                             class="thanks-panel_photo"
                           />
@@ -437,14 +437,14 @@
         <div class="footer">
           <div class="div-block-21 top-pallete">
             <img
-              src="../images/Group-30.svg"
+              src="/images/Group-30.svg"
               loading="lazy"
               style="opacity:0"
               data-w-id="03369f7f-7877-3bc6-15b0-a390c7f48f9e"
               alt=""
               class="image-12"
             /><img
-              src="../images/Group-32.svg"
+              src="/images/Group-32.svg"
               loading="lazy"
               style="opacity:0"
               data-w-id="9ad5db2e-7ec4-ac24-b1ff-c2c6c274c890"
@@ -454,14 +454,14 @@
           </div>
           <div class="div-block-21">
             <img
-              src="../images/Group-31.svg"
+              src="/images/Group-31.svg"
               loading="lazy"
               style="opacity:0"
               data-w-id="7661dc83-303f-e5db-6aab-cb876da5ccf9"
               alt=""
               class="image-11"
             /><img
-              src="../images/Group-33.svg"
+              src="/images/Group-33.svg"
               loading="lazy"
               style="opacity:0"
               data-w-id="bb6a8283-6ed8-f3f9-74ef-b9ccbcdea8cd"
@@ -482,7 +482,7 @@
 <NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
 
 <div>
-  <script defer src="../js/webflowPage.js"></script>
+  <script defer src="/js/webflowPage.js"></script>
   <script
     defer
     src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=643738a971c1d64a8bd7a90a"
@@ -499,5 +499,5 @@
     defer
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
   ></script>
-  <script defer src="../js/animations.js" type="text/javascript"></script>
+  <script defer src="/js/animations.js" type="text/javascript"></script>
 </div>

@@ -254,7 +254,7 @@
         >
           <div class="flex items-center">
             <a href="/" class="flex flex-row items-center align-middle">
-              <img src="../images/favicon.png" class="h-10 w-10" alt="" />
+              <img src="/images/favicon.png" class="h-10 w-10" alt="" />
               <h2
                 class="ml-4 pr-3 sm:pr-0 block text-base font-semibold text-gray-900"
               >

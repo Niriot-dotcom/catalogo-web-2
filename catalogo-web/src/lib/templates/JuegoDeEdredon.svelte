@@ -275,7 +275,7 @@
         <!-- agrega estos complementos copy -->
         <div class="h-2/6 -ml-[20%]">
           <img
-            src="../images/copys/AgregaComplementosBlack.svg"
+            src="/images/copys/AgregaComplementosBlack.svg"
             loading="eager"
             alt=""
             class="h-full scale-150"

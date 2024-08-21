@@ -148,7 +148,7 @@
     <div class="">
       <div class="h-[10vh] pl-[12%]">
         <img
-          src="../images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
+          src="/images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
             ? 'CambiaElLookConEstosComplementos'
             : 'AgregaComplementosBlack'}.svg"
           loading="eager"

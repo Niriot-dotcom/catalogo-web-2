@@ -57,7 +57,7 @@
     <div class="w-full h-1/2">
       <div class="w-full h-full">
         <img
-          src="../images/icons/hand-scroll.svg"
+          src="/images/icons/hand-scroll.svg"
           loading="eager"
           alt=""
           class="w-full h-1/2 scale-[0.7]"
@@ -83,7 +83,7 @@
       <div class="w-full h-1/2">
         <div class="w-full h-full">
           <img
-            src="../images/icons/hand-scroll.svg"
+            src="/images/icons/hand-scroll.svg"
             loading="eager"
             alt=""
             class="w-full h-1/2 scale-[0.7] ml-[50px]"

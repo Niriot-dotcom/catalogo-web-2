@@ -6,7 +6,7 @@
 
   export let pages: DatabasePage[];
   export let handleImageClick: (sku: string, relatedProds: string[]) => void;
-  let carousel;
+  let carousel: any;
 
   let soportes = [
     {
@@ -34,7 +34,7 @@
       filteredPages = [...pages];
     } else {
       filteredPages = pages.filter((page) =>
-        page.pageKeywords.includes(support),
+        page.pageKeywords?.includes(support),
       );
     }
 
@@ -87,6 +87,8 @@
       <div class="w-full row-span-2 flex justify-center mt-5">
         <div class="grid grid-cols-3 w-11/12 place-items-center">
           {#each soportes as soporte, i}
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div
               class="flex flex-col h-full w-11/12 cursor-pointer relative"
               on:click={() => handleFilterBySupport(soporte.name)}
@@ -103,7 +105,7 @@
                   class="h-1/4 w-full flex justify-center absolute right-0 bottom-1.5 xs:bottom-2"
                 >
                   <img
-                    src="../images/abajo.svg"
+                    src="/images/abajo.svg"
                     loading="eager"
                     alt=""
                     class="h-5 xs:h-5 -rotate-90"
@@ -233,11 +235,11 @@
             on:click={() => handleImageClick(product.SKU, [])}
             class="w-full h-[45vh] select-none rounded-xl p-3 relative"
             style={`background-color: ${
-              product.pageKeywords.includes("vialifresh")
+              product.pageKeywords?.includes("vialifresh")
                 ? COLORS.bgVialifresh
-                : product.pageKeywords.includes("viafoam")
+                : product.pageKeywords?.includes("viafoam")
                   ? COLORS.bgViafoam
-                  : product.pageKeywords.includes("nuit")
+                  : product.pageKeywords?.includes("nuit")
                     ? COLORS.bgNuit
                     : COLORS.bgBasicPillow
             }`}
@@ -250,7 +252,7 @@
             <div class="w-full">
               <p
                 class="chavos-3xl"
-                style={product.pageKeywords.includes("nuit")
+                style={product.pageKeywords?.includes("nuit")
                   ? `color: #fff`
                   : ""}
               >
@@ -280,7 +282,7 @@
                 <p class="chavos-sm mb-1">{@html copy}</p>
               {/each}
             </div>
-            {#if product.pageKeywords.includes("vialifresh")}
+            {#if product.pageKeywords?.includes("vialifresh")}
               <div class="grid grid-cols-4 gap-3 my-3">
                 {#each VIALIFRESH_ICONS as icon}
                   <img
@@ -291,7 +293,7 @@
                   />
                 {/each}
               </div>
-            {:else if product.pageKeywords.includes("viafoam")}
+            {:else if product.pageKeywords?.includes("viafoam")}
               <div class="flex max-h-[10%]">
                 <img src="/images/viafom.svg" loading="eager" alt="" class="" />
                 <img
@@ -312,7 +314,7 @@
                   class=""
                   width="20"
                   height="20"
-                  viewbox="0 0 20 20"
+                  viewBox="0 0 20 20"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -368,6 +370,7 @@
         </p>
       </div>
       <div class="w-full flex items-center justify-center justify-items-center">
+        <!-- svelte-ignore a11y-missing-attribute -->
         <iframe
           width="300"
           height="300"
@@ -395,6 +398,8 @@
         <div class="w-full h-full row-span-2 flex justify-center">
           <div class="grid grid-cols-3 h-full w-8/12 place-items-center">
             {#each soportes as soporte, i}
+              <!-- svelte-ignore a11y-click-events-have-key-events -->
+              <!-- svelte-ignore a11y-no-static-element-interactions -->
               <div
                 class="flex flex-col h-full w-9/12 cursor-pointer"
                 on:click={() => handleFilterBySupport(soporte.name)}
@@ -411,7 +416,7 @@
                     class="h-1/4 w-full flex justify-center absolute right-0 bottom-0"
                   >
                     <img
-                      src="../images/abajo.svg"
+                      src="/images/abajo.svg"
                       loading="eager"
                       alt=""
                       class="h-8 -rotate-90"
@@ -445,9 +450,12 @@
         </div>
 
         <!-- lineas -->
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
           class="w-8/12 h-full row-span-3 justify-center flex flex-col space-y-3 relative"
         >
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div
             class="w-full h-full min-h-[40%] max-h-[40%] flex justify-center cursor-pointer"
             on:click={() => handleFilterBySupport("viafoam")}
@@ -466,12 +474,15 @@
                   </p>
                 </div>
                 <div class="w-4/12 flex justify-evenly h-[9vh]">
+                  <!-- svelte-ignore a11y-missing-attribute -->
                   <img src="/images/viafom.svg" />
+                  <!-- svelte-ignore a11y-missing-attribute -->
                   <img src="/images/viafom2.svg" />
                 </div>
               </div>
             </div>
           </div>
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div
             class="w-full h-full min-h-[40%] max-h-[40%] flex justify-center cursor-pointer"
             on:click={() => handleFilterBySupport("vialifresh")}
@@ -524,7 +535,7 @@
 
       <img
         id="pillows-grid-desktop"
-        src="../images/abajo.svg"
+        src="/images/abajo.svg"
         loading="eager"
         style="opacity:0"
         data-w-id="ea4b971a-27e3-8638-3274-44384a88c49a"
@@ -550,16 +561,18 @@
         class="h-full gap-8 grid w-8/12 grid-cols-1 sm:w-11/12 sm:grid-cols-2 lg:w-11/12 lg:grid-cols-3 xl:w-8/12 xl:grid-cols-3"
       >
         {#each filteredPages as product, i}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div
             data-visible-id={product.SKU}
-            on:click={() => handleImageClick(product.pageProducts[0])}
+            on:click={() => handleImageClick(product.SKU, [])}
             class="h-[70vh] rounded-xl p-3 relative"
             style={`background-color: ${
-              product.pageKeywords.includes("vialifresh")
+              product.pageKeywords?.includes("vialifresh")
                 ? COLORS.bgVialifresh
-                : product.pageKeywords.includes("viafoam")
+                : product.pageKeywords?.includes("viafoam")
                   ? COLORS.bgViafoam
-                  : product.pageKeywords.includes("nuit")
+                  : product.pageKeywords?.includes("nuit")
                     ? COLORS.bgNuit
                     : COLORS.bgBasicPillow
             }`}
@@ -603,7 +616,7 @@
                 <p class="chavos-sm mb-1">{@html copy}</p>
               {/each}
             </div>
-            {#if product.pageKeywords.includes("vialifresh")}
+            {#if product.pageKeywords?.includes("vialifresh")}
               <div class="grid grid-cols-4 gap-3 my-3">
                 {#each VIALIFRESH_ICONS as icon}
                   <img
@@ -614,7 +627,7 @@
                   />
                 {/each}
               </div>
-            {:else if product.pageKeywords.includes("viafoam")}
+            {:else if product.pageKeywords?.includes("viafoam")}
               <div class="flex max-h-[10%]">
                 <img src="/images/viafom.svg" loading="eager" alt="" class="" />
                 <img
@@ -635,7 +648,7 @@
                   class=""
                   width="20"
                   height="20"
-                  viewbox="0 0 20 20"
+                  viewBox="0 0 20 20"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -656,7 +669,7 @@
 </div>
 
 <div>
-  <script defer src="../js/webflowPage.js"></script>
+  <script defer src="/js/webflowPage.js"></script>
 
   <script
     defer
@@ -674,7 +687,7 @@
     defer
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
   ></script>
-  <script defer src="../js/animations.js" type="text/javascript"></script>
+  <script defer src="/js/animations.js" type="text/javascript"></script>
 </div>
 
 <style>

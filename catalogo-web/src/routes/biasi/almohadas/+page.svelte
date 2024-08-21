@@ -127,7 +127,7 @@
     calidad del sueño.
   </h2>
   <img
-    src="../images/abajo.svg"
+    src="/images/abajo.svg"
     loading="lazy"
     style="opacity:0"
     data-w-id="ea4b971a-27e3-8638-3274-44384a88c49a"
@@ -233,25 +233,25 @@
     <div class="div-block-65">
       <img
         style="object-fit: cover;"
-        src="../images/bacterias.svg"
+        src="/images/bacterias.svg"
         loading="lazy"
         alt=""
         class="pricing-image-two shadow-two"
       /><img
         style="object-fit: cover;"
-        src="../images/hongos.svg"
+        src="/images/hongos.svg"
         loading="lazy"
         alt=""
         class="pricing-image-two shadow-two"
       /><img
         style="object-fit: cover;"
-        src="../images/moho.svg"
+        src="/images/moho.svg"
         loading="lazy"
         alt=""
         class="pricing-image-two shadow-two"
       /><img
         style="object-fit: cover;"
-        src="../images/denied.svg"
+        src="/images/denied.svg"
         loading="lazy"
         alt=""
         class="pricing-image-two shadow-two denied"
@@ -277,7 +277,7 @@
       <div class="w-slider-mask">
         <!--
             <div class="team-slide-wrapper w-slide">
-              <div class="team-block viafom"><img src="../images/87554_3.jpg" loading="lazy" sizes="(max-width: 479px) 89vw, (max-width: 991px) 39vw, 25vw" srcset="../images/87554_3-p-500.jpg 500w, ../images/87554_3-p-800.jpg 800w, ../images/87554_3-p-1080.jpg 1080w, ../images/87554_3-p-1600.jpg 1600w, ../images/87554_3.jpg 2000w" alt="" class="team-member-image-two">
+              <div class="team-block viafom"><img src="/images/87554_3.jpg" loading="lazy" sizes="(max-width: 479px) 89vw, (max-width: 991px) 39vw, 25vw" srcset="/images/87554_3-p-500.jpg 500w, /images/87554_3-p-800.jpg 800w, /images/87554_3-p-1080.jpg 1080w, /images/87554_3-p-1600.jpg 1600w, /images/87554_3.jpg 2000w" alt="" class="team-member-image-two">
                 <div class="team-block-info">
                   <h3 class="team-member-name-two">Nombre Almohada</h3>
                   <p class="team-member-text">Copy principal almohada</p>
@@ -291,7 +291,7 @@
               </div>
             </div>
             <div class="team-slide-wrapper w-slide">
-              <div class="team-block"><img src="../images/87554_3.jpg" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 39vw, 25vw" srcset="../images/87554_3-p-500.jpg 500w, ../images/87554_3-p-800.jpg 800w, ../images/87554_3-p-1080.jpg 1080w, ../images/87554_3-p-1600.jpg 1600w, ../images/87554_3.jpg 2000w" alt="" class="team-member-image-two">
+              <div class="team-block"><img src="/images/87554_3.jpg" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 39vw, 25vw" srcset="/images/87554_3-p-500.jpg 500w, /images/87554_3-p-800.jpg 800w, /images/87554_3-p-1080.jpg 1080w, /images/87554_3-p-1600.jpg 1600w, /images/87554_3.jpg 2000w" alt="" class="team-member-image-two">
                 <div class="team-block-info">
                   <h3 class="team-member-name-two">Full Name</h3>
                   <p class="team-member-text">Copy principal almohada</p>
@@ -502,7 +502,7 @@
 />
 
 <div>
-  <script defer src="../js/webflowPage.js"></script>
+  <script defer src="/js/webflowPage.js"></script>
   <script
     defer
     src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=643738a971c1d64a8bd7a90a"
@@ -519,8 +519,8 @@
     defer
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
   ></script>
-  <script defer src="../js/animations.js" type="text/javascript"></script>
-  <script defer src="../js/webflow.js" type="text/javascript"></script>
+  <script defer src="/js/animations.js" type="text/javascript"></script>
+  <script defer src="/js/webflow.js" type="text/javascript"></script>
 </div>
 
 <style>

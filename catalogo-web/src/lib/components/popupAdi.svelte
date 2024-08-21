@@ -280,7 +280,7 @@
               <img
                 style="width: 95px; height: auto; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; border-radius:24px"
                 class="mb-8 mx-auto"
-                src="../images/favicon.png"
+                src="/images/favicon.png"
                 alt="app_icon"
               />
               <h2
@@ -345,7 +345,7 @@
               <img
                 style="width: 95px; height: auto; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; border-radius:24px"
                 class="mb-4 mx-auto"
-                src="../images/favicon.png"
+                src="/images/favicon.png"
                 alt="app_icon"
               />
               <h2
@@ -453,7 +453,7 @@
               <img
                 style="width: 95px; height: auto; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; border-radius:24px"
                 class="mb-4 mx-auto"
-                src="../images/favicon.png"
+                src="/images/favicon.png"
                 alt="app_icon"
               />
               <h2
@@ -633,11 +633,7 @@
                 >
                   <li class="flex items-center justify-between py-3">
                     <div class="flex items-center">
-                      <img
-                        src="../images/icons/adi.svg"
-                        alt=""
-                        class="h-8 w-8"
-                      />
+                      <img src="/images/icons/adi.svg" alt="" class="h-8 w-8" />
                       <p class="ml-4 text-sm font-medium text-gray-900">
                         {userCatalog.email}
                       </p>
@@ -729,7 +725,7 @@
                           <span class="block flex-shrink-0">
                             <img
                               class="h-10 w-10 rounded-full"
-                              src="../images/icons/whats.png"
+                              src="/images/icons/whats.png"
                               alt=""
                             />
                           </span>
@@ -776,7 +772,7 @@
                           <span class="block flex-shrink-0">
                             <img
                               class="h-10 w-10 rounded-full"
-                              src="../images/icons/face.png"
+                              src="/images/icons/face.png"
                               alt=""
                             />
                           </span>
@@ -823,7 +819,7 @@
                           <span class="block flex-shrink-0">
                             <img
                               class="h-10 w-10 rounded-full"
-                              src="../images/icons/mail.png"
+                              src="/images/icons/mail.png"
                               alt=""
                             />
                           </span>
@@ -870,7 +866,7 @@
                           <span class="block flex-shrink-0">
                             <img
                               class="h-10 w-10 rounded-full"
-                              src="../images/icons/apps.png"
+                              src="/images/icons/apps.png"
                               alt=""
                             />
                           </span>

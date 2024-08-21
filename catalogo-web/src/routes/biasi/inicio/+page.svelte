@@ -19,14 +19,14 @@
   onMount(() => {
     // Crear y configurar el script de Webflow
     const scriptWebflow = document.createElement("script");
-    scriptWebflow.src = "../js/webflow.js";
+    scriptWebflow.src = "/js/webflow.js";
     scriptWebflow.type = "text/javascript";
     scriptWebflow.async = true;
     scriptWebflow.defer = true;
 
     // Crear y configurar el script de Animaciones
     const scriptAnimations = document.createElement("script");
-    scriptAnimations.src = "../js/animations.js";
+    scriptAnimations.src = "/js/animations.js";
     scriptAnimations.type = "text/javascript";
     scriptAnimations.async = true;
     scriptAnimations.defer = true;
@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/nbh4cvf.css" />
 
   <link
-    href="../css/catalogo-invierno-main-bb224a.webflow.css"
+    href="/css/catalogo-invierno-main-bb224a.webflow.css"
     rel="stylesheet"
     type="text/css"
   />
@@ -141,7 +141,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("../images/biasi/entrada.png");
+      background-image: url("/images/biasi/entrada.png");
       background-size: cover;
       background-repeat: no-repeat;
       /* transition: opacity 3s ease; */
@@ -157,7 +157,7 @@
     left: 0; */
       width: 100%;
       height: 100%;
-      background-image: url("../images/biasi/entrada2.png");
+      background-image: url("/images/biasi/entrada2.png");
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -166,7 +166,7 @@
 {#if !mounted}
   <div style="position: fixed; z-index: 900;" class="pre-loader">
     <img
-      src="../images/Rolling-1s-200px.gif"
+      src="/images/Rolling-1s-200px.gif"
       loading="lazy"
       data-w-id="1f5e2a88-0001-12a7-db16-3b8a774a2252"
       alt=""
@@ -182,7 +182,7 @@
       class="lottie-animation-2"
       data-w-id="1f700f8d-934b-35eb-3365-1457a93be06f"
       data-animation-type="lottie"
-      data-src="../documents/animation_lkkxzewl.json"
+      data-src="/documents/animation_lkkxzewl.json"
       data-loop="1"
       data-direction="1"
       data-autoplay="1"
@@ -203,7 +203,7 @@
           class="close-indice image-13"
         >
           <img
-            src="../images/close.svg"
+            src="/images/close.svg"
             loading="lazy"
             width="22"
             height="22"
@@ -245,7 +245,7 @@
           <ul role="list" class="list w-list-unstyled">
             <li class="list-item">
               <img
-                src="../images/External-link.svg"
+                src="/images/External-link.svg"
                 loading="lazy"
                 alt=""
                 class="image-7"
@@ -254,7 +254,7 @@
             </li>
             <li class="list-item">
               <img
-                src="../images/Share.svg"
+                src="/images/Share.svg"
                 loading="lazy"
                 alt=""
                 class="image-7"
@@ -263,7 +263,7 @@
             </li>
             <li class="list-item">
               <img
-                src="../images/Shopping-cart.svg"
+                src="/images/Shopping-cart.svg"
                 loading="lazy"
                 alt=""
                 class="image-7"
@@ -272,7 +272,7 @@
             </li>
             <li class="list-item">
               <img
-                src="../images/Heart.svg"
+                src="/images/Heart.svg"
                 loading="lazy"
                 alt=""
                 class="image-7"
@@ -281,7 +281,7 @@
             </li>
             <li class="list-item">
               <img
-                src="../images/Document-search.svg"
+                src="/images/Document-search.svg"
                 loading="lazy"
                 alt=""
                 class="image-7"
@@ -290,7 +290,7 @@
             </li>
             <li class="list-item">
               <img
-                src="../images/Grid.svg"
+                src="/images/Grid.svg"
                 loading="lazy"
                 alt=""
                 class="image-7"
@@ -299,7 +299,7 @@
             </li>
             <li class="list-item">
               <img
-                src="../images/Download.svg"
+                src="/images/Download.svg"
                 loading="lazy"
                 alt=""
                 class="image-7"
@@ -308,7 +308,7 @@
             </li>
             <li class="list-item">
               <img
-                src="../images/Question-mark-circle.svg"
+                src="/images/Question-mark-circle.svg"
                 loading="lazy"
                 alt=""
                 class="image-7"
@@ -325,7 +325,7 @@
               class="navigator-menu close"
             >
               <img
-                src="../images/close.svg"
+                src="/images/close.svg"
                 loading="lazy"
                 alt=""
                 class="image-8"
@@ -334,7 +334,7 @@
             <a href="#" class="link-block-3 w-inline-block">
               <div id="prev" class="navigator-menu btn-prev">
                 <img
-                  src="../images/Grid.svg"
+                  src="/images/Grid.svg"
                   loading="lazy"
                   alt=""
                   class="image-7"
@@ -350,7 +350,7 @@
           <a id="next" href="#" class="link-block w-inline-block">
             <div id="next" class="navigator-menu btn-next">
               <img
-                src="../images/Shopping-cart.svg"
+                src="/images/Shopping-cart.svg"
                 loading="lazy"
                 alt=""
                 class="image-6"
@@ -369,7 +369,7 @@
               class="navigator-menu initial nav-action"
             >
               <img
-                src="../images/Menu.svg"
+                src="/images/Menu.svg"
                 loading="lazy"
                 alt=""
                 class="image-8"
@@ -383,7 +383,7 @@
                 class="navigator-menu btn-prev nav-action"
               >
                 <img
-                  src="../images/Grid.svg"
+                  src="/images/Grid.svg"
                   loading="lazy"
                   alt=""
                   class="image-7"
@@ -406,7 +406,7 @@
               class="navigator-menu btn-next nav-action"
             >
               <img
-                src="../images/Shopping-cart.svg"
+                src="/images/Shopping-cart.svg"
                 loading="lazy"
                 alt=""
                 class="image-6"
@@ -430,7 +430,7 @@
                   class="w-24 mt-0 ml-5 text-[2w] relative text-[#141414] hidden"
                   data-w-id="e37d71ea-2f7e-d30b-df49-c890c74b5ee0"
                   data-animation-type="lottie"
-                  data-src="../documents/9261-scroll-down.json"
+                  data-src="/documents/9261-scroll-down.json"
                   data-loop="1"
                   data-direction="1"
                   data-autoplay="1"
@@ -527,7 +527,7 @@
                   <a href="/biasi/accesorios-de-cocina">
                     <div class="absolute bottom-10 left-24">
                       <img
-                        src="../images/biasi/indice1.svg"
+                        src="/images/biasi/indice1.svg"
                         loading="lazy"
                         style="opacity:0"
                         data-w-id="03369f7f-7877-3bc6-15b0-a390c7f48f9e"
@@ -536,7 +536,7 @@
                       />
                       <div class="absolute top-1/2 right-0">
                         <img
-                          src={"../images/biasi/indice1a.svg"}
+                          src={"/images/biasi/indice1a.svg"}
                           loading="eager"
                           alt=""
                           style="opacity:0"
@@ -552,7 +552,7 @@
                   <a href="/biasi/organizacion">
                     <div class="absolute top-0 left-0">
                       <img
-                        src="../images/biasi/indice2.svg"
+                        src="/images/biasi/indice2.svg"
                         loading="lazy"
                         style="opacity:0"
                         data-w-id="03369f7f-7877-3bc6-15b0-a390c7f48f9e"
@@ -561,7 +561,7 @@
                       />
                       <div class="absolute top-2/3 right-0">
                         <img
-                          src={"../images/biasi/indice2a.svg"}
+                          src={"/images/biasi/indice2a.svg"}
                           loading="eager"
                           alt=""
                           style="opacity:0"
@@ -577,7 +577,7 @@
                   <a href="/biasi/muebles">
                     <div class="absolute top-0 right-0">
                       <img
-                        src="../images/biasi/indice3.svg"
+                        src="/images/biasi/indice3.svg"
                         loading="lazy"
                         style="opacity:0"
                         data-w-id="03369f7f-7877-3bc6-15b0-a390c7f48f9e"
@@ -586,7 +586,7 @@
                       />
                       <div class="absolute -top-10 right-0">
                         <img
-                          src={"../images/biasi/indice3a.svg"}
+                          src={"/images/biasi/indice3a.svg"}
                           loading="eager"
                           alt=""
                           style="opacity:0"
@@ -602,7 +602,7 @@
                   <a href="/biasi/accesorios-de-decoracion">
                     <div class="absolute -top-28 right-20">
                       <img
-                        src="../images/biasi/indice4.svg"
+                        src="/images/biasi/indice4.svg"
                         loading="lazy"
                         style="opacity:0"
                         data-w-id="03369f7f-7877-3bc6-15b0-a390c7f48f9e"
@@ -611,7 +611,7 @@
                       />
                       <div class="absolute bottom-0 left-0">
                         <img
-                          src={"../images/biasi/indice4a.svg"}
+                          src={"/images/biasi/indice4a.svg"}
                           loading="eager"
                           alt=""
                           style="opacity:0"
@@ -659,7 +659,7 @@
                   <a href="/biasi/organizacion">
                     <div class="absolute top-0 right-0">
                       <img
-                        src="../images/biasi/indice2.svg"
+                        src="/images/biasi/indice2.svg"
                         loading="lazy"
                         style="opacity:0"
                         data-w-id="03369f7f-7877-3bc6-15b0-a390c7f48f9e"
@@ -668,7 +668,7 @@
                       />
                       <div class="absolute top-1/2 -left-1/2">
                         <img
-                          src={"../images/biasi/indice2a.svg"}
+                          src={"/images/biasi/indice2a.svg"}
                           loading="eager"
                           alt=""
                           style="opacity:0"
@@ -684,7 +684,7 @@
                   <a href="/biasi/accesorios-de-cocina">
                     <div class="absolute top-0 left-0">
                       <img
-                        src="../images/biasi/indice1.svg"
+                        src="/images/biasi/indice1.svg"
                         loading="lazy"
                         style="opacity:0"
                         data-w-id="03369f7f-7877-3bc6-15b0-a390c7f48f9e"
@@ -693,7 +693,7 @@
                       />
                       <div class="absolute top-1/2 -right-1/2">
                         <img
-                          src={"../images/biasi/indice1a.svg"}
+                          src={"/images/biasi/indice1a.svg"}
                           loading="eager"
                           alt=""
                           style="opacity:0"
@@ -709,7 +709,7 @@
                   <a href="/biasi/muebles">
                     <div class="absolute top-0 right-0">
                       <img
-                        src="../images/biasi/indice3.svg"
+                        src="/images/biasi/indice3.svg"
                         loading="lazy"
                         style="opacity:0"
                         data-w-id="03369f7f-7877-3bc6-15b0-a390c7f48f9e"
@@ -718,7 +718,7 @@
                       />
                       <div class="absolute top-1/2 -left-1/2">
                         <img
-                          src={"../images/biasi/indice3a.svg"}
+                          src={"/images/biasi/indice3a.svg"}
                           loading="eager"
                           alt=""
                           style="opacity:0"
@@ -734,7 +734,7 @@
                   <a href="/biasi/accesorios-de-decoracion">
                     <div class="absolute top-0 left-0">
                       <img
-                        src="../images/biasi/indice4.svg"
+                        src="/images/biasi/indice4.svg"
                         loading="lazy"
                         style="opacity:0"
                         data-w-id="03369f7f-7877-3bc6-15b0-a390c7f48f9e"
@@ -743,7 +743,7 @@
                       />
                       <div class="absolute top-1/2 -right-1/2">
                         <img
-                          src={"../images/biasi/indice4a.svg"}
+                          src={"/images/biasi/indice4a.svg"}
                           loading="eager"
                           alt=""
                           style="opacity:0"
@@ -785,7 +785,7 @@
     HeaderComponent={BiasiFooterHeader()}
   />
 
-  <script defer src="../js/webflowPage.js"></script>
+  <script defer src="/js/webflowPage.js"></script>
 
   <script
     defer
@@ -803,5 +803,5 @@
     defer
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
   ></script>
-  <script defer src="../js/animations.js" type="text/javascript"></script>
+  <script defer src="/js/animations.js" type="text/javascript"></script>
 </div>
