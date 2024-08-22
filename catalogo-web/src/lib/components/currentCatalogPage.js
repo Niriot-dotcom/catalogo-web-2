@@ -569,7 +569,7 @@ export function getCurrentPageInfo(url) {
   }
 
   // Extraer el nombre de la página de la URL
-  const pageName = url.split("/").pop();
+  const pageName = url.split("/").slice(0, 3).pop();
 
   // Encontrar la página y su posición
   const currentPage = catalogPages.find((page) => page.link === pageName);
@@ -610,7 +610,7 @@ export function getNextPage(url) {
   }
 
   // Extraer el nombre de la página de la URL
-  const pageName = url.split("/").pop();
+  const pageName = url.split("/").slice(0, 3).pop();
 
   // Encontrar la página y su posición
   const currentPage = catalogPages.find((page) => page.link === pageName);
@@ -655,7 +655,7 @@ export function getPreviousPage(url) {
   }
 
   // Extraer el nombre de la página de la URL
-  const pageName = url.split("/").pop();
+  const pageName = url.split("/").slice(0, 3).pop();
 
   // Encontrar la página y su posición
   const currentPage = catalogPages.find((page) => page.link === pageName);

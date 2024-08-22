@@ -33,6 +33,7 @@
 
 <!-- MOBILE -->
 <div
+  id={page.SKU}
   style="background-color: {bgColor};"
   class="md:hidden pt-10 overflow-x-hidden"
 >
@@ -77,8 +78,7 @@
       )
         ? ' mb-9'
         : ''}"
-      style={page.pageTitle.toLowerCase().includes("duvet") &&
-      currentCatalog !== CATALOGS_ROUTES.INVIERNO
+      style={page.pageResources?.includes("WITHOUT_BORDER")
         ? `border-width: 0px; bottom: 10vh; transform: scale(1.5); height: 30vh;`
         : `bottom: 0px; height: 40vh;`}
     >
@@ -95,8 +95,7 @@
         {:else}
           <OptimImg
             onClick={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
-            imgClass={page.pageTitle.toLowerCase().includes("duvet") &&
-            currentCatalog !== CATALOGS_ROUTES.INVIERNO
+            imgClass={page.pageResources?.includes("WITHOUT_BORDER")
               ? "object-contain w-full h-full"
               : "object-cover w-full h-full"}
             source={`${URLS.fotos}${page.SKU}-3.webp`}
@@ -170,7 +169,7 @@
   {#if LEGALES_SVGS.hasOwnProperty(page.pageTitle
       .replaceAll(" ", "")
       .toUpperCase())}
-    <div>
+    <div class="w-full h-[8vh]">
       <LegalLicenses
         license={page.pageTitle.replaceAll(" ", "").toUpperCase()}
       />
@@ -180,6 +179,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="{page.SKU}d"
   style="background-color: {bgColor};"
   class="hidden md:block w-screen h-screen overflow-hidden"
 >
@@ -277,7 +277,7 @@
         <!-- agrega estos complementos copy -->
         <div class="h-2/6 -ml-[20%]">
           <img
-            src="../images/copys/AgregaComplementosBlack.svg"
+            src="/images/copys/AgregaComplementosBlack.svg"
             loading="eager"
             alt=""
             class="h-full scale-150"

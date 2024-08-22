@@ -305,7 +305,7 @@
       <li class="flex items-center justify-between py-3">
         <div class="flex items-center">
           <img
-            src="../images/icons/adi.svg"
+            src="/images/icons/adi.svg"
             alt=""
             class={adiDoc ? "h-8 w-8" : "hidden"}
           />

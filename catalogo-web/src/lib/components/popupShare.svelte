@@ -353,7 +353,7 @@
                             <span class="block flex-shrink-0">
                               <img
                                 class="h-10 w-10 rounded-full"
-                                src="../images/icons/whats.png"
+                                src="/images/icons/whats.png"
                                 alt=""
                               />
                             </span>
@@ -400,7 +400,7 @@
                             <span class="block flex-shrink-0">
                               <img
                                 class="h-10 w-10 rounded-full"
-                                src="../images/icons/face.png"
+                                src="/images/icons/face.png"
                                 alt=""
                               />
                             </span>
@@ -447,7 +447,7 @@
                             <span class="block flex-shrink-0">
                               <img
                                 class="h-10 w-10 rounded-full"
-                                src="../images/icons/mail.png"
+                                src="/images/icons/mail.png"
                                 alt=""
                               />
                             </span>
@@ -494,7 +494,7 @@
                             <span class="block flex-shrink-0">
                               <img
                                 class="h-10 w-10 rounded-full"
-                                src="../images/icons/apps.png"
+                                src="/images/icons/apps.png"
                                 alt=""
                               />
                             </span>

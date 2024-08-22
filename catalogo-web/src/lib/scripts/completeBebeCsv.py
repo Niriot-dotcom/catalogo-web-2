@@ -214,7 +214,6 @@ vianney_words_remove = [
     'Jgo Espejos ',
     'Portarretratos ',
     
-    # TODO ask Diego
     'Vianney Home Velas 250 Gr ',
     'Difusor 60 Ml ',
     'Protect 125 Ml ',

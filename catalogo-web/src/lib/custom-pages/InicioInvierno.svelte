@@ -3,7 +3,7 @@
   let carousel: any;
 </script>
 
-<div class="flex h-[60vh] bg-white relative">
+<div class="flex h-[60vh] md:h-[80vh] bg-white relative">
   <!-- LOGO INVIERNO -->
   <div class="absolute top-3 left-2 h-[45%] z-10">
     <img
@@ -14,7 +14,7 @@
   </div>
 
   <!-- CAROUSEL -->
-  <div class="h-[60vh] w-full flex items-center">
+  <div class="h-full w-full flex items-center">
     <Carousel
       bind:this={carousel}
       autoplayDuration={0}
@@ -27,7 +27,7 @@
     >
       <!-- IMAGES -->
       {#each { length: 3 } as _, i}
-        <div class="overflow-hidden w-full h-[60vh]">
+        <div class="overflow-hidden w-full h-[60vh] md:h-[80vh]">
           <img
             src="/images/invierno/recursos/INICIO-{i + 1}.webp"
             alt=""

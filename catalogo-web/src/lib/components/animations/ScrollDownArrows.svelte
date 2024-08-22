@@ -6,7 +6,7 @@
 
   onMount(() => {
     const script = document.createElement("script");
-    script.src = "../js/webflow.js";
+    script.src = "/js/webflow.js";
     script.type = "text/javascript";
     script.defer = true;
     document.head.appendChild(script);
@@ -21,7 +21,7 @@
     class="lottie-animation"
     data-w-id="e37d71ea-2f7e-d30b-df49-c890c74b5ee0"
     data-animation-type="lottie"
-    data-src="../documents/9261-scroll-down.json"
+    data-src="/documents/9261-scroll-down.json"
     data-loop="1"
     data-direction="1"
     data-autoplay="1"

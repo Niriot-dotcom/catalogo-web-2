@@ -42,6 +42,8 @@
 
 <!-- MOBILE -->
 <div
+  id={page.SKU}
+  data-visible-id={page.SKU}
   style="background-color: {bgColor};"
   class="md:hidden pt-10 overflow-x-hidden w-screen"
 >
@@ -147,7 +149,7 @@
     <div class="">
       <div class="h-[10vh] pl-[12%]">
         <img
-          src="../images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
+          src="/images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
             ? 'CambiaElLookConEstosComplementos'
             : 'AgregaComplementosBlack'}.svg"
           loading="eager"
@@ -218,6 +220,8 @@
 
 <!-- DESKTOP -->
 <div
+  id="{page.SKU}d"
+  data-visible-id={page.SKU}
   style="background-color: {bgColor};"
   class="hidden md:block w-screen h-screen overflow-hidden"
 >

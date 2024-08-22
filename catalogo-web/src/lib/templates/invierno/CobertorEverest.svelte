@@ -65,7 +65,7 @@
           {typeof page.pageCopys[1] !== "undefined" ? page.pageCopys[1] : ""}
         </div>
         <img
-          src="../images/Flechas.svg"
+          src="/images/Flechas.svg"
           loading="eager"
           alt=""
           class="arrow-image"
@@ -91,7 +91,7 @@
           page.pageDescriptions[2]
         </div>
         <img
-          src="../images/Flechas-1.svg"
+          src="/images/Flechas-1.svg"
           loading="eager"
           alt=""
           class="arrow-image"

@@ -63,6 +63,7 @@
 
 <!-- MOBILE -->
 <div
+  id={page.SKU}
   style="background-color: {bgColor};"
   class="md:hidden overflow-x-hidden w-screen relative"
 >
@@ -204,6 +205,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="{page.SKU}d"
   style="background-color: {bgColor};"
   class="hidden md:block w-screen h-screen overflow-hidden"
 >
@@ -329,7 +331,7 @@
           <div class="w-full text-black absolute bottom-3">
             <div class="w-full h-full">
               <!-- <img
-                src="../images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
+                src="/images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
                   ? 'CambiaElLookConEstosComplementos'
                   : 'AgregaComplementosBlack'}.svg"
                 loading="eager"

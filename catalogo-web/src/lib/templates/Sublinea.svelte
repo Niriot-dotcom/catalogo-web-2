@@ -3,8 +3,6 @@
   import OptimImg from "$lib/components/OptimImg.svelte";
   import LegalLicenses from "$lib/components/communication/LegalLicenses.svelte";
   import ImageComponent from "$lib/components/imageComponent.svelte";
-  import ArrowLeft from "$lib/components/resources/ArrowLeft.svelte";
-  import ArrowRight from "$lib/components/resources/ArrowRight.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import {
     COLORS,
@@ -67,7 +65,7 @@
 
   onMount(() => {
     const script = document.createElement("script");
-    script.src = "../js/customSlider.js";
+    script.src = "/js/customSlider.js";
     script.async = true;
     document.body.appendChild(script);
   });
@@ -92,7 +90,7 @@
           />
         </div>
       {:else}
-        <p class="chavos-3xl xs:chavos-4xl">{title}</p>
+        <p class="chavos-3xl xs:chavos-4xl pb-5">{title}</p>
       {/if}
     {:else}
       <p class="chavos-3xl xs:chavos-4xl">{title}</p>
@@ -103,13 +101,9 @@
     <div
       class="md:hidden relative flex space-x-1 overflow-x-scroll hidden-scroll"
     >
-      <!-- TODO fix position -->
-      <!-- <button class="absolute z-30 left-8 top-1/2">
-        <ArrowRight color="#fff" />
-      </button> -->
-
       {#each groupPages as page, i}
         <div
+          id={page.SKU}
           class="flex flex-col"
           data-visible-id={page.SKU}
           on:click={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
@@ -117,19 +111,19 @@
           <p class="text-black chavos-base pl-5 xs:chavos-xl">
             {page.pageTitle}
           </p>
-          <div class="min-w-[60vw] max-w-[60vw] h-[30vh]">
+          <div
+            data-visible-id={page.SKU}
+            class="min-w-[60vw] max-w-[60vw] h-full"
+          >
             <OptimImg
-              imgClass="object-cover w-full h-full"
+              imgClass="object-{title.toLowerCase() === 'rellenos de cojín'
+                ? 'contain'
+                : 'cover'} w-full h-full"
               source={`${URLS.fotos}${page.SKU}.webp`}
             />
           </div>
         </div>
       {/each}
-
-      <!-- TODO fix position -->
-      <!-- <button class="absolute z-30 right-8 top-1/2">
-        <ArrowLeft color="#fff" />
-      </button> -->
 
       <div class="absolute -bottom-0 w-1/2 h-12 min-h-12 flex right-0">
         <HorizontalScroll />
@@ -138,7 +132,12 @@
   {:else}
     <!-- images -->
     {#each groupPages as page, i}
-      <div class="w-full {groupPages.length > 1 ? 'pt-5' : 'pt-1'}">
+      <div
+        id="section-{title}"
+        class="w-full h-full min-h-fit {groupPages.length > 1
+          ? 'pt-5'
+          : 'pt-1'}"
+      >
         {#if groupPages.length > 1}
           <p class="text-black chavos-base pl-5 xs:chavos-xl">
             {page.pageTitle}
@@ -148,17 +147,25 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
+          id={page.SKU}
           data-visible-id={page.SKU}
           class="w-full grid grid-cols-8 gap-1 overflow-hidden px-3 relative"
-          style="{page.pageResources &&
+          style={`height: ${
+            page.pageResources &&
             page.pageResources.length > 0 &&
-            page.pageResources[0] ===
-              EnumSublinea.INDIVIDUAL} ? 'height: 30vh' : '40vh'"
+            (page.pageResources[0] === EnumSublinea.INDIVIDUAL ||
+              page.pageResources[0] === EnumSublinea.DOBLE)
+              ? "20vh;"
+              : "30vh;"
+          }`}
           on:click={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
         >
           {#if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.INDIVIDUAL}
             <!-- main image -->
-            <div class="col-span-8 h-[30vh]">
+            <div
+              data-visible-id={page.SKU}
+              class="col-span-8 w-full overflow-hidden"
+            >
               <OptimImg
                 imgClass="object-contain w-full h-full"
                 source={`${URLS.fotos}${page.SKU}.webp`}
@@ -168,7 +175,10 @@
               />
             </div>
           {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.DOBLE}
-            <div class="col-span-4 h-[25vh]">
+            <div
+              data-visible-id={page.SKU}
+              class="col-span-4 w-full h-full overflow-hidden"
+            >
               <OptimImg
                 imgClass="object-contain w-full h-full"
                 source={`${URLS.fotos}${page.SKU}.webp`}
@@ -176,7 +186,7 @@
             </div>
 
             <!-- environment image -->
-            <div class="col-span-4 h-[25vh]">
+            <div class="col-span-4 w-full h-full overflow-hidden">
               <OptimImg
                 imgClass="object-contain w-full h-full"
                 source={`${URLS.fotos}${page.SKU}-${
@@ -188,47 +198,54 @@
             </div>
           {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.CUATRO}
             {#each { length: 4 } as _, i}
-              <div class="col-span-4 h-[25vh]">
+              <div
+                data-visible-id={page.SKU}
+                class="col-span-4 h-full overflow-hidden"
+              >
                 <OptimImg
-                  imgClass="object-contain w-full h-full"
+                  imgClass="object-cover w-full h-full"
                   source={`${URLS.fotos}${page.SKU}${i === 0 ? "" : `-${i + 1}`}.webp`}
                 />
               </div>
             {/each}
           {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.DOBLE_VERTICAL}
-            <div class="col-span-8 h-[25vh] w-full">
-              <OptimImg
-                imgClass="object-cover w-full h-full"
-                source={`${URLS.fotos}${page.SKU}.webp`}
-              />
-            </div>
+            <div
+              data-visible-id={page.SKU}
+              class="h-full w-full col-span-8 overflow-hidden flex flex-col space-y-1"
+            >
+              <div class="w-full h-full overflow-hidden">
+                <OptimImg
+                  imgClass="w-full h-full object-contain"
+                  source={`${URLS.fotos}${page.SKU}.webp`}
+                />
+              </div>
 
-            <!-- environment image -->
-            <div class="col-span-8 h-[20vh]">
-              <OptimImg
-                imgClass="w-full h-full {page.pageTitle === 'jgo repisas tonalá'
-                  ? 'object-contain scale-[1]'
-                  : 'object-cover'}"
-                source={`${URLS.fotos}${page.SKU}-${
-                  page.pageResources?.length > 1 && page.pageResources[1] !== ""
-                    ? page.pageResources[1]
-                    : "2"
-                }.webp`}
-              />
+              <div class="w-full h-full overflow-hidden">
+                <OptimImg
+                  imgClass="w-full h-full object-contain"
+                  source={`${URLS.fotos}${page.SKU}-${
+                    page.pageResources?.length > 1 &&
+                    page.pageResources[1] !== ""
+                      ? page.pageResources[1]
+                      : "2"
+                  }.webp`}
+                />
+              </div>
             </div>
           {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.DOBLE_SLIDER}
             <div
+              data-visible-id={page.SKU}
               udesly-before-after="50"
               slider-height="30vh"
-              class="col-span-8 px-5 w-full flex-col justify-center items-center mb-0 mr-0 flex relative overflow-hidden max-w-none"
+              class="col-span-8 px-5 w-full h-full flex-col justify-center items-center mb-0 mr-0 flex relative overflow-hidden max-w-none"
             >
               <ImageComponent
-                classList="z-0 w-auto object-cover absolute"
+                classList="z-0 h-full object-cover absolute"
                 src={`${URLS.fotos}${page.SKU}.webp`}
                 image="right"
               />
               <ImageComponent
-                classList="z-[1] w-auto object-cover absolute"
+                classList="z-[1] h-full object-cover absolute"
                 src={`${URLS.fotos}${page.SKU}-${
                   page.pageResources?.length > 1 && page.pageResources[1] !== ""
                     ? page.pageResources[1]
@@ -255,16 +272,7 @@
           {/if} -->
 
             <!-- main image -->
-            <div class="col-span-5 h-[40vh]">
-              <!-- <OptimImg
-              imgClass="{title === 'Bolsa De Regalo' ||
-              title === 'Caminos De Mesa' ||
-              title === 'Cortinas' ||
-              title === 'Manteles Individuales'
-                ? 'object-cover'
-                : 'object-contain'} w-full h-full"
-              source={`${URLS.fotos}${page.SKU}.webp`}
-            /> -->
+            <div data-visible-id={page.SKU} class="col-span-5 h-full">
               <OptimImg
                 imgClass="{title.toLowerCase() === 'cojín' ||
                 title.toLowerCase() === 'cojínes' ||
@@ -274,7 +282,9 @@
                 title.toLowerCase() === 'cojínes xl' ||
                 title.toLowerCase() === 'cojines xl' ||
                 title.toLowerCase() === 'fundas de cojín' ||
+                title.toLowerCase() === 'funda de cojín' ||
                 title.toLowerCase() === 'fundas de almohada' ||
+                title.toLowerCase() === 'funda de almohada' ||
                 (page.pageResources?.length > 2 &&
                   page.pageResources[2] === 'CONTAIN')
                   ? 'object-contain'
@@ -284,7 +294,7 @@
             </div>
 
             <!-- environment image -->
-            <div class="col-span-3 h-[40vh]">
+            <div class="col-span-3 h-full">
               <OptimImg
                 imgClass="object-cover w-full h-full"
                 source={`${URLS.fotos}${page.SKU}-${
@@ -301,7 +311,7 @@
         {#if LEGALES_SVGS.hasOwnProperty(page.pageTitle
             .replaceAll(" ", "")
             .toUpperCase())}
-          <div>
+          <div class="w-full h-[8vh]">
             <LegalLicenses
               license={page.pageTitle.replaceAll(" ", "").toUpperCase()}
             />
@@ -313,12 +323,12 @@
 </div>
 
 <!-- DESKTOP -->
-<div style="background-color: {bgColor};" class="hidden md:block w-screen">
+<div style="background-color: {bgColor};" class="hidden md:block w-screen p-5">
   <!-- products -->
   {#if groupPages.length === 1}
     <div class="w-full h-full flex space-x-1">
       <!-- main image -->
-      <div class="w-full h-full relative">
+      <div id="{groupPages[0].SKU}d" class="w-full h-full relative">
         <div class="w-full h-full">
           <OptimImg
             onClick={() =>
@@ -371,20 +381,33 @@
       style="background-color: {bgColor};"
       class="text-black mt-24 absolute left-1/2 translate-x-[-50%] flex flex-col text-center justify-center z-10 py-3 px-6"
     >
-      <p class="chavos-4xl xs:chavos-5xl">{title}</p>
-      {#if groupPages[0].pageCopys && groupPages[0].pageCopys.length > 0 && groupPages[0].pageCopys[0] !== ""}
-        <p class="chavos-sm xs:chavos-base"></p>
+      {#if groupPages[0].pageResources.length > 1 && groupPages[0].pageResources[1] !== ""}
+        <div class="w-full h-[10vh] my-3">
+          <img
+            alt={title}
+            src={groupPages[0].pageResources[1]}
+            class="w-full h-full"
+          />
+        </div>
+      {:else}
+        <!-- <p class="chavos-3xl xs:chavos-4xl pb-5">{title}</p> -->
+        <p class="chavos-4xl xs:chavos-5xl">{title}</p>
+        {#if groupPages[0].pageCopys && groupPages[0].pageCopys.length > 0 && groupPages[0].pageCopys[0] !== ""}
+          <p class="chavos-sm xs:chavos-base"></p>
+        {/if}
       {/if}
     </div>
 
     <div class="w-full grid grid-cols-12">
       {#each groupPages as page, i}
         <button
+          id="{page.SKU}d"
           data-visible-id={page.SKU}
           class="w-full h-full relative cursor-pointer {getGridColsConfig(
             groupPages.length,
             i,
           )}"
+          on:click={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
           on:mouseenter={() => handleShowZoom(i, true)}
           on:mouseleave={() => handleShowZoom(i, false)}
         >

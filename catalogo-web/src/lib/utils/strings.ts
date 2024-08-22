@@ -20,3 +20,11 @@ export function deleteSubArray(totalItems: [], item: []) {
     return JSON.stringify(subArray) !== itemString;
   });
 }
+
+export function productTypeToSectionId(productType: string) {
+  return productType
+    .replaceAll(" ", "-")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}

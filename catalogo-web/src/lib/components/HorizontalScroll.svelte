@@ -23,7 +23,7 @@
   <!-- horizontal -->
   <div class="w-full h-full">
     <img
-      src="../images/icons/hand-scroll-black.svg"
+      src="/images/icons/hand-scroll-black.svg"
       loading="eager"
       alt=""
       class="w-full h-full"

@@ -4,14 +4,13 @@
   import ComplementosCopy from "$lib/components/resources/ComplementosCopy.svelte";
   import FormaBebe01 from "$lib/components/resources/FormaBebe01.svelte";
   import FormaBebe02 from "$lib/components/resources/FormaBebe02.svelte";
-  import FormaBebe03 from "$lib/components/resources/FormaBebe03.svelte";
   import FormaBebe04 from "$lib/components/resources/FormaBebe04.svelte";
   import FormaBebe05 from "$lib/components/resources/FormaBebe05.svelte";
   import FormaBebe06 from "$lib/components/resources/FormaBebe06.svelte";
   import FormaBebe07 from "$lib/components/resources/FormaBebe07.svelte";
   import FormaBebe09 from "$lib/components/resources/FormaBebe09.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
-  import { CATALOGS_ROUTES, COLORS, URLS } from "$lib/constants/strings";
+  import { COLORS, URLS } from "$lib/constants/strings";
   import { getCurrentCatalog } from "$lib/utils/navigation";
   import { randomIntFromInterval } from "$lib/utils/strings";
   import { onMount } from "svelte";
@@ -91,16 +90,13 @@
     let randomInt = randomIntFromInterval(1, 10);
     plastaIndex = +randomInt < 10 ? "0" + randomInt : randomInt;
     componentType = "FormaBebe" + plastaIndex;
-    // console.log("componentType: ", componentType);
     loadComponent();
   });
-  // $: {
-  //   loadComponent();
-  // }
 </script>
 
 <!-- MOBILE -->
 <div
+  id={page.SKU}
   style="background-color: {bgColor};"
   class="md:hidden pt-10 overflow-x-hidden relative"
 >
@@ -245,6 +241,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="{page.SKU}d"
   class="hidden md:block w-screen h-screen relative bg-beige bg-no-repeat bg-cover overflow-hidden"
   style={`background-image: url('${URLS.fotos}${page.SKU}-${textureIndex}-1280.webp')`}
 >

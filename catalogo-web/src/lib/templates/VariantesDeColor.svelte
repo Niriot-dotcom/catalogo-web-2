@@ -11,6 +11,7 @@
     URLS,
   } from "$lib/constants/strings";
   import { getCurrentCatalog } from "$lib/utils/navigation";
+  import { productTypeToSectionId } from "$lib/utils/strings";
   import { onMount } from "svelte";
 
   export let visibleIds: string[];
@@ -51,8 +52,9 @@
 <!-- MOBILE -->
 {#if config === EnumVariantesDeColor.HORIZONTAL}
   <div
+    id="section-{productTypeToSectionId(title)}"
     data-visible-id={groupPages[selectedColorIndex].SKU}
-    class="w-full overflow-hidden px-5 relative py-2 bg-beige"
+    class="md:hidden w-full overflow-hidden px-5 relative py-2 bg-beige"
     style={`background-color: ${groupPages[selectedColorIndex].pageResources[0]}`}
   >
     <!-- line header text -->
@@ -120,7 +122,12 @@
                   groupPages[i].pageResources.length > 1
                     ? groupPages[i].pageResources[1]
                     : "#888"
-                }; border: 4px solid #fff;`
+                }; border: 3px solid ${
+                  currentCatalog === CATALOGS_ROUTES.INVIERNO
+                    ? groupPages[selectedColorIndex].pageResources[0] +
+                      "; box-shadow: 0 0 0 1px black;"
+                    : ""
+                }`
               : `background-color: ${
                   groupPages[i].pageResources &&
                   groupPages[i].pageResources.length > 1
@@ -292,7 +299,12 @@
                     groupPages[i].pageResources.length > 1
                       ? groupPages[i].pageResources[1]
                       : "#888"
-                  }; border: 4px solid #fff;`
+                  }; border: 3px solid ${
+                    currentCatalog === CATALOGS_ROUTES.INVIERNO
+                      ? groupPages[selectedColorIndex].pageResources[0] +
+                        "; box-shadow: 0 0 0 1px black;"
+                      : ""
+                  }`
                 : `background-color: ${
                     groupPages[i].pageResources &&
                     groupPages[i].pageResources.length > 1
@@ -316,6 +328,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="section-{productTypeToSectionId(title)}d"
   style={`background-color: ${groupPages[selectedColorIndex].pageResources[0]}`}
   class="hidden md:block w-screen h-screen"
 >
@@ -362,7 +375,7 @@
               <p
                 class="uppercase text-black chavos-sm bg-white px-3 py-1.5 w-fit rounded-2xl absolute bottom-0 right-0 mb-3 mr-3 xs:chavos-base"
               >
-                {groupPages[selectedColorIndex].pageCopys[0]}
+                {@html groupPages[selectedColorIndex].pageCopys[0]}
               </p>
             {/if}
           </div>
@@ -397,7 +410,12 @@
                       groupPages[i].pageResources.length > 1
                         ? groupPages[i].pageResources[1]
                         : "#888"
-                    }; border: 4px solid #fff;`
+                    }; border: 3px solid ${
+                      currentCatalog === CATALOGS_ROUTES.INVIERNO
+                        ? groupPages[selectedColorIndex].pageResources[0] +
+                          "; box-shadow: 0 0 0 1px black;"
+                        : ""
+                    }`
                   : `background-color: ${
                       groupPages[i].pageResources &&
                       groupPages[i].pageResources.length > 1

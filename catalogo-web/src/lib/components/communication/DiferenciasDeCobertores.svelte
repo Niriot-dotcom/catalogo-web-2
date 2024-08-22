@@ -76,11 +76,13 @@
   ];
 </script>
 
-<div class="overflow-hidden w-screen text-black relative bg-[#f3ece7] py-3">
+<div
+  class="overflow-hidden w-screen text-black relative bg-[#f3ece7] py-3 md:py-12"
+>
   <!-- header -->
   <div class="w-full pl-10 flex">
     <!-- text -->
-    <div class="title text-nowrap w-2/3 text-[#a5722f] text-2xl">
+    <div class="title text-nowrap w-2/3 text-[#a5722f] text-2xl md:text-6xl">
       <span class="">Encuentra tu</span>
       <span class="font-bold">cobertor ideal:</span>
     </div>
@@ -134,21 +136,6 @@
             class="title goto-section text-center mb-3 relative"
           >
             {cobertor.title}
-            <!-- <a
-              data-sveltekit-preload-data="tap"
-              data-sveltekit-reload
-              href="cobertor-everest"
-              class="link-block-5 w-inline-block"
-            >
-              <img
-                src="../images/mini-link.svg"
-                loading="lazy"
-                data-w-id="fc43544f-8d87-75cf-a494-d1d7c1345924"
-                alt=""
-                data-tippy-content="Ir a la sección →"
-                class="goto-section"
-              />
-            </a> -->
           </div>
 
           <!-- characteristics -->
@@ -169,42 +156,33 @@
   </div>
 
   <!-- DESKTOP -->
-  <div class="hidden lg:grid grid-cols-3 grid-rows-2 m-5 gap-5">
+  <div class="hidden md:grid grid-cols-3 xl:grid-cols-6">
     {#each cobertoresInfos as cobertor, i}
       <a
         data-sveltekit-preload-data="tap"
         data-sveltekit-reload
         href={cobertor.link}
-        class="link-block-5 w-inline-block text-[#6c5750]"
       >
-        <div class="">
-          <!-- images (product and plasta) -->
-          <div class="md:hidden pt-10 relative">
-            <div class="w-2/3 h-2/3 absolute z-0 bottom-5 -right-1">
+        <div class="text-[#6c5750]">
+          <div class="flex text-center justify-center relative">
+            <div
+              class="absolute z-0 w-2/3 h-2/3 md:bottom-3 md:right-0 lg:bottom-20 lg:right-10 xl:w-2/3 xl:h-2/3 xl:bottom-5 xl:-right-1"
+            >
               <CircleBehind color="#e2d9cf" />
             </div>
 
-            <!-- text header -->
-            <div class="relative w-12 h-12">
+            <div
+              class="w-[30vh] h-[30vh] lg:w-[35vh] lg:h-[35vh] xl:w-[30vh] xl:h-[30vh] z-10"
+            >
               <img
+                class="h-full object-contain"
                 src={`${cobertor.image}-500.webp`}
                 loading="eager"
                 sizes="(max-width: 479px) 92vw, (max-width: 767px) 83vw, 29vw"
                 srcset={`${cobertor.image}-500.webp 500w, ${cobertor.image}-800.webp 800w, ${cobertor.image}-1080.webp 1080w, ${cobertor.image}-1800.webp 1800w`}
                 alt=""
-                class="z-20 inset-0"
               />
             </div>
-            <!-- <div class="relative w-12 h-12">
-              <img
-                src={`${cobertor.image}-500.webp`}
-                loading="eager"
-                sizes="(max-width: 479px) 92vw, (max-width: 767px) 83vw, 29vw"
-                srcset={`${cobertor.image}-500.webp 500w, ${cobertor.image}-800.webp 800w, ${cobertor.image}-1080.webp 1080w, ${cobertor.image}-1800.webp 1800w`}
-                alt=""
-                class="z-20 inset-0"
-              />
-            </div> -->
           </div>
 
           <!-- cobertor title -->
@@ -212,14 +190,20 @@
             data-tippy-content="Ir a la sección →"
             words-slide-from-right=""
             text-split=""
-            class="title goto-section text-center mb-3 relative"
+            class="goto-section text-center mb-3 relative"
           >
-            {cobertor.title}
+            <p class="title text-center leading-none mt-5 lg:text-6xl">
+              {cobertor.title}
+            </p>
           </div>
 
           <!-- characteristics -->
           {#each cobertor.characteristics as characteristic, i}
-            <p class="text-center relative">{@html characteristic}</p>
+            <p
+              class="text-center relative chavos-base md:chavos-xl text-nowrap leading-tight"
+            >
+              {@html characteristic}
+            </p>
           {/each}
         </div>
       </a>

@@ -21,6 +21,7 @@
       if (window.scrollY > 40) {
         window.removeEventListener("scroll", handleScroll);
         tutorialDiv.style.opacity = "0";
+        tutorialDiv.style.display = "none";
       }
     }
   };
@@ -57,7 +58,7 @@
     <div class="w-full h-1/2">
       <div class="w-full h-full">
         <img
-          src="../images/icons/hand-scroll.svg"
+          src="/images/icons/hand-scroll.svg"
           loading="eager"
           alt=""
           class="w-full h-1/2 scale-[0.7]"
@@ -83,7 +84,7 @@
       <div class="w-full h-1/2">
         <div class="w-full h-full">
           <img
-            src="../images/icons/hand-scroll.svg"
+            src="/images/icons/hand-scroll.svg"
             loading="eager"
             alt=""
             class="w-full h-1/2 scale-[0.7] ml-[50px]"
@@ -95,7 +96,7 @@
           <!-- text -->
           <div class="h-full text-center">
             <p class="xs:chavos-lg chavos-base">
-              desliza a los lados o usa las flechas para cambiar de sección
+              usa las flechas para cambiar de sección
             </p>
           </div>
         </div>
@@ -103,7 +104,10 @@
     {/if}
 
     <!-- recommendation text -->
-    <div class="h-full text-center">
+    <div class="h-full text-center w-full flex flex-col space-y-3">
+      <p class="xs:chavos-base chavos-sm">
+        Da click en los productos para ver precios y tallas.
+      </p>
       <p class="xs:chavos-base chavos-sm">
         Se recomienda usar Google Chrome como navegador.
       </p>

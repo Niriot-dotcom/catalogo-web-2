@@ -21,7 +21,7 @@
       currentCatalog = getCurrentCatalog();
     }
     const script = document.createElement("script");
-    script.src = "../js/customSlider.js";
+    script.src = "/js/customSlider.js";
     script.async = true;
     document.body.appendChild(script);
   });
@@ -31,6 +31,7 @@
   .complCurtains[0]}, {page.complPillowCovers[0]}, {page.complCushions[0]}" -->
 <!-- MOBILE -->
 <div
+  id={page.SKU}
   style="background-color: {bgColor};"
   class="md:hidden pt-10 overflow-x-hidden"
 >
@@ -90,7 +91,7 @@
   <div class="mt-3">
     <div class="h-[10vh] pl-[12%]">
       <img
-        src="../images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
+        src="/images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
           ? 'CambiaElLookConEstosComplementos'
           : 'AgregaComplementosBlack'}.svg"
         loading="eager"
@@ -151,6 +152,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="{page.SKU}d"
   style="background-color: {bgColor};"
   class="hidden md:block w-screen h-screen relative"
 >

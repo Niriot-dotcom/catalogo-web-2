@@ -7,18 +7,19 @@
     data-w-id="1f5e2a88-0001-12a7-db16-3b8a774a2252"
     alt=""
     class="image-42"
-    style="mix-blend-mode: darken;" 
+    style="mix-blend-mode: darken;"
   />
 </div>
 
 <div>
   <style>
-    @media (max-width: 600px) { /* Ajusta el 600px según tus necesidades */
-      body{
-    margin-top: 0px !important;
-  }
-  }
-</style>
+    @media (max-width: 600px) {
+      /* Ajusta el 600px según tus necesidades */
+      body {
+        margin-top: 0px !important;
+      }
+    }
+  </style>
 </div>
 
 <div
@@ -80,7 +81,7 @@
   </div>
 </div>
 <div>
-  <script defer src="../js/webflowPage.js"></script>
+  <script defer src="/js/webflowPage.js"></script>
   <script
     defer
     src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=643738a971c1d64a8bd7a90a"
@@ -97,8 +98,6 @@
     defer
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
   ></script>
-  <script defer src="../js/animations.js"></script>
-  <script defer src="../js/webflow.js" type="text/javascript"></script>
+  <script defer src="/js/animations.js"></script>
+  <script defer src="/js/webflow.js" type="text/javascript"></script>
 </div>
-
-

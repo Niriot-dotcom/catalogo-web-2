@@ -54,9 +54,8 @@
 </script>
 
 <!-- MOBILE -->
-
-<!-- 'edredones nuut' header -->
 <div
+  id={page.SKU}
   class="md:hidden overflow-x-hidden"
   style={`background-color: ${bgColor};`}
 >
@@ -110,7 +109,7 @@
       <div class="">
         <div class="h-[10vh] ml-[12%]">
           <img
-            src="../images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
+            src="/images/copys/{currentCatalog === CATALOGS_ROUTES.VIANNEY
               ? 'CambiaElLookConEstosComplementos'
               : 'AgregaComplementosWhite'}.svg"
             loading="eager"
@@ -151,6 +150,7 @@
 
 <!-- DESKTOP -->
 <div
+  id="{page.SKU}d"
   style={`background-color: ${bgColor}; border-color: ${bgColor};`}
   class="hidden md:block w-screen h-screen overflow-hidden border-[32px]"
 >
@@ -172,7 +172,7 @@
       </div>
       <div class="w-full h-full ml-[12%] row-span-1">
         <img
-          src="../images/copys/AgregaComplementosWhite.svg"
+          src="/images/copys/AgregaComplementosWhite.svg"
           loading="eager"
           alt=""
           class="h-full scale-[1.4]"

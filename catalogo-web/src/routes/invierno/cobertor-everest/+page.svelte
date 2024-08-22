@@ -2,9 +2,7 @@
   import ImageComponent from "$lib/components/imageComponent.svelte";
   import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
   import { Catalogs } from "$lib/constants/globalTypes";
-  import { catalogSections } from "$lib/components/currentCatalogPage";
   import { onMount } from "svelte";
   import type { PageData } from "./$types";
   import DiferenciasDeCobertores from "$lib/components/communication/DiferenciasDeCobertores.svelte";
@@ -13,6 +11,7 @@
   import InicioInvierno from "$lib/custom-pages/InicioInvierno.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import AddAll from "$lib/components/AddAll.svelte";
+  import Tutorial from "$lib/components/tutorial.svelte";
 
   function isSafari() {
     return (
@@ -33,23 +32,28 @@
     }
   });
 
-  let visibleIds = [];
-
-  function handleVisibleChange(event) {
+  let visibleIds: string[] = [];
+  let showViewPrices = false;
+  function handleVisibleChange(event: any) {
     visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
   }
-
+  let relatedProducts: string[] = [];
+  let selectedProduct: null | string = null;
   let showPopup = false;
-
-  function show() {
-    showPopup = true;
-  }
 
   export let data: PageData;
   const pages = data.props.pages;
+  const handleImageClick = (sku: string, relatedProds: string[]) => {
+    selectedProduct = sku;
+    relatedProducts = relatedProds;
+  };
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
+
+<!-- TUTORIAL -->
+<Tutorial showHorizontalHand />
 
 <InicioInvierno />
 <div>
@@ -68,8 +72,8 @@
 <EntradaInvierno
   titleSvg="/images/invierno/copys/ENTRADA-P01-EVEREST-TITULO.svg"
   variant={EnumEntradaInvierno.FOTO_VIDEO}
-  titleSize="w-5/6"
-  titlePosition="top-[60vh] left-0"
+  titleSize="w-5/6 md:w-full"
+  titlePosition="top-[60vh] left-0 md:bottom-0"
   storyPosition="top-1/2 left-0 transform -translate-y-1/2"
   bgImage="/images/invierno/portadillas/ENTRADA-P01-EVEREST.webp"
   bgVideo="/images/invierno/portadillas/ENTRADA-P01-EVEREST-VERTICAL.mp4"
@@ -78,11 +82,12 @@
 {#each pages as page, index}
   {#if index % 2 === 0}
     <div
-      id={page.pageTitle}
-      data-visible-id={page.SKU}
-      class="plantilla-everest overflow-x-hidden"
+      id={page.SKU}
+      data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
+        .complCurtains[0]}"
+      class="plantilla-everest"
     >
-      <div class="div-block-31">
+      <div id="{page.SKU}d" class="div-block-31">
         <ImageComponent
           src={`${URLS.fotos}${page.SKU}.webp`}
           loading="eager"
@@ -90,7 +95,7 @@
           classList="image-16"
         />
         <div class="div-block-11">
-          <div class="page-title-box">
+          <div class="page-title-box mt-24">
             <h2 class="heading-4">{page.pageTitle}</h2>
             <p class="paragraph product-detail-subtitle alternate">
               Cobertor Everest
@@ -112,12 +117,32 @@
         <div
           class="background-video-2 w-background-video w-background-video-atom"
         >
-          <ImageComponent
-            src={`${URLS.fotos}${page.SKU}-2.webp`}
-            loading="eager"
-            id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
-            classList="image-16 h-full object-cover"
-          />
+          {#if page.pageVideos.length > 0 && page.pageVideos[0].includes(".mp4")}
+            <video
+              id="03aaf391-43fe-3144-f30a-a9a620053ba8-video"
+              autoplay
+              loop
+              style="background-image:url(&quot;{`${URLS.fotos}${page.SKU}-2.webp`}&quot;)"
+              muted
+              playsinline
+              data-wf-ignore
+              data-object-fit="cover"
+              class="image-28"
+            >
+              <source src={page.pageVideos[0]} data-wf-ignore="true" />
+              <source
+                src={page.pageVideos[0].replace("mp4", "webm")}
+                data-wf-ignore="true"
+              />
+            </video>
+          {:else}
+            <OptimImg
+              source={`${URLS.fotos}${page.SKU}-2.webp`}
+              id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
+              imgClass="image-16 h-full object-cover"
+            />
+          {/if}
+
           <div class="copy-box-everest right">
             <div class="text-block-26">
               {page.pageCopys[0]}
@@ -130,7 +155,7 @@
                 : ""}
             </div> -->
             <img
-              src="../images/Flechas.svg"
+              src="/images/Flechas.svg"
               loading="eager"
               alt=""
               class="arrow-image"
@@ -153,7 +178,7 @@
                 {page.pageCopys[3]}
               </div>
               <img
-                src="../images/Flechas-1.svg"
+                src="/images/Flechas-1.svg"
                 loading="eager"
                 alt=""
                 class="arrow-image mt-0 ml-20"
@@ -174,12 +199,9 @@
               skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]}
             />
           </div>
-          <div
-            on:click={show}
-            style="cursor:pointer;"
-            class="link-block-10 w-inline-block"
-          >
+          <div style="cursor:pointer;" class="link-block-10 w-inline-block">
             <OptimImg
+              onClick={() => handleImageClick(page.complSheets[0], [])}
               imgClass="image-18"
               source={`${URLS.fotos}${page.complSheets[0]}.webp`}
             />
@@ -187,12 +209,9 @@
               agrega <br />estas<br /><strong>sábanas</strong>
             </div>
           </div>
-          <div
-            on:click={show}
-            style="cursor:pointer;"
-            class="link-block-10 w-inline-block"
-          >
+          <div style="cursor:pointer;" class="link-block-10 w-inline-block">
             <OptimImg
+              onClick={() => handleImageClick(page.complCurtains[0], [])}
               imgClass="image-18"
               source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             />
@@ -210,20 +229,41 @@
     </div>
   {:else}
     <div
-      id={page.pageTitle}
-      data-visible-id="{page.SKU},"
-      class="plantilla-everest inversa overflow-x-hidden"
+      id={page.SKU}
+      data-visible-id="{page.SKU}, {page.complSheets[0]}, {page
+        .complCurtains[0]}"
+      class="plantilla-everest inversa"
     >
-      <section class="section-6">
+      <section id="{page.SKU}d" class="section-6">
         <div
           class="background-video-2 w-background-video w-background-video-atom"
         >
-          <ImageComponent
-            src={`${URLS.fotos}${page.SKU}.webp`}
-            loading="eager"
-            id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
-            classList="image-17"
-          />
+          {#if page.pageVideos.length > 0 && page.pageVideos[0].includes(".mp4")}
+            <video
+              id="03aaf391-43fe-3144-f30a-a9a620053ba8-video"
+              autoplay
+              loop
+              style="background-image:url(&quot;{`${URLS.fotos}${page.SKU}-2.webp`}&quot;)"
+              muted
+              playsinline
+              data-wf-ignore
+              data-object-fit="cover"
+              class="image-28"
+            >
+              <source src={page.pageVideos[0]} data-wf-ignore="true" />
+              <source
+                src={page.pageVideos[0].replace("mp4", "webm")}
+                data-wf-ignore="true"
+              />
+            </video>
+          {:else}
+            <OptimImg
+              source={`${URLS.fotos}${page.SKU}.webp`}
+              id="85459054-6751-a5e7-07bf-1e4f3351a2d0"
+              imgClass="image-17"
+            />
+            <!-- imgClass="image-16 h-full object-cover" -->
+          {/if}
 
           <div class="copy-box-everest right">
             <div class="text-block-26">
@@ -237,7 +277,7 @@
                 : ""}
             </div> -->
             <img
-              src="../images/Flechas.svg"
+              src="/images/Flechas.svg"
               loading="eager"
               alt=""
               class="arrow-image"
@@ -260,7 +300,7 @@
                 {page.pageCopys[3]}
               </div>
               <img
-                src="../images/Flechas-1.svg"
+                src="/images/Flechas-1.svg"
                 loading="eager"
                 alt=""
                 class="arrow-image mt-0 ml-20"
@@ -281,12 +321,9 @@
               skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]}
             />
           </div>
-          <div
-            on:click={show}
-            style="cursor:pointer;"
-            class="link-block-10 w-inline-block"
-          >
+          <div style="cursor:pointer;" class="link-block-10 w-inline-block">
             <OptimImg
+              onClick={() => handleImageClick(page.complSheets[0], [])}
               imgClass="image-18"
               source={`${URLS.fotos}${page.complSheets[0]}.webp`}
             />
@@ -294,12 +331,9 @@
               agrega <br />estas<br /><strong>sábanas</strong>
             </div>
           </div>
-          <div
-            on:click={show}
-            style="cursor:pointer;"
-            class="link-block-10 w-inline-block"
-          >
+          <div style="cursor:pointer;" class="link-block-10 w-inline-block">
             <OptimImg
+              onClick={() => handleImageClick(page.complCurtains[0], [])}
               imgClass="image-18"
               source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
             />
@@ -322,7 +356,7 @@
           classList="image-16"
         />
         <div class="div-block-11">
-          <div class="page-title-box">
+          <div class="page-title-box mt-24">
             <h2 class="heading-4">{page.pageTitle}</h2>
             <p class="paragraph product-detail-subtitle alternate">
               Cobertor Everest
@@ -344,10 +378,17 @@
   {/if}
 {/each}
 
-<NavigatorMenu bind:visibleIds bind:showPopup catalog={Catalogs.INVIERNO} />
+<NavigatorMenu
+  catalog={Catalogs.INVIERNO}
+  bind:relatedProducts
+  bind:visibleIds
+  bind:showPopup
+  bind:showViewPrices
+  bind:selectedProduct
+/>
 
 <div>
-  <script defer src="../js/webflowPage.js"></script>
+  <script defer src="/js/webflowPage.js"></script>
   <script
     defer
     src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=643738a971c1d64a8bd7a90a"
@@ -364,6 +405,6 @@
     defer
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
   ></script>
-  <script defer src="../js/animations.js" type="text/javascript"></script>
-  <script defer src="../js/webflow.js" type="text/javascript"></script>
+  <script defer src="/js/animations.js" type="text/javascript"></script>
+  <script defer src="/js/webflow.js" type="text/javascript"></script>
 </div>
