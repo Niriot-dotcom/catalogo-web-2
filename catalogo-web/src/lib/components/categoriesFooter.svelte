@@ -40,7 +40,12 @@
         >
           <div class="category-div">
             <div class="page-details-container categorias-card">
-              <div class="page-title category-title">
+              <div
+                class="page-title category-title"
+                style={catalog === Catalogs.BIASI
+                  ? "font-weight: 500; text-transform: lowercase; color: #d8d5d4; letter-spacing: 0.05em;"
+                  : ""}
+              >
                 {@html category.title}
               </div>
             </div>
@@ -53,11 +58,11 @@
             {/if}
             <img
               src={category.image}
-              loading="lazy"
+              loading="eager"
               width="Auto"
               sizes="100vw"
               alt=""
-              class="image-24 zoomed-in"
+              class="image-24 {catalog !== Catalogs.BIASI ? 'zoomed-in' : ''}"
             />
           </div>
         </a>
