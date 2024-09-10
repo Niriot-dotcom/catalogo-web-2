@@ -4,13 +4,19 @@ import { db } from "$lib/firebase";
 import { BiasiCollectionName } from "$lib/constants/DB";
 import { GROUPED_TEMPLATES } from "$lib/constants/strings";
 import type { DatabasePage } from "$lib/constants/globalTypes";
+import { BiasiMueblesSubsections } from "$lib/constants/subSections";
 
 export type VisibleIds = string[];
 
 export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   const q = query(
     collection(db, BiasiCollectionName),
-    where("productSection", "==", "Página 04 / Organización"),
+    where("productSection", "==", "Página 01 / Muebles"),
+    where(
+      "productType",
+      "in",
+      BiasiMueblesSubsections.find((s) => s.title === "repisas")?.productTypes,
+    ),
     where("pageStatus", "==", "Activa"),
   );
   const querySnapshot = await getDocs(q);

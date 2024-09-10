@@ -9,7 +9,7 @@
   export let paddingTop: string = "5";
   export let activeTitle: string;
   export let activeLink: string;
-  export let breakLine: number;
+  export let breakLine: number = -1;
   export let loadingSection: boolean = true;
   let currentCatalog: string;
 

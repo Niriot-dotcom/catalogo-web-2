@@ -40,3 +40,21 @@ export const InviernoBasicosSubsections = [
     productTypes: ["PROTECTOR DE COLCHÓN"],
   },
 ];
+
+export const BiasiMueblesSubsections = [
+  {
+    title: "mesas",
+    link: "mesas",
+    productTypes: ["MESA", "LIBRERO", "PANEL CABECERA"],
+  },
+  {
+    title: "repisas",
+    link: "repisas",
+    productTypes: ["REPISA"],
+  },
+  {
+    title: "puffs",
+    link: "puffs",
+    productTypes: ["PUFF"],
+  },
+];

@@ -44,10 +44,10 @@
 
 <!-- ENTRADA -->
 <EntradaBiasi
-  titleSvg="/images/biasi/portadillas/12-VIALITE.svg"
+  titleSvg="/images/biasi/portadillas/13-SUPER-PRECIOS.svg"
   titleClasses="bottom-0 right-0"
   circlePosition=""
-  bgVideo="/images/biasi/portadillas/12-VIALITE.gif"
+  bgVideo="/images/biasi/portadillas/13-SUPER-PRECIOS.gif"
 />
 
 {#each pages as page, i}

@@ -10,7 +10,7 @@ export type VisibleIds = string[];
 export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   const q = query(
     collection(db, BiasiCollectionName),
-    where("productSection", "==", "Página 04 / Organización"),
+    where("productSection", "==", "Página 02 / Decoración"),
     where("pageStatus", "==", "Activa"),
   );
   const querySnapshot = await getDocs(q);

@@ -11,6 +11,10 @@
   import FloatingImages from "$lib/templates/floatingImages.svelte";
   import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
   import EntradaBiasi from "$lib/templates/biasi/EntradaBiasi.svelte";
+  import { URLS } from "$lib/constants/strings";
+  import { BiasiMueblesSubsections } from "$lib/constants/subSections";
+  import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
+  import InicioBiasi from "$lib/templates/biasi/InicioBiasi.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -21,6 +25,8 @@
   let relatedProducts: string[] = [];
   let selectedProduct: null | string = null;
   let showPopup = false;
+  let loadingSection: boolean;
+  let currentPageRoute = "muebles";
 
   export let data: PageData;
   const handleImageClick = (sku: string, relatedProds: string[]) => {
@@ -36,6 +42,9 @@
     if (!event.detail[0]) return;
     initAnimates[+event.detail[0].split("-")[1]] = true;
   }
+
+  let activeTitle = BiasiMueblesSubsections[2].title;
+  let activeLink = BiasiMueblesSubsections[2].link;
 </script>
 
 <VisibleDetector on:visibleChange={handleVisibleChange} />
@@ -44,50 +53,63 @@
 
 <!-- ENTRADA -->
 <EntradaBiasi
-  titleSvg="/images/biasi/portadillas/12-VIALITE.svg"
-  titleClasses="bottom-0 right-0"
-  circlePosition=""
-  bgVideo="/images/biasi/portadillas/12-VIALITE.gif"
+  withSectionMenu
+  bgVideo="{URLS.videos}ENTRADA-P01-MUEBLES.gif"
+  titleSvg="/images/biasi/portadillas/01-MUEBLES.svg"
 />
 
-{#each pages as page, i}
-  {#if page.pageTemplate == "floatingImages"}
-    <FloatingImages
-      templateId={`floatingImages-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "imagesAndGrid"}
-    <ImagesAndGrid
-      templateId={`imagesAndGrid-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "mainAndElements"}
-    <MainAndElements
-      templateId={`mainAndElements-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "twoSides"}
-    <TwoSides
-      templateId={`twoSides-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "videoAndGrid"}
-    <VideoAndGrid
-      templateId={`videoAndGrid-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {/if}
-{/each}
+<SectionMenu
+  {currentPageRoute}
+  sections={BiasiMueblesSubsections}
+  bind:activeTitle
+  bind:activeLink
+  bind:loadingSection
+/>
+
+{#if loadingSection}
+  <div class="w-full h-screen bg-beige">
+    <div class="loader"></div>
+  </div>
+{:else}
+  {#each pages as page, i}
+    {#if page.pageTemplate == "floatingImages"}
+      <FloatingImages
+        templateId={`floatingImages-${i.toString()}`}
+        initAnimate={initAnimates[i]}
+        bind:selectedProduct
+        bind:page
+      />
+    {:else if page.pageTemplate == "imagesAndGrid"}
+      <ImagesAndGrid
+        templateId={`imagesAndGrid-${i.toString()}`}
+        initAnimate={initAnimates[i]}
+        bind:selectedProduct
+        bind:page
+      />
+    {:else if page.pageTemplate == "mainAndElements"}
+      <MainAndElements
+        templateId={`mainAndElements-${i.toString()}`}
+        initAnimate={initAnimates[i]}
+        bind:selectedProduct
+        bind:page
+      />
+    {:else if page.pageTemplate == "twoSides"}
+      <TwoSides
+        templateId={`twoSides-${i.toString()}`}
+        initAnimate={initAnimates[i]}
+        bind:selectedProduct
+        bind:page
+      />
+    {:else if page.pageTemplate == "videoAndGrid"}
+      <VideoAndGrid
+        templateId={`videoAndGrid-${i.toString()}`}
+        initAnimate={initAnimates[i]}
+        bind:selectedProduct
+        bind:page
+      />
+    {/if}
+  {/each}
+{/if}
 
 <NavigatorMenu
   catalog={Catalogs.BIASI}

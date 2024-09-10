@@ -14,7 +14,6 @@
   import PopupCompra from "./popupCompra.svelte";
   import PopupAuth from "./popupAuth.svelte";
   import CategoriesFooter from "./categoriesFooter.svelte";
-  import { BiasiFooterHeader } from "$lib/constants/FooterHeaders";
   import { Catalogs } from "$lib/constants/globalTypes";
   import {
     catalogSections,
@@ -284,7 +283,6 @@
           {catalog}
           showOnlyGrid={true}
           categories={catalogSections.BIASI}
-          HeaderComponent={BiasiFooterHeader()}
         />
       {:else if catalog === Catalogs.CHAVOS}
         <!-- <PhotographicIndex {catalog} showOnlyGrid={true} categories={ChavosCategories} /> -->
@@ -703,7 +701,7 @@
   </div>
 </div>
 
-{#if catalog !== Catalogs.INVIERNO}
+{#if catalog !== Catalogs.INVIERNO && catalog !== Catalogs.BIASI}
   <!-- Left navigation button -->
   <div
     class="fixed left-0 top-1/2 transform -translate-y-1/2"
@@ -892,71 +890,69 @@
                       <span class="truncate">Decoradora IA</span>
                     </a> -->
 
-                    {#if catalog === Catalogs.CHAVOS || catalog === Catalogs.VIANNEY || catalog === Catalogs.BEBE || catalog === Catalogs.INVIERNO}
-                      <button
-                        on:click={handleShowSections}
-                        class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
+                    <button
+                      on:click={handleShowSections}
+                      class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
+                    >
+                      <svg
+                        class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke=""
+                        aria-hidden="true"
                       >
-                        <svg
-                          class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke=""
-                          aria-hidden="true"
-                        >
-                          <g>
-                            <path
-                              id="Icon"
-                              d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z"
-                              stroke="#94a3b8"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                          </g>
-                        </svg>
+                        <g>
+                          <path
+                            id="Icon"
+                            d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z"
+                            stroke="#94a3b8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                      </svg>
 
-                        <span class="truncate">Secciones</span>
+                      <span class="truncate">Secciones</span>
 
-                        <div
-                          id="sections-dropdown-arrow"
-                          class="flex items-center justify-center cursor-pointer px-2"
-                        >
-                          <!-- Chevron icon -->
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="w-5 h-5 text-gray-500"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                              clip-rule="evenodd"
-                            />
-                          </svg>
-                        </div>
-                      </button>
                       <div
-                        id="sections-list"
-                        class="mt-3 ml-8 space-y-1"
-                        aria-labelledby="communities-headline"
+                        id="sections-dropdown-arrow"
+                        class="flex items-center justify-center cursor-pointer px-2"
                       >
-                        {#each catalogSections[catalog] as section}
-                          <a
-                            href={section.link}
-                            class="group flex flex-col leading-5 rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                          >
-                            <span class="truncate chavos-bold-sm"
-                              >{section.title.replaceAll("<br />", " ")}</span
-                            >
-                            <span class="truncate chavos-xs"
-                              >{section.subtitle}</span
-                            >
-                          </a>
-                        {/each}
+                        <!-- Chevron icon -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          class="w-5 h-5 text-gray-500"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
                       </div>
-                    {/if}
+                    </button>
+                    <div
+                      id="sections-list"
+                      class="mt-3 ml-8 space-y-1"
+                      aria-labelledby="communities-headline"
+                    >
+                      {#each catalogSections[catalog] as section}
+                        <a
+                          href={section.link}
+                          class="group flex flex-col leading-5 rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        >
+                          <span class="truncate chavos-bold-sm"
+                            >{section.title.replaceAll("<br />", " ")}</span
+                          >
+                          <span class="truncate chavos-xs"
+                            >{section.subtitle}</span
+                          >
+                        </a>
+                      {/each}
+                    </div>
                   </div>
                   <!--
                 <div class="pt-10">
