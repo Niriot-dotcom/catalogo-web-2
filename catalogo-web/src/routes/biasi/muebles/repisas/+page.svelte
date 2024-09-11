@@ -14,7 +14,6 @@
   import { URLS } from "$lib/constants/strings";
   import { BiasiMueblesSubsections } from "$lib/constants/subSections";
   import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
-  import InicioBiasi from "$lib/templates/biasi/InicioBiasi.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
