@@ -1,7 +1,7 @@
 <script lang="ts">
   import ScrollDownArrows from "$lib/components/animations/ScrollDownArrows.svelte";
   import SectionsPaginationArrows from "$lib/components/navigation/SectionsPaginationArrows.svelte";
-  import { COLORS, EnumEntradaInvierno } from "$lib/constants/strings";
+  import { COLORS } from "$lib/constants/strings";
 
   export let bgVideo: string;
   export let titleSvg: string = "";
@@ -15,8 +15,9 @@
   <div class="flex flex-col space-y-1 min-h-fit">
     <div class="relative w-full {withSectionMenu ? 'h-[80vh]' : 'h-[100dvh]'}">
       <img
-        class="w-full h-full object-cover"
-        style="object-position: bottom 0px right -15vw;"
+        class="w-full h-full object-cover {bgVideo.includes('PRECIOS')
+          ? 'sp-offset'
+          : ''}"
         src={bgVideo}
         alt=""
       />
@@ -31,3 +32,15 @@
     </div>
   </div>
 </div>
+
+<style>
+  .sp-offset {
+    object-position: bottom 0px right -15vw;
+  }
+
+  @media (min-width: 640px) {
+    .sp-offset {
+      object-position: 50% 50%;
+    }
+  }
+</style>
