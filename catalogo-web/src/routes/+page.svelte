@@ -1,7 +1,6 @@
 <script lang="ts">
   import SearchPallete from "$lib/components/searchPallete.svelte";
   import PopupCompra from "$lib/components/popupCompra.svelte";
-  import Footer from "$lib/components/footer.svelte";
   import { user } from "$lib/firebase";
   import { fly, fade } from "svelte/transition";
   import { cubicIn, cubicOut } from "svelte/easing";
@@ -18,6 +17,7 @@
     CATALOGS_NAMES,
     URLS,
   } from "$lib/constants/strings";
+  import Footer from "$lib/components/navigation/Footer.svelte";
 
   let showCart = false;
   let showCatalogDetail = false;
