@@ -11,6 +11,7 @@
   import FloatingImages from "$lib/templates/floatingImages.svelte";
   import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
   import EntradaBiasi from "$lib/templates/biasi/EntradaBiasi.svelte";
+  import { URLS } from "$lib/constants/strings";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -44,10 +45,8 @@
 
 <!-- ENTRADA -->
 <EntradaBiasi
+  bgVideo="{URLS.videos}ENTRADA-P11-MASCOTAS.gif"
   titleSvg="/images/biasi/portadillas/11-MASCOTAS.svg"
-  titleClasses="bottom-0 right-0"
-  circlePosition=""
-  bgVideo="/images/biasi/portadillas/11-MASCOTAS.gif"
 />
 
 {#each pages as page, i}

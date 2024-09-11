@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { BiasiPage } from "$lib/constants/BiasiPages";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import Copy from "$lib/components/Copy.svelte";
   import { textToDivId } from "$lib/utils/strings";
+  import type { DatabasePage } from "$lib/constants/globalTypes";
 
-  export let page: BiasiPage;
+  export let page: DatabasePage;
   export let initAnimate = false;
   export let templateId: string;
   export let selectedProduct: null | string;

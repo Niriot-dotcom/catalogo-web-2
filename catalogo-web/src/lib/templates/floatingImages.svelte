@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { BiasiPage } from "$lib/constants/BiasiPages";
+  import type { DatabasePage } from "$lib/constants/globalTypes";
   import BiasiMacetas from "$lib/custom-pages/biasiMacetas.svelte";
   import BiasiUtensilios from "$lib/custom-pages/biasiUtensilios.svelte";
 
-  export let page: BiasiPage;
+  export let page: DatabasePage;
   export let templateId: string;
   export let initAnimate = false;
   export let selectedProduct: null | string;

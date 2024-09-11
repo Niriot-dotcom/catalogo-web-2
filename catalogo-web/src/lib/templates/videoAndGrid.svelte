@@ -1,8 +1,8 @@
 <script lang="ts">
   import OptimImg from "$lib/components/OptimImg.svelte";
-  import type { BiasiPage } from "$lib/constants/BiasiPages";
+  import type { DatabasePage } from "$lib/constants/globalTypes";
 
-  export let page: BiasiPage;
+  export let page: DatabasePage;
   export let initAnimate = false;
   export let templateId: string;
   export let selectedProduct: null | string;
