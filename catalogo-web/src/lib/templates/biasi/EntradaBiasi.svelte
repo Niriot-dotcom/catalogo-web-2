@@ -9,17 +9,23 @@
   export let bgColor: string = COLORS.beige;
 </script>
 
-<!-- MOBILE -->
-<div style="background-color: {bgColor};" class="relative w-screen">
+<div style="background-color: {bgColor};" class="w-screen">
   <SectionsPaginationArrows />
 
-  <div class="flex flex-col space-y-1 min-h-fit relative">
-    <div class="w-full {withSectionMenu ? 'h-[80vh]' : 'h-screen'}">
-      <img class="w-full h-full object-cover" src={bgVideo} alt="" />
+  <div class="flex flex-col space-y-1 min-h-fit">
+    <div class="relative w-full {withSectionMenu ? 'h-[80vh]' : 'h-[100dvh]'}">
+      <img
+        class="w-full h-full object-cover"
+        style="object-position: bottom 0px right -15vw;"
+        src={bgVideo}
+        alt=""
+      />
 
       {#if !bgVideo.includes("PRECIOS")}
-        <div class="z-20 h-5/6 absolute p-3 bottom-0 right-0">
-          <img class="w-full h-full" src={titleSvg} alt="" />
+        <div
+          class="z-20 w-full h-5/6 absolute p-0 bottom-0 right-0 flex items-end justify-end"
+        >
+          <img class="w-fit max-h-full" src={titleSvg} alt="" />
         </div>
       {/if}
     </div>
