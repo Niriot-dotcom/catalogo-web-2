@@ -111,8 +111,8 @@ export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
     title: "Biasi",
     year: "2025",
     url: "/biasi",
-    launchVideo: "",
-    downloadLink: "",
+    launchVideo: "https://youtu.be/WFb0OppuHog",
+    downloadLink: "https://bit.ly/BIASI_25",
     image: "/images/biasi/PortadaBiasi25.jpg",
     description:
       "Hemos reunido una selección exclusiva de artículos que brindarán soluciones prácticas y con estilo para cada habitación de tu hogar, desde la cocina hasta el cuarto de lavado. Descubre con nosotros las últimas tendencias en decoración, ideas innovadoras y prácticas para aprovechar cada rincón de tu hogar y hacerlo un lugar aún más especial.",
