@@ -4,11 +4,11 @@
   import TemplateDetector from "$lib/components/templateDetector.svelte";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
   import type { PageData } from "./$types";
-  import VideoAndGrid from "$lib/templates/videoAndGrid.svelte";
-  import MainAndElements from "$lib/templates/mainAndElements.svelte";
-  import TwoSides from "$lib/templates/twoSides.svelte";
-  import ImagesAndGrid from "$lib/templates/imagesAndGrid.svelte";
-  import FloatingImages from "$lib/templates/floatingImages.svelte";
+  import VideoAndGrid from "$lib/templates/VideoAndGrid.svelte";
+  import MainAndElements from "$lib/templates/MainAndElements.svelte";
+  import TwoSides from "$lib/templates/TwoSides.svelte";
+  import ImagesAndGrid from "$lib/templates/ImagesAndGrid.svelte";
+  import FloatingImages from "$lib/templates/FloatingImages.svelte";
   import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
   import EntradaBiasi from "$lib/templates/biasi/EntradaBiasi.svelte";
   import { URLS } from "$lib/constants/strings";
@@ -71,37 +71,38 @@
   </div>
 {:else}
   {#each pages as page, i}
-    {#if page.pageTemplate == "floatingImages"}
+    {#if page.pageTemplate == "FloatingImages"}
       <FloatingImages
-        templateId={`floatingImages-${i.toString()}`}
+        templateId={`FloatingImages-${i.toString()}`}
         initAnimate={initAnimates[i]}
         bind:selectedProduct
         bind:page
       />
-    {:else if page.pageTemplate == "imagesAndGrid"}
+    {:else if page.pageTemplate == "ImagesAndGrid"}
       <ImagesAndGrid
-        templateId={`imagesAndGrid-${i.toString()}`}
+        templateId={`ImagesAndGrid-${i.toString()}`}
         initAnimate={initAnimates[i]}
         bind:selectedProduct
         bind:page
       />
-    {:else if page.pageTemplate == "mainAndElements"}
+    {:else if page.pageTemplate == "MainAndElements"}
       <MainAndElements
-        templateId={`mainAndElements-${i.toString()}`}
+        templateId={`MainAndElements-${i.toString()}`}
         initAnimate={initAnimates[i]}
+        {handleImageClick}
         bind:selectedProduct
         bind:page
       />
-    {:else if page.pageTemplate == "twoSides"}
+    {:else if page.pageTemplate == "TwoSides"}
       <TwoSides
-        templateId={`twoSides-${i.toString()}`}
+        templateId={`TwoSides-${i.toString()}`}
         initAnimate={initAnimates[i]}
         bind:selectedProduct
         bind:page
       />
-    {:else if page.pageTemplate == "videoAndGrid"}
+    {:else if page.pageTemplate == "VideoAndGrid"}
       <VideoAndGrid
-        templateId={`videoAndGrid-${i.toString()}`}
+        templateId={`VideoAndGrid-${i.toString()}`}
         initAnimate={initAnimates[i]}
         bind:selectedProduct
         bind:page

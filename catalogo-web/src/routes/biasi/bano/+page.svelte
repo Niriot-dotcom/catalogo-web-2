@@ -4,14 +4,15 @@
   import TemplateDetector from "$lib/components/templateDetector.svelte";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
   import type { PageData } from "./$types";
-  import VideoAndGrid from "$lib/templates/videoAndGrid.svelte";
-  import MainAndElements from "$lib/templates/mainAndElements.svelte";
-  import TwoSides from "$lib/templates/twoSides.svelte";
-  import ImagesAndGrid from "$lib/templates/imagesAndGrid.svelte";
-  import FloatingImages from "$lib/templates/floatingImages.svelte";
+  import VideoAndGrid from "$lib/templates/VideoAndGrid.svelte";
+  import MainAndElements from "$lib/templates/MainAndElements.svelte";
+  import TwoSides from "$lib/templates/TwoSides.svelte";
+  import ImagesAndGrid from "$lib/templates/ImagesAndGrid.svelte";
+  import FloatingImages from "$lib/templates/FloatingImages.svelte";
   import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
   import EntradaBiasi from "$lib/templates/biasi/EntradaBiasi.svelte";
   import { URLS } from "$lib/constants/strings";
+  import Sublinea from "$lib/templates/Sublinea.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -49,42 +50,9 @@
   titleSvg="/images/biasi/portadillas/10-BANO.svg"
 />
 
-{#each pages as page, i}
-  {#if page.pageTemplate == "floatingImages"}
-    <FloatingImages
-      templateId={`floatingImages-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "imagesAndGrid"}
-    <ImagesAndGrid
-      templateId={`imagesAndGrid-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "mainAndElements"}
-    <MainAndElements
-      templateId={`mainAndElements-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "twoSides"}
-    <TwoSides
-      templateId={`twoSides-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "videoAndGrid"}
-    <VideoAndGrid
-      templateId={`videoAndGrid-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
+{#each Object.keys(groups) as group, i}
+  {#if groups[group][0].pageTemplate == "Sublinea"}
+    <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
   {/if}
 {/each}
 
