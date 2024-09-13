@@ -30,15 +30,6 @@ export enum Catalogs {
   BEBE = "BEBE",
 }
 
-export enum Templates {
-  twoSides = "twoSides",
-  portadilla = "portadilla",
-  videoAndGrid = "videoAndGrid",
-  imagesAndGrid = "imagesAndGrid",
-  floatingImages = "floatingImages",
-  mainAndElements = "mainAndElements",
-}
-
 export type SectionCategory = {
   link: string;
   title: string;

@@ -4,11 +4,9 @@
   import TemplateDetector from "$lib/components/templateDetector.svelte";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
   import type { PageData } from "./$types";
-  import VideoAndGrid from "$lib/templates/VideoAndGrid.svelte";
   import MainAndElements from "$lib/templates/MainAndElements.svelte";
   import TwoSides from "$lib/templates/TwoSides.svelte";
   import ImagesAndGrid from "$lib/templates/ImagesAndGrid.svelte";
-  import FloatingImages from "$lib/templates/FloatingImages.svelte";
   import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
   import EntradaBiasi from "$lib/templates/biasi/EntradaBiasi.svelte";
   import { URLS } from "$lib/constants/strings";
