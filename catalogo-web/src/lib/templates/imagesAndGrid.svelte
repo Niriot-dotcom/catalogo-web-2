@@ -26,8 +26,8 @@
   }
 
   let hoverCopys: string[] = [
-    page.pageDescriptions.split(/(?<!\\),/)[hoverIndex * 2],
-    page.pageDescriptions.split(/(?<!\\),/)[hoverIndex * 2 + 1],
+    page.pageCopys[hoverIndex * 2],
+    page.pageCopys[hoverIndex * 2 + 1],
   ];
   let hoverImages: string[] = [
     !page.pageImages?.split(",")[hoverIndex * 2].includes("-1280.webp")
@@ -150,9 +150,7 @@
 
                   <div class="px-8 py-5 h-screen flex flex-col col-span-3">
                     <div
-                      class={page.pageCategory === "Vialité"
-                        ? "flex flex-col self-center"
-                        : "flex flex-col"}
+                      class="flex flex-col"
                       style={`color: ${page.pageResources || "#00614B"};`}
                     >
                       <span
@@ -270,9 +268,7 @@
                   handleImageClick(e, page.pageProducts?.split(",")[i])}
               >
                 <div class="relative w-full h-full">
-                  {#if page.pageIcons && page.pageIcons.split(",").length > 0 && page.pageIcons
-                      .split(",")
-                      [i]?.includes(".webp")}
+                  {#if page.pageIcons.length > 0}
                     <div
                       class="w-full h-full absolute flex items-start justify-end pr-1 pt-1"
                     >
@@ -287,7 +283,6 @@
                   <OptimImg
                     imgClass="w-full h-full object-cover rounded-md"
                     source={page.pageMainImage?.split(",")[i]}
-                    loading={"lazy"}
                   />
                 </div>
               </div>

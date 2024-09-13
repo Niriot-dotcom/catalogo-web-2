@@ -156,18 +156,22 @@
             (page.pageResources[0] === EnumSublinea.INDIVIDUAL ||
               page.pageResources[0] === EnumSublinea.DOBLE)
               ? "20vh;"
-              : "30vh;"
+              : page.pageResources[0] === EnumSublinea.FULLSCREEN
+                ? "80vh"
+                : "30vh;"
           }`}
           on:click={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
         >
-          {#if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.INDIVIDUAL}
+          {#if page.pageResources && page.pageResources.length > 0 && (page.pageResources[0] === EnumSublinea.INDIVIDUAL || page.pageResources[0] === EnumSublinea.FULLSCREEN)}
             <!-- main image -->
             <div
               data-visible-id={page.SKU}
               class="col-span-8 w-full overflow-hidden"
             >
               <OptimImg
-                imgClass="object-contain w-full h-full"
+                imgClass="{page.pageResources[0] === EnumSublinea.FULLSCREEN
+                  ? 'object-cover'
+                  : 'object-contain'} w-full h-full"
                 source={`${URLS.fotos}${page.SKU}.webp`}
                 style={page.pageTitle === "Tropical"
                   ? "transform: scale(2)"

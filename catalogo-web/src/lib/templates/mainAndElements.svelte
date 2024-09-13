@@ -3,14 +3,13 @@
   import Copy from "$lib/components/Copy.svelte";
   import { textToDivId } from "$lib/utils/strings";
   import type { DatabasePage } from "$lib/constants/globalTypes";
+  import { URLS } from "$lib/constants/strings";
 
   export let page: DatabasePage;
   export let initAnimate = false;
   export let templateId: string;
   export let selectedProduct: null | string;
-  const handleImageClick = (sku) => {
-    selectedProduct = sku;
-  };
+  export let handleImageClick: (sku: string, relatedProds: string[]) => void;
 
   let showSides = false;
   let showMainImg = false;
@@ -25,13 +24,6 @@
       executeAnimation();
     }
   }
-
-  let imgUrls: string[] = [];
-  imgUrls = [
-    page.pageMainImage!,
-    ...page.pageImages!.split(",").reverse(),
-  ].filter((url) => url !== "");
-  imgUrls = [...new Set(imgUrls)];
 </script>
 
 <div id={page.pageTitle} class="sticky z-10" data-template-id={templateId}>
@@ -60,11 +52,11 @@
                   >
                     <Copy
                       className="font-helvetica flex absolute pl-3 pt-3 text-[1.6vw]"
-                      text={page.pageCopys?.split(/(?<!\\),/)[0]}
+                      text={page.pageCopys[0]}
                     />
                     <OptimImg
                       imgClass="w-full h-full object-cover"
-                      source={`${page.pageImages?.split(",")[2]}`}
+                      source="{URLS.fotos}{page.SKU}.webp"
                       loading={"eager"}
                     />
                   </div>
@@ -73,11 +65,11 @@
                 <div class="row-span-4 w-full h-full">
                   <Copy
                     className="font-helvetica lex absolute pl-3 pt-3 text-[1.6vw]"
-                    text={page.pageCopys?.split(/(?<!\\),/)[1]}
+                    text={page.pageCopys[1]}
                   />
                   <OptimImg
                     imgClass="w-full h-full object-cover"
-                    source={`${page.pageImages?.split(",")[1]}`}
+                    source="{URLS.fotos}{page.SKU}-2.webp"
                     loading={"eager"}
                   />
                 </div>
@@ -87,12 +79,12 @@
                 >
                   <Copy
                     className="font-helvetica flex absolute pl-3 pt-3 text-[1.6vw]"
-                    text={page.pageCopys?.split(/(?<!\\),/)[2]}
+                    text={page.pageCopys[2]}
                   />
 
                   <OptimImg
                     imgClass="w-full h-full object-cover"
-                    source={`${page.pageImages?.split(",")[0]}`}
+                    source="{URLS.fotos}{page.SKU}-3.webp"
                     loading={"eager"}
                   />
                 </div>
@@ -105,7 +97,7 @@
           <div class="flex justify-around">
             <div class="">
               <div class="text-black flex flex-col items-start">
-                {#if page.pageCategory === "Organización"}
+                {#if page.productType === "Organización"}
                   <p
                     text-split=""
                     words-slide-from-right=""
@@ -150,8 +142,7 @@
                 class="items-start"
                 style="width: 100%; flex-wrap: wrap; align-content: start; justify-content: space-evenly; align-items: start; display: flex;"
               >
-                {#each page.pageIcons
-                  .split(",")
+                <!-- {#each page.pageIcons
                   .filter((icon) => icon.includes(".webp")) as icon}
                   <div class="p-1">
                     <img
@@ -161,7 +152,7 @@
                       class="pricing-image-two shadow-two"
                     />
                   </div>
-                {/each}
+                {/each} -->
               </div>
             </div>
           </div>
@@ -171,12 +162,11 @@
             class:fade-enter-active={showMainImg}
             data-visible-id={page.pageProducts?.split(",")[0]}
             on:click|preventDefault={(e) =>
-              handleImageClick(page.pageProducts?.split(",")[0])}
+              handleImageClick(page.SKU, page.pageRelatedProducts)}
           >
             <OptimImg
               imgClass="h-full w-full object-contain scale-[0.8]"
-              source={`${page.pageMainImage}`}
-              loading={"eager"}
+              source="{URLS.fotos}{page.SKU}.webp"
             />
           </div>
         </div>
@@ -206,7 +196,7 @@
                   <div
                     class="grid grid-cols-1 grid-rows-3 gap-3 place-items-center h-full w-full"
                   >
-                    <div
+                    <!-- <div
                       class="w-full h-full border-b-4 border-white pb-4 flex justify-center cursor-pointer"
                       data-visible-id={page.pageRelatedProducts?.split(",")[0]}
                       on:click|preventDefault={(e) =>
@@ -221,9 +211,9 @@
                         }.webp`}
                         loading={"eager"}
                       />
-                    </div>
+                    </div> -->
 
-                    <div
+                    <!-- <div
                       class="h-full cursor-pointer"
                       data-visible-id={page.pageRelatedProducts?.split(",")[1]}
                       on:click|preventDefault={(e) =>
@@ -255,7 +245,7 @@
                         }.webp`}
                         loading={"eager"}
                       />
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -283,7 +273,7 @@
         <div class="flex mx-7 mt-7 mb-3 justify-between relative">
           <div class="flex h-full z-10">
             <div class="text-black flex flex-col">
-              {#if page.pageCategory === "Organización"}
+              {#if page.productType === "Organización"}
                 <span
                   text-split=""
                   words-slide-from-right=""
@@ -312,20 +302,21 @@
               {/if}
             </div>
           </div>
-          <div class="flex h-full justify-end items-start">
-            {#each page.pageIcons
-              .split(",")
-              .filter((icon) => icon.includes(".webp")) as icon}
-              <div class="">
-                <img
-                  src={icon}
-                  loading="eager"
-                  alt=""
-                  class="max-w-[15vw] ml-1"
-                />
-              </div>
-            {/each}
-          </div>
+
+          {#if page.pageIcons.length > 0}
+            <div class="flex h-full justify-end items-start">
+              {#each page.pageIcons as icon}
+                <div class="">
+                  <img
+                    src="{URLS.iconos}{icon}.webp"
+                    loading="eager"
+                    alt=""
+                    class="max-w-[15vw] ml-1"
+                  />
+                </div>
+              {/each}
+            </div>
+          {/if}
         </div>
 
         <!-- main image -->
@@ -346,36 +337,34 @@
             >
               <div
                 class="w-slider-mask relative"
-                data-visible-id="{page.pageProducts?.split(
-                  ',',
-                )}, {page.pageRelatedProducts?.split(',')}"
+                data-visible-id="{page.SKU}, {page.pageRelatedProducts}"
               >
-                {#each imgUrls as imgUrl, index}
-                  {#if imgUrl !== ""}
-                    <div class="w-slide">
-                      <div
-                        class="w-11/12 m-auto"
-                        on:click={() => handleImageClick(page.pageProducts)}
-                      >
-                        <Copy
-                          className="max-w-[80%] font-helvetica flex absolute ml-16 mt-3 text-xl text-start"
-                          text={page.pageCopys?.split(/(?<!\\),/)[index - 1]}
-                        />
-                        <OptimImg
-                          source={imgUrl}
-                          loading="eager"
-                          alt=""
-                          imgClass="w-full h-[40vh] object-contain cursor-pointer"
-                        />
-                      </div>
-                    </div>
-                  {/if}
-                {/each}
+                <!-- {#each imgUrls as imgUrl, index}
+                  {#if imgUrl !== ""} -->
+                <div class="w-slide">
+                  <div
+                    class="w-11/12 m-auto"
+                    on:click={() =>
+                      handleImageClick(page.SKU, page.pageRelatedProducts)}
+                  >
+                    <!-- <Copy
+                      className="max-w-[80%] font-helvetica flex absolute ml-16 mt-3 text-xl text-start"
+                      text={page.pageCopys[index - 1]}
+                    /> -->
+                    <OptimImg
+                      source="{URLS.fotos}{page.SKU}.webp"
+                      alt=""
+                      imgClass="w-full h-[40vh] object-contain cursor-pointer"
+                    />
+                  </div>
+                </div>
+                <!-- {/if}
+                {/each} -->
               </div>
               <div
                 class="team-slider-nav w-slider-nav w-slider-nav-invert w-round w-slider-force-show"
               >
-                {#each imgUrls as imgUrl, index}
+                <!-- {#each imgUrls as imgUrl, index}
                   {#if imgUrl !== ""}
                     <div
                       class="w-slider-dot"
@@ -387,7 +376,7 @@
                       style="margin-left: 6px; margin-right: 6px;"
                     />
                   {/if}
-                {/each}
+                {/each} -->
               </div>
             </div>
           </div>
@@ -403,25 +392,23 @@
           >
             Hace juego con:
           </p>
-          <div class="max-h-[22vh] grid grid-cols-3 grid-rows-1 gap-3 m-3">
-            {#each { length: 3 } as _, i}
-              <div
-                class="h-full w-full"
-                data-visible-id={page.pageComplementProducts?.split(",")[i]}
-              >
-                <OptimImg
-                  imgClass="h-full object-contain cursor-pointer rounded-md"
-                  source={`https://storage.googleapis.com/catalogo-web/biasi/fotos/${
-                    page.pageComplementProducts?.split(",")[i]
-                  }.webp`}
-                  loading={"eager"}
-                  onClick={() =>
-                    handleImageClick(
-                      page.pageComplementProducts?.split(",")[i],
-                    )}
-                />
-              </div>
-            {/each}
+          <div class="max-h-[22vh] grid grid-cols-2 grid-rows-1 gap-3 m-3">
+            <div class="h-full w-full" data-visible-id={page.SKU}>
+              <OptimImg
+                imgClass="h-full object-contain cursor-pointer rounded-md"
+                source="{URLS.fotos}{page.SKU}-2.webp"
+                onClick={() =>
+                  handleImageClick(page.SKU, page.pageRelatedProducts)}
+              />
+            </div>
+            <div class="h-full w-full" data-visible-id={page.SKU}>
+              <OptimImg
+                imgClass="h-full object-contain cursor-pointer rounded-md"
+                source="{URLS.fotos}{page.SKU}-3.webp"
+                onClick={() =>
+                  handleImageClick(page.SKU, page.pageRelatedProducts)}
+              />
+            </div>
           </div>
         </div>
       </div>
