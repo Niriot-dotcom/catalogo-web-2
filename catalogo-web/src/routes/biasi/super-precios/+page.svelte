@@ -47,14 +47,7 @@
 <EntradaBiasi bgVideo="{URLS.videos}ENTRADA-P13-SUPER-PRECIOS.gif" />
 
 {#each pages as page, i}
-  {#if page.pageTemplate == "FloatingImages"}
-    <FloatingImages
-      templateId={`FloatingImages-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "ImagesAndGrid"}
+  {#if page.pageTemplate == "ImagesAndGrid"}
     <ImagesAndGrid
       templateId={`ImagesAndGrid-${i.toString()}`}
       initAnimate={initAnimates[i]}
@@ -72,13 +65,6 @@
   {:else if page.pageTemplate == "TwoSides"}
     <TwoSides
       templateId={`TwoSides-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "VideoAndGrid"}
-    <VideoAndGrid
-      templateId={`VideoAndGrid-${i.toString()}`}
       initAnimate={initAnimates[i]}
       bind:selectedProduct
       bind:page

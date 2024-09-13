@@ -100,13 +100,6 @@
         bind:selectedProduct
         bind:page
       />
-    {:else if page.pageTemplate == "VideoAndGrid"}
-      <VideoAndGrid
-        templateId={`VideoAndGrid-${i.toString()}`}
-        initAnimate={initAnimates[i]}
-        bind:selectedProduct
-        bind:page
-      />
     {/if}
   {/each}
 {/if}
