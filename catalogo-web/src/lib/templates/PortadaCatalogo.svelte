@@ -52,14 +52,13 @@
       <source src="{PORTADA_ROUTE}V.webm" data-wf-ignore="true" />
     </video>
 
-    <!-- TODO -->
-    <!-- <div class="w-screen h-screen flex justify-center items-center">
+    <div class="w-screen h-screen flex justify-center items-center">
       <img
-        class="w-[100vw] sm:w-[50vw] md:w-[60vw] lg:w-[50vw]"
-        src="images/biasi/PortadaLogo.webp"
+        class="w-[90vw] sm:w-[50vw] md:w-[60vw] lg:w-[50vw]"
+        src="{PORTADA_ROUTE}LOGOTIPO.svg"
         alt="PortadaLogo"
       />
-    </div> -->
+    </div>
   </div>
 </div>
 
@@ -86,14 +85,13 @@
       <source src="{PORTADA_ROUTE}H.webm" data-wf-ignore="true" />
     </video>
 
-    <!-- TODO -->
-    <!-- <div class="w-screen h-screen flex justify-center items-center">
+    <div class="w-screen h-screen flex justify-center items-center">
       <img
         class="w-[100vw] sm:w-[50vw] md:w-[60vw] lg:w-[50vw]"
-        src="images/biasi/PortadaLogo.webp"
+        src="{PORTADA_ROUTE}LOGOTIPO.svg"
         alt="PortadaLogo"
       />
-    </div> -->
+    </div>
   </div>
 </div>
 
