@@ -26,7 +26,11 @@
     navigateToNextPage,
     navigateToPreviousPage,
   } from "$lib/utils/navigation";
-  import { CATALOGS_DESCRIPTIONS, URLS } from "$lib/constants/strings";
+  import {
+    CATALOGS_DESCRIPTIONS,
+    CATALOGS_ROUTES,
+    URLS,
+  } from "$lib/constants/strings";
   export let visibleIds: string[] = [];
   export let relatedProducts: string[] = [];
   export let showPopup = false;
@@ -941,7 +945,7 @@
                     >
                       {#each catalogSections[catalog] as section}
                         <a
-                          href={section.link}
+                          href="/{CATALOGS_ROUTES[catalog]}/{section.link}"
                           class="group flex flex-col leading-5 rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                         >
                           <span class="truncate chavos-bold-sm"
