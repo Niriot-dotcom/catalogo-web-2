@@ -10,6 +10,8 @@
   import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
   import EntradaBiasi from "$lib/templates/biasi/EntradaBiasi.svelte";
   import { URLS } from "$lib/constants/strings";
+  import HeaderAndImages from "$lib/templates/HeaderAndImages.svelte";
+  import CobertorAustral from "$lib/templates/invierno/CobertorAustral.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -29,6 +31,7 @@
 
   const pages: DatabasePage[] = data.props.pages;
   const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
+  const pairPages: (DatabasePage | null)[][] = data.props.pairPages;
 
   let initAnimates = Array(pages.length).fill(false);
   function handleTemplateChange(event: any) {
@@ -47,28 +50,28 @@
   titleSvg="/images/biasi/portadillas/05-RECAMARA.svg"
 />
 
-{#each pages as page, i}
-  {#if page.pageTemplate == "ImagesAndGrid"}
-    <ImagesAndGrid
-      templateId={`ImagesAndGrid-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "MainAndElements"}
-    <MainAndElements
-      templateId={`MainAndElements-${i.toString()}`}
-      initAnimate={initAnimates[i]}
+<!-- TODO -->
+<!-- {#each pairPages as pairPage, i}
+  <TwoSides
+    templateId={`TwoSides-${i.toString()}`}
+    initAnimate={initAnimates[i]}
+    {pairPage}
+    {handleImageClick}
+  />
+{/each} -->
+
+{#each pages as page, _}
+  {#if page.pageTemplate == "CobertorAustral"}
+    <CobertorAustral {page} />
+  {/if}
+{/each}
+
+{#each Object.keys(groups) as group, _}
+  {#if groups[group][0].pageTemplate == "HeaderAndImages"}
+    <HeaderAndImages
+      groupPages={groups[group]}
+      title={group}
       {handleImageClick}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "TwoSides"}
-    <TwoSides
-      templateId={`TwoSides-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
     />
   {/if}
 {/each}

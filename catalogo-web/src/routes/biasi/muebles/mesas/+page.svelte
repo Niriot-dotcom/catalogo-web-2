@@ -9,7 +9,7 @@
   import ImagesAndGrid from "$lib/templates/ImagesAndGrid.svelte";
   import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
   import EntradaBiasi from "$lib/templates/biasi/EntradaBiasi.svelte";
-  import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
+  import { URLS } from "$lib/constants/strings";
   import { BiasiMueblesSubsections } from "$lib/constants/subSections";
   import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
 
@@ -72,14 +72,7 @@
   </div>
 {:else}
   {#each pages as page, i}
-    {#if page.pageTemplate == "FloatingImages"}
-      <FloatingImages
-        templateId={`FloatingImages-${i.toString()}`}
-        initAnimate={initAnimates[i]}
-        bind:selectedProduct
-        bind:page
-      />
-    {:else if page.pageTemplate == "ImagesAndGrid"}
+    {#if page.pageTemplate == "ImagesAndGrid"}
       <ImagesAndGrid
         templateId={`ImagesAndGrid-${i.toString()}`}
         initAnimate={initAnimates[i]}

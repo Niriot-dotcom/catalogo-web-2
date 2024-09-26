@@ -47,28 +47,14 @@
   titleSvg="/images/biasi/portadillas/02-DECORACION.svg"
 />
 
-{#each pages as page, i}
-  {#if page.pageTemplate == "ImagesAndGrid"}
+{#each Object.keys(groups) as group, i}
+  {#if groups[group][0].pageTemplate == "ImagesAndGrid"}
     <ImagesAndGrid
+      groupPages={groups[group]}
+      title={group}
       templateId={`ImagesAndGrid-${i.toString()}`}
       initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "MainAndElements"}
-    <MainAndElements
-      templateId={`MainAndElements-${i.toString()}`}
-      initAnimate={initAnimates[i]}
       {handleImageClick}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "TwoSides"}
-    <TwoSides
-      templateId={`TwoSides-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
     />
   {/if}
 {/each}

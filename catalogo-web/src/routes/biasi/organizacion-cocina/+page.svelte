@@ -28,7 +28,7 @@
   };
 
   const pages: DatabasePage[] = data.props.pages;
-  const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
+  const pairPages: (DatabasePage | null)[][] = data.props.pairPages;
 
   let initAnimates = Array(pages.length).fill(false);
   function handleTemplateChange(event: any) {
@@ -47,30 +47,13 @@
   titleSvg="/images/biasi/portadillas/07-ORGANIZACION-COCINA.svg"
 />
 
-{#each pages as page, i}
-  {#if page.pageTemplate == "ImagesAndGrid"}
-    <ImagesAndGrid
-      templateId={`ImagesAndGrid-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "MainAndElements"}
-    <MainAndElements
-      templateId={`MainAndElements-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      {handleImageClick}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "TwoSides"}
-    <TwoSides
-      templateId={`TwoSides-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {/if}
+{#each pairPages as pairPage, i}
+  <TwoSides
+    templateId={`TwoSides-${i.toString()}`}
+    initAnimate={initAnimates[i]}
+    {pairPage}
+    {handleImageClick}
+  />
 {/each}
 
 <NavigatorMenu
