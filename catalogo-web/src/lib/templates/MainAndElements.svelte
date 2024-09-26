@@ -8,7 +8,6 @@
   export let page: DatabasePage;
   export let initAnimate = false;
   export let templateId: string;
-  export let selectedProduct: null | string;
   export let handleImageClick: (sku: string, relatedProds: string[]) => void;
 
   let showSides = false;
@@ -392,18 +391,21 @@
           >
             Hace juego con:
           </p>
-          <div class="max-h-[22vh] grid grid-cols-2 grid-rows-1 gap-3 m-3">
-            <div class="h-full w-full" data-visible-id={page.SKU}>
+          <div
+            data-visible-id={page.SKU}
+            class="max-h-[22vh] grid grid-cols-2 grid-rows-1 gap-3 m-3 place-items-center"
+          >
+            <div class="h-full w-full flex justify-center">
               <OptimImg
-                imgClass="h-full object-contain cursor-pointer rounded-md"
+                imgClass="h-full object-contain cursor-pointer"
                 source="{URLS.fotos}{page.SKU}-2.webp"
                 onClick={() =>
                   handleImageClick(page.SKU, page.pageRelatedProducts)}
               />
             </div>
-            <div class="h-full w-full" data-visible-id={page.SKU}>
+            <div class="h-full w-full flex justify-center">
               <OptimImg
-                imgClass="h-full object-contain cursor-pointer rounded-md"
+                imgClass="h-full object-contain cursor-pointer"
                 source="{URLS.fotos}{page.SKU}-3.webp"
                 onClick={() =>
                   handleImageClick(page.SKU, page.pageRelatedProducts)}

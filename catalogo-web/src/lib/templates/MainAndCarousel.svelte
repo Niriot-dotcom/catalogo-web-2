@@ -4,6 +4,7 @@
   import { textToDivId } from "$lib/utils/strings";
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import { URLS } from "$lib/constants/strings";
+  import HorizontalScroll from "$lib/components/HorizontalScroll.svelte";
 
   export let page: DatabasePage;
   export let initAnimate = false;
@@ -392,7 +393,7 @@
           >
             Hace juego con:
           </p>
-          <div class="max-h-[22vh] grid grid-cols-2 grid-rows-1 gap-3 m-3">
+          <!-- <div class="max-h-[22vh] grid grid-cols-2 grid-rows-1 gap-3 m-3">
             <div class="h-full w-full" data-visible-id={page.SKU}>
               <OptimImg
                 imgClass="h-full object-contain cursor-pointer rounded-md"
@@ -408,6 +409,34 @@
                 onClick={() =>
                   handleImageClick(page.SKU, page.pageRelatedProducts)}
               />
+            </div>
+          </div> -->
+
+          <div
+            class="lg:hidden relative flex space-x-1 overflow-x-scroll hidden-scroll"
+          >
+            {#each ["", "-2", "-3"] as img, i}
+              <div
+                id="{page.SKU}{img}"
+                class="flex flex-col"
+                data-visible-id={page.SKU}
+                on:click={() =>
+                  handleImageClick(page.SKU, page.pageRelatedProducts)}
+              >
+                <div
+                  data-visible-id={page.SKU}
+                  class="min-w-[60vw] max-w-[60vw] h-full"
+                >
+                  <OptimImg
+                    imgClass="object-cover w-full h-full"
+                    source="{URLS.fotos}{page.SKU}{img}.webp"
+                  />
+                </div>
+              </div>
+            {/each}
+
+            <div class="absolute -bottom-0 w-1/2 h-12 min-h-12 flex right-0">
+              <HorizontalScroll />
             </div>
           </div>
         </div>

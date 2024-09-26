@@ -1,22 +1,24 @@
 <script lang="ts">
-  import OptimImg from "$lib/components/OptimImg.svelte";
   import Copy from "$lib/components/Copy.svelte";
-  import { textToDivId } from "$lib/utils/strings";
+  import OptimImg from "$lib/components/OptimImg.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
+  import { URLS } from "$lib/constants/strings";
+  import { toTitleCase } from "$lib/utils/strings";
 
-  export let page: DatabasePage;
   export let initAnimate = false;
   export let templateId: string;
-  export let selectedProduct: null | string;
+  export let handleImageClick: (sku: string, relatedProds: string[]) => void;
+  export let title: string;
+  export let groupPages: DatabasePage[];
 
   let hoverIndex = 0;
-  let numProducts = page.pageProducts?.split(",").length || 0;
+  let numProducts = groupPages.length || 0;
 
   let showImages = Array(numProducts).fill(false);
   const executeAnimation = async () => {
-    for (const [i, _] of page.pageProducts?.split(",")!.entries()!) {
+    for (const [i, _] of groupPages.entries()) {
       showImages[i] = true;
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 100));
     }
   };
   $: {
@@ -25,21 +27,13 @@
     }
   }
 
-  let hoverCopys: string[] = [
-    page.pageCopys[hoverIndex * 2],
-    page.pageCopys[hoverIndex * 2 + 1],
-  ];
+  // let hoverCopys: string[] = [
+  //   groupPages[hoverIndex].pageCopys[hoverIndex * 2],
+  //   groupPages[hoverIndex].pageCopys[hoverIndex * 2 + 1],
+  // ];
   let hoverImages: string[] = [
-    !page.pageImages?.split(",")[hoverIndex * 2].includes("-1280.webp")
-      ? page.pageImages
-          ?.split(",")
-          [hoverIndex * 2].replace(".webp", "-1280.webp")!
-      : page.pageImages?.split(",")[hoverIndex * 2],
-    !page.pageImages?.split(",")[hoverIndex * 2 + 1].includes("-1280.webp")
-      ? page.pageImages
-          ?.split(",")
-          [hoverIndex * 2 + 1].replace(".webp", "-1280.webp")!
-      : page.pageImages?.split(",")[hoverIndex * 2 + 1],
+    `${URLS.fotos}${groupPages[hoverIndex].SKU}-2.webp`,
+    `${URLS.fotos}${groupPages[hoverIndex].SKU}-3.webp`,
   ];
   const handleMouseHover = (e, index: number) => {
     if (index === hoverIndex) {
@@ -47,27 +41,19 @@
     }
     hoverIndex = index;
 
-    let imgSrc0 = page.pageImages?.split(",")[hoverIndex * 2]!;
-    if (!imgSrc0?.includes("-1280.webp")) {
-      imgSrc0 = imgSrc0.replace(".webp", "-1280.webp");
-    }
-    let imgSrc1 = page.pageImages?.split(",")[hoverIndex * 2 + 1]!;
-    if (!imgSrc1?.includes("-1280.webp")) {
-      imgSrc1 = imgSrc1.replace(".webp", "-1280.webp");
-    }
+    let imgSrc0 = `${URLS.fotos}${groupPages[index].SKU}-2.webp`;
+    let imgSrc1 = `${URLS.fotos}${groupPages[index].SKU}-3.webp`;
     hoverImages = [imgSrc0, imgSrc1];
 
-    hoverCopys = [
-      page.pageDescriptions.split(/(?<!\\),/)[hoverIndex * 2],
-      page.pageDescriptions.split(/(?<!\\),/)[hoverIndex * 2 + 1],
-    ];
+    // hoverCopys = [
+    //   groupPages[index].pageCopys,
+    // ];
   };
 
-  const handleImageClick = (e, sku) => {
-    selectedProduct = sku;
-  };
-
-  const CLASSES_BY_ELEMENTS = {
+  const CLASSES_BY_ELEMENTS: Record<
+    number | string,
+    { grid: string; gridHeight?: string }
+  > = {
     3: { grid: "mt-3 grid grid-cols-3 grid-rows-1 gap-3 h-full" },
     4: { grid: "mt-3 grid grid-cols-2 grid-rows-2 gap-3 max-h-[75vh]" },
     5: { grid: "mt-3 grid grid-cols-3 grid-rows-2 gap-3 h-full" },
@@ -112,37 +98,31 @@
                 >
                   <div
                     class="h-screen flex flex-col col-span-2 border-r-4"
-                    style={`border-color: ${page.pageResources || "#00614B"};`}
+                    style={`border-color: ${groupPages[hoverIndex].pageResources[0] || "#00614B"};`}
                   >
                     <div class="flex flex-col w-full pr-10">
                       <div class="">
-                        <Copy
+                        <!-- <Copy
                           className="font-helvetica flex absolute ml-3 mt-3 text-[1.6vw]"
                           text={hoverCopys[0]}
-                        />
+                        /> -->
                         <img
+                          alt="product image"
                           src={hoverImages[0]}
                           class="h-[50vh] w-full object-bottom font-semibold"
-                          style={`object-fit: ${
-                            page.pageProductsImagesPosition?.split(",")[
-                              hoverIndex * 2
-                            ] || ""
-                          }`}
+                          style={"object-fit: contain"}
                         />
                       </div>
                       <div>
-                        <Copy
+                        <!-- <Copy
                           className="font-helvetica flex absolute ml-3 mt-3 text-[1.6vw]"
                           text={hoverCopys[1]}
-                        />
+                        /> -->
                         <img
+                          alt="product image"
                           src={hoverImages[1]}
                           class="h-[50vh] w-full object-bottom"
-                          style={`object-fit: ${
-                            page.pageProductsImagesPosition?.split(",")[
-                              hoverIndex * 2 + 1
-                            ] || "contain"
-                          }`}
+                          style={"object-fit: contain"}
                         />
                       </div>
                     </div>
@@ -151,52 +131,56 @@
                   <div class="px-8 py-5 h-screen flex flex-col col-span-3">
                     <div
                       class="flex flex-col"
-                      style={`color: ${page.pageResources || "#00614B"};`}
+                      style={`color: ${groupPages[hoverIndex].pageResources[0] || "#00614B"};`}
                     >
-                      <span
+                      <!-- <span
                         text-split=""
                         words-slide-from-right=""
                         class="font-helvetica text-base lg:text-3xl md:text-2xl sm:text-xl -mb-0"
-                        >{page.pageSubtitle}</span
-                      >
+                        >{groupPages[hoverIndex].pageSubtitle}</span
+                      > -->
                       <span
                         text-split=""
                         words-slide-from-right=""
                         class="font-bold text-5xl lg:text-8xl md:text-8xl sm:text-7xl font-kepler"
-                        >{page.pageTitle}</span
                       >
-                      <span
+                        {toTitleCase(title)}
+                      </span>
+                      <!-- <span
                         text-split=""
                         words-slide-from-right=""
                         class="font-helvetica text-xs lg:text-xl md:text-lg sm:text-base"
                       >
-                        {page.pageCopys}
-                      </span>
+                        {groupPages[hoverIndex].pageCopys}
+                      </span> -->
                     </div>
 
                     <!-- GRID -->
-                    <div class={CLASSES_BY_ELEMENTS[numProducts].grid}>
-                      {#each { length: numProducts } as _, i}
-                        <div
+                    <div
+                      class={numProducts in CLASSES_BY_ELEMENTS
+                        ? CLASSES_BY_ELEMENTS[numProducts].grid
+                        : "mt-3 grid grid-cols-3 gap-3 w-full h-full"}
+                    >
+                      {#each groupPages as product, i}
+                        <button
                           class="w-full h-full flex items-center justify-center overflow-hidden hover:cursor-pointer opacity-0 transform transition-transform ease-out"
                           class:fade-enter-active={showImages[i]}
                           draggable="true"
-                          data-visible-id={page.pageProducts?.split(",")[i]}
+                          data-visible-id={product.SKU}
                           on:click|preventDefault={(e) =>
                             handleImageClick(
-                              e,
-                              page.pageProducts?.split(",")[i],
+                              product.SKU,
+                              product.pageRelatedProducts,
                             )}
                           on:mouseover|preventDefault={(e) =>
                             handleMouseHover(e, i)}
+                          on:focus
                         >
                           <div class="relative w-full h-full">
-                            {#if page.pageIcons && page.pageIcons.split(",").length > 0 && page.pageIcons
-                                .split(",")
-                                [i]?.includes(".webp")}
+                            {#if product.pageIcons && product.pageIcons.length > 0 && product.pageIcons[0] !== ""}
                               <div class="flex absolute right-0 pr-1 pt-3">
                                 <img
-                                  src={page.pageIcons.split(",")[i]}
+                                  src={URLS.iconos + product.pageIcons[0]}
                                   loading="eager"
                                   alt=""
                                   class="pricing-image-two shadow-two"
@@ -204,15 +188,14 @@
                               </div>
                             {/if}
                             <OptimImg
-                              imgClass="w-full h-full object-cover rounded-md"
+                              imgClass="w-full h-full object-cover"
                               style={numProducts === 4
                                 ? "object-position: bottom;"
-                                : null}
-                              source={page.pageMainImage?.split(",")[i]}
-                              loading={"lazy"}
+                                : ""}
+                              source="{URLS.fotos}{product.SKU}.webp"
                             />
                           </div>
-                        </div>
+                        </button>
                       {/each}
                     </div>
                   </div>
@@ -231,49 +214,57 @@
   class="lg:hidden min-h-screen z-10 bg-white pt-1 sticky"
   data-template-id={templateId}
 >
-  <div id={textToDivId(page.pageTitle)} class="min-h-screen">
+  <div id={title} class="min-h-screen">
     <div class="justify-center items-center block min-h-screen">
       <div class="flex flex-col p-7 min-h-screen">
         <div
           class="flex flex-col"
-          style={`color: ${page.pageResources || "#00614B"};`}
+          style={`color: ${groupPages[0].pageResources[0] || "#00614B"};`}
         >
-          <span
+          <!-- <span
             class="font-helvetica text-base lg:text-4xl md:text-2xl sm:text-xl -mb-2"
-            >{page.pageSubtitle}</span
           >
+            {page.pageSubtitle}
+          </span> -->
           <span
             class="font-bold text-5xl lg:text-9xl md:text-8xl sm:text-7xl font-kepler"
-            >{page.pageTitle}</span
           >
-          <span
+            {toTitleCase(title)}
+          </span>
+          <!-- <span
             class="font-helvetica text-sm lg:text-xl md:text-lg sm:text-base"
           >
             {page.pageCopys}
-          </span>
+          </span> -->
         </div>
 
         <!-- GRID -->
         <div class="">
-          <div class={CLASSES_BY_ELEMENTS[`mobile${numProducts}`].grid}>
-            {#each { length: numProducts } as _, i}
+          <div
+            class={`mobile${numProducts}` in CLASSES_BY_ELEMENTS
+              ? CLASSES_BY_ELEMENTS[`mobile${numProducts}`].grid
+              : "mt-3 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white"}
+          >
+            {#each groupPages as product, i}
               <div
                 style={`height: ${
-                  CLASSES_BY_ELEMENTS[`mobile${numProducts}`].gridHeight
+                  `mobile${numProducts}` in CLASSES_BY_ELEMENTS
+                    ? CLASSES_BY_ELEMENTS[`mobile${numProducts}`].gridHeight
+                    : "100%"
                 };`}
                 class="w-full flex items-center justify-center overflow-hidden opacity-0 transform transition-transform ease-out"
                 class:fade-enter-active={showImages[i]}
-                data-visible-id={page.pageProducts?.split(",")[i]}
+                data-visible-id={product.SKU}
                 on:click|preventDefault={(e) =>
-                  handleImageClick(e, page.pageProducts?.split(",")[i])}
+                  handleImageClick(product.SKU, product.pageRelatedProducts)}
               >
                 <div class="relative w-full h-full">
-                  {#if page.pageIcons.length > 0}
+                  {#if product.pageIcons.length > 0}
                     <div
                       class="w-full h-full absolute flex items-start justify-end pr-1 pt-1"
                     >
                       <img
-                        src={page.pageIcons.split(",")[i]}
+                        src={product.pageIcons[0]}
                         loading="eager"
                         alt=""
                         class="w-full max-w-[30%] object-contain"
@@ -281,8 +272,8 @@
                     </div>
                   {/if}
                   <OptimImg
-                    imgClass="w-full h-full object-cover rounded-md"
-                    source={page.pageMainImage?.split(",")[i]}
+                    imgClass="w-full h-full object-cover"
+                    source="{URLS.fotos}{product.SKU}.webp"
                   />
                 </div>
               </div>
