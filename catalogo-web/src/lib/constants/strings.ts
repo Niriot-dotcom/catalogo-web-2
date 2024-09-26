@@ -95,7 +95,12 @@ export const VIALIFRESH_ICONS = [
   "/images/icons/ICON-CONTROLA-MOH-MENTA.svg",
   "/images/icons/ICON-CONTROLA-ACA-MENTA.svg",
 ];
-export const GROUPED_TEMPLATES = ["Sublinea", "VariantesDeColor"];
+export const GROUPED_TEMPLATES = [
+  "Sublinea",
+  "VariantesDeColor",
+  "HeaderAndImages",
+  "ImagesAndGrid",
+];
 export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
   invierno: {
     title: "Invierno",
