@@ -11,6 +11,7 @@
   export let title: string;
   export let groupPages: DatabasePage[];
 
+  let textColor = "#8f8b8b";
   let hoverIndex = 0;
   let numProducts = groupPages.length || 0;
 
@@ -98,7 +99,7 @@
                 >
                   <div
                     class="h-screen flex flex-col col-span-2 border-r-4"
-                    style={`border-color: ${groupPages[hoverIndex].pageResources[0] || "#00614B"};`}
+                    style={`border-color: ${textColor};`}
                   >
                     <div class="flex flex-col w-full pr-10">
                       <div class="">
@@ -129,10 +130,7 @@
                   </div>
 
                   <div class="px-8 py-5 h-screen flex flex-col col-span-3">
-                    <div
-                      class="flex flex-col"
-                      style={`color: ${groupPages[hoverIndex].pageResources[0] || "#00614B"};`}
-                    >
+                    <div class="flex flex-col" style={`color: ${textColor};`}>
                       <!-- <span
                         text-split=""
                         words-slide-from-right=""
@@ -187,13 +185,26 @@
                                 />
                               </div>
                             {/if}
-                            <OptimImg
-                              imgClass="w-full h-full object-cover"
-                              style={numProducts === 4
-                                ? "object-position: bottom;"
-                                : ""}
-                              source="{URLS.fotos}{product.SKU}.webp"
-                            />
+
+                            <!-- video or foto -->
+                            {#if product.pageVideos.length === 1 && product.pageVideos[0] !== ""}
+                              <video
+                                autoplay
+                                loop
+                                muted
+                                playsinline
+                                src={`${product.pageVideos[0]}`}
+                                class="w-full h-full object-cover"
+                              />
+                            {:else}
+                              <OptimImg
+                                imgClass="w-full h-full object-cover"
+                                style={numProducts === 4
+                                  ? "object-position: bottom;"
+                                  : ""}
+                                source="{URLS.fotos}{product.SKU}.webp"
+                              />
+                            {/if}
                           </div>
                         </button>
                       {/each}
@@ -217,10 +228,7 @@
   <div id={title} class="min-h-screen">
     <div class="justify-center items-center block min-h-screen">
       <div class="flex flex-col p-7 min-h-screen">
-        <div
-          class="flex flex-col"
-          style={`color: ${groupPages[0].pageResources[0] || "#00614B"};`}
-        >
+        <div class="flex flex-col" style={`color: ${textColor};`}>
           <!-- <span
             class="font-helvetica text-base lg:text-4xl md:text-2xl sm:text-xl -mb-2"
           >
@@ -246,7 +254,7 @@
               : "mt-3 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white"}
           >
             {#each groupPages as product, i}
-              <div
+              <button
                 style={`height: ${
                   `mobile${numProducts}` in CLASSES_BY_ELEMENTS
                     ? CLASSES_BY_ELEMENTS[`mobile${numProducts}`].gridHeight
@@ -271,12 +279,25 @@
                       />
                     </div>
                   {/if}
-                  <OptimImg
-                    imgClass="w-full h-full object-cover"
-                    source="{URLS.fotos}{product.SKU}.webp"
-                  />
+
+                  <!-- video or foto -->
+                  {#if product.pageVideos.length === 1 && product.pageVideos[0] !== ""}
+                    <video
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      src={`${product.pageVideos[0]}`}
+                      class="w-full h-full object-cover"
+                    />
+                  {:else}
+                    <OptimImg
+                      imgClass="w-full h-full object-cover"
+                      source="{URLS.fotos}{product.SKU}.webp"
+                    />
+                  {/if}
                 </div>
-              </div>
+              </button>
             {/each}
           </div>
         </div>
