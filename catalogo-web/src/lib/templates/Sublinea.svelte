@@ -172,7 +172,11 @@
                 imgClass="{page.pageResources[0] === EnumSublinea.FULLSCREEN
                   ? 'object-cover'
                   : 'object-contain'} w-full h-full"
-                source={`${URLS.fotos}${page.SKU}.webp`}
+                source={page.pageResources &&
+                page.pageResources.length > 0 &&
+                !isNaN(+page.pageResources[0])
+                  ? `${URLS.fotos}${page.SKU}-${page.pageResources[0]}.webp`
+                  : `${URLS.fotos}${page.SKU}.webp`}
                 style={page.pageTitle === "Tropical"
                   ? "transform: scale(2)"
                   : ""}
