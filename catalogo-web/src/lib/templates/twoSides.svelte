@@ -9,6 +9,7 @@
   export let templateId: string;
   export let handleImageClick: (sku: string, relatedProds: string[]) => void;
 
+  let textColor = "#8f8b8b";
   let showSide = [false, false];
   let showSquares = [false, false];
   const executeAnimation = () => {
@@ -49,7 +50,7 @@
                     {#if page !== null}
                       <div
                         id={page.SKU}
-                        class="w-full h-screen pb-16 lg:pb-3 flex flex-col justify-between inset-0 transform translate-y-full transition-transform duration-500 ease-out"
+                        class="w-full h-screen pb-16 lg:pb-3 flex flex-col space-y-4 justify-between inset-0 transform translate-y-full transition-transform duration-500 ease-out"
                         style={`background-color: ${
                           page.pageResources &&
                           page.pageResources.length > 0 &&
@@ -58,37 +59,26 @@
                             ? page.pageResources[0]
                             : COLORS.beige
                         };
-                        color: #8f8b8b;`}
+                        color: ${textColor};`}
                         class:animate-up={showSide[i]}
                       >
                         <!-- HEADER TEXT -->
                         <div
-                          class="mx-auto w-5/6 text-center pt-20 lg:pt-0 pb-3"
+                          class="mx-auto w-5/6 text-center pt-20 lg:pt-0 pb-3 font-helvetica"
                           style={`color: ${page.pageResources[0]}`}
                         >
-                          <div class="font-helvetica">
-                            <p class="text-xl">
-                              {page.pageSubtitle[i] || ""}
-                            </p>
-                          </div>
-                          <div class="font-helvetica">
-                            <p
-                              class="font-bold font-kepler text-5xl lg:text-6xl"
-                            >
-                              {page.pageTitle || ""}
-                            </p>
-                          </div>
+                          <p class="font-bold font-kepler text-5xl lg:text-6xl">
+                            {page.pageTitle || ""}
+                          </p>
                           <div
                             class="border mx-[13vw] my-3"
-                            style={`border-color: #8f8b8b;`}
+                            style={`border-color: ${textColor};`}
                           />
-                          <div class="font-helvetica">
-                            <Copy
-                              className="text-xl"
-                              text={page.pageCopys[0]}
-                              customColor={page.pageResources[0]}
-                            />
-                          </div>
+                          <Copy
+                            className="text-xl"
+                            text={page.pageCopys[0]}
+                            customColor={page.pageResources[0]}
+                          />
 
                           <!-- ICONS -->
                           <div class="w-full relative flex items-center">
@@ -115,7 +105,7 @@
 
                         <!-- MAIN IMAGE -->
                         <button
-                          class="relative w-full h-full mx-auto max-w-[70%] overflow-hidden border-4 border-red-400"
+                          class="relative w-full h-full mx-auto max-w-[91.6%] overflow-hidden border-4 border-red-400"
                           data-visible-id={page.SKU}
                           on:click|preventDefault={(e) =>
                             handleImageClick(
@@ -124,7 +114,7 @@
                             )}
                         >
                           <OptimImg
-                            imgClass="w-full h-full object-contain"
+                            imgClass="w-full h-full object-cover"
                             source="{URLS.fotos}{page.SKU}.webp"
                           />
                         </button>
