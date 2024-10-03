@@ -792,9 +792,9 @@
         style="background-color: rgba(0, 0, 0, 0.5);"
       >
         <div
-          class="pointer-events-none fixed inset-y-0 left-0 flex max-w-full pr-10"
+          class="pointer-events-none fixed inset-y-0 left-0 flex max-w-full pr-16 sm:pr-0"
         >
-          <div class="pointer-events-auto w-screen sm:max-w-xs max-w-md">
+          <div class="pointer-events-auto w-screen sm:max-w-sm max-w-md">
             <div
               class="flex h-full flex-col overflow-y-scroll bg-white py-0 shadow-xl"
               transition:fly={{ x: -400, duration: 500 }}
@@ -1304,29 +1304,3 @@
     </div>
   </div>
 {/if}
-
-<style>
-  .spinner {
-    padding-left: 2px;
-    padding-right: 2px;
-    margin-left: 4px;
-    margin-right: 4px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid #292929;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    animation: spin 2s linear infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-</style>
