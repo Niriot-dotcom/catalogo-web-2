@@ -5,7 +5,6 @@
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import { COLORS, URLS } from "$lib/constants/strings";
   import Carousel from "svelte-carousel";
-  import ImageDot from "$lib/components/ImageDot.svelte";
 
   export let page: DatabasePage;
   export let initAnimate = false;
