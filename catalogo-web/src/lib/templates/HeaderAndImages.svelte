@@ -30,7 +30,10 @@
           class="div-block-57 rounded-lg relative"
           on:click|preventDefault={(e) =>
             handleImageClick(product.SKU, product.pageRelatedProducts)}
-          style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
+          style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; {groupPages.length ===
+          1
+            ? 'width: 80vh;'
+            : ''}"
         >
           {#if product.pageIcons[i] !== ""}
             <div class="flex absolute z-50 top-0 ml-2 mt-2">

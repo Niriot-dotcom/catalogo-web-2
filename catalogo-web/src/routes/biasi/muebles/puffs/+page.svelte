@@ -13,6 +13,7 @@
   import { BiasiMueblesSubsections } from "$lib/constants/subSections";
   import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
   import MainAndCarousel from "$lib/templates/MainAndCarousel.svelte";
+  import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -69,36 +70,13 @@
     <div class="loader"></div>
   </div>
 {:else}
-  {#each pages as page, i}
-    {#if page.pageTemplate == "ImagesAndGrid"}
-      <ImagesAndGrid
-        templateId={`ImagesAndGrid-${i.toString()}`}
-        initAnimate={initAnimates[i]}
-        bind:selectedProduct
-        bind:page
-      />
-    {:else if page.pageTemplate == "MainAndElements"}
-      <MainAndElements
-        templateId={`MainAndElements-${i.toString()}`}
-        initAnimate={initAnimates[i]}
+  {#each Object.keys(groups) as group, _}
+    {#if groups[group][0].pageTemplate == "VariantesDeColor"}
+      <VariantesDeColor
+        bind:visibleIds
+        groupPages={groups[group]}
+        title={group}
         {handleImageClick}
-        bind:selectedProduct
-        bind:page
-      />
-    {:else if page.pageTemplate == "MainAndCarousel"}
-      <MainAndCarousel
-        templateId={`MainAndCarousel-${i.toString()}`}
-        initAnimate={initAnimates[i]}
-        {handleImageClick}
-        bind:selectedProduct
-        bind:page
-      />
-    {:else if page.pageTemplate == "TwoSides"}
-      <TwoSides
-        templateId={`TwoSides-${i.toString()}`}
-        initAnimate={initAnimates[i]}
-        bind:selectedProduct
-        bind:page
       />
     {/if}
   {/each}

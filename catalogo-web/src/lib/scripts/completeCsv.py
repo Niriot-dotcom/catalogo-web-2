@@ -125,6 +125,8 @@ list_cols = [
 COLORED_TEMPLATES = [
     "Cobertor",
     "JuegoDeEdredon",
+    "MainAndElements",
+    "MainAndCarousel",
     # "EdredonNovo",
     # "CobertorEverest",
     # "CobertorAustral",

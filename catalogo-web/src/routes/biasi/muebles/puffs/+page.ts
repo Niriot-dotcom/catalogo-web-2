@@ -17,7 +17,7 @@ export const load = async ({ params }: Parameters<PageLoad>[0]) => {
       "in",
       BiasiMueblesSubsections.find((s) => s.title === "puffs")?.productTypes,
     ),
-    where("pageStatus", "==", "Activa"),
+    where("pageStatus", "==", true),
   );
   const querySnapshot = await getDocs(q);
   var pages: DatabasePage[] = [];
@@ -37,5 +37,7 @@ export const load = async ({ params }: Parameters<PageLoad>[0]) => {
     }
   }
 
+  console.log("pages: ", pages);
+  console.log("groupedPages: ", groupedPages);
   return { props: { pages, groupedPages } };
 };

@@ -55,6 +55,6 @@ export const BiasiMueblesSubsections = [
   {
     title: "puffs",
     link: "puffs",
-    productTypes: ["PUFF"],
+    productTypes: ["PUFF", "Puff"],
   },
 ];

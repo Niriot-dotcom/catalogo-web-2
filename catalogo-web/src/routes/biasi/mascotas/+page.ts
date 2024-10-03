@@ -31,5 +31,21 @@ export const load = async ({ params }: Parameters<PageLoad>[0]) => {
     }
   }
 
-  return { props: { pages, groupedPages } };
+  let pairPages: (DatabasePage | null)[][] = pages
+    .filter((page) => page.pageTemplate === "TwoSides")
+    .reduce(
+      (acc: (DatabasePage | null)[][], curr: DatabasePage, index: number) => {
+        // If index is even, start a new pair
+        if (index % 2 === 0) {
+          acc.push([curr, null]);
+        } else {
+          // Otherwise, fill the second element of the last pair
+          acc[acc.length - 1][1] = curr;
+        }
+        return acc;
+      },
+      [],
+    );
+
+  return { props: { pages, groupedPages, pairPages } };
 };
