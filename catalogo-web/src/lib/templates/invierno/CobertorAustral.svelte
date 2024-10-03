@@ -80,6 +80,12 @@
                 text-split=""
                 words-slide-from-right=""
                 class="paragraph product-detail-subtitle"
+                style={page.pageResources &&
+                page.pageResources.length > 0 &&
+                page.pageResources[0] !== "#" &&
+                page.pageResources[0] !== ""
+                  ? `color: ${page.pageResources[0]};`
+                  : ""}
               >
                 Cobertor Austral
               </p>

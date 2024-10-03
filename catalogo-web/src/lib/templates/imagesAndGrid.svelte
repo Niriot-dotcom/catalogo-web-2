@@ -55,25 +55,25 @@
     number | string,
     { grid: string; gridHeight?: string }
   > = {
-    3: { grid: "mt-3 grid grid-cols-3 grid-rows-1 gap-3 h-full" },
-    4: { grid: "mt-3 grid grid-cols-2 grid-rows-2 gap-3 max-h-[75vh]" },
-    5: { grid: "mt-3 grid grid-cols-3 grid-rows-2 gap-3 h-full" },
-    6: { grid: "mt-3 grid grid-cols-3 grid-rows-2 gap-3 h-full" },
+    3: { grid: "mt-0 grid grid-cols-3 grid-rows-1 gap-3 h-full" },
+    4: { grid: "mt-0 grid grid-cols-2 grid-rows-2 gap-3 max-h-[75vh]" },
+    5: { grid: "mt-0 grid grid-cols-3 grid-rows-2 gap-3 h-full" },
+    6: { grid: "mt-0 grid grid-cols-3 grid-rows-2 gap-3 h-full" },
 
     mobile3: {
-      grid: "mt-3 grid grid-cols-1 grid-rows-3 gap-3 h-full w-full bg-white",
+      grid: "mt-0 grid grid-cols-1 grid-rows-3 gap-3 h-full w-full bg-white",
       gridHeight: "21vh",
     },
     mobile4: {
-      grid: "mt-3 grid grid-cols-2 grid-rows-2 gap-3 h-full w-full bg-white",
+      grid: "mt-0 grid grid-cols-2 grid-rows-2 gap-3 h-full w-full bg-white",
       gridHeight: "35vh",
     },
     mobile5: {
-      grid: "mt-3 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white",
+      grid: "mt-0 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white",
       gridHeight: "100%",
     },
     mobile6: {
-      grid: "mt-3 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white",
+      grid: "mt-0 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white",
       gridHeight: "100%",
     },
   };
@@ -104,7 +104,7 @@
                     <div class="flex flex-col w-full pr-10">
                       <div class="">
                         <!-- <Copy
-                          className="font-helvetica flex absolute ml-3 mt-3 text-[1.6vw]"
+                          className="font-helvetica flex absolute ml-3 mt-0 text-[1.6vw]"
                           text={hoverCopys[0]}
                         /> -->
                         <img
@@ -116,7 +116,7 @@
                       </div>
                       <div>
                         <!-- <Copy
-                          className="font-helvetica flex absolute ml-3 mt-3 text-[1.6vw]"
+                          className="font-helvetica flex absolute ml-3 mt-0 text-[1.6vw]"
                           text={hoverCopys[1]}
                         /> -->
                         <img
@@ -157,7 +157,7 @@
                     <div
                       class={numProducts in CLASSES_BY_ELEMENTS
                         ? CLASSES_BY_ELEMENTS[numProducts].grid
-                        : "mt-3 grid grid-cols-3 gap-3 w-full h-full"}
+                        : "mt-0 grid grid-cols-3 gap-3 w-full h-full"}
                     >
                       {#each groupPages as product, i}
                         <button
@@ -193,7 +193,7 @@
                                 loop
                                 muted
                                 playsinline
-                                src={`${product.pageVideos[0]}`}
+                                src="{URLS.videos}{product.pageVideos[0]}"
                                 class="w-full h-full object-cover"
                               />
                             {:else}
@@ -221,13 +221,10 @@
 </div>
 
 <!-- MOBILE -->
-<div
-  class="lg:hidden min-h-screen z-10 bg-white pt-1 sticky"
-  data-template-id={templateId}
->
-  <div id={title} class="min-h-screen">
-    <div class="justify-center items-center block min-h-screen">
-      <div class="flex flex-col p-7 min-h-screen">
+<div class="lg:hidden z-10 bg-white pt-1 sticky" data-template-id={templateId}>
+  <div id={title} class="">
+    <div class="justify-center items-center block">
+      <div class="flex flex-col p-7">
         <div class="flex flex-col" style={`color: ${textColor};`}>
           <!-- <span
             class="font-helvetica text-base lg:text-4xl md:text-2xl sm:text-xl -mb-2"
@@ -247,59 +244,57 @@
         </div>
 
         <!-- GRID -->
-        <div class="">
-          <div
-            class={`mobile${numProducts}` in CLASSES_BY_ELEMENTS
-              ? CLASSES_BY_ELEMENTS[`mobile${numProducts}`].grid
-              : "mt-3 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white"}
-          >
-            {#each groupPages as product, i}
-              <button
-                style={`height: ${
-                  `mobile${numProducts}` in CLASSES_BY_ELEMENTS
-                    ? CLASSES_BY_ELEMENTS[`mobile${numProducts}`].gridHeight
-                    : "100%"
-                };`}
-                class="w-full flex items-center justify-center overflow-hidden opacity-0 transform transition-transform ease-out"
-                class:fade-enter-active={showImages[i]}
-                data-visible-id={product.SKU}
-                on:click|preventDefault={(e) =>
-                  handleImageClick(product.SKU, product.pageRelatedProducts)}
-              >
-                <div class="relative w-full h-full">
-                  {#if product.pageIcons.length > 0}
-                    <div
-                      class="w-full h-full absolute flex items-start justify-end pr-1 pt-1"
-                    >
-                      <img
-                        src={product.pageIcons[0]}
-                        loading="eager"
-                        alt=""
-                        class="w-full max-w-[30%] object-contain"
-                      />
-                    </div>
-                  {/if}
+        <div
+          class={`mobile${numProducts}` in CLASSES_BY_ELEMENTS
+            ? CLASSES_BY_ELEMENTS[`mobile${numProducts}`].grid
+            : "mt-0 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white"}
+        >
+          {#each groupPages as product, i}
+            <button
+              style={`height: ${
+                `mobile${numProducts}` in CLASSES_BY_ELEMENTS
+                  ? CLASSES_BY_ELEMENTS[`mobile${numProducts}`].gridHeight
+                  : "100%"
+              };`}
+              class="w-full flex items-center justify-center overflow-hidden opacity-0 transform transition-transform ease-out"
+              class:fade-enter-active={showImages[i]}
+              data-visible-id={product.SKU}
+              on:click|preventDefault={(e) =>
+                handleImageClick(product.SKU, product.pageRelatedProducts)}
+            >
+              <div class="relative w-full h-full">
+                {#if product.pageIcons.length > 0}
+                  <div
+                    class="w-full h-full absolute flex items-start justify-end pr-1 pt-1"
+                  >
+                    <img
+                      src={product.pageIcons[0]}
+                      loading="eager"
+                      alt=""
+                      class="w-full max-w-[30%] object-contain"
+                    />
+                  </div>
+                {/if}
 
-                  <!-- video or foto -->
-                  {#if product.pageVideos.length === 1 && product.pageVideos[0] !== ""}
-                    <video
-                      autoplay
-                      loop
-                      muted
-                      playsinline
-                      src={`${product.pageVideos[0]}`}
-                      class="w-full h-full object-cover"
-                    />
-                  {:else}
-                    <OptimImg
-                      imgClass="w-full h-full object-cover"
-                      source="{URLS.fotos}{product.SKU}.webp"
-                    />
-                  {/if}
-                </div>
-              </button>
-            {/each}
-          </div>
+                <!-- video or foto -->
+                {#if product.pageVideos.length === 1 && product.pageVideos[0] !== ""}
+                  <video
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    src="{URLS.videos}{product.pageVideos[0]}"
+                    class="w-full h-full object-cover"
+                  />
+                {:else}
+                  <OptimImg
+                    imgClass="w-full h-full object-cover"
+                    source="{URLS.fotos}{product.SKU}.webp"
+                  />
+                {/if}
+              </div>
+            </button>
+          {/each}
         </div>
       </div>
     </div>
