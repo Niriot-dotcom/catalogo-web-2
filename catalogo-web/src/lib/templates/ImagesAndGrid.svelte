@@ -55,25 +55,25 @@
     number | string,
     { grid: string; gridHeight?: string }
   > = {
-    3: { grid: "mt-0 grid grid-cols-3 grid-rows-1 gap-3 h-full" },
-    4: { grid: "mt-0 grid grid-cols-2 grid-rows-2 gap-3 max-h-[75vh]" },
-    5: { grid: "mt-0 grid grid-cols-3 grid-rows-2 gap-3 h-full" },
-    6: { grid: "mt-0 grid grid-cols-3 grid-rows-2 gap-3 h-full" },
+    3: { grid: "mt-1 grid grid-cols-3 grid-rows-1 gap-3 h-full" },
+    4: { grid: "mt-1 grid grid-cols-2 grid-rows-2 gap-3 max-h-[75vh]" },
+    5: { grid: "mt-1 grid grid-cols-3 grid-rows-2 gap-3 h-full" },
+    6: { grid: "mt-1 grid grid-cols-3 grid-rows-2 gap-3 h-full" },
 
     mobile3: {
-      grid: "mt-0 grid grid-cols-1 grid-rows-3 gap-3 h-full w-full bg-white",
+      grid: "mt-1 grid grid-cols-1 grid-rows-3 gap-3 h-full w-full bg-white",
       gridHeight: "21vh",
     },
     mobile4: {
-      grid: "mt-0 grid grid-cols-2 grid-rows-2 gap-3 h-full w-full bg-white",
+      grid: "mt-1 grid grid-cols-2 grid-rows-2 gap-3 h-full w-full bg-white",
       gridHeight: "35vh",
     },
     mobile5: {
-      grid: "mt-0 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white",
+      grid: "mt-1 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white",
       gridHeight: "100%",
     },
     mobile6: {
-      grid: "mt-0 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white",
+      grid: "mt-1 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white",
       gridHeight: "100%",
     },
   };
@@ -104,7 +104,7 @@
                     <div class="flex flex-col w-full pr-10">
                       <div class="">
                         <!-- <Copy
-                          className="font-helvetica flex absolute ml-3 mt-0 text-[1.6vw]"
+                          className="font-helvetica flex absolute ml-3 mt-1 text-[1.6vw]"
                           text={hoverCopys[0]}
                         /> -->
                         <img
@@ -116,7 +116,7 @@
                       </div>
                       <div>
                         <!-- <Copy
-                          className="font-helvetica flex absolute ml-3 mt-0 text-[1.6vw]"
+                          className="font-helvetica flex absolute ml-3 mt-1 text-[1.6vw]"
                           text={hoverCopys[1]}
                         /> -->
                         <img
@@ -137,13 +137,25 @@
                         class="font-helvetica text-base lg:text-3xl md:text-2xl sm:text-xl -mb-0"
                         >{groupPages[hoverIndex].pageSubtitle}</span
                       > -->
-                      <span
-                        text-split=""
-                        words-slide-from-right=""
-                        class="font-bold text-5xl lg:text-8xl md:text-8xl sm:text-7xl font-kepler"
-                      >
-                        {toTitleCase(title)}
-                      </span>
+
+                      <!-- if HAY UNA IMAGEN EN PAGE RESOURCES, else SE PONE EL TITULO-->
+                      {#if groupPages[0].pageResources.length > 0 && groupPages[0].pageResources[0] !== ""}
+                        <div class="w-full h-[10vh] my-3">
+                          <img
+                            alt={title}
+                            src={groupPages[0].pageResources[0]}
+                            class="w-full h-full"
+                          />
+                        </div>
+                      {:else}
+                        <span
+                          text-split=""
+                          words-slide-from-right=""
+                          class="font-bold chavos-5xl sm:chavos-7xl md:chavos-8xl"
+                        >
+                          {toTitleCase(title)}
+                        </span>
+                      {/if}
                       <!-- <span
                         text-split=""
                         words-slide-from-right=""
@@ -157,7 +169,7 @@
                     <div
                       class={numProducts in CLASSES_BY_ELEMENTS
                         ? CLASSES_BY_ELEMENTS[numProducts].grid
-                        : "mt-0 grid grid-cols-3 gap-3 w-full h-full"}
+                        : "mt-1 grid grid-cols-3 gap-3 w-full h-full"}
                     >
                       {#each groupPages as product, i}
                         <button
@@ -232,7 +244,7 @@
             {page.pageSubtitle}
           </span> -->
           <span
-            class="font-bold text-5xl lg:text-9xl md:text-8xl sm:text-7xl font-kepler"
+            class="font-bold chavos-5xl sm:chavos-7xl md:chavos-8xl lg:chavos-9xl"
           >
             {toTitleCase(title)}
           </span>
@@ -247,7 +259,7 @@
         <div
           class={`mobile${numProducts}` in CLASSES_BY_ELEMENTS
             ? CLASSES_BY_ELEMENTS[`mobile${numProducts}`].grid
-            : "mt-0 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white"}
+            : "mt-1 grid grid-cols-2 grid-rows-3 gap-3 h-full w-full bg-white"}
         >
           {#each groupPages as product, i}
             <button

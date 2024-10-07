@@ -447,7 +447,7 @@ def process_csv_file(limit, filename):
                 row['pageResources'] = get_numeric_array(row['pageResources'], True, sku=row['SKU'], pageTemplate=row['pageTemplate'])
                 row['pageKeywords'] = get_numeric_array(row['pageKeywords'], keyword=keyw)
                 row['pageVideos'] = get_numeric_array(row['pageVideos'])
-                row['pageStatus'] = row['pageStatus'] if row['pageStatus'] else 'Activa'
+                row['pageStatus'] = row['pageStatus'] if row['pageStatus'] else True
                 row['pageIcons'] = get_numeric_array(row['pageIcons'])
 
                 # uppercase to capital first letter
