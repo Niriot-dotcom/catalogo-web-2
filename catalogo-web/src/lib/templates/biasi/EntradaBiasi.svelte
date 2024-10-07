@@ -9,7 +9,7 @@
   export let bgColor: string = COLORS.beige;
 </script>
 
-<div style="background-color: {bgColor};" class="w-screen">
+<div style="background-color: {bgColor};" class="w-screen relative">
   <SectionsPaginationArrows />
 
   <div class="flex flex-col space-y-1 min-h-fit">
