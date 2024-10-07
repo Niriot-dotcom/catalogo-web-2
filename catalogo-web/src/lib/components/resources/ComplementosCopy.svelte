@@ -26,6 +26,15 @@
     alt=""
     class="h-full scale-[0.8]"
   />
-  <!-- {:else if catalog === CATALOGS_ROUTES.BEBE} -->
-  <!-- {:else} -->
+  <!-- {:else if catalog === CATALOGS_ROUTES.BEBE}
+  <img
+    src="/images/copys/AgregaComplementosBlack.svg"
+    loading="eager"
+    alt=""
+    class="h-full scale-[0.8]"
+  /> -->
+{:else}
+  <div class="w-full h-full flex text-center justify-center m-auto">
+    <p class="text-black chavos-3xl text-center m-auto">complementa con:</p>
+  </div>
 {/if}

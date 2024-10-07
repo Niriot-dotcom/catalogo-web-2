@@ -133,7 +133,11 @@
   {#if !page.pageResources?.includes("NADA")}
     <!-- complementos -->
     <div class="">
-      <div class="h-[10vh] pl-[12%] flex justify-between">
+      <div
+        class="h-[10vh] pl-[{currentCatalog === CATALOGS_ROUTES.VIANNEY
+          ? '0%'
+          : '12%'}] flex justify-between"
+      >
         <ComplementosCopy catalog={currentCatalog} />
 
         <AddAll skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]} />

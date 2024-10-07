@@ -1,5 +1,6 @@
+<!-- TODO animations not working -->
 <section id="inicio" class="introducci-n mt-16">
-  <div class="div-block">
+  <div class="div-block h-screen">
     <!-- <section class="categorias">
       <div class="w-full flex xs:p-16 sm:p-20 md:p-20 lg:p-40 p-10">
         <div class="text-black flex flex-col font-helvetica items-end w-full">
@@ -132,10 +133,10 @@
     </div>
 
     <!-- MOBILE -->
-    <div class="lg:hidden sticky-container primary-container">
-      <div class="sticky-parent primary-sticky">
-        <div class="card-parent pillows-background">
-          <section class="hero-image-left">
+    <div class="lg:hidden sticky-container primary-container h-screen static">
+      <div class="sticky-parent primary-sticky h-screen static">
+        <div class="card-parent pillows-background h-screen">
+          <section class="hero-image-left h-screen">
             <div class="background-image bg-center"></div>
 
             <div

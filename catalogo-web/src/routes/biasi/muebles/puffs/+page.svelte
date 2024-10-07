@@ -14,6 +14,7 @@
   import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
   import MainAndCarousel from "$lib/templates/MainAndCarousel.svelte";
   import VariantesDeColor from "$lib/templates/VariantesDeColor.svelte";
+  import InicioBiasi from "$lib/templates/biasi/InicioBiasi.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -49,6 +50,8 @@
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 <PvisibleDetector bind:visibleIds />
 <TemplateDetector on:templateChange={handleTemplateChange} />
+
+<InicioBiasi />
 
 <!-- ENTRADA -->
 <EntradaBiasi

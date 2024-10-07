@@ -77,7 +77,7 @@
   class="md:hidden py-0 overflow-x-hidden"
 >
   <!-- text header -->
-  <div class="text-black px-5 mt-5">
+  <div class="text-black px-5 mt-12">
     <!-- LOGO -->
     {#if groupPages[0].pageResources[0] === EnumSublinea.CAROUSEL_HORIZONTAL}
       <!-- if HAY UNA IMAGEN EN PAGE RESOURCES, else SE PONE EL TITULO-->

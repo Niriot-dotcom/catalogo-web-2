@@ -13,6 +13,7 @@
   import { BiasiMueblesSubsections } from "$lib/constants/subSections";
   import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
   import InicioBiasi from "$lib/templates/biasi/InicioBiasi.svelte";
+  import Tutorial from "$lib/components/tutorial.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -49,7 +50,8 @@
 <PvisibleDetector bind:visibleIds />
 <TemplateDetector on:templateChange={handleTemplateChange} />
 
-<!-- TODO animations not working -->
+<Tutorial showHorizontalHand />
+
 <InicioBiasi />
 
 <!-- ENTRADA -->

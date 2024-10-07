@@ -12,6 +12,7 @@
   import { URLS } from "$lib/constants/strings";
   import { BiasiMueblesSubsections } from "$lib/constants/subSections";
   import SectionMenu from "$lib/components/navigation/SectionMenu.svelte";
+  import InicioBiasi from "$lib/templates/biasi/InicioBiasi.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -47,6 +48,8 @@
 <VisibleDetector on:visibleChange={handleVisibleChange} />
 <PvisibleDetector bind:visibleIds />
 <TemplateDetector on:templateChange={handleTemplateChange} />
+
+<InicioBiasi />
 
 <!-- ENTRADA -->
 <EntradaBiasi

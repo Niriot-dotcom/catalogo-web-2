@@ -283,36 +283,16 @@
   >
     <div class="div-block-28">
       {#if catalog === Catalogs.BIASI}
-        <CategoriesFooter
-          {catalog}
-          showOnlyGrid={true}
-          categories={catalogSections.BIASI}
-        />
+        <CategoriesFooter {catalog} categories={catalogSections.BIASI} />
       {:else if catalog === Catalogs.CHAVOS}
         <!-- <PhotographicIndex {catalog} showOnlyGrid={true} categories={ChavosCategories} /> -->
-        <CategoriesFooter
-          {catalog}
-          showOnlyGrid={true}
-          categories={catalogSections.CHAVOS}
-        />
+        <CategoriesFooter {catalog} categories={catalogSections.CHAVOS} />
       {:else if catalog === Catalogs.VIANNEY}
-        <CategoriesFooter
-          {catalog}
-          showOnlyGrid={true}
-          categories={catalogSections.VIANNEY}
-        />
+        <CategoriesFooter {catalog} categories={catalogSections.VIANNEY} />
       {:else if catalog === Catalogs.BEBE}
-        <CategoriesFooter
-          {catalog}
-          showOnlyGrid={true}
-          categories={catalogSections.BEBE}
-        />
+        <CategoriesFooter {catalog} categories={catalogSections.BEBE} />
       {:else if catalog === Catalogs.INVIERNO}
-        <CategoriesFooter
-          {catalog}
-          showOnlyGrid={true}
-          categories={catalogSections.INVIERNO}
-        />
+        <CategoriesFooter {catalog} categories={catalogSections.INVIERNO} />
       {/if}
     </div>
   </div>
@@ -1164,7 +1144,8 @@
                     <button
                       on:click={shareOnWhatsApp}
                       type="submit"
-                      class="bg-green-600 hover:bg-green-800 w-full rounded-md border border-transparent fill-white px-4 py-3 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-vianney-500 focus:ring-offset-2 focus:ring-offset-gray-50 flex items-center justify-center space-x-2"
+                      disabled={cartItems.length <= 0}
+                      class="bg-green-600 hover:bg-green-800 disabled:bg-green-300 w-full rounded-md border border-transparent fill-white px-4 py-3 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-vianney-500 focus:ring-offset-2 focus:ring-offset-gray-50 flex items-center justify-center space-x-2"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

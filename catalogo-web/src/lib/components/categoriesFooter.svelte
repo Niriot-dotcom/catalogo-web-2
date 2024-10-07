@@ -3,20 +3,13 @@
   import { Catalogs, type SectionCategory } from "$lib/constants/globalTypes";
 
   export let categories: SectionCategory[];
-  export let showOnlyGrid = false;
   export let HeaderComponent: string | undefined = undefined;
   export let catalog: string;
 
   categories = categories.filter((category) => category.title !== "");
 </script>
 
-<section
-  class={showOnlyGrid ? "z-10 sticky top-0" : "z-10 sticky top-0 bg-white"}
->
-  {#if !showOnlyGrid && HeaderComponent}
-    {@html HeaderComponent}
-  {/if}
-
+<section class="z-10 sticky top-0">
   <div
     id="w-node-f5ab1b35-365f-ca7a-3311-3ceb3b540049-3b540049"
     class="w-layout-layout quick-stack-2 desktop wf-layout-layout"
@@ -24,11 +17,9 @@
     {#each categories as category, index}
       <div
         id="w-node-f5ab1b35-365f-ca7a-3311-3ceb3b54004a-3b540049"
-        class={$sveltePage.url.pathname + $sveltePage.url.hash ===
+        class={$sveltePage.url.pathname.split("/").slice(0, 3).join("/") ===
         "/" + catalog.toLowerCase() + "/" + category.link
-          ? showOnlyGrid
-            ? "w-layout-cell cell scale-90 border-[8px] border-[#fff]"
-            : "w-layout-cell cell scale-90 border-[8px] border-vianney-600 rounded-[14px]"
+          ? "w-layout-cell cell scale-90 border-[8px] border-[#fff]"
           : "w-layout-cell cell"}
       >
         <a
