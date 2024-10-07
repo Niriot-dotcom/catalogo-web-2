@@ -50,15 +50,14 @@
   titleSvg="/images/biasi/portadillas/05-RECAMARA.svg"
 />
 
-<!-- TODO -->
-<!-- {#each pairPages as pairPage, i}
+{#each pairPages as pairPage, i}
   <TwoSides
     templateId={`TwoSides-${i.toString()}`}
     initAnimate={initAnimates[i]}
     {pairPage}
     {handleImageClick}
   />
-{/each} -->
+{/each}
 
 {#each pages as page, _}
   {#if page.pageTemplate == "CobertorAustral"}
@@ -66,11 +65,19 @@
   {/if}
 {/each}
 
-{#each Object.keys(groups) as group, _}
+{#each Object.keys(groups) as group, i}
   {#if groups[group][0].pageTemplate == "HeaderAndImages"}
     <HeaderAndImages
       groupPages={groups[group]}
       title={group}
+      {handleImageClick}
+    />
+  {:else if groups[group][0].pageTemplate == "ImagesAndGrid"}
+    <ImagesAndGrid
+      groupPages={groups[group]}
+      title={group}
+      templateId={`ImagesAndGrid-${i.toString()}`}
+      initAnimate={initAnimates[i]}
       {handleImageClick}
     />
   {/if}

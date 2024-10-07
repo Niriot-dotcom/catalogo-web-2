@@ -1,5 +1,6 @@
 <script lang="ts">
   import AddAll from "$lib/components/AddAll.svelte";
+  import OptimVideo from "$lib/components/elements/OptimVideo.svelte";
   import ImageComponent from "$lib/components/imageComponent.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
@@ -13,13 +14,14 @@
     <div class="h-full">
       <div
         data-poster-url={`${URLS.fotos}${page.SKU}.webp`}
-        data-video-urls="../videos/invierno/AUSTRAL/{page.pageTitle.toUpperCase()}/video-{page.pageTitle}.mp4,../videos/invierno/AUSTRAL/{page.pageTitle.toUpperCase()}/video-{page.pageTitle}.webm"
+        data-video-urls="{page.pageVideos[0]}-VERTICAL.mp4,{page
+          .pageVideos[0]}-VERTICAL.webm"
         data-autoplay="true"
         data-loop="true"
         data-wf-ignore="true"
         class="background-video-3 w-background-video w-background-video-atom"
       >
-        <video
+        <!-- <video
           id="03aaf391-43fe-3144-f30a-a9a620053ba8-video"
           autoplay
           loop
@@ -30,14 +32,20 @@
           data-object-fit="cover"
         >
           <source
-            src="../videos/invierno/AUSTRAL/{page.pageTitle.toUpperCase()}/video-{page.pageTitle}.mp4"
+            src="{page.pageVideos[0] || ""}.mp4"
             data-wf-ignore="true"
           />
           <source
-            src="../videos/invierno/AUSTRAL/{page.pageTitle.toUpperCase()}/video-{page.pageTitle}.webm"
+            src="{page.pageVideos[0] || ""}.webm"
             data-wf-ignore="true"
           />
-        </video>
+        </video> -->
+        <OptimVideo
+          path={page.pageVideos[0]}
+          style="background-image:url(&quot;{`${URLS.fotos}${page.SKU}-2.webp`}&quot;)"
+          class="background-video-3 w-background-video w-background-video-atom"
+        />
+
         <div class="div-block-37">
           <ImageComponent
             id="13bb5612-fe92-2612-82a1-47ecd004a28d"
