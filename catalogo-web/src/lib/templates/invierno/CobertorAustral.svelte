@@ -4,9 +4,18 @@
   import ImageComponent from "$lib/components/imageComponent.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
-  import { URLS } from "$lib/constants/strings";
+  import { CATALOGS_ROUTES, URLS } from "$lib/constants/strings";
+  import { getCurrentCatalog } from "$lib/utils/navigation";
+  import { onMount } from "svelte";
 
   export let page: DatabasePage;
+
+  let currentCatalog: string;
+  onMount(() => {
+    if (window) {
+      currentCatalog = getCurrentCatalog();
+    }
+  });
 </script>
 
 <div id={page.SKU} class="plantilla-austral" data-visible-id={page.SKU}>
@@ -135,9 +144,11 @@
           imgClass="image-18"
           source={`${URLS.fotos}${page.complSheets[0]}.webp`}
         />
-        <div data-visible-id={page.complSheets[0]} class="text-block-22">
-          agrega estas<strong class="bold-text-6"><br />sábanas</strong>
-        </div>
+        {#if currentCatalog === CATALOGS_ROUTES.INVIERNO}
+          <div data-visible-id={page.complSheets[0]} class="text-block-22">
+            agrega estas<strong class="bold-text-6"><br />sábanas</strong>
+          </div>
+        {/if}
       </div>
       <div
         data-visible-id={page.complCurtains[0]}
@@ -147,9 +158,11 @@
           imgClass="image-18"
           source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
         />
-        <div class="text-block-22">
-          combina con estas <br />‍<strong>cortinas</strong>
-        </div>
+        {#if currentCatalog === CATALOGS_ROUTES.INVIERNO}
+          <div class="text-block-22">
+            combina con estas <br />‍<strong>cortinas</strong>
+          </div>
+        {/if}
       </div>
     </div>
   </div>
