@@ -243,11 +243,23 @@
           >
             {page.pageSubtitle}
           </span> -->
-          <span
-            class="font-bold chavos-5xl sm:chavos-7xl md:chavos-8xl lg:chavos-9xl"
-          >
-            {toTitleCase(title)}
-          </span>
+
+          <!-- if HAY UNA IMAGEN EN PAGE RESOURCES, else SE PONE EL TITULO-->
+          {#if groupPages[0].pageResources.length > 0 && groupPages[0].pageResources[0] !== ""}
+            <div class="w-full h-[15vh] my-3">
+              <img
+                alt={title}
+                src={groupPages[0].pageResources[0]}
+                class="w-full h-full"
+              />
+            </div>
+          {:else}
+            <span
+              class="font-bold chavos-5xl sm:chavos-7xl md:chavos-8xl lg:chavos-9xl"
+            >
+              {toTitleCase(title)}
+            </span>
+          {/if}
           <!-- <span
             class="font-helvetica text-sm lg:text-xl md:text-lg sm:text-base"
           >
