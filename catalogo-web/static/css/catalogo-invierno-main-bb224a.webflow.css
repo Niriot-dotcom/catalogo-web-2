@@ -5092,7 +5092,7 @@ blockquote {
   }
 
   .sticky-element {
-    height: 105vh;
+    height: 200vh;
     position: -webkit-sticky;
     position: sticky;
   }
