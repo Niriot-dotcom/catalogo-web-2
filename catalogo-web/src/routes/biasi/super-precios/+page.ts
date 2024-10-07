@@ -11,7 +11,7 @@ export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   const q = query(
     collection(db, BiasiCollectionName),
     where("productSection", "==", "Página 13 / Súper Precios"),
-    where("pageStatus", "==", "Activa"),
+    // where("pageStatus", "==", true),
   );
   const querySnapshot = await getDocs(q);
   var pages: DatabasePage[] = [];
