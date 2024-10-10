@@ -5,6 +5,7 @@
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import { COLORS, URLS } from "$lib/constants/strings";
   import Carousel from "svelte-carousel";
+  import AddAll from "$lib/components/AddAll.svelte";
 
   export let page: DatabasePage;
   export let initAnimate = false;
@@ -40,7 +41,9 @@
       class="hidden lg:block h-screen w-screen text-white font-helvetica"
       style={`background-color: ${page.pageResources[0] || COLORS.beige}`}
     >
-      <div class="grid grid-flow-row-dense grid-cols-8 grid-rows-1">
+      <div
+        class="w-full h-full grid grid-flow-row-dense grid-cols-8 grid-rows-1"
+      >
         <div
           class="px-8 py-12 h-screen flex items-center col-span-2 border-r-4 border-white inset-0 transform translate-y-full transition-transform duration-700 ease-out"
           class:animate-up={showSides}
@@ -79,25 +82,23 @@
           </div>
         </div>
 
-        <div class="w-full h-full px-10 py-10 col-span-4">
+        <div class="w-full h-full px-10 py-12 col-span-4">
           <div class="flex justify-around">
-            <div class="">
-              <div class="text-black flex flex-col items-start">
-                <p
-                  text-split=""
-                  words-slide-from-right=""
-                  class="text-7xl md:text-6xl"
-                >
-                  {page.pageTitle}
-                </p>
-                <p
-                  text-split=""
-                  words-slide-from-right=""
-                  class="italic text-2xl md:text-2xl"
-                >
-                  {page.pageSubtitle}
-                </p>
-              </div>
+            <div class="text-black flex flex-col items-start">
+              <p
+                text-split=""
+                words-slide-from-right=""
+                class="text-7xl md:text-6xl"
+              >
+                {page.pageTitle}
+              </p>
+              <p
+                text-split=""
+                words-slide-from-right=""
+                class="italic text-2xl md:text-2xl"
+              >
+                {page.pageSubtitle}
+              </p>
             </div>
             <div class="">
               <div
@@ -119,98 +120,51 @@
             </div>
           </div>
 
-          <div
-            class="w-full flex my-12 overflow-hidden opacity-0 transform transition-transform ease-out cursor-pointer"
+          <button
+            class="w-full h-3/4 flex my-12 overflow-hidden opacity-0 transform transition-transform ease-out"
             class:fade-enter-active={showMainImg}
-            data-visible-id={page.pageProducts?.split(",")[0]}
+            data-visible-id={page.SKU}
             on:click|preventDefault={(e) =>
               handleImageClick(page.SKU, page.pageRelatedProducts)}
           >
             <OptimImg
-              imgClass="h-full w-full object-contain scale-[0.8]"
+              imgClass="h-full w-full object-contain"
               source="{URLS.fotos}{page.SKU}.webp"
             />
-          </div>
+          </button>
         </div>
 
         <div
           class="px-8 py-12 h-screen flex items-center col-span-2 border-l-4 border-white inset-0 transform translate-y-full transition-transform duration-700 ease-out"
           class:animate-up={showSides}
         >
-          <div class="w-full h-full flex items-start">
-            <div class="h-full">
-              <div class="w-full h-full grid grid-cols-1 grid-rows-6 gap-5">
-                <div class="row-span-1 w-full flex items-end justify-center">
-                  <p
-                    class="text-[2vw] pb-16"
-                    style={page.pageTemplate !== "Muebles"
-                      ? "color: black"
-                      : "color: white"}
-                  >
-                    Hace juego con:
-                  </p>
-                </div>
+          <div class="w-full h-full flex flex-col justify-around">
+            <p class="w-full text-2xl text-black font-helvetica">
+              Hace juego con:
+            </p>
 
-                <!-- elements  -->
-                <div
-                  class="row-span-5 w-full flex flex-col items-center justify-center"
-                >
-                  <div
-                    class="grid grid-cols-1 grid-rows-3 gap-3 place-items-center h-full w-full"
-                  >
-                    <!-- <div
-                      class="w-full h-full border-b-4 border-white pb-4 flex justify-center cursor-pointer"
-                      data-visible-id={page.pageRelatedProducts?.split(",")[0]}
-                      on:click|preventDefault={(e) =>
-                        handleImageClick(
-                          page.pageComplementProducts?.split(",")[0],
-                        )}
-                    >
-                      <OptimImg
-                        imgClass="h-full object-contain"
-                        source={`https://storage.googleapis.com/catalogo-web/biasi/fotos/${
-                          page.pageComplementProducts?.split(",")[0]
-                        }.webp`}
-                        loading={"eager"}
-                      />
-                    </div> -->
+            <div class="w-full">
+              <OptimImg
+                imgClass="w-full object-contain cursor-pointer"
+                source="{URLS.fotos}{page.complSheets[0]}.webp"
+                onClick={() => handleImageClick(page.complSheets[0], [])}
+              />
+            </div>
 
-                    <!-- <div
-                      class="h-full cursor-pointer"
-                      data-visible-id={page.pageRelatedProducts?.split(",")[1]}
-                      on:click|preventDefault={(e) =>
-                        handleImageClick(
-                          page.pageComplementProducts?.split(",")[1],
-                        )}
-                    >
-                      <OptimImg
-                        imgClass="h-full object-cover"
-                        source={`https://storage.googleapis.com/catalogo-web/biasi/fotos/${
-                          page.pageComplementProducts?.split(",")[1]
-                        }.webp`}
-                        loading={"eager"}
-                      />
-                    </div>
+            <div class="border-2 border-white w-full my-4" />
 
-                    <div
-                      class="w-full h-full border-t-4 border-white pt-4 cursor-pointer"
-                      data-visible-id={page.pageRelatedProducts?.split(",")[2]}
-                      on:click|preventDefault={(e) =>
-                        handleImageClick(
-                          page.pageComplementProducts?.split(",")[2],
-                        )}
-                    >
-                      <OptimImg
-                        imgClass="w-full h-full object-contain"
-                        source={`https://storage.googleapis.com/catalogo-web/biasi/fotos/${
-                          page.pageComplementProducts?.split(",")[2]
-                        }.webp`}
-                        loading={"eager"}
-                      />
-                    </div> -->
-                  </div>
-                </div>
-              </div>
+            <div class="w-full">
+              <OptimImg
+                imgClass="w-full object-contain cursor-pointer"
+                source="{URLS.fotos}{page.complCurtains[0]}.webp"
+                onClick={() => handleImageClick(page.complCurtains[0], [])}
+              />
+            </div>
+
+            <div class="w-full flex justify-center">
+              <AddAll
+                skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]}
+              />
             </div>
           </div>
         </div>
@@ -407,14 +361,22 @@
 
         <!-- elements images -->
         <div class="flex flex-col min-h-fit pb-10">
-          <p
-            class="w-full text-xl pt-3 px-7"
-            style={page.pageTemplate !== "Muebles"
-              ? "color: black"
-              : "color: white"}
-          >
-            Hace juego con:
-          </p>
+          <div class="flex">
+            <p
+              class="w-full text-xl pt-3 px-7"
+              style={page.pageTemplate !== "Muebles"
+                ? "color: black"
+                : "color: white"}
+            >
+              Hace juego con:
+            </p>
+
+            <div class="pl-[0%] flex justify-between">
+              <AddAll
+                skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]}
+              />
+            </div>
+          </div>
           <div
             data-visible-id={page.SKU}
             class="max-h-[22vh] grid grid-cols-2 grid-rows-1 gap-3 m-3 place-items-center"
