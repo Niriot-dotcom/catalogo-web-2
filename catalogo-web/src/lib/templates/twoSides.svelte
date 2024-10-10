@@ -64,7 +64,7 @@
               <!-- HEADER TEXT -->
               <div
                 class="mx-auto w-5/6 text-center pt-10 lg:pt-0 pb-1 font-helvetica"
-                style={`color: ${page.pageResources[0]}`}
+                style={`color: ${textColor}`}
               >
                 <p class="font-bold text-4xl lg:text-5xl">
                   {@html page.pageTitle || ""}
@@ -115,8 +115,8 @@
                     path="{URLS.videos}{page.pageVideos[0]}"
                     class="w-full h-full object-cover"
                     style={page.pageResources &&
-                    page.pageResources.length > 2 &&
-                    page.pageResources[2] === "CONTAIN"
+                    page.pageResources.length > 1 &&
+                    page.pageResources[1] === "CONTAIN"
                       ? "object-fit: contain;"
                       : "object-fit: cover;"}
                   />
@@ -125,10 +125,14 @@
                 {:else}
                   <OptimImg
                     imgClass="w-full h-full"
-                    source="{URLS.fotos}{page.SKU}.webp"
-                    style={page.pageResources &&
+                    source="{URLS.fotos}{page.SKU}{page.pageResources &&
                     page.pageResources.length > 2 &&
-                    page.pageResources[2] === "CONTAIN"
+                    page.pageResources[2] !== ''
+                      ? page.pageResources[2]
+                      : ''}.webp"
+                    style={page.pageResources &&
+                    page.pageResources.length > 1 &&
+                    page.pageResources[1] === "CONTAIN"
                       ? "object-fit: contain;"
                       : "object-fit: cover;"}
                   />
