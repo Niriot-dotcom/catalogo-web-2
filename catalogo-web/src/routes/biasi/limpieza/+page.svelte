@@ -29,6 +29,7 @@
 
   const pages: DatabasePage[] = data.props.pages;
   const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
+  const pairPages: (DatabasePage | null)[][] = data.props.pairPages;
 
   let initAnimates = Array(pages.length).fill(false);
   function handleTemplateChange(event: any) {
@@ -46,6 +47,15 @@
   bgVideo="{URLS.videos}ENTRADA-P09-LIMPIEZA.gif"
   titleSvg="/images/biasi/portadillas/09-LIMPIEZA.svg"
 />
+
+{#each pairPages as pairPage, i}
+  <TwoSides
+    templateId={`TwoSides-${i.toString()}`}
+    initAnimate={initAnimates[i]}
+    {pairPage}
+    {handleImageClick}
+  />
+{/each}
 
 {#each Object.keys(groups) as group, i}
   {#if groups[group][0].pageTemplate == "ImagesAndGrid"}

@@ -50,6 +50,15 @@
   titleSvg="/images/biasi/portadillas/11-MASCOTAS.svg"
 />
 
+{#each pairPages as pairPage, i}
+  <TwoSides
+    templateId={`TwoSides-${i.toString()}`}
+    initAnimate={initAnimates[i]}
+    {pairPage}
+    {handleImageClick}
+  />
+{/each}
+
 {#each Object.keys(groups) as group, _}
   {#if groups[group][0].pageTemplate == "Sublinea"}
     <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
@@ -61,15 +70,6 @@
       {handleImageClick}
     />
   {/if}
-{/each}
-
-{#each pairPages as pairPage, i}
-  <TwoSides
-    templateId={`TwoSides-${i.toString()}`}
-    initAnimate={initAnimates[i]}
-    {pairPage}
-    {handleImageClick}
-  />
 {/each}
 
 <NavigatorMenu

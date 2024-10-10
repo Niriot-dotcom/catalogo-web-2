@@ -50,6 +50,12 @@
   titleSvg="/images/biasi/portadillas/05-RECAMARA.svg"
 />
 
+{#each pages as page, _}
+  {#if page.pageTemplate == "CobertorAustral"}
+    <CobertorAustral {page} />
+  {/if}
+{/each}
+
 {#each pairPages as pairPage, i}
   <TwoSides
     templateId={`TwoSides-${i.toString()}`}
@@ -57,12 +63,6 @@
     {pairPage}
     {handleImageClick}
   />
-{/each}
-
-{#each pages as page, _}
-  {#if page.pageTemplate == "CobertorAustral"}
-    <CobertorAustral {page} />
-  {/if}
 {/each}
 
 {#each Object.keys(groups) as group, i}
