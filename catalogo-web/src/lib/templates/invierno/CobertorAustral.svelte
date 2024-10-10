@@ -104,19 +104,22 @@
                   ? `color: ${page.pageResources[0]};`
                   : ""}
               >
-                Cobertor Austral
+                {page.pageSubtitle || "Cobertor Austral"}
               </p>
             </div>
-            {#each page.pageIcons as icon}
-              <div>
-                <ImageComponent
-                  src={icon}
-                  loading="eager"
-                  alt=""
-                  classList="icon-image"
-                />
-              </div>
-            {/each}
+
+            {#if page.pageIcons && page.pageIcons.length > 0}
+              {#each page.pageIcons as icon}
+                <div>
+                  <img
+                    src="{URLS.iconos}{icon}.webp"
+                    loading="eager"
+                    alt=""
+                    class="icon-image"
+                  />
+                </div>
+              {/each}
+            {/if}
           </div>
         </div>
       </div>
@@ -139,7 +142,11 @@
           />
         </div>
       </div>
-      <div class="link-block-10 w-inline-block">
+
+      <div
+        data-visible-id={page.complSheets[0]}
+        class="link-block-10 w-inline-block"
+      >
         <OptimImg
           imgClass="image-18"
           source={`${URLS.fotos}${page.complSheets[0]}.webp`}
@@ -152,7 +159,7 @@
       </div>
       <div
         data-visible-id={page.complCurtains[0]}
-        class="link-block-10 w-inline-block"
+        class="link-block-10 w-inline-block md:mt-2"
       >
         <OptimImg
           imgClass="image-18"
