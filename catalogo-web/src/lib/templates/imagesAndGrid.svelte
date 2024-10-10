@@ -1,5 +1,6 @@
 <script lang="ts">
   import Copy from "$lib/components/Copy.svelte";
+  import OptimVideo from "$lib/components/elements/OptimVideo.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
   import type { DatabasePage } from "$lib/constants/globalTypes";
   import { URLS } from "$lib/constants/strings";
@@ -86,141 +87,146 @@
   style="overflow-x: hidden; width: 100vw;"
 >
   <main id="smooth-content" class="main-wrapper-2]">
-    <div class="section-height">
-      <div class="sticky-element">
-        <div class="track">
-          <div class="track-flex">
-            <div class="thanks-panel_wrap">
+    <div class="sticky-element">
+      <div class="track">
+        <div class="track-flex">
+          <div class="thanks-panel_wrap">
+            <div
+              class="bg-center w-screen h-screen bg-cover justify-center items-center block relative"
+            >
               <div
-                class="bg-center w-screen h-screen bg-cover justify-center items-center block relative"
+                class="grid grid-flow-row-dense grid-cols-5 grid-rows-1 bg-white"
               >
                 <div
-                  class="grid grid-flow-row-dense grid-cols-5 grid-rows-1 bg-white"
+                  class="h-screen flex flex-col col-span-2 border-r-4"
+                  style={`border-color: ${textColor};`}
                 >
-                  <div
-                    class="h-screen flex flex-col col-span-2 border-r-4"
-                    style={`border-color: ${textColor};`}
-                  >
-                    <div class="flex flex-col w-full pr-10">
-                      <div class="">
-                        <!-- <Copy
+                  <div class="flex flex-col w-full pr-8">
+                    <div class="">
+                      <!-- <Copy
                           className="font-helvetica flex absolute ml-3 mt-1 text-[1.6vw]"
                           text={hoverCopys[0]}
                         /> -->
-                        <img
-                          alt="product image"
-                          src={hoverImages[0]}
-                          class="h-[50vh] w-full object-bottom font-semibold"
-                          style={"object-fit: contain"}
-                        />
-                      </div>
-                      <div>
-                        <!-- <Copy
+                      <img
+                        alt="product image"
+                        src={hoverImages[0]}
+                        class="h-[50vh] w-full object-bottom font-semibold"
+                        style="object-fit: {groupPages[hoverIndex].pageResources
+                          .length > 1
+                          ? groupPages[
+                              hoverIndex
+                            ].pageResources[1].toLowerCase()
+                          : 'contain'}"
+                      />
+                    </div>
+                    <div>
+                      <!-- <Copy
                           className="font-helvetica flex absolute ml-3 mt-1 text-[1.6vw]"
                           text={hoverCopys[1]}
                         /> -->
-                        <img
-                          alt="product image"
-                          src={hoverImages[1]}
-                          class="h-[50vh] w-full object-bottom"
-                          style={"object-fit: contain"}
-                        />
-                      </div>
+                      <img
+                        alt="product image"
+                        src={hoverImages[1]}
+                        class="h-[50vh] w-full object-bottom"
+                        style="object-fit: {groupPages[hoverIndex].pageResources
+                          .length > 2
+                          ? groupPages[
+                              hoverIndex
+                            ].pageResources[2].toLowerCase()
+                          : 'contain'}"
+                      />
                     </div>
                   </div>
+                </div>
 
-                  <div class="px-8 py-5 h-screen flex flex-col col-span-3">
-                    <div class="flex flex-col" style={`color: ${textColor};`}>
-                      <!-- <span
+                <div class="px-8 py-5 h-screen flex flex-col col-span-3">
+                  <div class="flex flex-col" style={`color: ${textColor};`}>
+                    <!-- <span
                         text-split=""
                         words-slide-from-right=""
                         class="font-helvetica text-base lg:text-3xl md:text-2xl sm:text-xl -mb-0"
                         >{groupPages[hoverIndex].pageSubtitle}</span
                       > -->
 
-                      <!-- if HAY UNA IMAGEN EN PAGE RESOURCES, else SE PONE EL TITULO-->
-                      {#if groupPages[0].pageResources.length > 0 && groupPages[0].pageResources[0] !== ""}
-                        <div class="w-full h-[10vh] my-3">
-                          <img
-                            alt={title}
-                            src={groupPages[0].pageResources[0]}
-                            class="w-full h-full"
-                          />
-                        </div>
-                      {:else}
-                        <span
-                          text-split=""
-                          words-slide-from-right=""
-                          class="font-bold chavos-5xl sm:chavos-7xl md:chavos-8xl"
-                        >
-                          {toTitleCase(title)}
-                        </span>
-                      {/if}
-                      <!-- <span
+                    <!-- if HAY UNA IMAGEN EN PAGE RESOURCES, else SE PONE EL TITULO-->
+                    {#if groupPages[0].pageResources.length > 0 && groupPages[0].pageResources[0] !== ""}
+                      <div class="w-full h-[20vh] my-3">
+                        <img
+                          alt={title}
+                          src={groupPages[0].pageResources[0]}
+                          class="w-full h-full"
+                        />
+                      </div>
+                    {:else}
+                      <span
+                        text-split=""
+                        words-slide-from-right=""
+                        class="mt-12 font-bold chavos-5xl sm:chavos-6xl md:chavos-7xl"
+                      >
+                        {toTitleCase(title)}
+                      </span>
+                    {/if}
+                    <!-- <span
                         text-split=""
                         words-slide-from-right=""
                         class="font-helvetica text-xs lg:text-xl md:text-lg sm:text-base"
                       >
                         {groupPages[hoverIndex].pageCopys}
                       </span> -->
-                    </div>
+                  </div>
 
-                    <!-- GRID -->
-                    <div
-                      class={numProducts in CLASSES_BY_ELEMENTS
-                        ? CLASSES_BY_ELEMENTS[numProducts].grid
-                        : "mt-1 grid grid-cols-3 gap-3 w-full h-full"}
-                    >
-                      {#each groupPages as product, i}
-                        <button
-                          class="w-full h-full flex items-center justify-center overflow-hidden hover:cursor-pointer opacity-0 transform transition-transform ease-out"
-                          class:fade-enter-active={showImages[i]}
-                          draggable="true"
-                          data-visible-id={product.SKU}
-                          on:click|preventDefault={(e) =>
-                            handleImageClick(
-                              product.SKU,
-                              product.pageRelatedProducts,
-                            )}
-                          on:mouseover|preventDefault={(e) =>
-                            handleMouseHover(e, i)}
-                          on:focus
-                        >
-                          <div class="relative w-full h-full">
-                            {#if product.pageIcons && product.pageIcons.length > 0 && product.pageIcons[0] !== ""}
-                              <div class="flex absolute right-0 pr-1 pt-3">
-                                <img
-                                  src={URLS.iconos + product.pageIcons[0]}
-                                  loading="eager"
-                                  alt=""
-                                  class="pricing-image-two shadow-two"
-                                />
-                              </div>
-                            {/if}
+                  <!-- GRID -->
+                  <div
+                    class={numProducts in CLASSES_BY_ELEMENTS
+                      ? CLASSES_BY_ELEMENTS[numProducts].grid
+                      : "mt-1 grid grid-cols-3 gap-3 w-full h-full"}
+                    style="overflow-y: scroll; margin-bottom: 1rem"
+                  >
+                    {#each groupPages as product, i}
+                      <button
+                        class="w-full h-full min-h-56 flex items-center justify-center overflow-hidden opacity-0 transform transition-transform ease-out"
+                        class:fade-enter-active={showImages[i]}
+                        draggable="true"
+                        data-visible-id={product.SKU}
+                        on:click|preventDefault={(e) =>
+                          handleImageClick(
+                            product.SKU,
+                            product.pageRelatedProducts,
+                          )}
+                        on:mouseover|preventDefault={(e) =>
+                          handleMouseHover(e, i)}
+                        on:focus
+                      >
+                        <div class="relative w-full h-full">
+                          {#if product.pageIcons && product.pageIcons.length > 0 && product.pageIcons[0] !== ""}
+                            <div class="flex absolute right-0 pr-1 pt-3">
+                              <img
+                                src={URLS.iconos + product.pageIcons[0]}
+                                loading="eager"
+                                alt=""
+                                class="pricing-image-two shadow-two"
+                              />
+                            </div>
+                          {/if}
 
-                            <!-- video or foto -->
-                            {#if product.pageVideos.length === 1 && product.pageVideos[0] !== ""}
-                              <video
-                                autoplay
-                                loop
-                                muted
-                                playsinline
-                                src="{URLS.videos}{product.pageVideos[0]}"
-                                class="w-full h-full object-cover"
-                              />
-                            {:else}
-                              <OptimImg
-                                imgClass="w-full h-full object-cover"
-                                style={numProducts === 4
-                                  ? "object-position: bottom;"
-                                  : ""}
-                                source="{URLS.fotos}{product.SKU}.webp"
-                              />
-                            {/if}
-                          </div>
-                        </button>
-                      {/each}
-                    </div>
+                          <!-- video or foto -->
+                          {#if product.pageVideos.length === 1 && product.pageVideos[0] !== ""}
+                            <OptimVideo
+                              path="{URLS.videos}{product.pageVideos[0]}"
+                              class="w-full h-full object-cover"
+                            />
+                          {:else}
+                            <OptimImg
+                              imgClass="w-full h-full object-cover"
+                              style={numProducts === 4
+                                ? "object-position: bottom;"
+                                : ""}
+                              source="{URLS.fotos}{product.SKU}.webp"
+                            />
+                          {/if}
+                        </div>
+                      </button>
+                    {/each}
                   </div>
                 </div>
               </div>
