@@ -3146,7 +3146,7 @@ blockquote {
 
 .div-block-57 {
   width: 40%;
-  height: auto;
+  height: 40%;
   max-width: 270px;
   cursor: pointer;
   flex-direction: column;
@@ -5593,12 +5593,12 @@ blockquote {
 
   .div-block-57 {
     width: 45%;
-    height: auto;
+    height: 45%;
     max-width: 270px;
   }
 
   .image-41 {
-    height: auto;
+    height: 100%;
     max-width: 275px;
   }
 

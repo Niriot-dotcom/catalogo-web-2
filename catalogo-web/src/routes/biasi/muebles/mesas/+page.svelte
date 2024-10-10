@@ -67,6 +67,7 @@
   bind:activeTitle
   bind:activeLink
   bind:loadingSection
+  paddingTop="pt-5 md:pt-12"
 />
 
 {#if loadingSection}

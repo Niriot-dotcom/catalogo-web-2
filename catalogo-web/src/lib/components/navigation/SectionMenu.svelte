@@ -1,12 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import ScrollDownArrows from "../animations/ScrollDownArrows.svelte";
-  import { goto, pushState } from "$app/navigation";
   import { getCurrentCatalog } from "$lib/utils/navigation";
 
   export let currentPageRoute: string;
   export let sections: { title: string; link: string }[];
-  export let paddingTop: string = "5";
+  export let paddingTop: string = "pt-5 md:pt-32";
   export let activeTitle: string;
   export let activeLink: string;
   export let breakLine: number = -1;
@@ -33,7 +32,7 @@
 </script>
 
 <div
-  class="bg-beige w-full items-center justify-center pt-{paddingTop} px-0 pb-0 flex space-x-8 flex-wrap flex-row md:pt-32 md:pb-10 md:space-x-16 md:top-0 md:z-50 md:start-0"
+  class="bg-beige w-full items-center justify-center {paddingTop} px-0 pb-0 flex space-x-8 flex-wrap flex-row md:pb-10 md:space-x-16 md:top-0 md:z-50 md:start-0"
 >
   {#each sections as section, i}
     <!-- svelte-ignore a11y-click-events-have-key-events -->
