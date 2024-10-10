@@ -172,7 +172,11 @@
                 imgClass="{page.pageResources[0] === EnumSublinea.FULLSCREEN
                   ? 'object-cover'
                   : 'object-contain'} w-full h-full"
-                source="{URLS.fotos}{page.SKU}.webp"
+                source="{URLS.fotos}{page.SKU}{page.pageResources &&
+                page.pageResources.length > 1 &&
+                page.pageResources[1] !== ''
+                  ? page.pageResources[1]
+                  : ''}.webp"
               />
               <!-- source={page.pageResources &&
                 page.pageResources.length > 0 &&
