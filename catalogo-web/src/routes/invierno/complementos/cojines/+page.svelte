@@ -50,7 +50,7 @@
 <SectionMenu
   {currentPageRoute}
   sections={InviernoComplementosSubsections}
-  paddingTop="12"
+  paddingTop="pt-12 md:pt-32"
   breakLine={1}
   bind:activeTitle
   bind:activeLink

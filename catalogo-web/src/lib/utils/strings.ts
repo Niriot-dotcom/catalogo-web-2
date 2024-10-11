@@ -13,6 +13,13 @@ export function capitalizeFirstLetter(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+export function toTitleCase(str: string) {
+  return str.replace(
+    /\w\S*/g,
+    (text) => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase(),
+  );
+}
+
 export function deleteSubArray(totalItems: [], item: []) {
   const itemString = JSON.stringify(item);
 

@@ -1,23 +1,100 @@
 '''
 ==> RUN COMMAND
 
-python3 src/lib/scripts/completeCsv.py
+python src/lib/scripts/completeCsv.py
 
 '''
 
 from firebase_admin import credentials
 from firebase_admin import firestore
+from sklearn.cluster import KMeans
 from json import JSONEncoder
-import firebase_admin
+from PIL import Image
+from io import BytesIO
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import csv
+import firebase_admin
+import requests
 import json
+import csv
 
 ''' CREDENTIALS '''
-cred = credentials.Certificate('/Users/Paty.Lopez/Vianney/keys/mx-vianney-001-firebase-adminsdk-q5ydi-71a4661d43.json')
+cred = credentials.Certificate('/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 keys/mx-vianney-001-firebase-adminsdk-q5ydi-84d2becdf3.json')
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
+
+''' FUNCTIONS '''
+def rgb_to_hex(r, g, b):
+    return '#{:02x}{:02x}{:02x}'.format(r, g, b)
+def get_color_palette_from_image(image, n_colors=18, showPalette=False):
+    image = np.array(image)
+
+    # Get the dimensions (width, height, and depth) of the image
+    w, h, d = tuple(image.shape)
+
+    # Reshape the image into a 2D array, where each row represents a pixel
+    pixel = np.reshape(image, (w * h, d))
+
+    # Create a KMeans model with the specified number of clusters and fit it to the pixels
+    model = KMeans(n_clusters=n_colors, random_state=42).fit(pixel)
+
+    # Get the cluster centers (representing colors) from the model
+    colour_palette = np.uint8(model.cluster_centers_)
+
+    if showPalette:
+        plt.imshow([colour_palette])
+        plt.show()
+    return colour_palette
+def crop_image_url(url, new_height, new_width):
+    try:
+        response = requests.get(url)
+        im = Image.open(BytesIO(response.content))
+        width, height = im.size   
+
+        left = (width - new_width)/2
+        top = (height - new_height)/2
+        right = (width + new_width)/2
+        bottom = (height + new_height)/2
+
+        crop_im = im.crop((left, top, right, bottom)) #Cropping Image 
+        # crop_im.save(file_path + "_new.webp") 
+        return crop_im
+    except:
+        # UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x13f0e7060>
+        return False
+def aclarar_color(hex_color, porcentaje):
+    # Convertir el código hexadecimal a valores RGB
+    r = int(hex_color[1:3], 16)
+    g = int(hex_color[3:5], 16)
+    b = int(hex_color[5:7], 16)
+
+    # Aclarar los valores RGB
+    r_nuevo = r + (255 - r) * porcentaje
+    g_nuevo = g + (255 - g) * porcentaje
+    b_nuevo = b + (255 - b) * porcentaje
+
+    # Asegurarse de que los valores están en el rango válido (0-255)
+    r_nuevo = min(int(r_nuevo), 255)
+    g_nuevo = min(int(g_nuevo), 255)
+    b_nuevo = min(int(b_nuevo), 255)
+
+    # Convertir los valores RGB a código hexadecimal
+    nuevo_hex = '#{:02x}{:02x}{:02x}'.format(int(r_nuevo), int(g_nuevo), int(b_nuevo))
+    return nuevo_hex
+def get_background_color_from_sku(sku: str, percentage=0.7, h=300, w=300):
+    url =  f"https://storage.googleapis.com/catalogo-web/fotos/{sku}-1280.webp"
+    new_image = crop_image_url(url, h, w)
+    try:
+        color_palette = get_color_palette_from_image(new_image, n_colors=9)
+        r, g, b = color_palette[0]
+        hex_color = rgb_to_hex(r, g, b)
+
+        # lighten color
+        return aclarar_color(hex_color, percentage)
+    except:
+        print("An exception occurred with", sku)
+        return ""
 
 ''' CONSTANTS '''
 class NumpyArrayEncoder(JSONEncoder):
@@ -25,29 +102,8 @@ class NumpyArrayEncoder(JSONEncoder):
         if isinstance(obj, np.ndarray):
             return obj.tolist()
         return JSONEncoder.default(self, obj)
+
 csv_file = '/Users/Paty.Lopez/Documents/GitHub/catalogo-web/catalogo-web/src/lib/scripts/out_keywords.csv'
-list_cols = [
-    "productName", "sku", "productType", "productSection", "productOrder",
-    "complSheets", "complPillowCovers", "complCushions", "complCurtains", "complDecoration",
-    "brandId", "categoryId", "departmentId", "keywords", "name",
-    "pageTitle",
-    "pageSubtitle",
-    "pageOrder",
-    "pageTemplate",
-    "pageCategory",
-    "pageCopys",
-    "pageDescriptions",
-    "pageProducts",
-    "pageIcons",
-    "pageVideos",
-    "pageImages",
-    "pageProductsImagesPosition",
-    "pageResources",
-    "pageStatus",
-    "pageSeoDescription",
-    "pageSeoTitle",
-    "pageKeywords",
-]
 list_cols = [
     "productName", "SKU", "productType", "productSection", "productOrder",
     "complSheets", "complCurtains", "complPillowCovers", "complCushions", "complDecoration",
@@ -66,37 +122,16 @@ list_cols = [
     "pageSeoTitle",
     "pageSeoDescription",
 ]
-bebe_words_remove = [
-    'Adorno Led ',
-    'Cobertor Baby Ligero ',
-    'Funda De Almohada ',
-    'Almohada Viafoam ',
-    'Cesto ',
-    'Cobertor Baby Nórdico ',
-    'Cobertor Baby Siberia ',
-    'Cobija Baby Voga ',
-    'Funda De Cojín ',
-    'Cojín ',
-    'Cortinas Blackout Catania ',
-    'Cortinas Translúcidas ',
-    'Edredón Baby Voga ',
-    'Edredón ',
-    'Kit De Regalo ',
-    'Manta Baby Voga ',
-    'Protector De Barandal ',
-    'Protector De Colchón ',
-    'Jgo Repisas ',
-    'Repisa ',
-    'Sábana Camiseta ',
-    'Sábana Viasoft Washed ',
-    'Sabanitas ',
-    'Sabanita ',
-    'Sleep Bag ',
-    'Tapete De Juego ',
-    'Tapete Decorativo ',
-    'Toalla Baby ',
-    'Toallitas Faciales ',
-    # '',
+COLORED_TEMPLATES = [
+    "Cobertor",
+    "JuegoDeEdredon",
+    "MainAndElements",
+    "MainAndCarousel",
+    # "EdredonNovo",
+    # "CobertorEverest",
+    # "CobertorAustral",
+    # "CobertorInvernal",
+    # "CobertorNordico",
 ]
 vianney_words_remove = [
     'Edredón Nuut ',
@@ -109,38 +144,55 @@ vianney_words_remove = [
     'Frazada Austral ',
     'Frazada Everest ',
     'Cobertor Ligero ',
-    'Protector de almohada ',
+    # 'Protector de Almohada ',
     'Protector De Colchón ',
-    'Almohada Abrazable ',
+    'Funda De Almohada Abrazable',
     'Funda De Almohada ',
+    'Almohada Abrazable ',
+    'Protector De Almohada ',
     'Almohada ',
     'Colchoneta ',
-    'Protector ',
     'Tapete Everest ',
     'Cojín Everest ',
     'Funda De Cojín ',
     'Relleno De Cojín ',
+    'Cojín Multiusos Porto ',
     'Cojín Viafoam ',
     'Cojín ',
+    'Cojines ',
+    'Cojín Multiusos Porto ',
     'Velvet ',
     'Repisa ',
     'Edredón ',
-    'Almohada Abrazable ',
-    'Almohada ',
     'Camino De Mesa ',
     'Cobertor Ligero ',
+    'Cobertor Everest ',
+    'Cobertor Austral ',
+    'Cobertor Invernal ',
+    'Cobertor Nórdico ',
+    'Cobertor Mascota ',
+    'Cobertor Siberia ',
     'Sábanas Camiseta ',
     'Sábanas Cabos ',
     'Sábanas Modal ',
     'Sábanas Viasoft Washed ',
     'Sábanas Viasoft ',
+    'Sábanas Siberia ',
+    'Sábanas Andes-Polar ',
+    'Sábanas ',
+    'Sleep Bag ',
     'Par Manteles Individuales ',
     'Manteles Individuales ',
+    'Mantel Rectangular ',
     'Protector Silla ',
+    'Protector De Sala ',
+    'Protector ',
     'Mandil ',
     'Funda De Sillón Niza ',
     'Funda De Silla Niza ',
     'Fundas De Silla ',
+    'Tapete De Baño ',
+    'Tapete De ',
     'Tapete Decorativo ',
     'Cortinas Translúcidas ',
     'Cortinas Viasoft ',
@@ -154,36 +206,72 @@ vianney_words_remove = [
     'Toalla Microsport ',
     'Bata De Baño Soft ',
     'Bata De Baño Tulum ',
+    'Bata De Baño ',
+    'Bata De Descanso ',
+    'Bata De ',
+    'Salida De ',
     'Salida De Baño ',
     'Toalla Para Cabeza Tulum ',
+    'Toalla Balandra ',
+    'Rodapié ',
+    'Jgo Espejos ',
+    'Portarretratos ',
+
+    # INVIERNO
+    'Winter Hoodie ',
+    'Pijama ',
+    'Puff ',
+    'Adorno Navideño ',
+
+    # BIASI
+    'Panel Cabecera ',
+    'Librero ',
+    'Mesa ',
+    
+    
+    'Vianney Home Velas 250 Gr ',
+    'Difusor 60 Ml ',
+    'Protect 125 Ml ',
+    '125 Ml',
+    # 'Tubo 1,00A1,80 Sencillo ',
+    # 'Tubo 1,00A1,80 Doble ',
+    # '',
+    # '',
 ]
 
 ''' UTILS '''
-def get_numeric_array(arr, resources=False, keyword=''):
-    if resources and arr != '':
-        print('pageResources arr:\n', arr)
+def get_numeric_array(arr: str, resources=False, keyword='', sku='', pageTemplate=''):
     # arr can be:
     #    an empty string (''),
     #    ['12345' '12345']
     #    [12345, 12345]
     #    12345,12345
-    if arr == '':
+    if arr == '' or arr == '[]':
         arr = []
     elif "'" in arr and '[' in arr:
-        arr.replace(" '", ", '").strip('[]').replace("'", "").split(', ')
+        arr = arr.replace(" '", ", '").strip('[]').replace("'", "").split(', ')
     elif not "'" in arr and '[' in arr and ','in arr:
-        arr.strip('[]').split(', ')
+        arr = arr.strip('[]').split(', ')
     elif not "'" in arr and '[' in arr and ','in arr:
-        arr.split(',')
+        arr = arr.split(',')
     else:
-        raise Exception('get_numeric_array ERROR ==> Invalid input string arr:\n%s\n' % type(arr))
+        raise Exception('get_numeric_array ERROR ==> Invalid input string arr:\ntype: %s\nstring (arr): %s' % (type(arr), arr))
+
+    arr = np.array(arr)
 
     # viasoft, vialifresh and viafoam keywords when it appears on productName
     if keyword != '':
-        arr.append(keyword)
+        arr = np.append(arr, keyword)
+    if resources and len(arr) == 0 and pageTemplate in COLORED_TEMPLATES:
+        print("===>>>", resources, sku, pageTemplate)
+        print('==> here SI ENTRA A TOMAR COLOR', sku)
+        arr = np.append(arr, get_background_color_from_sku(sku))
+        if pageTemplate == "Cobertor":
+            arr = np.append(arr, get_background_color_from_sku(sku, percentage=0.5))
+        print('arr:', arr)
+    return arr
 
-    return np.array(arr)
-
+    # CHECK IF ALL CONTENT IS NUMERIC
     # numeric_mask = np.char.isnumeric(np.array(arr, dtype=np.unicode_))
     # if resources and arr != '':
     #     print('pageResources arr:\n', arr[numeric_mask])
@@ -193,8 +281,7 @@ def numpy_array_to_list(arr):
     arr.replace(" '", ", '").strip('[]').replace("'", "").split(', ')
     return arr
 
-def get_page_title(productName: str):
-    possible_subtitle = ''
+def get_page_title(productName: str, template: str, productType=""):
     new_keyword = ''
     if 'viasoft' in productName.lower():
         new_keyword = 'viasoft'
@@ -202,18 +289,23 @@ def get_page_title(productName: str):
         new_keyword = 'viafoam'
     if 'vialifresh' in productName.lower():
         new_keyword = 'vialifresh'
-
+    
     # first, remove tallas
     tallas_to_remove = [
+        'Baby',
         'Ccc',
+        'Ks/Qs',
+        'Qs',
         'Ks',
         'Std',
         'Gde',
         'Ind',
         'Mat/Ind',
         'Mat',
+        'Med',
         'Corta',
         'Larga',
+        'Infantil',
         'Qs/Mat',
         'Europea',
         'Xl',
@@ -222,98 +314,89 @@ def get_page_title(productName: str):
         '1/2',
         'Baño',
         'Uni',
-
         'Carriola',
         'Cuna',
         'Pol',
         'Franela',
         '2-4',
+        '3-9',
+        '5-8',
+        '9-12',
         'Años',
+        'Meses',
+        'Pullman',
+        '1,00A1,80',
+        '1,05A1,83',
+
+        # lineas
+        'Soft',
+        # 'Voga',
+        # 'Mumbai',
+        # 'Viasoft',
+        'Par',
+        'Velvet',
     ]
-    # tallas_array and titles_array
-    # productName = [' '.join([word for word in title.split() if word not in tallas_to_remove]) for title in titles_array]
-    # tallas_array and title string
-    productName = ' '.join([word for word in productName.split() if word not in tallas_to_remove])
+    upper_tallas_to_remove = [x.upper() for x in tallas_to_remove]
+    productName = ' '.join([word for word in productName.split() if word.upper() not in upper_tallas_to_remove])
 
     # then, remove other custom titles
-    remove_from_productName = [
-        'Edredón Nuut ',
-        'Edredón Novo ',
-        'Edredón Voga ',
-        'Edredón ',
-        'Funda de Duvet ',
-        'Relleno de ',
-        'Frazada Austral ',
-        'Frazada Everest ',
-        'Cobertor Ligero ',
-        'Protector de almohada ',
-        'Almohada Abrazable ',
-        'Almohada ',
-        'Colchoneta ',
-        'Protector ',
-        'Tapete Everest ',
-        'Cojín Everest ',
-        'Cojín ',
-        'Velvet ',
-        'Repisa ',
-        # '',
-        # '',
-        # '',
-        # '',
-        # '',
-        # '',
-        # '',
-    ]
-
-    # returns true if productName contains some substring
-    # if any(substring in productName for substring in remove_from_productName):
-    # for substring in remove_from_productName:
-    #     if substring in productName:
-    #         return productName.replace(substring, '')
-
-    # for substring in bebe_words_remove:
-    #     if substring in productName:
-    #         possible_subtitle = substring.lower()
-    #         return productName.replace(substring, ''), possible_subtitle
     for substring in vianney_words_remove:
-        if substring in productName:
-            possible_subtitle = substring.lower()
-            return productName.replace(substring, ''), possible_subtitle, new_keyword
-    return productName, possible_subtitle, new_keyword
+        if substring.upper() in productName.upper():
+            # print(substring.upper(), productName.upper(), "=", productName.replace(substring.upper(), ''))
+            return productName.replace(substring.upper(), '').title(), new_keyword
+    return productName.title(), new_keyword
 
 
-def get_page_subtitle(productType, pageTemplate):
+def get_page_subtitle(productType, pageTemplate, pageSubtitle):
+    if pageSubtitle != "":
+        return pageSubtitle
+    
     product_types = {
-        'Juego de Edredón': 'juego de edredón',
-        'Edredón Novo': 'edredón novo',
-        'Edredón Nuut': 'edredón nuut',
-        'Cobertor Ligero': 'cobertor ligero',
+        'Juego de Edredón': 'Juego de Edredón',
+        'Edredón Novo': 'Edredón Novo',
+        'Edredón Nuut': 'Edredón Nuut',
+        'Cobertor Ligero': 'Cobertor Ligero',
         'Relleno de Duvet': 'relleno',
-        'Funda de Duvet': 'funda de duvet',
-        'Funda De Duvet': 'funda de duvet',
+        'Funda de Duvet': 'Funda de Duvet',
+        'Funda De Duvet': 'Funda de Duvet',
         
         # vianney
-        'Edredón Voga': 'edredón',
-        'Edredón': 'juego de edredón',
+        'Edredón Voga': 'Edredón',
+        'Edredón': 'Juego de Edredón',
         'Juego de Cocina': 'Juego de cocina',
-    }
-    # templates_with_subtitles = {
-    #     'JuegoDeEdredon',
-    #     'EdredonNovo',
-    #     'EdredonNuut',
-    #     'Cobertor',
-    #     'VariantesDeColor',
-    # }
+        'Colcha': 'Colcha',
 
-    if productType in product_types:
-        return product_types[productType]
+        # invierno
+        'Cobertor Everest': 'Cobertor Everest',
+        'Cobertor Austral': 'Cobertor Austral',
+        'Cobertor Invernal': 'Cobertor Invernal',
+        'Cobertor Nórdico': 'Cobertor Nórdico',
+        'Cobertor Ligero': 'Cobertor Ligero',
+
+        # bebe
+        'Edredón Baby Voga': 'edredón baby',
+        'Cobija Baby Voga': 'cobija baby voga',
+        'Manta Baby Voga': 'manta baby voga',
+        'Cobertor Baby Ligero': 'cobertor baby ligero',
+        'Cobertor Baby Nórdico': 'cobertor baby nórdico',
+        'Cobertor Baby Siberia': 'cobertor baby siberia',
+
+        # biasi
+        'Panel Cabecera': 'Panel Cabecera',
+        'Librero': 'Librero',
+        '': '',
+        '': '',
+        '': '',
+        '': '',
+        '': '',
+        '': '',
+    }
+
+    upper_product_types = {k.upper(): v for k, v in product_types.items()}
+    if productType.upper() in upper_product_types:
+        return upper_product_types[productType.upper()]
     else:
         return ''
-        if pageTemplate == 'VariantesDeColor':
-
-            return ''
-        else: 
-            return ''
 
 ''' FUNCTIONS '''
 def read_json_file(filename):
@@ -325,131 +408,6 @@ def read_json_file(filename):
 def write_csv_file(filename, json_data):
     df = pd.DataFrame(json_data)
     df.to_csv(filename, index=False)
-
-def read_csv_file(filename):
-    cols = ''
-    json_data = read_json_file('./src/lib/scripts/generated.json')
-    unavailable_products = []
-
-    with open(filename, mode='r') as csv_file:
-        csv_reader = csv.DictReader(csv_file)
-        line_count = 0
-
-        updated_data = []
-        for row in csv_reader:
-            # if line_count == 195: break
-            if line_count == 0:
-                cols = ", ".join(row)
-                line_count += 1
-
-            ''' process '''
-
-            # if productName is empty, then row is empty
-            if 'productName' in row and row['productName'] in ['', 'productName', 'Nombre Producto']:
-                continue
-
-            '''
-            # here begins with products.
-            # we only have productName, SKU, productType, productSection, productOrder.
-            # we need to complete:
-                complSheets, complPillowCovers, complCurtains, complDecoration,
-                brandId, categoryId, departmentId, keywords, name
-            '''
-            if 'SKU' in row and row['SKU'] != '':
-                # rename some properties
-                sku = row['SKU']
-                complementsIds = get_numeric_array(pd.unique(np.r_[
-                    row['complSheets'].replace(" '", ", '").strip('[]').replace("'", "").split(', ') if "'" in row['complSheets'] else row['complSheets'].split(','),
-                    row['complCurtains'].replace(" '", ", '").strip('[]').replace("'", "").split(', ') if "'" in row['complCurtains'] else row['complCurtains'].split(','),
-                    row['complPillowCovers'].replace(" '", ", '").strip('[]').replace("'", "").split(', ') if "'" in row['complPillowCovers'] else row['complPillowCovers'].split(','),
-                    row['complDecoration'].replace(" '", ", '").strip('[]').replace("'", "").split(', ') if "'" in row['complDecoration'] else row['complDecoration'].split(','),
-                    # row['complSheets']
-                    # row['complCurtains'],
-                    # row['complPillowCovers'],
-                    # row['complDecoration'],
-                ]))
-
-                row['productOrder'] = int(row['productOrder'])
-                row['complSheets'] = get_numeric_array(row['complSheets'].replace(" '", ", '").strip('[]').replace("'", "").split(', ') if "'" in row['complSheets'] else row['complSheets'].split(','))
-                row['complCurtains'] = get_numeric_array(row['complCurtains'].replace(" '", ", '").strip('[]').replace("'", "").split(', ') if "'" in row['complCurtains'] else row['complCurtains'].split(','))
-                row['complPillowCovers'] = get_numeric_array(row['complPillowCovers'].replace(" '", ", '").strip('[]').replace("'", "").split(', ') if "'" in row['complPillowCovers'] else row['complPillowCovers'].split(','))
-                row['complDecoration'] = get_numeric_array(row['complDecoration'].replace(" '", ", '").strip('[]').replace("'", "").split(', ') if "'" in row['complDecoration'] else row['complDecoration'].split(','))
-                    
-                # row['complSheets'] = get_numeric_array(row['complSheets'].split(','))
-                # row['complCurtains'] = get_numeric_array(row['complCurtains'].split(','))
-                # row['complPillowCovers'] = get_numeric_array(row['complPillowCovers'].split(','))
-                # row['complDecoration'] = get_numeric_array(row['complDecoration'].split(','))
-
-                if sku not in json_data:
-                    unavailable_products.append(sku)
-                    # print(f'here {sku} does not exist in data')
-
-                # fullfiling => complSheets, complPillowCovers,
-                #               complCurtains, complDecoration
-                # row['complSheets'] = row['complSheets'].split(',')
-                # row['complPillowCovers'] = row['complPillowCovers'].split(',')
-                # row['complCurtains'] = row['complCurtains'].split(',')
-                # row['complDecoration'] = row['complDecoration'].split(',')
-
-                # fullfiling => brandId, categoryId, departmentId, keywords, name
-                row['brandId'] = json_data[sku]['BrandId'] if sku in json_data else ""
-                row['categoryId'] = json_data[sku]['CategoryId'] if sku in json_data else ""
-                row['departmentId'] = json_data[sku]['DepartmentId'] if sku in json_data else ""
-                row['keywords'] = json_data[sku]['KeyWords'] if sku in json_data else ""
-                row['name'] = json_data[sku]['Name'] if sku in json_data else ""
-                
-                # fullfiling => pageTitle, pageTemplate, pageCategory, pageSubtitle,
-                #               pageDescriptions, pageType, pageIsSingleProduct, pageCopys,
-                #               pageProducts, pageMainImage, pageImages, pageComplementProducts,
-                #               pageProductsImagesPosition, pageResources, pageIcons,
-                #               pageProductsInImage, pageProductsImages, pageMainVideo,
-                #               pageVideos, pageRelatedProducts, pageStatus, pageSeoDescription,
-                #               pageSeoTitle, pageKeywords
-                row['pageTitle'] = get_page_title(row['productName'])
-                row['pageSubtitle'] = get_page_subtitle(row['productType'], row['pageTemplate'])
-                row['pageOrder'] = row['productOrder']
-                row['pageCategory'] = row['productSection'].split('/ ')[1]
-                row['pageProducts'] = get_numeric_array(pd.unique(np.r_[np.array([sku]), complementsIds]))
-                row['pageCopys'] = np.array([]) if row['pageCopys'] == '' else numpy_array_to_list(row['pageCopys'])
-                row['pageIcons'] = np.array([]) if row['pageIcons'] == '' else get_numeric_array(row['pageIcons'].replace(" '", ", '").strip('[]').replace("'", "").split(', ') if "'" in row['pageIcons'] else row['pageIcons'].split(','))
-                row['pageVideos'] = np.array([]) if row['pageVideos'] == '' else row['pageVideos']
-                row['pageImages'] = np.array([]) if row['pageImages'] == '' else row['pageImages']
-                row['pageResources'] = np.array([]) if row['pageResources'] == '' else row['pageResources']
-                row['pageDescriptions'] = np.array([]) if row['pageDescriptions'] == '' else row['pageDescriptions']
-                row['pageStatus'] = row['pageStatus'] if row['pageStatus'] else 'Activa'
-                # row['pageKeywords'] = json_data[sku]['KeyWords'] if sku in json_data else np.array([])
-                if row['pageType'] == 'Almohadas' or row['pageType'] == 'Almohadas Viafoam':
-                    print(row['productName'], row['pageKeywords'], end=' = ')
-                row['pageKeywords'] = numpy_array_to_list(row['pageKeywords']) if "'" in row['pageKeywords'] else np.array(row['pageKeywords'].split(','))
-                if row['pageType'] == 'Almohadas' or row['pageType'] == 'Almohadas Viafoam':
-                    print(row['pageKeywords'])
-                
-                row['pageType'] = row['productType']
-                row['pageComplementProducts'] = complementsIds
-                row['pageRelatedProducts'] = get_numeric_array(pd.unique(np.r_[np.array([sku]), complementsIds]))
-                    
-                # print('updated row {}:\n{}\n\n'.format(
-                #         line_count,
-                #         json.dumps(row, cls=NumpyArrayEncoder, indent='\t', ensure_ascii=False)
-                # ))
-
-            line_count += 1
-            updated_data.append(row)
-
-        # write_csv_file('', updated_data)
-        print(f'\n\nProcessed {line_count} lines.')
-        print(f'{len(unavailable_products)} unavailable products: {unavailable_products}')
-        return updated_data
-    # print(cols)
-
-    # print('updated_data:', len(updated_data))
-    # print('updated_data:', updated_data)
-    # with open('output.csv', 'w', newline='') as new_csv_file:
-    #     writer = csv.writer(new_csv_file)
-    #     # Write headers
-    #     writer.writerow(headers)
-    #     # Write updated data
-    #     writer.writerows(updated_data)
 
 def process_csv_file(limit, filename):
     json_data = read_json_file('./src/lib/scripts/generated.json')
@@ -465,42 +423,11 @@ def process_csv_file(limit, filename):
             if line_count == 0:
                 line_count += 1
 
-            ''' process '''
-            # if productName is empty, then row is empty
-            if 'productName' in row and row['productName'] in ['', 'productName', 'Nombre Producto']:
-                continue
-
             # si el SKU es valido, se comienzan a llenar los campos
             if 'SKU' in row and row['SKU'] != '':
-                # rename some properties
-                sku = row['SKU']
-                complementsIds = pd.unique(np.r_[
-                    get_numeric_array(row['complSheets']),
-                    get_numeric_array(row['complCurtains']),
-                    get_numeric_array(row['complPillowCovers']),
-                    get_numeric_array(row['complDecoration']),
-                ])
-
                 # checar si esta en la oferta maestra, sino, guardarlo en los productos no disponibles
-                if sku not in json_data:
-                        unavailable_products.append(sku)
-                row['brandId'] = json_data[sku]['BrandId'] if sku in json_data else ""
-                row['categoryId'] = json_data[sku]['CategoryId'] if sku in json_data else ""
-                row['departmentId'] = json_data[sku]['DepartmentId'] if sku in json_data else ""
-                row['keywords'] = json_data[sku]['KeyWords'] if sku in json_data else ""
-                row['name'] = json_data[sku]['Name'] if sku in json_data else ""
-
-                # the fields that are not changed are:
-                # "productName", "SKU", "productType", "productSection", "productOrder",
-                # "brandId", "categoryId", "departmentId", "keywords", "name",
-                # "pageTemplate", "pageSeoTitle", "pageSeoDescription",
-
-                # quitar los campos de la oferta maestra (tal vez quitarlo despues)
-                del row['brandId']
-                del row['categoryId']
-                del row['departmentId']
-                del row['keywords']
-                del row['name']
+                if row['SKU'] not in json_data:
+                    unavailable_products.append(row['SKU'])
 
                 # begins with the 'complete csv' process
                 row['productSection'] = row['productSection']
@@ -512,15 +439,19 @@ def process_csv_file(limit, filename):
                 row['complDecoration'] = get_numeric_array(row['complDecoration'])
 
                 # informacion de la pagina
-                row['pageTitle'], subt, keyw = get_page_title(row['productName'])
-                row['pageSubtitle'] = subt if subt != '' else get_page_subtitle(row['productType'], row['pageTemplate'])
+                # row['pageTitle'], keyw = row['pageTitle'], "" if row['pageTitle'] != "" else get_page_title(row['productName'], row['pageTemplate'], row['productType'])
+                row['pageTitle'], keyw = get_page_title(row['productName'], row['pageTemplate'], row['productType'])
+                print('row[pageTitle]:', row['pageTitle'])
+                row['pageSubtitle'] = row['pageSubtitle'] if row['pageSubtitle'] != "" else get_page_subtitle(row['productType'], row['pageTemplate'], row['pageSubtitle'])
                 row['pageCopys'] = get_numeric_array(row['pageCopys'])
-                row['pageResources'] = get_numeric_array(row['pageResources'], True)
+                row['pageResources'] = get_numeric_array(row['pageResources'], True, sku=row['SKU'], pageTemplate=row['pageTemplate'])
                 row['pageKeywords'] = get_numeric_array(row['pageKeywords'], keyword=keyw)
                 row['pageVideos'] = get_numeric_array(row['pageVideos'])
-                row['pageStatus'] = row['pageStatus'] if row['pageStatus'] else 'Activa'
-                row['pageProducts'] = pd.unique(np.r_[np.array([sku]), complementsIds])
+                row['pageStatus'] = row['pageStatus'] if row['pageStatus'] else True
                 row['pageIcons'] = get_numeric_array(row['pageIcons'])
+
+                # uppercase to capital first letter
+                row['productType'] = row['productType'].title() if row['pageTemplate'] == "Sublinea" or row['pageTemplate'] == "VariantesDeColor" else row['productType']
 
             line_count += 1
             updated_data.append(row)
@@ -530,13 +461,5 @@ def process_csv_file(limit, filename):
         return updated_data
 
 ''' MAIN '''
-# new_data = read_csv_file('/Users/Paty.Lopez/Documents/GitHub/catalogo-web/catalogo-web/src/lib/scripts/out_keywords.csv')
-
-# new_data = process_csv_file(-1, '/Users/Paty.Lopez/Desktop/CAT WEB BD Bebe 2024.csv')
-# write_csv_file('./src/lib/scripts/Bebe.csv', new_data)
-
-new_data = process_csv_file(-1, '/Users/Paty.Lopez/Desktop/CAT WEB BD Vianney Hogar 2024.csv')
-write_csv_file('./src/lib/scripts/Vianney Hogar.csv', new_data)
-
-# title =  get_page_title('Viasoft Edredón Qs/Mat Xl Bernal')
-# print('title:', title[2])
+new_data = process_csv_file(-1, '/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/00 DOCS/CAT WEB DB.csv')
+write_csv_file('./src/lib/scripts/Biasi Completed F0.csv', new_data)

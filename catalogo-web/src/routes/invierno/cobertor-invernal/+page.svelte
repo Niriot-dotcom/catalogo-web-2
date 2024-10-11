@@ -81,6 +81,7 @@
   import { EnumEntradaInvierno, URLS } from "$lib/constants/strings";
   import EntradaInvierno from "$lib/templates/invierno/EntradaInvierno.svelte";
   import OptimImg from "$lib/components/OptimImg.svelte";
+  import AddAll from "$lib/components/AddAll.svelte";
 
   let visibleIds: string[] = [];
   let showViewPrices = false;
@@ -250,13 +251,21 @@
       </div>
     </div>
     <div class="related-products horizontal">
-      <div
-        text-split=""
-        words-slide-from-right=""
-        class="text-block-23 look-book"
-      >
-        Completa<br /><strong class="bold-text">el Look</strong>
+      <div class="flex flex-col">
+        <div
+          text-split=""
+          words-slide-from-right=""
+          class="text-block-23 look-book"
+        >
+          Completa<br /><strong class="bold-text">el Look</strong>
+        </div>
+        <div class="h-[10vh] pl-[12%] flex justify-between">
+          <AddAll
+            skus={[page.SKU, page.complSheets[0], page.complCurtains[0]]}
+          />
+        </div>
       </div>
+
       <div class="link-block-10 centered w-inline-block">
         <OptimImg
           onClick={() => handleImageClick(page.complSheets[0], [])}

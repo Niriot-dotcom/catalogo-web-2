@@ -16,7 +16,7 @@
   <style>
     @media (max-width: 600px) {
       body {
-        margin-top: 60px;
+        /* margin-top: 60px; <== este causaba que h-screen no funcionara como debe */
         max-width: 100vw !important;
         overflow-x: hidden !important;
       }

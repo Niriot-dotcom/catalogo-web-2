@@ -14,7 +14,6 @@
   import PopupCompra from "./popupCompra.svelte";
   import PopupAuth from "./popupAuth.svelte";
   import CategoriesFooter from "./categoriesFooter.svelte";
-  import { BiasiFooterHeader } from "$lib/constants/FooterHeaders";
   import { Catalogs } from "$lib/constants/globalTypes";
   import {
     catalogSections,
@@ -27,7 +26,11 @@
     navigateToNextPage,
     navigateToPreviousPage,
   } from "$lib/utils/navigation";
-  import { CATALOGS_DESCRIPTIONS, URLS } from "$lib/constants/strings";
+  import {
+    CATALOGS_DESCRIPTIONS,
+    CATALOGS_ROUTES,
+    URLS,
+  } from "$lib/constants/strings";
   export let visibleIds: string[] = [];
   export let relatedProducts: string[] = [];
   export let showPopup = false;
@@ -280,37 +283,16 @@
   >
     <div class="div-block-28">
       {#if catalog === Catalogs.BIASI}
-        <CategoriesFooter
-          {catalog}
-          showOnlyGrid={true}
-          categories={catalogSections.BIASI}
-          HeaderComponent={BiasiFooterHeader()}
-        />
+        <CategoriesFooter {catalog} categories={catalogSections.BIASI} />
       {:else if catalog === Catalogs.CHAVOS}
         <!-- <PhotographicIndex {catalog} showOnlyGrid={true} categories={ChavosCategories} /> -->
-        <CategoriesFooter
-          {catalog}
-          showOnlyGrid={true}
-          categories={catalogSections.CHAVOS}
-        />
+        <CategoriesFooter {catalog} categories={catalogSections.CHAVOS} />
       {:else if catalog === Catalogs.VIANNEY}
-        <CategoriesFooter
-          {catalog}
-          showOnlyGrid={true}
-          categories={catalogSections.VIANNEY}
-        />
+        <CategoriesFooter {catalog} categories={catalogSections.VIANNEY} />
       {:else if catalog === Catalogs.BEBE}
-        <CategoriesFooter
-          {catalog}
-          showOnlyGrid={true}
-          categories={catalogSections.BEBE}
-        />
+        <CategoriesFooter {catalog} categories={catalogSections.BEBE} />
       {:else if catalog === Catalogs.INVIERNO}
-        <CategoriesFooter
-          {catalog}
-          showOnlyGrid={true}
-          categories={catalogSections.INVIERNO}
-        />
+        <CategoriesFooter {catalog} categories={catalogSections.INVIERNO} />
       {/if}
     </div>
   </div>
@@ -703,7 +685,7 @@
   </div>
 </div>
 
-{#if catalog !== Catalogs.INVIERNO}
+{#if catalog !== Catalogs.INVIERNO && catalog !== Catalogs.BIASI}
   <!-- Left navigation button -->
   <div
     class="fixed left-0 top-1/2 transform -translate-y-1/2"
@@ -790,9 +772,9 @@
         style="background-color: rgba(0, 0, 0, 0.5);"
       >
         <div
-          class="pointer-events-none fixed inset-y-0 left-0 flex max-w-full pr-10"
+          class="pointer-events-none fixed inset-y-0 left-0 flex max-w-full pr-16 sm:pr-0"
         >
-          <div class="pointer-events-auto w-screen sm:max-w-xs max-w-md">
+          <div class="pointer-events-auto w-screen sm:max-w-sm max-w-md">
             <div
               class="flex h-full flex-col overflow-y-scroll bg-white py-0 shadow-xl"
               transition:fly={{ x: -400, duration: 500 }}
@@ -892,71 +874,69 @@
                       <span class="truncate">Decoradora IA</span>
                     </a> -->
 
-                    {#if catalog === Catalogs.CHAVOS || catalog === Catalogs.VIANNEY || catalog === Catalogs.BEBE || catalog === Catalogs.INVIERNO}
-                      <button
-                        on:click={handleShowSections}
-                        class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
+                    <button
+                      on:click={handleShowSections}
+                      class="text-gray-700 w-full hover:bg-gray-100 group flex items-center rounded-md px-3 py-1 text-sm font-medium"
+                    >
+                      <svg
+                        class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke=""
+                        aria-hidden="true"
                       >
-                        <svg
-                          class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke=""
-                          aria-hidden="true"
-                        >
-                          <g>
-                            <path
-                              id="Icon"
-                              d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z"
-                              stroke="#94a3b8"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                          </g>
-                        </svg>
+                        <g>
+                          <path
+                            id="Icon"
+                            d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z"
+                            stroke="#94a3b8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                      </svg>
 
-                        <span class="truncate">Secciones</span>
+                      <span class="truncate">Secciones</span>
 
-                        <div
-                          id="sections-dropdown-arrow"
-                          class="flex items-center justify-center cursor-pointer px-2"
-                        >
-                          <!-- Chevron icon -->
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="w-5 h-5 text-gray-500"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                              clip-rule="evenodd"
-                            />
-                          </svg>
-                        </div>
-                      </button>
                       <div
-                        id="sections-list"
-                        class="mt-3 ml-8 space-y-1"
-                        aria-labelledby="communities-headline"
+                        id="sections-dropdown-arrow"
+                        class="flex items-center justify-center cursor-pointer px-2"
                       >
-                        {#each catalogSections[catalog] as section}
-                          <a
-                            href={section.link}
-                            class="group flex flex-col leading-5 rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                          >
-                            <span class="truncate chavos-bold-sm"
-                              >{section.title.replaceAll("<br />", " ")}</span
-                            >
-                            <span class="truncate chavos-xs"
-                              >{section.subtitle}</span
-                            >
-                          </a>
-                        {/each}
+                        <!-- Chevron icon -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          class="w-5 h-5 text-gray-500"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
                       </div>
-                    {/if}
+                    </button>
+                    <div
+                      id="sections-list"
+                      class="mt-3 ml-8 space-y-1"
+                      aria-labelledby="communities-headline"
+                    >
+                      {#each catalogSections[catalog] as section}
+                        <a
+                          href="/{CATALOGS_ROUTES[catalog]}/{section.link}"
+                          class="group flex flex-col leading-5 rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        >
+                          <span class="truncate chavos-bold-sm"
+                            >{section.title.replaceAll("<br />", " ")}</span
+                          >
+                          <span class="truncate chavos-xs"
+                            >{section.subtitle}</span
+                          >
+                        </a>
+                      {/each}
+                    </div>
                   </div>
                   <!--
                 <div class="pt-10">
@@ -1164,7 +1144,8 @@
                     <button
                       on:click={shareOnWhatsApp}
                       type="submit"
-                      class="bg-green-600 hover:bg-green-800 w-full rounded-md border border-transparent fill-white px-4 py-3 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-vianney-500 focus:ring-offset-2 focus:ring-offset-gray-50 flex items-center justify-center space-x-2"
+                      disabled={cartItems.length <= 0}
+                      class="bg-green-600 hover:bg-green-800 disabled:bg-green-300 w-full rounded-md border border-transparent fill-white px-4 py-3 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-vianney-500 focus:ring-offset-2 focus:ring-offset-gray-50 flex items-center justify-center space-x-2"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1304,29 +1285,3 @@
     </div>
   </div>
 {/if}
-
-<style>
-  .spinner {
-    padding-left: 2px;
-    padding-right: 2px;
-    margin-left: 4px;
-    margin-right: 4px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid #292929;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    animation: spin 2s linear infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-</style>

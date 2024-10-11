@@ -53,6 +53,7 @@ export const EnumSublinea = {
   DOBLE_SLIDER: "DOBLE_SLIDER",
   CUATRO: "CUATRO",
   CAROUSEL_HORIZONTAL: "CAROUSEL_HORIZONTAL",
+  FULLSCREEN: "FULLSCREEN",
 };
 export const EnumVariantesDeColor = {
   SIN_ACERCAMIENTO: "SIN_ACERCAMIENTO",
@@ -94,6 +95,12 @@ export const VIALIFRESH_ICONS = [
   "/images/icons/ICON-CONTROLA-MOH-MENTA.svg",
   "/images/icons/ICON-CONTROLA-ACA-MENTA.svg",
 ];
+export const GROUPED_TEMPLATES = [
+  "Sublinea",
+  "VariantesDeColor",
+  "HeaderAndImages",
+  "ImagesAndGrid",
+];
 export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
   invierno: {
     title: "Invierno",
@@ -108,14 +115,13 @@ export const CATALOGS_DESCRIPTIONS: Record<string, CatalogDetail> = {
   },
   biasi: {
     title: "Biasi",
-    year: "2023-2024",
+    year: "2025",
     url: "/biasi",
-    launchVideo: "https://youtu.be/JeH4yR02paI",
-    downloadLink: "https://bit.ly/BIASI-24",
-    image:
-      "https://vianney.vtexassets.com/assets/vtex.file-manager-graphql/images/a4088526-d654-4c2a-89d1-0b32c8e4ac62___af699926a12561adc26e1db51b175351.jpg",
+    launchVideo: "https://youtu.be/WFb0OppuHog",
+    downloadLink: "https://bit.ly/BIASI_25",
+    image: "/images/biasi/PortadaBiasi25.jpg",
     description:
-      "Con Biasi 2023-2024 Vive simple, vive en familia. En este catálogo encontrarás los artículos ideales para organizar, amueblar y decorar cada espacio de tu hogar.",
+      "Hemos reunido una selección exclusiva de artículos que brindarán soluciones prácticas y con estilo para cada habitación de tu hogar, desde la cocina hasta el cuarto de lavado. Descubre con nosotros las últimas tendencias en decoración, ideas innovadoras y prácticas para aprovechar cada rincón de tu hogar y hacerlo un lugar aún más especial.",
     logo: "",
   },
   chavos: {

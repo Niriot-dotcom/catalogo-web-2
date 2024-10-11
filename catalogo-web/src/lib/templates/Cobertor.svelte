@@ -55,8 +55,6 @@
     }
   }
 
-  function handleAddAllProducts() {}
-
   let currentCatalog: string;
   onMount(() => {
     if (window) {

@@ -77,7 +77,7 @@
   class="md:hidden py-0 overflow-x-hidden"
 >
   <!-- text header -->
-  <div class="text-black px-5 mt-5">
+  <div class="text-black px-5 mt-12">
     <!-- LOGO -->
     {#if groupPages[0].pageResources[0] === EnumSublinea.CAROUSEL_HORIZONTAL}
       <!-- if HAY UNA IMAGEN EN PAGE RESOURCES, else SE PONE EL TITULO-->
@@ -156,23 +156,33 @@
             (page.pageResources[0] === EnumSublinea.INDIVIDUAL ||
               page.pageResources[0] === EnumSublinea.DOBLE)
               ? "20vh;"
-              : "30vh;"
+              : page.pageResources[0] === EnumSublinea.FULLSCREEN
+                ? "80vh"
+                : "30vh;"
           }`}
           on:click={() => handleImageClick(page.SKU, page.pageRelatedProducts)}
         >
-          {#if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.INDIVIDUAL}
+          {#if page.pageResources && page.pageResources.length > 0 && (page.pageResources[0] === EnumSublinea.INDIVIDUAL || page.pageResources[0] === EnumSublinea.FULLSCREEN)}
             <!-- main image -->
             <div
               data-visible-id={page.SKU}
               class="col-span-8 w-full overflow-hidden"
             >
               <OptimImg
-                imgClass="object-contain w-full h-full"
-                source={`${URLS.fotos}${page.SKU}.webp`}
-                style={page.pageTitle === "Tropical"
-                  ? "transform: scale(2)"
-                  : ""}
+                imgClass="{page.pageResources[0] === EnumSublinea.FULLSCREEN
+                  ? 'object-cover'
+                  : 'object-contain'} w-full h-full"
+                source="{URLS.fotos}{page.SKU}{page.pageResources &&
+                page.pageResources.length > 1 &&
+                page.pageResources[1] !== ''
+                  ? page.pageResources[1]
+                  : ''}.webp"
               />
+              <!-- source={page.pageResources &&
+                page.pageResources.length > 0 &&
+                !isNaN(+page.pageResources[0])
+                  ? `${URLS.fotos}${page.SKU}-${page.pageResources[0]}.webp`
+                  : `${URLS.fotos}${page.SKU}.webp`} -->
             </div>
           {:else if page.pageResources && page.pageResources.length > 0 && page.pageResources[0] === EnumSublinea.DOBLE}
             <div
@@ -379,7 +389,7 @@
     <!-- text header -->
     <div
       style="background-color: {bgColor};"
-      class="text-black mt-24 absolute left-1/2 translate-x-[-50%] flex flex-col text-center justify-center z-10 py-3 px-6"
+      class="text-black mt-24 absolute left-1/2 translate-x-[-50%] flex flex-col text-center justify-center z-10 py-3 px-6 shadow-xl"
     >
       {#if groupPages[0].pageResources.length > 1 && groupPages[0].pageResources[1] !== ""}
         <div class="w-full h-[10vh] my-3">
@@ -415,7 +425,7 @@
             id={`zoom-circle-${title}-${i}`}
             class="w-full h-full absolute -left-[12%] opacity-0 transition-all duration-200 ease-linear"
           >
-            <div class="lg:scale-[0.6] scale-[0.8] rounded-[50%]">
+            <div class="lg:scale-[0.6] scale-[0.8] rounded-[50%] bg-beige">
               <OptimImg
                 imgClass="object-cover rounded-[50%]"
                 source={`${URLS.fotos}${page.SKU}-2.webp`}

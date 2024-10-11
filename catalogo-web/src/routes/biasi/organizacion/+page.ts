@@ -1,39 +1,51 @@
 import type { PageLoad } from "./$types";
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "$lib/firebase";
-import { BiasiCollectionName } from "$lib/constants/BiasiDB";
+import { BiasiCollectionName } from "$lib/constants/DB";
+import { GROUPED_TEMPLATES } from "$lib/constants/strings";
+import type { DatabasePage } from "$lib/constants/globalTypes";
 
 export type VisibleIds = string[];
 
-export const load: PageLoad = async ({ params }) => {
-  // firebase query to get all the documents in the collection that match the field value pageType: "Coberot Austral"
+export const load = async ({ params }: Parameters<PageLoad>[0]) => {
   const q = query(
     collection(db, BiasiCollectionName),
-    where("pageCategory", "==", "Organización"),
+    where("productSection", "==", "Página 04 / Organización"),
+    // where("pageStatus", "==", true),
   );
   const querySnapshot = await getDocs(q);
-  var products: any = [];
+  var pages: DatabasePage[] = [];
   querySnapshot.forEach((doc) => {
-    // map the document data to an array with the data of products
-    products.push(doc.data());
+    pages.push(doc.data() as any);
   });
+  pages.sort((a, b) => (a.productOrder > b.productOrder ? 1 : -1));
 
-  products = products.sort((a, b) => {
-    if (a.pageTemplate === "portadilla" && b.pageTemplate !== "portadilla") {
-      return -1;
-    } else if (
-      a.pageTemplate !== "portadilla" &&
-      b.pageTemplate === "portadilla"
-    ) {
-      return 1;
-    } else {
-      return b.pageTemplate.localeCompare(a.pageTemplate);
+  let groupedPages: Record<string, DatabasePage[]> = {};
+  for (const page of pages) {
+    if (GROUPED_TEMPLATES.includes(page.pageTemplate)) {
+      if (groupedPages[page.productType] === undefined) {
+        groupedPages[page.productType] = [page];
+      } else {
+        groupedPages[page.productType].push(page);
+      }
     }
-  });
+  }
 
-  return {
-    props: {
-      pages: products,
-    },
-  };
+  let pairPages: (DatabasePage | null)[][] = pages
+    .filter((page) => page.pageTemplate === "TwoSides")
+    .reduce(
+      (acc: (DatabasePage | null)[][], curr: DatabasePage, index: number) => {
+        // If index is even, start a new pair
+        if (index % 2 === 0) {
+          acc.push([curr, null]);
+        } else {
+          // Otherwise, fill the second element of the last pair
+          acc[acc.length - 1][1] = curr;
+        }
+        return acc;
+      },
+      [],
+    );
+
+  return { props: { pages, groupedPages, pairPages } };
 };

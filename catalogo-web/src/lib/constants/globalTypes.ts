@@ -30,15 +30,6 @@ export enum Catalogs {
   BEBE = "BEBE",
 }
 
-export enum Templates {
-  twoSides = "twoSides",
-  portadilla = "portadilla",
-  videoAndGrid = "videoAndGrid",
-  imagesAndGrid = "imagesAndGrid",
-  floatingImages = "floatingImages",
-  mainAndElements = "mainAndElements",
-}
-
 export type SectionCategory = {
   link: string;
   title: string;
@@ -49,39 +40,27 @@ export type SectionCategory = {
 };
 
 export type DatabasePage = {
+  SKU: string;
+  productType: string;
+  productName: string;
+  status: string;
+  productSection: string;
+  productOrder: number;
   pageTemplate: string;
   pageTitle: string;
-  pageSubtitle?: string;
-  pageCategory?: string;
-  pageMainImage?: string;
-  pageCopys?: string;
-  pageImages?: string;
-
-  pageResources?: string;
-  pageMainVideo?: string;
-
-  pageType?: string;
-  pageProducts?: string;
-  pageIcons?: string;
-  pageVideos?: string;
-  pageRelatedProducts?: string;
-  pageComplementProducts?: string;
-  pageDescriptions?: string;
-  pageProductsInImage?: string;
-  pageProductsImages?: string;
-  pageProductsImagesPosition?: string;
-  pageSeoTitle?: string;
-  pageKeywords?: string;
-  pageSeoDescription?: string;
-  pageStatus?: string;
-  storageFoto?: string;
-  storageVideo?: string;
-  ID?: string;
-
-  SKU: string;
+  pageResources: string;
   complSheets: string[];
   complCurtains: string[];
   complPillowCovers: string[];
   complCushions: string[];
   complDecoration: string[];
+  pageCopys: string[];
+  pageKeywords: string[];
+  pageVideos: string[];
+  pageStatus: string;
+  pageRelatedProducts: string[];
+  pageIcons: string[];
+  pageSubtitle: string;
+  pageSeoTitle: string;
+  pageSeoDescription: string;
 };

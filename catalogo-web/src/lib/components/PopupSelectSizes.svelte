@@ -3,6 +3,7 @@
   import { deleteSubArray } from "$lib/utils/strings";
   import { createEventDispatcher, onMount } from "svelte";
   import { addToCart } from "./cartLogic";
+  import { stringify } from "postcss";
 
   export let show: boolean;
   export let totalItems: [];
@@ -121,7 +122,8 @@
                         >
                           {#each item as variantProduct}
                             <option value={variantProduct.product.Id}>
-                              {variantProduct.product.VariantProduct}
+                              {variantProduct.product.VariantProduct ||
+                                "UNITALLA"}
                             </option>
                           {/each}
                         </select>

@@ -31,11 +31,10 @@ app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 ''' CONSTANTS '''
-COLLECTION_NAME = "testPages"
-OUT_JSON = 'jsonInvierno.json'
-CSV_DB = './src/lib/scripts/Invierno Completed F3.csv'
+COLLECTION_NAME = "catalogPages"
+CSV_DB = './src/lib/scripts/Biasi Completed F0.csv'
 
-csv_filepath = '/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/CAT WEB - INVIERNO 24-25/000 docs/out.csv'
+csv_filepath = '/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/00 DOCS/out.csv'
 ARRAY_ROWS = [
     'complSheets',
     'complCurtains',
@@ -126,6 +125,6 @@ def parse_csv_to_json(csv_filepath, json_filepath="", count_stop=-1):
 
 
 ''' MAIN '''
-# delete_collection(COLLECTION_NAME, 5)
-json_obj = parse_csv_to_json(CSV_DB, OUT_JSON)
+# delete_collection(COLLECTION_NAME, 10)
+json_obj = parse_csv_to_json(CSV_DB)
 json_to_firebase(json_obj, COLLECTION_NAME)

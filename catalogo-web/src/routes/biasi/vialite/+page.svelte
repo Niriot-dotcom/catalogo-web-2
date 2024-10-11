@@ -1,100 +1,66 @@
 <script lang="ts">
   import PvisibleDetector from "$lib/components/pvisibleDetector.svelte";
+  import VisibleDetector from "$lib/components/visibleDetector.svelte";
   import TemplateDetector from "$lib/components/templateDetector.svelte";
   import NavigatorMenu from "$lib/components/navigatorMenu.svelte";
-  import CategoriesFooter from "$lib/components/categoriesFooter.svelte";
-  import { catalogSections } from "$lib/components/currentCatalogPage";
-  import { BiasiFooterHeader } from "$lib/constants/FooterHeaders";
   import type { PageData } from "./$types";
-  import VideoAndGrid from "$lib/templates/videoAndGrid.svelte";
-  import MainAndElements from "$lib/templates/mainAndElements.svelte";
-  import Portadilla from "$lib/templates/portadilla.svelte";
-  import TwoSides from "$lib/templates/twoSides.svelte";
-  import ImagesAndGrid from "$lib/templates/imagesAndGrid.svelte";
-  import FloatingImages from "$lib/templates/floatingImages.svelte";
-  import { Catalogs } from "$lib/constants/globalTypes";
+  import MainAndElements from "$lib/templates/MainAndElements.svelte";
+  import TwoSides from "$lib/templates/TwoSides.svelte";
+  import ImagesAndGrid from "$lib/templates/ImagesAndGrid.svelte";
+  import { Catalogs, type DatabasePage } from "$lib/constants/globalTypes";
+  import EntradaBiasi from "$lib/templates/biasi/EntradaBiasi.svelte";
+  import { URLS } from "$lib/constants/strings";
+  import Sublinea from "$lib/templates/Sublinea.svelte";
 
   let visibleIds: string[] = [];
+  let showViewPrices = false;
+  function handleVisibleChange(event: any) {
+    visibleIds = event.detail;
+    showViewPrices = visibleIds.length > 0;
+  }
+  let relatedProducts: string[] = [];
   let selectedProduct: null | string = null;
   let showPopup = false;
-  function handleVisibleChange(event) {
-    visibleIds = event.detail;
-  }
-  function show() {
-    showPopup = true;
-  }
 
   export let data: PageData;
-  const pages = data.props.pages;
+  const handleImageClick = (sku: string, relatedProds: string[]) => {
+    selectedProduct = sku;
+    relatedProducts = relatedProds;
+  };
+
+  const pages: DatabasePage[] = data.props.pages;
+  const groups: Record<string, DatabasePage[]> = data.props.groupedPages;
 
   let initAnimates = Array(pages.length).fill(false);
-  function handleTemplateChange(event) {
+  function handleTemplateChange(event: any) {
     if (!event.detail[0]) return;
     initAnimates[+event.detail[0].split("-")[1]] = true;
   }
 </script>
 
-<!-- <VisibleDetector on:visibleChange={handleVisibleChange} /> -->
+<VisibleDetector on:visibleChange={handleVisibleChange} />
 <PvisibleDetector bind:visibleIds />
 <TemplateDetector on:templateChange={handleTemplateChange} />
 
-{#each pages as page, i}
-  {#if page.pageTemplate == "portadilla"}
-    <Portadilla
-      templateId={`portadilla-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:page
-    />
-  {:else if page.pageTemplate == "floatingImages"}
-    <FloatingImages
-      templateId={`floatingImages-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "imagesAndGrid"}
-    <ImagesAndGrid
-      templateId={`imagesAndGrid-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "mainAndElements"}
-    <MainAndElements
-      templateId={`mainAndElements-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "twoSides"}
-    <TwoSides
-      templateId={`twoSides-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
-  {:else if page.pageTemplate == "videoAndGrid"}
-    <VideoAndGrid
-      templateId={`videoAndGrid-${i.toString()}`}
-      initAnimate={initAnimates[i]}
-      bind:selectedProduct
-      bind:page
-    />
+<!-- ENTRADA -->
+<EntradaBiasi
+  bgVideo="{URLS.videos}ENTRADA-P12-VIALITE.gif"
+  titleSvg="/images/biasi/portadillas/12-VIALITE.svg"
+/>
+
+{#each Object.keys(groups) as group, i}
+  {#if groups[group][0].pageTemplate == "Sublinea"}
+    <Sublinea groupPages={groups[group]} title={group} {handleImageClick} />
   {/if}
 {/each}
 
-<CategoriesFooter
-  catalog={Catalogs.BIASI}
-  categories={catalogSections.BIASI}
-  HeaderComponent={BiasiFooterHeader()}
-/>
-
 <NavigatorMenu
+  catalog={Catalogs.BIASI}
+  bind:relatedProducts
   bind:visibleIds
   bind:showPopup
+  bind:showViewPrices
   bind:selectedProduct
-  isBiasi={true}
-  catalog={Catalogs.BIASI}
 />
 
 <div>
