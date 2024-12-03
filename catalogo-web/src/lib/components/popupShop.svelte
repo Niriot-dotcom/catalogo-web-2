@@ -169,6 +169,10 @@
       });
     }
 
+    // producto no encontrado
+    if (productsWithSameName.length <= 0) {
+      return;
+    }
     const productName = clickId
       ? productsWithSameName[0].Name
       : event

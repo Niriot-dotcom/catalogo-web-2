@@ -226,7 +226,7 @@
   >
     <div class="relative w-full h-full">
       <!-- complementos -->
-      <div class="absolute w-full h-[30vh]">
+      <div class="absolute w-full h-[35vh]">
         <div
           data-visible-id="{page.complSheets[0]}, {page.complCurtains[0]}, {page
             .complPillowCovers[0]}, {page.complCushions[0]}"
@@ -234,93 +234,102 @@
         >
           <!-- cojines -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <div
-            id={`compl-cushion-${page.SKU}`}
-            style="background-color: {bgColor};"
-            class="cursor-pointer col-start-1 border-2 border-black w-full h-full flex flex-col items-center justify-center transition-all duration-200 ease-linear"
-            on:mouseenter={() =>
-              handleShowComplement(`compl-cushion-${page.SKU}`, true)}
-            on:mouseleave={() =>
-              handleShowComplement(`compl-cushion-${page.SKU}`, false)}
-          >
-            <p class="pt-5 pb-3 text-black chavos-lg h-[5vh]">Cojín</p>
+          {#if page.complCushions[0]}
+            <div
+              id={`compl-cushion-${page.SKU}`}
+              style="background-color: {bgColor};"
+              class="cursor-pointer col-start-1 border-2 border-black w-full h-full flex flex-col items-center justify-between transition-all duration-200 ease-linear"
+              on:mouseenter={() =>
+                handleShowComplement(`compl-cushion-${page.SKU}`, true)}
+              on:mouseleave={() =>
+                handleShowComplement(`compl-cushion-${page.SKU}`, false)}
+            >
+              <p class="pt-5 pb-3 text-black chavos-lg h-[5vh]">Cojín</p>
 
-            <div class="w-[92%] h-[25vh] mb-3 overflow-hidden">
-              <OptimImg
-                onClick={() => handleImageClick(page.complCushions[0], [])}
-                imgClass="object-cover w-full h-full"
-                source={`${URLS.fotos}${page.complCushions[0]}.webp`}
-              />
+              <div class="w-[92%] h-[25vh] mb-3 overflow-hidden">
+                <OptimImg
+                  onClick={() => handleImageClick(page.complCushions[0], [])}
+                  imgClass="object-cover w-full h-full"
+                  source={`${URLS.fotos}${page.complCushions[0]}.webp`}
+                />
+              </div>
             </div>
-          </div>
+          {/if}
 
           <!-- sabanas -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <div
-            id={`compl-sheets-${page.SKU}`}
-            style="background-color: {bgColor};"
-            class="cursor-pointer col-start-2 border-2 border-black w-full h-full flex flex-col items-center justify-center transition-all duration-200 ease-linear"
-            on:mouseenter={() =>
-              handleShowComplement(`compl-sheets-${page.SKU}`, true)}
-            on:mouseleave={() =>
-              handleShowComplement(`compl-sheets-${page.SKU}`, false)}
-          >
-            <p class="pt-5 pb-3 text-black chavos-lg h-[5vh]">Sábanas</p>
+          {#if page.complSheets[0]}
+            <div
+              id={`compl-sheets-${page.SKU}`}
+              style="background-color: {bgColor};"
+              class="cursor-pointer col-start-2 border-2 border-black w-full h-full flex flex-col items-center justify-between transition-all duration-200 ease-linear"
+              on:mouseenter={() =>
+                handleShowComplement(`compl-sheets-${page.SKU}`, true)}
+              on:mouseleave={() =>
+                handleShowComplement(`compl-sheets-${page.SKU}`, false)}
+            >
+              <p class="pt-5 pb-3 text-black chavos-lg h-[5vh]">Sábanas</p>
 
-            <div class="w-[92%] h-[25vh] mb-3 overflow-hidden">
-              <OptimImg
-                onClick={() => handleImageClick(page.complSheets[0], [])}
-                imgClass="object-cover w-full h-full"
-                source={`${URLS.fotos}${page.complSheets[0]}.webp`}
-              />
+              <div class="w-[92%] h-[25vh] mb-3 overflow-hidden">
+                <OptimImg
+                  onClick={() => handleImageClick(page.complSheets[0], [])}
+                  imgClass="object-cover w-full h-full"
+                  source={`${URLS.fotos}${page.complSheets[0]}.webp`}
+                />
+              </div>
             </div>
-          </div>
+          {/if}
 
           <!-- cortinas -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <div
-            id={`compl-curtains-${page.SKU}`}
-            style="background-color: {bgColor};"
-            class="cursor-pointer col-start-3 border-2 border-black w-full h-full flex flex-col items-center justify-center transition-all duration-200 ease-linear"
-            on:mouseenter={() =>
-              handleShowComplement(`compl-curtains-${page.SKU}`, true)}
-            on:mouseleave={() =>
-              handleShowComplement(`compl-curtains-${page.SKU}`, false)}
-          >
-            <p class="pt-5 pb-3 text-black chavos-lg h-[5vh]">Cortinas</p>
+          {#if page.complCurtains[0]}
+            <div
+              id={`compl-curtains-${page.SKU}`}
+              style="background-color: {bgColor};"
+              class="cursor-pointer col-start-3 border-2 border-black w-full h-full flex flex-col items-center justify-between transition-all duration-200 ease-linear"
+              on:mouseenter={() =>
+                handleShowComplement(`compl-curtains-${page.SKU}`, true)}
+              on:mouseleave={() =>
+                handleShowComplement(`compl-curtains-${page.SKU}`, false)}
+            >
+              <p class="pt-5 pb-3 text-black chavos-lg h-[5vh]">Cortinas</p>
 
-            <div class="w-[92%] h-[25vh] mb-3 overflow-hidden">
-              <OptimImg
-                onClick={() => handleImageClick(page.complCurtains[0], [])}
-                imgClass="object-cover w-full h-full"
-                source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
-              />
+              <div class="w-[92%] h-[25vh] mb-3 overflow-hidden">
+                <OptimImg
+                  onClick={() => handleImageClick(page.complCurtains[0], [])}
+                  imgClass="object-cover w-full h-full"
+                  source={`${URLS.fotos}${page.complCurtains[0]}.webp`}
+                />
+              </div>
             </div>
-          </div>
+          {/if}
 
           <!-- decoracion -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <div
-            id={`compl-decoration-${page.SKU}`}
-            style="background-color: {bgColor};"
-            class="cursor-pointer col-start-4 border-2 border-black w-full h-full flex flex-col items-center justify-center transition-all duration-200 ease-linear"
-            on:mouseenter={() =>
-              handleShowComplement(`compl-decoration-${page.SKU}`, true)}
-            on:mouseleave={() =>
-              handleShowComplement(`compl-decoration-${page.SKU}`, false)}
-          >
-            <p class="pt-5 pb-3 text-black chavos-lg h-[5vh]">
-              Funda de almohada
-            </p>
+          {#if page.complPillowCovers[0]}
+            <div
+              id={`compl-decoration-${page.SKU}`}
+              style="background-color: {bgColor};"
+              class="cursor-pointer col-start-4 border-2 border-black w-full h-full flex flex-col items-center justify-between transition-all duration-200 ease-linear"
+              on:mouseenter={() =>
+                handleShowComplement(`compl-decoration-${page.SKU}`, true)}
+              on:mouseleave={() =>
+                handleShowComplement(`compl-decoration-${page.SKU}`, false)}
+            >
+              <p class="pt-5 pb-3 text-black chavos-lg h-[5vh]">
+                Funda de almohada
+              </p>
 
-            <div class="w-[92%] h-[25vh] mb-3 overflow-hidden">
-              <OptimImg
-                onClick={() => handleImageClick(page.complPillowCovers[0], [])}
-                imgClass="object-cover w-full h-full"
-                source={`${URLS.fotos}${page.complPillowCovers[0]}.webp`}
-              />
+              <div class="w-[92%] h-[25vh] mb-3 overflow-hidden">
+                <OptimImg
+                  onClick={() =>
+                    handleImageClick(page.complPillowCovers[0], [])}
+                  imgClass="object-cover w-full h-full"
+                  source={`${URLS.fotos}${page.complPillowCovers[0]}.webp`}
+                />
+              </div>
             </div>
-          </div>
+          {/if}
         </div>
       </div>
 

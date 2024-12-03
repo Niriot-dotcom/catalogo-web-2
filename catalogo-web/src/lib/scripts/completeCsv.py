@@ -312,7 +312,7 @@ def get_page_title(productName: str, template: str, productType=""):
         'Frazada',
         'Sofá',
         '1/2',
-        'Baño',
+        # 'Baño',
         'Uni',
         'Carriola',
         'Cuna',
@@ -333,7 +333,7 @@ def get_page_title(productName: str, template: str, productType=""):
         # 'Voga',
         # 'Mumbai',
         # 'Viasoft',
-        'Par',
+        # 'Par',
         'Velvet',
     ]
     upper_tallas_to_remove = [x.upper() for x in tallas_to_remove]
@@ -462,4 +462,4 @@ def process_csv_file(limit, filename):
 
 ''' MAIN '''
 new_data = process_csv_file(-1, '/Users/patylopez/Library/CloudStorage/GoogleDrive-patylopezdev@gmail.com/My Drive/SOFTWARE_PROJECTS/VIANNEY/00 DOCS/CAT WEB DB.csv')
-write_csv_file('./src/lib/scripts/Biasi Completed F0.csv', new_data)
+write_csv_file('./src/lib/scripts/Invierno Completed F0.csv', new_data)
